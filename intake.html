@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>홈페이지 제작 기획서 | NanuriWeb × K-Church911</title>
+<meta name="description" content="NanuriWeb 교회 홈페이지 제작 기획서 접수폼 — 모바일에서 바로 작성·제출">
+<style>
+:root{
+  --navy:#0B1628;--dark:#040c1a;--card:#0e1d38;--border:rgba(255,255,255,.1);
+  --gold:#C9A84C;--emerald:#1A7F5A;--red:#e05252;
+  --text:rgba(255,255,255,.88);--muted:rgba(255,255,255,.38);--dim:rgba(255,255,255,.18);
+  --radius:14px;--font:-apple-system,'Noto Sans KR','Apple SD Gothic Neo',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;-webkit-text-size-adjust:100%;}
+body{background:var(--dark);color:var(--text);font-family:var(--font);min-height:100vh;padding-bottom:80px;}
+
+/* ── Progress Bar ── */
+.prog-wrap{position:sticky;top:0;z-index:100;background:rgba(4,12,26,.96);backdrop-filter:blur(12px);padding:14px 20px 12px;}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.prog-logo{font-size:13px;font-weight:700;letter-spacing:.5px;color:var(--gold);}
+.prog-label{font-size:12px;color:var(--muted);}
+.prog-bar{height:3px;background:var(--dim);border-radius:99px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),#e8c76a);border-radius:99px;transition:width .4s ease;}
+.prog-dots{display:flex;gap:6px;margin-top:10px;}
+.prog-dot{flex:1;height:3px;border-radius:99px;background:var(--dim);transition:background .3s;}
+.prog-dot.done{background:var(--gold);}
+.prog-dot.active{background:var(--gold);}
+
+/* ── Layout ── */
+.wrap{max-width:640px;margin:0 auto;padding:0 20px;}
+
+/* ── Step Panels ── */
+.step{display:none;animation:fadeIn .35s ease;}
+.step.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Section Header ── */
+.step-head{padding:28px 0 22px;}
+.step-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.step-title{font-size:24px;font-weight:800;line-height:1.25;color:#fff;margin-bottom:6px;}
+.step-sub{font-size:14px;color:var(--muted);line-height:1.6;}
+
+/* ── Church Badge (pre-fill example) ── */
+.example-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);border-radius:50px;padding:5px 12px;font-size:11px;color:var(--gold);margin-bottom:20px;}
+
+/* ── Question Card ── */
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;}
+.qcard:focus-within{border-color:rgba(201,168,76,.45);box-shadow:0 0 0 3px rgba(201,168,76,.08);}
+.qlabel{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;display:flex;align-items:flex-start;gap:8px;}
+.qnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;border-radius:6px;background:var(--gold);color:#000;font-size:11px;font-weight:800;margin-top:0;}
+.qhint{font-size:11.5px;color:var(--muted);margin-bottom:10px;margin-left:30px;line-height:1.5;}
+.required{color:var(--gold);}
+
+/* ── Inputs ── */
+input[type=text],input[type=email],input[type=tel],input[type=number],
+input[type=url],select,textarea{
+  width:100%;background:rgba(255,255,255,.05);border:1px solid var(--dim);
+  border-radius:10px;padding:13px 15px;color:var(--text);font-family:var(--font);
+  font-size:15px;outline:none;transition:border .2s,background .2s;-webkit-appearance:none;
+}
+input::placeholder,textarea::placeholder{color:var(--muted);}
+input:focus,textarea:focus,select:focus{border-color:rgba(201,168,76,.55);background:rgba(255,255,255,.08);}
+textarea{resize:vertical;min-height:96px;line-height:1.6;}
+select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;}
+select option{background:#0e1d38;color:#fff;}
+.input-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){.input-row{grid-template-columns:1fr;}}
+
+/* ── Checkbox / Radio Pills ── */
+.pill-group{display:flex;flex-wrap:wrap;gap:8px;margin-left:0;}
+.pill-item{display:none;}
+.pill-label{display:flex;align-items:center;gap:6px;padding:8px 14px;border:1.5px solid var(--dim);border-radius:50px;font-size:13px;color:rgba(255,255,255,.55);cursor:pointer;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent;}
+.pill-item:checked+.pill-label{background:rgba(201,168,76,.15);border-color:var(--gold);color:var(--gold);}
+.pill-label:active{transform:scale(.96);}
+
+/* ── Radio Cards ── */
+.radio-cards{display:flex;flex-direction:column;gap:8px;}
+.radio-card-item{display:none;}
+.radio-card-label{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1.5px solid var(--dim);border-radius:10px;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent;}
+.radio-card-item:checked+.radio-card-label{border-color:var(--gold);background:rgba(201,168,76,.08);}
+.radio-dot{width:18px;height:18px;min-width:18px;border-radius:50%;border:2px solid var(--muted);display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.radio-card-item:checked+.radio-card-label .radio-dot{border-color:var(--gold);background:var(--gold);}
+.radio-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:#000;opacity:0;}
+.radio-card-item:checked+.radio-card-label .radio-dot::after{opacity:1;}
+.radio-card-text{font-size:14px;color:rgba(255,255,255,.7);}
+.radio-card-item:checked+.radio-card-label .radio-card-text{color:var(--gold);}
+
+/* ── Budget Slider Area ── */
+.budget-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+
+/* ── Navigation Buttons ── */
+.nav-row{display:flex;gap:10px;margin-top:28px;padding-bottom:8px;}
+.btn-prev{flex:0 0 auto;background:rgba(255,255,255,.07);border:1px solid var(--dim);color:rgba(255,255,255,.5);padding:0 20px;height:52px;border-radius:12px;font-size:15px;cursor:pointer;transition:all .2s;}
+.btn-prev:hover{background:rgba(255,255,255,.12);}
+.btn-next,.btn-submit{flex:1;height:52px;border-radius:12px;border:none;cursor:pointer;font-size:16px;font-weight:700;letter-spacing:.3px;transition:all .25s;-webkit-tap-highlight-color:transparent;}
+.btn-next{background:var(--gold);color:#000;}
+.btn-next:hover{background:#ddb84e;transform:translateY(-1px);}
+.btn-submit{background:linear-gradient(135deg,var(--emerald),#1e9469);color:#fff;}
+.btn-submit:hover{filter:brightness(1.1);transform:translateY(-1px);}
+.btn-submit:active{transform:translateY(0);}
+
+/* ── Thank You Screen ── */
+#screen-thanks{display:none;text-align:center;padding:48px 0;}
+.thanks-icon{width:72px;height:72px;background:rgba(26,127,90,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.thanks-title{font-size:26px;font-weight:800;color:#fff;margin-bottom:8px;}
+.thanks-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:36px;}
+.thanks-info{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;text-align:left;margin-bottom:28px;}
+.thanks-info-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--dim);}
+.thanks-info-row:last-child{border-bottom:none;}
+.ti-key{font-size:12px;color:var(--muted);}
+.ti-val{font-size:13px;color:var(--text);font-weight:600;text-align:right;max-width:60%;}
+
+/* ── QR Share Card ── */
+.qr-card{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(26,127,90,.08));border:1px solid rgba(201,168,76,.2);border-radius:var(--radius);padding:24px 20px;text-align:center;margin-bottom:20px;}
+.qr-title{font-size:15px;font-weight:700;color:var(--gold);margin-bottom:4px;}
+.qr-sub{font-size:12px;color:var(--muted);margin-bottom:20px;line-height:1.5;}
+.qr-img{width:160px;height:160px;border-radius:12px;background:#fff;padding:8px;margin:0 auto 16px;display:block;}
+.qr-url{font-size:12px;color:rgba(255,255,255,.5);word-break:break-all;margin-bottom:14px;background:rgba(255,255,255,.05);border-radius:8px;padding:8px 12px;}
+.btn-copy-url{width:100%;height:44px;border-radius:10px;border:1.5px solid var(--gold);background:transparent;color:var(--gold);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;}
+.btn-copy-url:hover{background:rgba(201,168,76,.1);}
+
+/* ── Floating QR Button ── */
+.fab-qr{position:fixed;bottom:24px;right:20px;width:52px;height:52px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.5);z-index:200;transition:transform .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent;}
+.fab-qr:hover{transform:scale(1.08);box-shadow:0 12px 32px rgba(0,0,0,.5);}
+.fab-qr svg{display:block;}
+
+/* ── QR Modal ── */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;display:none;align-items:flex-end;justify-content:center;}
+.modal-bg.open{display:flex;}
+.modal{background:var(--navy);border-radius:24px 24px 0 0;padding:32px 24px 40px;width:100%;max-width:480px;animation:slideUp .3s ease;}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-handle{width:40px;height:4px;background:var(--dim);border-radius:99px;margin:0 auto 24px;}
+.modal-title{font-size:18px;font-weight:800;color:#fff;margin-bottom:4px;text-align:center;}
+.modal-sub{font-size:13px;color:var(--muted);text-align:center;margin-bottom:24px;line-height:1.6;}
+.modal-qr{width:180px;height:180px;border-radius:14px;background:#fff;padding:8px;margin:0 auto 16px;display:block;}
+.modal-url{font-size:11px;color:rgba(255,255,255,.35);text-align:center;word-break:break-all;margin-bottom:20px;}
+.modal-btns{display:flex;flex-direction:column;gap:10px;}
+.btn-modal-copy{height:48px;border-radius:12px;background:var(--gold);border:none;color:#000;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;}
+.btn-modal-close{height:44px;border-radius:12px;background:rgba(255,255,255,.07);border:none;color:rgba(255,255,255,.5);font-size:14px;cursor:pointer;}
+
+/* ── Toast ── */
+.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--emerald);color:#fff;padding:10px 24px;border-radius:50px;font-size:14px;font-weight:600;opacity:0;transition:all .3s;pointer-events:none;z-index:9999;white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ── Divider ── */
+.divider{height:1px;background:var(--dim);margin:4px 0 16px;}
+</style>
+</head>
+<body>
+
+<!-- ── Progress Bar ── -->
+<div class="prog-wrap">
+  <div class="wrap">
+    <div class="prog-top">
+      <span class="prog-logo">NanuriWeb × K-Church911</span>
+      <span class="prog-label" id="prog-text">1 / 4단계</span>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:25%"></div></div>
+    <div class="prog-dots">
+      <div class="prog-dot active" id="dot-1"></div>
+      <div class="prog-dot" id="dot-2"></div>
+      <div class="prog-dot" id="dot-3"></div>
+      <div class="prog-dot" id="dot-4"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Form ── -->
+<div class="wrap">
+
+<!-- FormSubmit.co: 첫 제출 시 kchurch911@gmail.com 으로 인증 메일 발송됩니다 -->
+<form id="main-form" action="https://formsubmit.co/kchurch911@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="[NanuriWeb] 홈페이지 기획서 접수">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://nanuriweb-mauve.vercel.app/intake.html?submitted=1">
+
+<!-- ════════════════════════════════
+     STEP 1 · 교회 기본 정보
+════════════════════════════════ -->
+<div class="step active" id="step-1">
+  <div class="step-head">
+    <div class="step-eyebrow">Step 1 of 4</div>
+    <div class="step-title">교회 기본 정보</div>
+    <div class="step-sub">홈페이지의 정체성을 세우는 핵심 정보입니다. 편하게 작성해 주세요.</div>
+  </div>
+  <div class="example-badge">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="#C9A84C"/><text x="6" y="9.5" text-anchor="middle" font-size="8" fill="#C9A84C" font-family="sans-serif">예</text></svg>
+    예시: 시애틀지구촌교회 기준으로 작성됨
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">1</span> 교회 정식 명칭 <span class="required">*</span></div>
+    <div class="qhint">한글명 / 영문명 / 약칭(있는 경우)</div>
+    <div class="input-row">
+      <input type="text" name="교회_한글명" placeholder="예) 시애틀지구촌교회" required>
+      <input type="text" name="교회_영문명" placeholder="예) Seattle Global Church">
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">2</span> 교회 주소 및 연락처 <span class="required">*</span></div>
+    <div class="qhint">주소 / 전화번호 / 이메일</div>
+    <textarea name="교회_주소연락처" placeholder="예) 14th Ave NE, Seattle, WA 98125&#10;전화: 206-XXX-XXXX&#10;이메일: info@churchname.com" rows="3" required></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">3</span> 담임목사 이름 <span class="required">*</span></div>
+    <input type="text" name="담임목사_이름" placeholder="예) 홍길동 목사" required>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">4</span> 담임목사 프로필</div>
+    <div class="qhint">학력 · 목회 경력 · 사역 철학 · 가족 소개(선택) — 비신자가 신뢰를 느끼는 핵심 정보입니다</div>
+    <textarea name="담임목사_프로필" placeholder="예) ○○신학교 목회학 석사. 시애틀에서 ○○년째 목회 중. 이민자와 유학생의 정착을 돕는 사역에 집중하고 있음. 배우자 ○○○, 자녀 2명."></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">5</span> 교단 및 소속</div>
+    <input type="text" name="교단_소속" placeholder="예) 대한예수교장로회(합동) / 남침례교 / 독립교회 등">
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">6</span> 교회 설립연도 및 창립 배경</div>
+    <div class="input-row">
+      <input type="number" name="설립연도" placeholder="예) 2008">
+      <input type="text" name="창립_배경" placeholder="예) 시애틀 한인 이민자 복음 전도 목적">
+    </div>
+  </div>
+
+  <div class="nav-row">
+    <button type="button" class="btn-next" onclick="goStep(2)">다음 단계 →</button>
+  </div>
+</div><!-- /step-1 -->
+
+
+<!-- ════════════════════════════════
+     STEP 2 · 예배 & 사역
+════════════════════════════════ -->
+<div class="step" id="step-2">
+  <div class="step-head">
+    <div class="step-eyebrow">Step 2 of 4</div>
+    <div class="step-title">예배 & 사역 프로그램</div>
+    <div class="step-sub">VIP(첫 방문자)가 "내가 갈 수 있는 곳인가"를 확인하는 실용적 정보입니다.</div>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">7</span> 주일예배 일정 <span class="required">*</span></div>
+    <div class="qhint">예배 횟수 / 시간 / 언어(한국어·영어·이중언어) / 예배 성격</div>
+    <textarea name="주일예배_일정" placeholder="예) 매주 일요일 오전 11:00 — 한국어 / 오후 1:30 — 영어 청년예배&#10;예배 성격: 현대 찬양 + 강해 설교 혼합" rows="3" required></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">8</span> 주중 사역 일정</div>
+    <div class="qhint">새벽기도 / 수요예배 / 소그룹(목장) / 성경공부 / Zoom 모임 등</div>
+    <textarea name="주중_사역" placeholder="예) 수요일 저녁 7:30 수요예배&#10;목요일 오전 6:00 새벽기도회&#10;금요일 소그룹(목장) — 각 가정 순환"></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">9</span> 어린이 · 청소년 · 청년부 현황</div>
+    <div class="qhint">각 부서 존재 여부 / 담당 사역자 / 자녀 동반 가정에 핵심 정보</div>
+    <textarea name="부서_사역" placeholder="예) 어린이부: 주일 오전 11시 병행 운영 (영아~초6) / 청소년부: 주일 오후 1시 / 청년부: 금요 7시"></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">10</span> 새가족 환영 프로그램</div>
+    <div class="qhint">새가족 교육 / 정착반 / 멘토링 / 웰컴 시스템 등</div>
+    <textarea name="새가족_프로그램" placeholder="예) 4주 '목적이 이끄는 삶' 양육반 / 첫 방문 후 담임목사 문자 연락 / 새가족 런치 매월 첫째 주"></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">11</span> 지역사회 봉사 사역</div>
+    <div class="qhint">푸드뱅크 / 이민자 지원 / 영어교실 / 지역 파트너십 등</div>
+    <textarea name="지역사회_봉사" placeholder="예) 매달 푸드뱅크 봉사 / 이민 신규 정착자 영어 클래스 / 한인 노인 방문 사역"></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">12</span> 유튜브 / 온라인 예배</div>
+    <div class="qhint">채널 링크 / 라이브 여부 / 팟캐스트 등 — 없으면 '없음' 기재</div>
+    <input type="url" name="유튜브_채널" placeholder="예) https://youtube.com/@churchname (없으면 '없음' 기재)">
+  </div>
+
+  <div class="nav-row">
+    <button type="button" class="btn-prev" onclick="goStep(1)">← 이전</button>
+    <button type="button" class="btn-next" onclick="goStep(3)">다음 단계 →</button>
+  </div>
+</div><!-- /step-2 -->
+
+
+<!-- ════════════════════════════════
+     STEP 3 · 비전 & 전도 방향
+════════════════════════════════ -->
+<div class="step" id="step-3">
+  <div class="step-head">
+    <div class="step-eyebrow">Step 3 of 4</div>
+    <div class="step-title">비전 & 전도 방향</div>
+    <div class="step-sub">VIP가 "이 교회는 어떤 가치를 추구하는가"를 느끼는 가장 중요한 영역입니다.</div>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">13</span> 사명선언문 / 핵심 가치 <span class="required">*</span></div>
+    <div class="qhint">교회의 한 문장 사명, 또는 핵심 가치 3~5개</div>
+    <textarea name="사명선언문" placeholder="예) '하나님을 예배하고, 이웃을 사랑하며, 열방을 섬긴다'&#10;핵심 가치: 예배 / 공동체 / 전도 / 다음세대 / 선교" required></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">14</span> 목회 철학 및 설교 스타일</div>
+    <div class="qhint">비신자가 처음 왔을 때 어떤 분위기를 경험하나요?</div>
+    <textarea name="목회_철학" placeholder="예) 강해 설교 중심 / 역사신학에 근거한 성경적 정체성 형성 / 편안하고 질문을 환영하는 분위기"></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">15</span> 집중하는 타겟 그룹</div>
+    <div class="qhint">해당되는 항목을 모두 선택하세요</div>
+    <div class="pill-group" style="margin-top:4px;">
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="주재원 가정" id="tg1"><label class="pill-label" for="tg1">주재원 가정</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="유학생" id="tg2"><label class="pill-label" for="tg2">유학생</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="1.5세·2세" id="tg3"><label class="pill-label" for="tg3">1.5세 · 2세</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="이민 1세대" id="tg4"><label class="pill-label" for="tg4">이민 1세대</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="다문화가정" id="tg5"><label class="pill-label" for="tg5">다문화 가정</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="청년·대학생" id="tg6"><label class="pill-label" for="tg6">청년 · 대학생</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="어린 자녀 가정" id="tg7"><label class="pill-label" for="tg7">어린 자녀 가정</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="노인·은퇴자" id="tg8"><label class="pill-label" for="tg8">노인 · 은퇴자</label>
+      <input class="pill-item" type="checkbox" name="타겟그룹[]" value="비신자 VIP" id="tg9"><label class="pill-label" for="tg9">비신자 VIP</label>
+    </div>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">16</span> 지역 한인 커뮤니티 특성</div>
+    <div class="qhint">주변 한인 밀집 지역 / 주요 커뮤니티 시설 / 한인 커뮤니티의 가장 큰 필요</div>
+    <textarea name="지역_커뮤니티" placeholder="예) 시애틀 Bellevue·Redmond 마이크로소프트·아마존 한인 주재원 밀집. H마트·한국학교·한인회 연결고리 강함. 새로 온 이민자의 정착 지원 필요 큼."></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">17</span> 목사님의 초청 한마디 <span class="required">*</span></div>
+    <div class="qhint">교회에 오기를 망설이는 분께 드리는 따뜻한 메시지 (2~4문장, 홈페이지 메인에 사용됩니다)</div>
+    <textarea name="목사님_초청메시지" placeholder='예) "믿음이 아직 없어도 괜찮습니다. 교회는 완벽한 사람들의 모임이 아니라, 함께 성장하고 서로 돌보는 공동체입니다. 지금 있는 그대로 오십시오. 우리는 여러분을 진심으로 환영합니다."' rows="4" required></textarea>
+  </div>
+
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">18</span> 향후 5년 비전</div>
+    <div class="qhint">숫자 목표보다 방향성과 꿈을 자유롭게</div>
+    <textarea name="5년_비전" placeholder="예) 다음세대 중심의 교회 공동체 3개 개척 / 시애틀 한인 커뮤니티 정착 허브 역할"></textarea>
+  </div>
+
+  <div class="nav-row">
+    <button type="button" class="btn-prev" onclick="goStep(2)">← 이전</button>
+    <button type="button" class="btn-next" onclick="goStep(4)">다음 단계 →</button>
+  </div>
+</div><!-- /step-3 -->
+
+
+<!-- ════════════════════════════════
+     STEP 4 · 홈페이지 기획 & 제출
+════════════════════════════════ -->
+<div class="step" id="step-4">
+  <div class="step-head">
+    <div class="step-eyebrow">Step 4 of 4 — 마지막 단계</div>
+    <div class="step-title">홈페이지 기획 방향</div>
+    <div class="step-sub">원하시는 방향을 선택해 주시면 맞춤 제안서를 준비해 드립니다.</div>
+  </div>
+
+  <!-- 언어 설정 -->
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">19</span> 홈페이지 주요 언어 <span class="required">*</span></div>
+    <div class="radio-cards" style="margin-top:6px;">
+      <input class="radio-card-item" type="radio" name="언어_설정" value="한국어만" id="lang1" required>
+      <label class="radio-card-label" for="lang1"><span class="radio-dot"></span><span class="radio-card-text">한국어만</span></label>
+      <input class="radio-card-item" type="radio" name="언어_설정" value="한국어 기본+영어 탭" id="lang2">
+      <label class="radio-card-label" for="lang2"><span class="radio-dot"></span><span class="radio-card-text">한국어 기본 + 영어 탭 제공 <em style="font-size:11px;color:var(--muted);margin-left:6px;">추천</em></span></label>
+      <input class="radio-card-item" type="radio" name="언어_설정" value="한국어·영어 이중언어" id="lang3">
+      <label class="radio-card-label" for="lang3"><span class="radio-dot"></span><span class="radio-card-text">한국어 · 영어 동시 이중언어</span></label>
+      <input class="radio-card-item" type="radio" name="언어_설정" value="영어 기본+한국어 탭" id="lang4">
+      <label class="radio-card-label" for="lang4"><span class="radio-dot"></span><span class="radio-card-text">영어 기본 + 한국어 탭</span></label>
+    </div>
+  </div>
+
+  <!-- 필요 기능 체크 -->
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">20</span> 필요한 기능 선택</div>
+    <div class="qhint">원하는 기능을 모두 선택하세요</div>
+    <div class="pill-group" style="margin-top:8px;">
+      <input class="pill-item" type="checkbox" name="기능[]" value="처음 오시는 분 안내" id="f1"><label class="pill-label" for="f1">첫 방문자 안내</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="설교 영상(유튜브)" id="f2"><label class="pill-label" for="f2">설교 영상</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="온라인 헌금" id="f3"><label class="pill-label" for="f3">온라인 헌금</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="기도 요청 양식" id="f4"><label class="pill-label" for="f4">기도 요청</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="행사 달력·공지" id="f5"><label class="pill-label" for="f5">행사 달력</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="소그룹 신청" id="f6"><label class="pill-label" for="f6">소그룹 신청</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="카카오 채널 연동" id="f7"><label class="pill-label" for="f7">카카오 채널</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="Hebronguide 배너" id="f8"><label class="pill-label" for="f8">Hebronguide 연동</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="다국어 지원" id="f9"><label class="pill-label" for="f9">다국어 지원</label>
+      <input class="pill-item" type="checkbox" name="기능[]" value="SNS 공유" id="f10"><label class="pill-label" for="f10">SNS 공유</label>
+    </div>
+  </div>
+
+  <!-- 예산 -->
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">21</span> 예산 범위 <span class="required">*</span></div>
+    <div class="radio-cards" style="margin-top:6px;">
+      <input class="radio-card-item" type="radio" name="예산" value="$300 이하 (간단 랜딩페이지)" id="b1" required>
+      <label class="radio-card-label" for="b1"><span class="radio-dot"></span><span class="radio-card-text">$300 이하 — 간단 소개 페이지</span></label>
+      <input class="radio-card-item" type="radio" name="예산" value="$500 내외 (기본 홈페이지)" id="b2">
+      <label class="radio-card-label" for="b2"><span class="radio-dot"></span><span class="radio-card-text">$500 내외 — 기본 홈페이지 <em style="font-size:11px;color:var(--gold);margin-left:6px;">인기</em></span></label>
+      <input class="radio-card-item" type="radio" name="예산" value="$800~1200 (풀페이지+기능)" id="b3">
+      <label class="radio-card-label" for="b3"><span class="radio-dot"></span><span class="radio-card-text">$800~$1,200 — 풀페이지 + 기능 탑재</span></label>
+      <input class="radio-card-item" type="radio" name="예산" value="$1500+ (커스텀 제작)" id="b4">
+      <label class="radio-card-label" for="b4"><span class="radio-dot"></span><span class="radio-card-text">$1,500+ — 완전 커스텀 제작</span></label>
+    </div>
+  </div>
+
+  <!-- 도메인 / 희망 오픈일 -->
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">22</span> 도메인 및 오픈 일정</div>
+    <div class="qhint">희망 도메인명 / 오픈 목표 시점 (없으면 '미정')</div>
+    <div class="input-row">
+      <input type="text" name="희망_도메인" placeholder="예) seattlegmc.org">
+      <input type="text" name="오픈_목표" placeholder="예) 2026년 9월">
+    </div>
+  </div>
+
+  <!-- 사진·로고 자료 -->
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">23</span> 사진 · 로고 자료 현황</div>
+    <div class="qhint">보유 자료 종류 / 공유 방법 / 없으면 촬영 계획</div>
+    <textarea name="사진_로고_자료" placeholder="예) 예배 사진 있음 (구글 드라이브 공유 예정) / 목사님 공식 사진 있음 / 로고: 십자가 심볼 있음 (PNG 파일)"></textarea>
+  </div>
+
+  <!-- 특별 요청 -->
+  <div class="qcard">
+    <div class="qlabel"><span class="qnum">24</span> 특별 요청 사항</div>
+    <div class="qhint">꼭 반영해 주셨으면 하는 내용 / 우려 사항 / 참고할 타 교회 홈페이지</div>
+    <textarea name="특별_요청" placeholder="예) 개척교회 · 미자립 교회에도 부담 없이 사용할 수 있는 홈페이지가 되었으면 합니다."></textarea>
+  </div>
+
+  <!-- 제출자 연락처 -->
+  <div class="qcard" style="border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.04);">
+    <div class="qlabel"><span class="qnum" style="background:var(--emerald);">✉</span> 연락받을 이메일 <span class="required">*</span></div>
+    <div class="qhint">기획서 검토 결과와 제안서를 이 이메일로 보내드립니다</div>
+    <input type="email" name="연락처_이메일" placeholder="예) pastor@church.com" required>
+  </div>
+
+  <div class="nav-row">
+    <button type="button" class="btn-prev" onclick="goStep(3)">← 이전</button>
+    <button type="submit" class="btn-submit" id="btn-submit" onclick="handleSubmit(event)">
+      ✅ 기획서 제출하기
+    </button>
+  </div>
+  <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6;">
+    제출 즉시 kchurch911@gmail.com 으로 전달됩니다<br>
+    영업일 기준 1~2일 내 연락드리겠습니다
+  </p>
+</div><!-- /step-4 -->
+
+</form><!-- /main-form -->
+
+
+<!-- ════════════════════════════════
+     THANK YOU SCREEN
+════════════════════════════════ -->
+<div id="screen-thanks">
+  <div class="thanks-icon">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1A7F5A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+    </svg>
+  </div>
+  <div class="thanks-title">기획서가 제출되었습니다 🙏</div>
+  <div class="thanks-sub">입력해 주신 내용을 검토 후<br>영업일 1~2일 내 연락드리겠습니다.</div>
+
+  <div class="thanks-info" id="thanks-info"></div>
+
+  <div class="qr-card">
+    <div class="qr-title">이 기획서, 지인에게도 공유해 주세요</div>
+    <div class="qr-sub">홈페이지가 필요한 교회나 사업체에<br>QR 코드 또는 링크를 전달해 주세요</div>
+    <img class="qr-img" id="qr-img-thanks" src="" alt="QR Code">
+    <div class="qr-url" id="qr-url-thanks"></div>
+    <button class="btn-copy-url" onclick="copyUrl()">🔗 링크 복사하기</button>
+  </div>
+
+  <button onclick="location.reload()" style="width:100%;height:46px;border-radius:12px;border:1px solid var(--dim);background:transparent;color:var(--muted);font-size:14px;cursor:pointer;margin-top:4px;">
+    처음부터 다시 작성
+  </button>
+</div><!-- /screen-thanks -->
+
+</div><!-- /wrap -->
+
+
+<!-- ════════════════════════════════
+     FLOATING QR BUTTON
+════════════════════════════════ -->
+<button class="fab-qr" onclick="openQrModal()" aria-label="QR 코드로 공유">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+    <rect x="3" y="14" width="7" height="7"/>
+    <path d="M14 14h3v3h-3z"/><path d="M17 17h4v4h-4z"/><path d="M14 20h3"/>
+  </svg>
+</button>
+
+
+<!-- ════════════════════════════════
+     QR MODAL
+════════════════════════════════ -->
+<div class="modal-bg" id="qr-modal" onclick="closeQrModal(event)">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title">이 기획서 폼 공유</div>
+    <div class="modal-sub">QR 코드를 촬영하거나 링크를 복사해서<br>홈페이지가 필요한 교회에 전달해 주세요 🙏</div>
+    <img class="modal-qr" id="modal-qr-img" src="" alt="QR Code">
+    <div class="modal-url" id="modal-qr-url"></div>
+    <div class="modal-btns">
+      <button class="btn-modal-copy" onclick="copyUrl()">🔗 링크 복사하기</button>
+      <button class="btn-modal-close" onclick="document.getElementById('qr-modal').classList.remove('open')">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+
+<script>
+// ── QR Code & URL Setup ──
+var PAGE_URL = window.location.href.split('?')[0];
+var QR_API = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&format=png&data=';
+
+function setQrImages(){
+  var enc = encodeURIComponent(PAGE_URL);
+  var src = QR_API + enc;
+  var elms = ['modal-qr-img','qr-img-thanks'];
+  elms.forEach(function(id){ var el=document.getElementById(id); if(el) el.src=src; });
+  var urlElms = ['modal-qr-url','qr-url-thanks'];
+  urlElms.forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=PAGE_URL; });
+}
+setQrImages();
+
+// ── Step Navigation ──
+var currentStep = 1;
+var totalSteps = 4;
+var stepLabels = ['교회 기본 정보','예배 & 사역','비전 & 전도 방향','홈페이지 기획'];
+
+function goStep(n){
+  // Validate required fields in current step before proceeding forward
+  if(n > currentStep){
+    var step = document.getElementById('step-'+currentStep);
+    var required = step.querySelectorAll('[required]');
+    var valid = true;
+    required.forEach(function(el){
+      if(!el.value.trim()){
+        el.style.borderColor='rgba(224,82,82,.7)';
+        el.focus();
+        valid = false;
+      } else {
+        el.style.borderColor='';
+      }
+    });
+    if(!valid){
+      showToast('필수 항목을 입력해 주세요 ✏️');
+      return;
+    }
+  }
+
+  document.getElementById('step-'+currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step-'+n).classList.add('active');
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function updateProgress(){
+  var pct = (currentStep / totalSteps) * 100;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-text').textContent = currentStep + ' / ' + totalSteps + '단계 — ' + stepLabels[currentStep-1];
+  for(var i=1;i<=totalSteps;i++){
+    var dot = document.getElementById('dot-'+i);
+    dot.classList.remove('active','done');
+    if(i < currentStep) dot.classList.add('done');
+    if(i === currentStep) dot.classList.add('active');
+  }
+}
+
+// ── Form Submit Handler ──
+function handleSubmit(e){
+  e.preventDefault();
+  var form = document.getElementById('main-form');
+
+  // Final validation
+  var step = document.getElementById('step-4');
+  var required = step.querySelectorAll('[required]');
+  var valid = true;
+  required.forEach(function(el){
+    if(!el.value.trim()){
+      el.style.borderColor='rgba(224,82,82,.7)';
+      valid = false;
+    }
+  });
+  if(!valid){ showToast('필수 항목을 확인해 주세요 ✏️'); return; }
+
+  // Build thanks summary
+  var churchName = form.querySelector('[name="교회_한글명"]').value || '(미입력)';
+  var pastor = form.querySelector('[name="담임목사_이름"]').value || '(미입력)';
+  var budget = form.querySelector('[name="예산"]:checked');
+  var lang = form.querySelector('[name="언어_설정"]:checked');
+  var email = form.querySelector('[name="연락처_이메일"]').value;
+
+  document.getElementById('thanks-info').innerHTML =
+    '<div class="thanks-info-row"><span class="ti-key">교회명</span><span class="ti-val">'+escHtml(churchName)+'</span></div>'+
+    '<div class="thanks-info-row"><span class="ti-key">담임목사</span><span class="ti-val">'+escHtml(pastor)+'</span></div>'+
+    '<div class="thanks-info-row"><span class="ti-key">예산 범위</span><span class="ti-val">'+(budget?escHtml(budget.value):'미선택')+'</span></div>'+
+    '<div class="thanks-info-row"><span class="ti-key">언어 설정</span><span class="ti-val">'+(lang?escHtml(lang.value):'미선택')+'</span></div>'+
+    '<div class="thanks-info-row"><span class="ti-key">연락처 이메일</span><span class="ti-val">'+escHtml(email)+'</span></div>';
+
+  // Show thank you screen
+  document.getElementById('main-form').style.display='none';
+  document.getElementById('screen-thanks').style.display='block';
+  document.getElementById('prog-fill').style.width='100%';
+  document.getElementById('prog-text').textContent = '제출 완료 ✅';
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  // Actually submit in background
+  var formData = new FormData(form);
+  fetch(form.action, {method:'POST', body:formData, headers:{'Accept':'application/json'}})
+    .catch(function(){/* silent fail — user already sees thank you */});
+}
+
+function escHtml(str){
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── QR Modal ──
+function openQrModal(){
+  document.getElementById('qr-modal').classList.add('open');
+}
+function closeQrModal(e){
+  if(e.target === document.getElementById('qr-modal')){
+    document.getElementById('qr-modal').classList.remove('open');
+  }
+}
+
+// ── Copy URL ──
+function copyUrl(){
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(PAGE_URL).then(function(){
+      showToast('링크가 복사되었습니다! 📋');
+      document.getElementById('qr-modal').classList.remove('open');
+    });
+  } else {
+    showToast('주소창에서 직접 복사해 주세요');
+  }
+}
+
+// ── Toast ──
+function showToast(msg){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+
+// ── Auto-detect submitted (after redirect) ──
+if(window.location.search.indexOf('submitted=1') !== -1){
+  document.getElementById('main-form').style.display='none';
+  document.getElementById('screen-thanks').style.display='block';
+}
+</script>
+</body>
+</html>
