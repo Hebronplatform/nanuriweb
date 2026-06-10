@@ -28,9 +28,11 @@ body{font-family:var(--font-b);background:var(--white);color:var(--dark);font-si
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.15);padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-badge{background:var(--gold);color:var(--navy);font-family:var(--font-n);font-weight:700;font-size:15px;padding:4px 13px;border-radius:7px;}
-.nav-sub{font-size:11px;color:rgba(255,255,255,.4);font-family:var(--font-n);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-mark{height:44px;width:auto;flex-shrink:0;}
+.nav-logo-text{display:flex;flex-direction:column;gap:1px;}
+.nav-badge{font-family:var(--font-n);font-weight:800;font-size:17px;color:var(--gold);letter-spacing:-.3px;line-height:1.2;}
+.nav-sub{font-size:10px;color:rgba(255,255,255,.38);font-family:var(--font-n);letter-spacing:.4px;}
 .nav-links{display:flex;align-items:center;gap:4px;}
 .nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:13px;padding:6px 13px;border-radius:7px;transition:all .2s;}
 .nav-links a:hover{color:white;background:rgba(255,255,255,.07);}
@@ -417,8 +419,26 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <span class="nav-badge">NanuriWeb</span>
-    <span class="nav-sub" data-i18n="nav.sub">나누리웹 · Hebron Platform LLC</span>
+    <!-- 로고 마크: 세 노드가 아치로 연결 = 나눔·연결·환대 -->
+    <svg class="nav-logo-mark" viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+      <!-- 왼쪽 아치 (클라이언트 → NanuriWeb) -->
+      <path d="M10,45 C22,45 38,11 50,11" stroke="#C9A84C" stroke-width="2.6" stroke-linecap="round"/>
+      <!-- 오른쪽 아치 (NanuriWeb → 찾아오는 사람들) -->
+      <path d="M50,11 C62,11 78,45 90,45" stroke="#C9A84C" stroke-width="2.6" stroke-linecap="round"/>
+      <!-- 왼쪽 노드 (교회·사업체) -->
+      <circle cx="10" cy="45" r="5" fill="#C9A84C"/>
+      <!-- 오른쪽 노드 (새 가족·손님) -->
+      <circle cx="90" cy="45" r="5" fill="#C9A84C"/>
+      <!-- 중앙 노드 (NanuriWeb — 연결의 중심) -->
+      <circle cx="50" cy="10" r="8" fill="#C9A84C"/>
+      <!-- 십자: 신앙의 뿌리 (은은하게) -->
+      <line x1="50" y1="5.5" x2="50" y2="14.5" stroke="rgba(11,22,40,.82)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="45.5" y1="10" x2="54.5" y2="10" stroke="rgba(11,22,40,.82)" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-badge">NanuriWeb</span>
+      <span class="nav-sub" data-i18n="nav.sub">교회 · 사업체 홈페이지 전문</span>
+    </div>
   </a>
   <div class="nav-links">
     <a href="#theology" data-i18n="nav.story">우리 이야기</a>
