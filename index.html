@@ -102,7 +102,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .plan-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2);}
 .plan-card.featured{border-color:var(--gold);background:rgba(201,168,76,.07);box-shadow:0 0 0 3px rgba(201,168,76,.12);}
 .plan-card.special{border-color:rgba(26,127,90,.5);background:rgba(26,127,90,.07);}
-.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;font-family:var(--font-n);padding:4px 14px;border-radius:22px;white-space:nowrap;}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;font-family:var(--font-n);padding:4px 14px;border-radius:22px;white-space:nowrap;z-index:10;}
 .plan-badge.green{background:var(--emerald);color:white;}
 .plan-icon2{font-size:28px;margin-bottom:14px;display:block;}
 .plan-name2{font-family:var(--font-n);font-weight:700;font-size:18px;color:white;margin-bottom:4px;}
@@ -197,6 +197,25 @@ hr.pdiv{border:none;border-top:1px solid rgba(255,255,255,.08);margin:16px 0;}
 .hg-strip-text p strong{color:var(--gold-light);}
 .hg-strip a{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-family:var(--font-n);font-size:12px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:all .2s;}
 .hg-strip a:hover{background:rgba(201,168,76,.25);}
+
+/* PROCESS FLOW (contact section) */
+.process-flow{display:flex;align-items:flex-start;gap:0;margin:40px 0 52px;padding:32px 36px;background:white;border-radius:var(--rl);border:1px solid var(--border);box-shadow:var(--sh);}
+.pf-step{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;text-align:center;position:relative;}
+.pf-num{font-family:var(--font-n);font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
+.pf-icon-wrap{width:54px;height:54px;border-radius:50%;background:var(--ivory);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;transition:all .2s;position:relative;z-index:1;}
+.pf-step.pf-key .pf-icon-wrap{background:var(--gold-pale);border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,.12);}
+.pf-step.pf-key .pf-num{color:var(--emerald);}
+.pf-title{font-weight:700;font-size:13px;color:var(--navy);line-height:1.4;}
+.pf-desc{font-size:11px;color:var(--gray);line-height:1.55;}
+.pf-badge{font-size:10px;font-family:var(--font-n);font-weight:700;background:var(--emerald);color:white;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+.pf-connector{flex:0 0 28px;display:flex;align-items:flex-start;justify-content:center;padding-top:26px;color:var(--border);font-size:20px;line-height:1;}
+.pf-note{background:var(--emerald-lt);border:1px solid rgba(26,127,90,.18);border-radius:10px;padding:12px 18px;margin-top:0;margin-bottom:40px;font-size:13px;color:var(--emerald);font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;}
+@media(max-width:700px){
+  .process-flow{flex-wrap:wrap;gap:20px;padding:24px 20px;}
+  .pf-connector{display:none;}
+  .pf-step{flex:0 0 calc(50% - 10px);}
+  .pf-step:last-child{flex:0 0 100%;}
+}
 
 /* TRUST STRIP */
 .trust-strip{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.07);margin-top:16px;}
@@ -437,7 +456,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
   <div class="plans-grid">
     <div class="plan-card reveal">
-      <span class="plan-icon2">👤</span>
+      <div class="plan-card-img-wrap"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&h=380&q=85" alt="Solo Plan" loading="lazy"></div>
       <div class="plan-name2" data-i18n="bizplan.solo.name">Solo Plan</div>
       <span class="plan-sub2" data-i18n="bizplan.solo.sub">1인 사업·프리랜서</span>
       <div class="plan-price2">$299</div>
@@ -453,7 +472,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div>
     <div class="plan-card special reveal">
       <div class="plan-badge green" data-i18n="bizplan.startup.badge">🌱 창업 3년 이내 — 50% 할인</div>
-      <span class="plan-icon2" style="margin-top:16px;">🚀</span>
+      <div class="plan-card-img-wrap"><img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&h=380&q=85" alt="Startup Plan" loading="lazy"></div>
       <div class="plan-name2" data-i18n="bizplan.startup.name">Startup Plan</div>
       <span class="plan-sub2" data-i18n="bizplan.startup.sub">신규 창업 3년 이내</span>
       <div class="plan-price2 em">$449</div>
@@ -469,7 +488,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div>
     <div class="plan-card featured reveal">
       <div class="plan-badge" data-i18n="bizplan.bizgrowth.badge">⭐ 가장 많이 선택</div>
-      <span class="plan-icon2" style="margin-top:12px;">💼</span>
+      <div class="plan-card-img-wrap"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&h=380&q=85" alt="Business Growth" loading="lazy"></div>
       <div class="plan-name2" data-i18n="bizplan.bizgrowth.name">Business Growth</div>
       <span class="plan-sub2" data-i18n="bizplan.bizgrowth.sub">중소 사업체 · 10페이지</span>
       <div class="plan-price2">$999</div>
@@ -485,7 +504,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <button class="plan-cta2" onclick="goContact('Business Growth')" data-i18n="bizplan.bizgrowth.cta">신청하기</button>
     </div>
     <div class="plan-card reveal">
-      <span class="plan-icon2">🏢</span>
+      <div class="plan-card-img-wrap"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&h=380&q=85" alt="Business Pro" loading="lazy"></div>
       <div class="plan-name2" data-i18n="bizplan.bizpro.name">Business Pro</div>
       <span class="plan-sub2" data-i18n="bizplan.bizpro.sub">중견 사업체 · 15페이지+</span>
       <div class="plan-price2">$1,799</div>
@@ -521,6 +540,56 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <span class="eyebrow" style="color:var(--gold);" data-i18n="contact.eyebrow">신청하기 · Contact</span>
   <h2 class="sec-title" style="color:var(--navy);" data-i18n="contact.title">지금 신청하세요</h2>
   <p class="sec-desc" style="color:var(--gray);" data-i18n="contact.desc">문의 접수 후 48시간 이내 연락드립니다.</p>
+
+  <!-- PROCESS FLOW -->
+  <div class="process-flow reveal">
+    <div class="pf-step">
+      <div class="pf-num" data-i18n="pf.step">STEP 01</div>
+      <div class="pf-icon-wrap">📝</div>
+      <div class="pf-title" data-i18n="pf.s1.title">신청서 작성</div>
+      <div class="pf-desc" data-i18n="pf.s1.desc">아래 폼에 간단히<br>작성해 주세요</div>
+    </div>
+    <div class="pf-connector">→</div>
+    <div class="pf-step">
+      <div class="pf-num" data-i18n="pf.step2">STEP 02</div>
+      <div class="pf-icon-wrap">💬</div>
+      <div class="pf-title" data-i18n="pf.s2.title">48시간 내 연락</div>
+      <div class="pf-desc" data-i18n="pf.s2.desc">카카오톡 또는<br>이메일로 연락드립니다</div>
+    </div>
+    <div class="pf-connector">→</div>
+    <div class="pf-step">
+      <div class="pf-num" data-i18n="pf.step3">STEP 03</div>
+      <div class="pf-icon-wrap">🎙️</div>
+      <div class="pf-title" data-i18n="pf.s3.title">무료 상담</div>
+      <div class="pf-desc" data-i18n="pf.s3.desc">어떤 홈페이지가<br>필요한지 이야기합니다</div>
+    </div>
+    <div class="pf-connector">→</div>
+    <div class="pf-step pf-key">
+      <div class="pf-num" data-i18n="pf.step4">STEP 04</div>
+      <div class="pf-icon-wrap">📋</div>
+      <div class="pf-title" data-i18n="pf.s4.title">맞춤 기획서 제공</div>
+      <div class="pf-desc" data-i18n="pf.s4.desc">견적 포함 기획서를<br>무료로 드립니다</div>
+      <span class="pf-badge" data-i18n="pf.s4.badge">무료</span>
+    </div>
+    <div class="pf-connector">→</div>
+    <div class="pf-step">
+      <div class="pf-num" data-i18n="pf.step5">STEP 05</div>
+      <div class="pf-icon-wrap">✅</div>
+      <div class="pf-title" data-i18n="pf.s5.title">검토 후 결정</div>
+      <div class="pf-desc" data-i18n="pf.s5.desc">기획서 확인 후<br>진행 여부를 결정하세요</div>
+    </div>
+    <div class="pf-connector">→</div>
+    <div class="pf-step">
+      <div class="pf-num" data-i18n="pf.step6">STEP 06</div>
+      <div class="pf-icon-wrap">🚀</div>
+      <div class="pf-title" data-i18n="pf.s6.title">제작 & 오픈</div>
+      <div class="pf-desc" data-i18n="pf.s6.desc">평균 8주 완성<br>중간 확인 포함</div>
+    </div>
+  </div>
+  <div class="pf-note reveal">
+    <span>💡</span>
+    <span data-i18n="pf.note">기획서를 받아보신 후 결정하세요 — 기획서 제공까지는 비용이 없습니다</span>
+  </div>
 
   <div class="contact-grid">
     <div class="cform reveal">
@@ -865,6 +934,14 @@ const LANG = {
     'contact.f.phone':'연락처','contact.f.phone.ph':'010-0000-0000',
     'contact.f.email':'Email *','contact.f.plan':'관심 플랜',
     'contact.f.msg':'메시지','contact.f.msg.ph':'교회나 사업체를 간단히 소개해 주세요.',
+    'pf.step':'STEP 01','pf.step2':'STEP 02','pf.step3':'STEP 03','pf.step4':'STEP 04','pf.step5':'STEP 05','pf.step6':'STEP 06',
+    'pf.s1.title':'신청서 작성','pf.s1.desc':'아래 폼에 간단히\n작성해 주세요',
+    'pf.s2.title':'48시간 내 연락','pf.s2.desc':'카카오톡 또는\n이메일로 연락드립니다',
+    'pf.s3.title':'무료 상담','pf.s3.desc':'어떤 홈페이지가\n필요한지 이야기합니다',
+    'pf.s4.title':'맞춤 기획서 제공','pf.s4.desc':'견적 포함 기획서를\n무료로 드립니다','pf.s4.badge':'무료',
+    'pf.s5.title':'검토 후 결정','pf.s5.desc':'기획서 확인 후\n진행 여부를 결정하세요',
+    'pf.s6.title':'제작 & 오픈','pf.s6.desc':'평균 8주 완성\n중간 확인 포함',
+    'pf.note':'기획서를 받아보신 후 결정하세요 — 기획서 제공까지는 비용이 없습니다',
     'contact.f.kakao':'카카오톡 ID (선택)','contact.f.kakao.ph':'예: happy_church',
     'contact.f.source':'어디서 알게 되셨나요?',
     'contact.f.source.opt0':'-- 선택 --','contact.f.source.opt1':'구글 검색 (Google)',
@@ -919,6 +996,14 @@ const LANG = {
     'contact.f.phone':'Phone','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan of Interest',
     'contact.f.msg':'Message','contact.f.msg.ph':'Tell us briefly about your church or business.',
+    'pf.step':'STEP 01','pf.step2':'STEP 02','pf.step3':'STEP 03','pf.step4':'STEP 04','pf.step5':'STEP 05','pf.step6':'STEP 06',
+    'pf.s1.title':'Fill Out Form','pf.s1.desc':'Quick form below,\n2 minutes max',
+    'pf.s2.title':'We Contact You','pf.s2.desc':'Within 48 hours\nvia KakaoTalk or email',
+    'pf.s3.title':'Free Consultation','pf.s3.desc':'We talk through\nwhat you need',
+    'pf.s4.title':'Custom Proposal','pf.s4.desc':'Full proposal + quote\ndelivered free','pf.s4.badge':'FREE',
+    'pf.s5.title':'Review & Decide','pf.s5.desc':'No pressure —\nreview and decide',
+    'pf.s6.title':'Build & Launch','pf.s6.desc':'Ready in ~8 weeks\nwith check-ins',
+    'pf.note':'Review the proposal first — no payment required until after you approve',
     'contact.f.kakao':'KakaoTalk ID (optional)','contact.f.kakao.ph':'e.g. happy_church',
     'contact.f.source':'How did you find us?',
     'contact.f.source.opt0':'-- Select --','contact.f.source.opt1':'Google Search',
@@ -973,6 +1058,14 @@ const LANG = {
     'contact.f.phone':'Teléfono','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan de Interés',
     'contact.f.msg':'Mensaje','contact.f.msg.ph':'Cuéntanos sobre tu iglesia o negocio.',
+    'pf.step':'PASO 01','pf.step2':'PASO 02','pf.step3':'PASO 03','pf.step4':'PASO 04','pf.step5':'PASO 05','pf.step6':'PASO 06',
+    'pf.s1.title':'Llenar Formulario','pf.s1.desc':'Formulario rápido,\n2 minutos',
+    'pf.s2.title':'Te Contactamos','pf.s2.desc':'En 48 horas\npor KakaoTalk o email',
+    'pf.s3.title':'Consulta Gratis','pf.s3.desc':'Hablamos sobre\nlo que necesitas',
+    'pf.s4.title':'Propuesta Personalizada','pf.s4.desc':'Propuesta + presupuesto\nsin costo','pf.s4.badge':'GRATIS',
+    'pf.s5.title':'Revisar & Decidir','pf.s5.desc':'Sin presión,\ntú decides',
+    'pf.s6.title':'Construir & Lanzar','pf.s6.desc':'Listo en ~8 semanas\ncon revisiones',
+    'pf.note':'Revisa la propuesta primero — sin pago hasta que apruebes',
     'contact.f.kakao':'KakaoTalk ID (opcional)','contact.f.kakao.ph':'ej: happy_church',
     'contact.f.source':'¿Cómo nos encontraste?',
     'contact.f.source.opt0':'-- Seleccionar --','contact.f.source.opt1':'Búsqueda Google',
@@ -1025,6 +1118,14 @@ const LANG = {
     'contact.f.phone':'联系电话','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'感兴趣的方案',
     'contact.f.msg':'留言','contact.f.msg.ph':'请简单介绍您的教会或商业。',
+    'pf.step':'步骤01','pf.step2':'步骤02','pf.step3':'步骤03','pf.step4':'步骤04','pf.step5':'步骤05','pf.step6':'步骤06',
+    'pf.s1.title':'填写申请表','pf.s1.desc':'简单填写\n约2分钟',
+    'pf.s2.title':'48小时内联系','pf.s2.desc':'通过KakaoTalk\n或邮件联系您',
+    'pf.s3.title':'免费咨询','pf.s3.desc':'讨论您需要\n什么样的网站',
+    'pf.s4.title':'提供定制方案','pf.s4.desc':'含报价的方案书\n免费提供','pf.s4.badge':'免费',
+    'pf.s5.title':'审核后决定','pf.s5.desc':'查看方案后\n再做决定',
+    'pf.s6.title':'制作与上线','pf.s6.desc':'约8周完成\n包含中间确认',
+    'pf.note':'先查看方案书再决定 — 方案书提供之前无需付款',
     'contact.f.kakao':'KakaoTalk ID（可选）','contact.f.kakao.ph':'例: happy_church',
     'contact.f.source':'如何找到我们？',
     'contact.f.source.opt0':'-- 请选择 --','contact.f.source.opt1':'谷歌搜索',
