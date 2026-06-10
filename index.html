@@ -201,7 +201,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .plans-panel{display:none;}
 .plans-panel.active{display:block;}
 .plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:16px;}
-.plan-card{background:rgba(255,255,255,.04);border-radius:var(--rl);padding:30px 26px;border:1px solid rgba(255,255,255,.1);position:relative;transition:all .25s;}
+.plan-card{background:rgba(255,255,255,.04);border-radius:var(--rl);padding:30px 26px;border:1px solid rgba(255,255,255,.1);position:relative;transition:all .25s;overflow:hidden;}
+.plan-card-img{width:calc(100% + 52px);margin:-30px -26px 22px -26px;height:160px;object-fit:cover;border-radius:var(--rl) var(--rl) 0 0;display:block;}
 .plan-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2);}
 .plan-card.featured{border-color:var(--gold);background:rgba(201,168,76,.07);box-shadow:0 0 0 3px rgba(201,168,76,.12);}
 .plan-card.special{border-color:rgba(26,127,90,.5);background:rgba(26,127,90,.07);}
@@ -844,9 +845,9 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
     <div class="plan-card special reveal" style="grid-column:1/-1;">
       <div class="plan-badge green" data-i18n="plan.house.badge">🏠 House Church — 가정교회 무료 상담</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:16px;">
+      <img class="plan-card-img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&h=200&q=80" alt="House Church">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
         <div>
-          <span class="plan-icon2">🕊️</span>
           <div class="plan-name2" style="color:#4ade80;" data-i18n="plan.house.name">House Church Plan</div>
           <span class="plan-sub2" data-i18n="plan.house.sub">가정교회 목회 시스템 맞춤 설계</span>
           <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.9;margin-top:12px;" data-i18n="plan.house.desc">가정교회는 단순한 소규모 교회가 아닙니다. 독자적인 목회 철학과 시스템입니다. 함께 무료 상담으로 방향을 먼저 잡아드립니다.</p>
@@ -872,7 +873,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
     <div class="plan-card special reveal">
       <div class="plan-badge green" data-i18n="plan.plant.badge">🌱 개척교회 — 우선 섬깁니다</div>
-      <span class="plan-icon2" style="margin-top:16px;">✝</span>
+      <img class="plan-card-img" src="https://images.unsplash.com/photo-1513128034030-7d67c55f4028?auto=format&fit=crop&w=600&h=160&q=80" alt="Church Plant">
       <div class="plan-name2" data-i18n="plan.plant.name">Church Plant</div>
       <span class="plan-sub2" data-i18n="plan.plant.sub">설립 3년 이내 · 성도 50명 이하</span>
       <div class="plan-price2 em">$299</div>
@@ -888,7 +889,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div>
 
     <div class="plan-card reveal">
-      <span class="plan-icon2">⛪</span>
+      <img class="plan-card-img" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&h=160&q=80" alt="Starter Plan">
       <div class="plan-name2" data-i18n="plan.starter.name">Starter Plan</div>
       <span class="plan-sub2" data-i18n="plan.starter.sub">소형교회 · 7페이지</span>
       <div class="plan-price2">$499</div>
@@ -906,7 +907,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
     <div class="plan-card featured reveal">
       <div class="plan-badge" data-i18n="plan.growth.badge">⭐ 가장 많이 섬기는 플랜</div>
-      <span class="plan-icon2" style="margin-top:12px;">🌟</span>
+      <img class="plan-card-img" src="https://images.unsplash.com/photo-1510127034589-06f9be8f2b9f?auto=format&fit=crop&w=600&h=160&q=80" alt="Growth Plan">
       <div class="plan-name2" data-i18n="plan.growth.name">Growth Plan</div>
       <span class="plan-sub2" data-i18n="plan.growth.sub">중형교회 · 10개 섬김 공간</span>
       <div class="plan-price2">$799</div>
@@ -927,7 +928,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div>
 
     <div class="plan-card reveal">
-      <span class="plan-icon2">🏛️</span>
+      <img class="plan-card-img" src="https://images.unsplash.com/photo-1438232992991-995b671e4f9a?auto=format&fit=crop&w=600&h=160&q=80" alt="Pro Plan">
       <div class="plan-name2" data-i18n="plan.pro.name">Pro Plan</div>
       <span class="plan-sub2" data-i18n="plan.pro.sub">대형교회 · 넉넉한 섬김</span>
       <div class="plan-price2">$1,299</div>
