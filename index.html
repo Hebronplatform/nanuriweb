@@ -1640,14 +1640,47 @@ function goContact(plan) {
   }
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
-function submitForm() {
+async function submitForm() {
   const name = document.getElementById('c-name').value.trim();
   const email = document.getElementById('c-email').value.trim();
+  const pastor = document.getElementById('c-pastor').value.trim();
+  const phone = document.getElementById('c-phone').value.trim();
+  const plan = document.getElementById('c-plan').value;
+  const msg = document.getElementById('c-msg').value.trim();
   if (!name || !email) { alert('교회·사업체명과 이메일을 입력해 주세요.'); return; }
   const btn = document.querySelector('.fsubmit');
-  btn.textContent = '✅ 신청 완료! 48시간 이내 연락드립니다.';
-  btn.style.background = '#1A7F5A';
+  btn.textContent = '⏳ 전송 중...';
   btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'a82c6c13-be2d-4095-9721-55e54d8cd080',
+        subject: '[NanuriWeb] 새 문의: ' + name,
+        from_name: 'NanuriWeb Contact Form',
+        name: name,
+        email: email,
+        pastor: pastor,
+        phone: phone,
+        plan: plan,
+        message: msg || '(메시지 없음)'
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      btn.textContent = '✅ 신청 완료! 48시간 이내 연락드립니다.';
+      btn.style.background = '#1A7F5A';
+    } else {
+      btn.textContent = '❌ 오류가 발생했습니다. 다시 시도해 주세요.';
+      btn.style.background = '#dc2626';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    btn.textContent = '❌ 네트워크 오류. 다시 시도해 주세요.';
+    btn.style.background = '#dc2626';
+    btn.disabled = false;
+  }
 }
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
