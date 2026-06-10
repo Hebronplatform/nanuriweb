@@ -198,6 +198,18 @@ hr.pdiv{border:none;border-top:1px solid rgba(255,255,255,.08);margin:16px 0;}
 .hg-strip a{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-family:var(--font-n);font-size:12px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:all .2s;}
 .hg-strip a:hover{background:rgba(201,168,76,.25);}
 
+/* TRUST STRIP */
+.trust-strip{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.07);margin-top:16px;}
+.trust-chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-family:var(--font-n);color:rgba(255,255,255,.5);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);padding:7px 14px;border-radius:22px;white-space:nowrap;}
+.trust-chip .t-dot{width:6px;height:6px;border-radius:50%;background:var(--emerald);flex-shrink:0;}
+
+/* TESTIMONIAL */
+.testimonial-card{background:var(--gold-pale);border:1px solid rgba(201,168,76,.22);border-radius:var(--rl);padding:24px 28px;margin-top:20px;}
+.testimonial-quote{font-family:var(--font-d);font-size:15px;color:var(--navy);line-height:1.85;margin-bottom:14px;font-style:italic;position:relative;padding-left:20px;}
+.testimonial-quote::before{content:'"';font-size:48px;color:var(--gold);opacity:.35;position:absolute;left:-4px;top:-12px;line-height:1;font-style:normal;}
+.testimonial-author{font-size:12px;font-family:var(--font-n);font-weight:700;color:var(--gray);display:flex;align-items:center;gap:8px;}
+.testimonial-author .t-name{color:var(--navy);}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
@@ -283,6 +295,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <div class="proof-chip"><span class="dot"></span><span data-i18n="hero.chip1">에덴교회 Dallas — edendallas.org 완성</span></div>
       <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip2">한국 교회 2곳 — 기획서 진행 중</span></div>
       <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip3">HebronGuide 500개+ 도시 연결</span></div>
+      <div class="proof-chip"><span class="dot" style="background:#60a5fa;"></span><span data-i18n="hero.chip4">한국어 직접 상담 · 숨겨진 비용 없음</span></div>
     </div>
 
   </div>
@@ -407,6 +420,12 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
   </div>
   <p class="plans-note" data-i18n="plans.note">※ 모든 금액 USD · 연관리비 연초 일시납 · Church Plant: 설립 3년 이내·성도 50명 이하</p>
+  <div class="trust-strip">
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.nohidden">숨겨진 비용 없음</span></span>
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.revisions">만족할 때까지 무제한 수정</span></span>
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.korean">한국어로 직접 소통</span></span>
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.response">48시간 이내 응답 보장</span></span>
+  </div>
   </div><!-- /church-panel -->
 
   <!-- BIZ PANEL -->
@@ -483,6 +502,12 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div>
   </div>
   <p class="plans-note" data-i18n="bizplans.note">※ 모든 금액 USD · 연관리비 연초 일시납 · Startup: 창업 3년 이내 사업체</p>
+  <div class="trust-strip">
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.nohidden">숨겨진 비용 없음</span></span>
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.revisions">만족할 때까지 무제한 수정</span></span>
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.korean">한국어로 직접 소통</span></span>
+    <span class="trust-chip"><span class="t-dot"></span><span data-i18n="trust.response">48시간 이내 응답 보장</span></span>
+  </div>
 
   </div><!-- /biz-panel -->
 
@@ -517,6 +542,24 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
         <label data-i18n="contact.f.email">Email <span>*</span></label>
         <input type="email" id="c-email" placeholder="pastor@church.com">
       </div>
+      <div class="fr2">
+        <div class="fr">
+          <label data-i18n="contact.f.kakao">카카오톡 ID <span style="color:var(--gray);font-weight:400;">(선택)</span></label>
+          <input type="text" id="c-kakao" data-i18n-placeholder="contact.f.kakao.ph" placeholder="예: happy_church">
+        </div>
+        <div class="fr">
+          <label data-i18n="contact.f.source">어디서 알게 되셨나요?</label>
+          <select id="c-source">
+            <option value="" data-i18n="contact.f.source.opt0">-- 선택 --</option>
+            <option value="google" data-i18n="contact.f.source.opt1">구글 검색 (Google)</option>
+            <option value="youtube" data-i18n="contact.f.source.opt2">유튜브 (YouTube)</option>
+            <option value="instagram" data-i18n="contact.f.source.opt3">인스타그램 (Instagram)</option>
+            <option value="facebook" data-i18n="contact.f.source.opt4">페이스북 (Facebook)</option>
+            <option value="referral" data-i18n="contact.f.source.opt5">지인 추천</option>
+            <option value="other" data-i18n="contact.f.source.opt6">기타</option>
+          </select>
+        </div>
+      </div>
       <div class="fr">
         <label data-i18n="contact.f.plan">관심 플랜</label>
         <select id="c-plan">
@@ -548,6 +591,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <p data-i18n="contact.info.p">기술 모르셔도 됩니다. 어떤 플랜이 맞는지 모르셔도 됩니다. 연락 주시면 함께 방향을 잡아드립니다.</p>
       <div class="cdetails">
         <div class="cdetail"><span class="c-ico">📧</span><span>hello@nanuriweb.com</span></div>
+        <div class="cdetail"><span class="c-ico">💬</span><span data-i18n="contact.info.kakao">카카오톡 문의 가능 · ID: nanuriweb</span></div>
         <div class="cdetail"><span class="c-ico">🌐</span><span>NanuriWeb.com</span></div>
         <div class="cdetail"><span class="c-ico">📍</span><span>Hebron Platform LLC · Seattle, WA</span></div>
       </div>
@@ -644,6 +688,14 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
           <div class="pc-progress-label">진행 중</div>
           <div class="pc-progress-text">한국 교회 2곳 — 경기도 지역 · 장로회 기획서 심의 중</div>
         </div>
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote" data-i18n="testimonial.quote">처음에는 어떻게 시작해야 할지 막막했는데, 한국어로 차근차근 설명해 주셔서 편하게 진행할 수 있었습니다. 기대 이상의 결과물이었어요.</p>
+          <div class="testimonial-author">
+            <span class="t-name" data-i18n="testimonial.name">에덴교회 달라스 담임목사</span>
+            <span>· edendallas.org</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -692,6 +744,8 @@ async function submitForm() {
   const email = document.getElementById('c-email').value.trim();
   const pastor = document.getElementById('c-pastor').value.trim();
   const phone = document.getElementById('c-phone').value.trim();
+  const kakao = document.getElementById('c-kakao').value.trim();
+  const source = document.getElementById('c-source').value;
   const plan = document.getElementById('c-plan').value;
   const msg = document.getElementById('c-msg').value.trim();
   if (!name || !email) { alert('교회·사업체명과 이메일을 입력해 주세요.'); return; }
@@ -707,6 +761,8 @@ async function submitForm() {
         subject: '[NanuriWeb] 새 문의: ' + name,
         from_name: 'NanuriWeb Contact Form',
         name, email, pastor, phone, plan,
+        kakao_id: kakao || '(미입력)',
+        referral_source: source || '(미선택)',
         message: msg || '(메시지 없음)'
       })
     });
@@ -745,6 +801,7 @@ const LANG = {
     'hero.chip1':'에덴교회 Dallas — edendallas.org 완성',
     'hero.chip2':'한국 교회 2곳 — 기획서 진행 중',
     'hero.chip3':'HebronGuide 500개+ 도시 연결',
+    'hero.chip4':'한국어 직접 상담 · 숨겨진 비용 없음',
     'plans.eyebrow':'요금 · Plans','plans.title':'교회도, 사업체도',
     'plans.desc':'아래에서 원하시는 플랜을 선택하세요. 플랜 버튼을 누르시면 신청 폼으로 바로 연결됩니다.',
     'plans.tab.church':'⛪ 교회 Church','plans.tab.biz':'🏪 사업체 Business',
@@ -808,10 +865,21 @@ const LANG = {
     'contact.f.phone':'연락처','contact.f.phone.ph':'010-0000-0000',
     'contact.f.email':'Email *','contact.f.plan':'관심 플랜',
     'contact.f.msg':'메시지','contact.f.msg.ph':'교회나 사업체를 간단히 소개해 주세요.',
+    'contact.f.kakao':'카카오톡 ID (선택)','contact.f.kakao.ph':'예: happy_church',
+    'contact.f.source':'어디서 알게 되셨나요?',
+    'contact.f.source.opt0':'-- 선택 --','contact.f.source.opt1':'구글 검색 (Google)',
+    'contact.f.source.opt2':'유튜브 (YouTube)','contact.f.source.opt3':'인스타그램 (Instagram)',
+    'contact.f.source.opt4':'페이스북 (Facebook)','contact.f.source.opt5':'지인 추천',
+    'contact.f.source.opt6':'기타',
     'contact.f.submit':'신청하기 →',
     'contact.info.h3':'신청 접수 후 48시간 이내 연락드립니다',
     'contact.info.p':'기술 모르셔도 됩니다. 어떤 플랜이 맞는지 모르셔도 됩니다. 연락 주시면 함께 방향을 잡아드립니다.',
     'contact.info.response':'48시간 이내 응답 보장',
+    'contact.info.kakao':'카카오톡 문의 가능 · ID: nanuriweb',
+    'trust.nohidden':'숨겨진 비용 없음','trust.revisions':'만족할 때까지 무제한 수정',
+    'trust.korean':'한국어로 직접 소통','trust.response':'48시간 이내 응답 보장',
+    'testimonial.quote':'처음에는 어떻게 시작해야 할지 막막했는데, 한국어로 차근차근 설명해 주셔서 편하게 진행할 수 있었습니다. 기대 이상의 결과물이었어요.',
+    'testimonial.name':'에덴교회 달라스 담임목사',
     'about.eyebrow':'회사 소개 · About',
     'about.title':'NanuriWeb은<br><em>어떤 서비스인가요?</em>',
     'about.desc':'교회와 사업체 홈페이지 제작 전문 서비스입니다. Hebron Platform LLC (미국 텍사스 주 등록 법인)가 운영하며, 전 세계 한인 커뮤니티를 위한 HebronGuide.com과 연동됩니다.',
@@ -839,6 +907,7 @@ const LANG = {
     'hero.chip1':'Eden Church Dallas — edendallas.org live',
     'hero.chip2':'2 Churches in Korea — proposal in review',
     'hero.chip3':'HebronGuide — 500+ cities connected',
+    'hero.chip4':'Korean-friendly service · No hidden fees',
     'plans.eyebrow':'Pricing · Plans','plans.title':'Church or Business',
     'plans.desc':'Select a plan below. Click any plan button to jump to the order form.',
     'plans.tab.church':'⛪ Church','plans.tab.biz':'🏪 Business',
@@ -850,10 +919,21 @@ const LANG = {
     'contact.f.phone':'Phone','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan of Interest',
     'contact.f.msg':'Message','contact.f.msg.ph':'Tell us briefly about your church or business.',
+    'contact.f.kakao':'KakaoTalk ID (optional)','contact.f.kakao.ph':'e.g. happy_church',
+    'contact.f.source':'How did you find us?',
+    'contact.f.source.opt0':'-- Select --','contact.f.source.opt1':'Google Search',
+    'contact.f.source.opt2':'YouTube','contact.f.source.opt3':'Instagram',
+    'contact.f.source.opt4':'Facebook','contact.f.source.opt5':'Referral',
+    'contact.f.source.opt6':'Other',
     'contact.f.submit':'Submit →',
     'contact.info.h3':'We\'ll respond within 48 hours',
     'contact.info.p':'No tech knowledge needed. Not sure which plan fits? Just reach out — we\'ll figure it out together.',
     'contact.info.response':'48-hour response guaranteed',
+    'contact.info.kakao':'KakaoTalk available · ID: nanuriweb',
+    'trust.nohidden':'No Hidden Fees','trust.revisions':'Revisions Until Satisfied',
+    'trust.korean':'Korean-Friendly Service','trust.response':'48-hr Response Guaranteed',
+    'testimonial.quote':'I didn\'t know where to start, but the team walked me through everything step by step. The result was beyond what I expected.',
+    'testimonial.name':'Lead Pastor, Eden Church Dallas',
     'about.eyebrow':'About · Company Info',
     'about.title':'What is<br><em>NanuriWeb?</em>',
     'about.desc':'NanuriWeb specializes in church and business websites. Operated by Hebron Platform LLC (registered in Texas, USA), integrated with HebronGuide.com — connecting Korean communities in 500+ cities worldwide.',
@@ -881,6 +961,7 @@ const LANG = {
     'hero.chip1':'Eden Church Dallas — edendallas.org activo',
     'hero.chip2':'2 iglesias en Corea — propuesta en revisión',
     'hero.chip3':'HebronGuide — 500+ ciudades conectadas',
+    'hero.chip4':'Servicio en coreano · Sin costos ocultos',
     'plans.eyebrow':'Precios · Planes','plans.title':'Iglesia o Negocio',
     'plans.desc':'Selecciona un plan. Al hacer clic en cualquier botón serás llevado al formulario.',
     'plans.tab.church':'⛪ Iglesia','plans.tab.biz':'🏪 Negocio',
@@ -892,10 +973,21 @@ const LANG = {
     'contact.f.phone':'Teléfono','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan de Interés',
     'contact.f.msg':'Mensaje','contact.f.msg.ph':'Cuéntanos sobre tu iglesia o negocio.',
+    'contact.f.kakao':'KakaoTalk ID (opcional)','contact.f.kakao.ph':'ej: happy_church',
+    'contact.f.source':'¿Cómo nos encontraste?',
+    'contact.f.source.opt0':'-- Seleccionar --','contact.f.source.opt1':'Búsqueda Google',
+    'contact.f.source.opt2':'YouTube','contact.f.source.opt3':'Instagram',
+    'contact.f.source.opt4':'Facebook','contact.f.source.opt5':'Recomendación',
+    'contact.f.source.opt6':'Otro',
     'contact.f.submit':'Enviar →',
     'contact.info.h3':'Te respondemos en 48 horas',
     'contact.info.p':'No necesitas saber de tecnología. ¿No sabes qué plan elegir? Escríbenos y lo resolvemos juntos.',
     'contact.info.response':'Respuesta garantizada en 48h',
+    'contact.info.kakao':'KakaoTalk disponible · ID: nanuriweb',
+    'trust.nohidden':'Sin Costos Ocultos','trust.revisions':'Revisiones Ilimitadas',
+    'trust.korean':'Servicio en Coreano','trust.response':'Respuesta en 48h',
+    'testimonial.quote':'No sabía por dónde empezar, pero el equipo me guió paso a paso. El resultado superó mis expectativas.',
+    'testimonial.name':'Pastor Principal, Eden Church Dallas',
     'about.eyebrow':'Sobre Nosotros','about.title':'¿Qué es<br><em>NanuriWeb?</em>',
     'about.desc':'NanuriWeb se especializa en sitios web para iglesias y negocios. Operado por Hebron Platform LLC (registrado en Texas, EE.UU.), integrado con HebronGuide.com.',
     'about.process.title':'Cómo Funciona','about.portfolio.title':'Portafolio',
@@ -921,6 +1013,7 @@ const LANG = {
     'hero.chip1':'Dallas Eden Church — edendallas.org 已上线',
     'hero.chip2':'韩国2间教会 — 提案审议中',
     'hero.chip3':'HebronGuide — 500+城市连接',
+    'hero.chip4':'韩语服务 · 无隐藏费用',
     'plans.eyebrow':'价格 · 方案','plans.title':'教会或商业',
     'plans.desc':'请在下方选择方案。点击方案按钮即跳转至申请表。',
     'plans.tab.church':'⛪ 教会','plans.tab.biz':'🏪 商业',
@@ -932,10 +1025,21 @@ const LANG = {
     'contact.f.phone':'联系电话','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'感兴趣的方案',
     'contact.f.msg':'留言','contact.f.msg.ph':'请简单介绍您的教会或商业。',
+    'contact.f.kakao':'KakaoTalk ID（可选）','contact.f.kakao.ph':'例: happy_church',
+    'contact.f.source':'如何找到我们？',
+    'contact.f.source.opt0':'-- 请选择 --','contact.f.source.opt1':'谷歌搜索',
+    'contact.f.source.opt2':'YouTube','contact.f.source.opt3':'Instagram',
+    'contact.f.source.opt4':'Facebook','contact.f.source.opt5':'朋友推荐',
+    'contact.f.source.opt6':'其他',
     'contact.f.submit':'提交 →',
     'contact.info.h3':'提交后48小时内联系您',
     'contact.info.p':'无需技术知识。不确定选哪个方案？联系我们一起确定。',
     'contact.info.response':'48小时内回复保证',
+    'contact.info.kakao':'支持KakaoTalk · ID: nanuriweb',
+    'trust.nohidden':'无隐藏费用','trust.revisions':'修改直到满意',
+    'trust.korean':'韩语服务','trust.response':'48小时内回复',
+    'testimonial.quote':'起初不知从何开始，但团队一步步耐心指导，最终结果超出了我的期望。',
+    'testimonial.name':'Dallas Eden Church 主任牧师',
     'about.eyebrow':'关于我们','about.title':'什么是<br><em>NanuriWeb？</em>',
     'about.desc':'NanuriWeb专注于教会和商业网站制作。由Hebron Platform LLC（美国德克萨斯州注册）运营，与HebronGuide.com（500+城市韩人网络）联动。',
     'about.process.title':'服务流程','about.portfolio.title':'案例展示',
@@ -960,6 +1064,7 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => { if (t[el.dataset.i18nHtml]) el.innerHTML = t[el.dataset.i18nHtml]; });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { if (t[el.dataset.i18nPlaceholder]) el.placeholder = t[el.dataset.i18nPlaceholder]; });
   document.querySelectorAll('[data-i18n-label]').forEach(el => { if (t[el.dataset.i18nLabel]) el.label = t[el.dataset.i18nLabel]; });
+  document.querySelectorAll('option[data-i18n]').forEach(el => { if (t[el.dataset.i18n]) el.textContent = t[el.dataset.i18n]; });
   document.documentElement.lang = lang;
 }
 setLang('en');
