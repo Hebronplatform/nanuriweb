@@ -844,6 +844,12 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <h2 class="sec-title" style="color:white;"><span data-i18n="plans.title">작은 개척교회도</span><br><em style="color:var(--gold);" data-i18n="plans.title.em">천사 대접하듯 모십니다</em></h2>
   <p class="sec-desc" data-i18n-html="plans.desc">예산이 다르고 규모가 달라도, 섬기는 마음과 최상의 성공을 기원하는 마음은 모두 동일합니다.<br>아브라함이 나그네 셋 모두를 똑같이 섬겼듯이.</p>
 
+  <div class="plan-tabs">
+    <button class="plan-tab active" onclick="switchPlanTab('church',this)">⛪ 교회 Church</button>
+    <button class="plan-tab" onclick="switchPlanTab('biz',this)">🏪 사업체 Business</button>
+  </div>
+
+  <div id="church-panel" class="plans-panel active">
   <div class="plans-grid">
 
     <div class="plan-card special reveal" style="grid-column:1/-1;">
@@ -951,10 +957,11 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
   </div>
   <p class="plans-note" data-i18n="plans.note">※ 모든 금액 USD · 연관리비 연초 일시납 · Church Plant: 설립 3년 이내·성도 50명 이하</p>
+  </div><!-- /church-panel -->
 </div>
 </section>
 
-
+<div id="biz-panel" class="plans-panel">
 <!-- BRIDGE: 교회 → 사업체 -->
 <div class="journey-bridge">
   <div class="journey-bridge-inner">
@@ -1110,6 +1117,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <p class="plans-note" data-i18n="bizplans.note">※ 모든 금액 USD · 연관리비 연초 일시납 · Startup: 창업 3년 이내 사업체</p>
 </div>
 </section>
+</div><!-- /biz-panel -->
 
 
 <!-- CONVERGENCE: 두 길이 만나는 곳 -->
@@ -1635,6 +1643,20 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
 
 <script>
+function switchPlanTab(tab, btn) {
+  document.querySelectorAll('.plan-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const church = document.getElementById('church-panel');
+  const biz = document.getElementById('biz-panel');
+  if (tab === 'church') {
+    church.classList.add('active');
+    biz.classList.remove('active');
+  } else {
+    biz.classList.add('active');
+    church.classList.remove('active');
+  }
+  document.getElementById('plans').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 function goContact(plan) {
   const s = document.getElementById('c-plan');
   for (let i = 0; i < s.options.length; i++) {
