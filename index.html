@@ -419,21 +419,15 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <!-- 로고 마크: 세 노드가 아치로 연결 = 나눔·연결·환대 -->
-    <svg class="nav-logo-mark" viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
-      <!-- 왼쪽 아치 (클라이언트 → NanuriWeb) -->
-      <path d="M10,45 C22,45 38,11 50,11" stroke="#C9A84C" stroke-width="2.6" stroke-linecap="round"/>
-      <!-- 오른쪽 아치 (NanuriWeb → 찾아오는 사람들) -->
-      <path d="M50,11 C62,11 78,45 90,45" stroke="#C9A84C" stroke-width="2.6" stroke-linecap="round"/>
-      <!-- 왼쪽 노드 (교회·사업체) -->
-      <circle cx="10" cy="45" r="5" fill="#C9A84C"/>
-      <!-- 오른쪽 노드 (새 가족·손님) -->
-      <circle cx="90" cy="45" r="5" fill="#C9A84C"/>
-      <!-- 중앙 노드 (NanuriWeb — 연결의 중심) -->
-      <circle cx="50" cy="10" r="8" fill="#C9A84C"/>
-      <!-- 십자: 신앙의 뿌리 (은은하게) -->
-      <line x1="50" y1="5.5" x2="50" y2="14.5" stroke="rgba(11,22,40,.82)" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="45.5" y1="10" x2="54.5" y2="10" stroke="rgba(11,22,40,.82)" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- 로고 마크: N 레터마크 — 흐르는 대각선 + 웹 연결 노드 -->
+    <svg class="nav-logo-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+      <!-- N 레터마크: 왼쪽 수직 → 흐르는 대각선(나눔) → 오른쪽 수직 -->
+      <path d="M8,40 L8,8 Q24,20 40,40 L40,8"
+            stroke="#C9A84C" stroke-width="5.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 웹 연결 노드: 대각선 위의 만남의 점 -->
+      <circle cx="24" cy="22" r="5.5" fill="#C9A84C"/>
+      <circle cx="24" cy="22" r="2.4" fill="#0B1628"/>
     </svg>
     <div class="nav-logo-text">
       <span class="nav-badge">NanuriWeb</span>
@@ -861,8 +855,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <section class="plans-section" id="plans">
 <div style="max-width:1100px;margin:0 auto;">
   <span class="eyebrow" style="color:var(--gold-light);" data-i18n="plans.eyebrow">어떻게 섬길까요 · How We Serve</span>
-  <h2 class="sec-title" style="color:white;"><span data-i18n="plans.title">작은 개척교회도</span><br><em style="color:var(--gold);" data-i18n="plans.title.em">천사 대접하듯 모십니다</em></h2>
-  <p class="sec-desc" data-i18n-html="plans.desc">예산이 다르고 규모가 달라도, 섬기는 마음과 최상의 성공을 기원하는 마음은 모두 동일합니다.<br>아브라함이 나그네 셋 모두를 똑같이 섬겼듯이.</p>
+  <h2 class="sec-title" style="color:white;"><span data-i18n="plans.title">교회도, 일터도</span><br><em style="color:var(--gold);" data-i18n="plans.title.em">같은 마음으로 모십니다</em></h2>
+  <p class="sec-desc" data-i18n-html="plans.desc">규모가 다르고 업종이 달라도, 섬기는 마음은 하나입니다.<br>아래에서 나에게 맞는 플랜을 선택해 주세요.</p>
 
   <div class="plan-tabs">
     <button class="plan-tab active" onclick="switchPlanTab('church',this)">⛪ 교회 Church</button>
@@ -1777,7 +1771,7 @@ const LANG = {
     'eco.eyebrow':'같은 부름, 다른 현장 · One Purpose, Every Place',
     'eco.title':'교회와 일터가','eco.title.em':'서로를 살립니다',
     'plans.eyebrow':'어떻게 섬길까요 · How We Serve',
-    'plans.title':'작은 개척교회도','plans.title.em':'천사 대접하듯 모십니다',
+    'plans.title':'교회도, 일터도','plans.title.em':'같은 마음으로 모십니다',
     'plans.tab.church':'⛪ 교회 홈페이지','plans.tab.biz':'🏪 사업체 홈페이지',
     'process.eyebrow':'섬김의 여정 · How We Walk Together',
     'process.title':'아브라함처럼 달려가고','process.title.em':'떠나지 않고 곁에 있습니다',
@@ -1815,7 +1809,7 @@ const LANG = {
     'proof.card1.name':'에덴교회 Dallas','proof.card1.sub':'Eden Church Dallas · Texas, USA','proof.card1.desc':'달라스 한인 커뮤니티를 섬기는 에덴교회. NanuriWeb이 처음부터 끝까지 함께 제작하여 온라인 문을 열었습니다.','proof.card1.link':'edendallas.org 방문하기 →',
     'proof.card2.name':'한국 교회 2곳','proof.card2.sub':'경기도 지역 교회 · 기획서 심의 진행 중','proof.card2.desc':'NanuriWeb이 함께 준비한 장로회 심의용 기획서로 두 교회가 현재 내부 심의를 진행하고 있습니다. 곧 온라인에 태어날 두 교회를 위해 기도합니다.',
     'proof.next.text':'다음은 <span style="color:var(--gold);">당신의 교회</span>입니다','proof.next.sub':'지금 상담 신청하시면 48시간 이내에 연락드립니다.<br><span>장로회 기획서도 함께 준비해 드립니다.</span>','proof.next.cta':'무료 상담 신청 →',
-    'plans.desc':'예산이 다르고 규모가 달라도, 섬기는 마음과 최상의 성공을 기원하는 마음은 모두 동일합니다.<br>아브라함이 나그네 셋 모두를 똑같이 섬겼듯이.',
+    'plans.desc':'규모가 다르고 업종이 달라도, 섬기는 마음은 하나입니다.<br>아래에서 나에게 맞는 플랜을 선택해 주세요.',
     'plan.house.badge':'🏠 House Church — 가정교회 무료 상담','plan.house.name':'House Church Plan','plan.house.sub':'가정교회 목회 시스템 맞춤 설계','plan.house.desc':'가정교회는 단순한 소규모 교회가 아닙니다. 독자적인 목회 철학과 시스템입니다. 함께 무료 상담으로 방향을 먼저 잡아드립니다.','plan.house.cta':'🤝 무료 상담 신청 →','plan.house.choose':'상담 후 아래 플랜 중 선택',
     'plan.plant.badge':'🌱 개척교회 — 우선 섬깁니다','plan.plant.name':'Church Plant','plan.plant.sub':'설립 3년 이내 · 성도 50명 이하','plan.plant.note':'연관리비 <strong>2년 무료</strong> — 먼저 섬기고 나중에 받습니다','plan.plant.f1':'Growth Plan 모든 섬김 포함','plan.plant.f2':'HebronGuide — 나그네가 먼저 만납니다','plan.plant.f3':'당회 기획서 — 함께 준비합니다','plan.plant.f4':'NanuriWeb 파트너 공동체 인증','plan.plant.cta':'먼저 섬겨드리겠습니다',
     'plan.starter.name':'Starter Plan','plan.starter.sub':'소형교회 · 7페이지','plan.starter.note':'연관리비 <strong>$240/yr</strong> · 월 $20으로 문을 엽니다','plan.starter.f1':'교회 이야기를 담을 7개 공간','plan.starter.f2':'나그네가 손 내밀 기도·새가족 창구','plan.starter.f3':'500개 도시 나그네와 연결됩니다','plan.starter.f4':'검색하는 이에게 먼저 달려갑니다','plan.starter.f5':'말씀이 온라인으로 흘러갑니다 (선택)','plan.starter.cta':'함께 시작하겠습니다',
@@ -1918,7 +1912,7 @@ const LANG = {
     'eco.eyebrow':'One Purpose, Every Place',
     'eco.title':'Church and Workplace','eco.title.em':'strengthening each other',
     'plans.eyebrow':'How We Serve · 어떻게 섬길까요',
-    'plans.title':'Even the smallest church','plans.title.em':'welcomed like an angel',
+    'plans.title':'Church or Business —','plans.title.em':'Served with the Same Heart',
     'plans.tab.church':'⛪ Church Website','plans.tab.biz':'🏢 Business · Org · Group',
     'process.eyebrow':'How We Walk Together · 섬김의 여정',
     'process.title':'We run like Abraham —','process.title.em':'and we never leave your side',
@@ -1957,7 +1951,7 @@ const LANG = {
     'proof.card1.name':'Eden Church Dallas','proof.card1.sub':'Eden Church Dallas · Texas, USA','proof.card1.desc':'Eden Church, serving the Korean community in Dallas. NanuriWeb built the entire site from start to finish, opening their door online.','proof.card1.link':'Visit edendallas.org →',
     'proof.card2.name':'2 Churches in Korea','proof.card2.sub':'Churches in Gyeonggi-do · Proposal under board review','proof.card2.desc':'Two churches are currently in internal review using board proposals prepared together with NanuriWeb. We are praying for both churches soon to be born online.',
     'proof.next.text':'Next is <span style="color:var(--gold);">your church</span>','proof.next.sub':'Request a consultation now and we will reach out within 48 hours.<br><span>We will prepare the elder board proposal together.</span>','proof.next.cta':'Request Free Consultation →',
-    'plans.desc':'Budget and size may differ, but the heart of service and the wish for your success are always the same.<br>Just as Abraham served all three strangers equally.',
+    'plans.desc':'Different in size, different in field — one heart to serve.<br>Choose the plan that fits you below.',
     'plan.house.badge':'🏠 House Church — Free Consultation','plan.house.name':'House Church Plan','plan.house.sub':'Custom design for house church ministry systems','plan.house.desc':'A house church is not simply a small church. It is an independent ministry philosophy and system. Let\'s start with a free consultation to find the right direction together.','plan.house.cta':'🤝 Request Free Consultation →','plan.house.choose':'Choose a plan after consultation',
     'plan.plant.badge':'🌱 Church Plant — We Serve First','plan.plant.name':'Church Plant','plan.plant.sub':'Founded within 3 years · Under 50 members','plan.plant.note':'Annual maintenance <strong>FREE for 2 years</strong> — we serve first, receive later','plan.plant.f1':'All Growth Plan services included','plan.plant.f2':'HebronGuide — strangers find you first','plan.plant.f3':'Board proposal — we prepare it together','plan.plant.f4':'NanuriWeb Partner Community certification','plan.plant.cta':'We will serve you first',
     'plan.starter.name':'Starter Plan','plan.starter.sub':'Small Church · 7 pages','plan.starter.note':'Annual maintenance <strong>$240/yr</strong> · Open your door for $20/month','plan.starter.f1':'7 spaces to tell your church\'s story','plan.starter.f2':'Prayer & new visitor inquiry form','plan.starter.f3':'Connected to strangers in 500+ cities','plan.starter.f4':'Found first by those who are searching','plan.starter.f5':'Stream sermons online (optional)','plan.starter.cta':'Let\'s start together',
@@ -2060,7 +2054,7 @@ const LANG = {
     'eco.eyebrow':'Un Propósito, Todo Lugar',
     'eco.title':'Iglesia y Trabajo','eco.title.em':'fortaleciéndose mutuamente',
     'plans.eyebrow':'Cómo Servimos · How We Serve',
-    'plans.title':'Incluso la iglesia más pequeña','plans.title.em':'recibida como un ángel',
+    'plans.title':'Iglesia o Negocio —','plans.title.em':'Servidos con el Mismo Corazón',
     'plans.tab.church':'⛪ Sitio de Iglesia','plans.tab.biz':'🏢 Negocio · Org · Grupo',
     'process.eyebrow':'Cómo Caminamos Juntos',
     'process.title':'Corremos como Abraham —','process.title.em':'y nunca te dejamos solo',
@@ -2100,7 +2094,7 @@ const LANG = {
     'proof.card1.name':'Eden Church Dallas','proof.card1.sub':'Eden Church Dallas · Texas, EE.UU.','proof.card1.desc':'Eden Church, sirviendo a la comunidad coreana en Dallas. NanuriWeb construyó el sitio completo de principio a fin, abriendo su puerta en línea.','proof.card1.link':'Visitar edendallas.org →',
     'proof.card2.name':'2 Iglesias en Corea','proof.card2.sub':'Iglesias en Gyeonggi-do · Propuesta bajo revisión','proof.card2.desc':'Dos iglesias están actualmente en revisión interna usando propuestas preparadas junto con NanuriWeb. Estamos orando por ambas iglesias para que pronto nazcan en línea.',
     'proof.next.text':'La siguiente es <span style="color:var(--gold);">su iglesia</span>','proof.next.sub':'Solicite una consulta ahora y nos comunicaremos en 48 horas.<br><span>Prepararemos la propuesta para los ancianos juntos.</span>','proof.next.cta':'Solicitar Consulta Gratis →',
-    'plans.desc':'El presupuesto y el tamaño pueden diferir, pero el corazón de servicio y el deseo de su éxito siempre son los mismos.<br>Así como Abraham sirvió a los tres extraños por igual.',
+    'plans.desc':'Diferente en tamaño, diferente en campo — un solo corazón para servir.<br>Elige el plan que mejor se adapte a ti.',
     'plan.house.badge':'🏠 House Church — Consulta Gratis','plan.house.name':'House Church Plan','plan.house.sub':'Diseño personalizado para sistemas ministeriales de iglesia en casa','plan.house.desc':'Una iglesia en casa no es simplemente una iglesia pequeña. Es una filosofía y sistema ministerial independiente. Empecemos con una consulta gratuita para encontrar la dirección correcta juntos.','plan.house.cta':'🤝 Solicitar Consulta Gratis →','plan.house.choose':'Elija un plan después de la consulta',
     'plan.plant.badge':'🌱 Planta de Iglesia — Servimos Primero','plan.plant.name':'Church Plant','plan.plant.sub':'Fundada hace menos de 3 años · Menos de 50 miembros','plan.plant.note':'Mantenimiento anual <strong>GRATIS por 2 años</strong> — servimos primero, recibimos después','plan.plant.f1':'Todos los servicios del Growth Plan incluidos','plan.plant.f2':'HebronGuide — los visitantes te encuentran primero','plan.plant.f3':'Propuesta para la junta — la preparamos juntos','plan.plant.f4':'Certificación de Comunidad Asociada NanuriWeb','plan.plant.cta':'Te serviremos primero',
     'plan.starter.name':'Starter Plan','plan.starter.sub':'Iglesia Pequeña · 7 páginas','plan.starter.note':'Mantenimiento anual <strong>$240/yr</strong> · Abre tu puerta por $20/mes','plan.starter.f1':'7 espacios para contar la historia de tu iglesia','plan.starter.f2':'Formulario de oración y bienvenida para nuevos visitantes','plan.starter.f3':'Conectado a visitantes en 500+ ciudades','plan.starter.f4':'Aparece primero para los que están buscando','plan.starter.f5':'Transmitir sermones en línea (opcional)','plan.starter.cta':'Empecemos juntos',
@@ -2203,7 +2197,7 @@ const LANG = {
     'eco.eyebrow':'同一呼召，不同现场',
     'eco.title':'教会与职场','eco.title.em':'相互扶持成长',
     'plans.eyebrow':'我们如何服侍 · How We Serve',
-    'plans.title':'哪怕最小的植堂教会','plans.title.em':'也像接待天使一样款待',
+    'plans.title':'教会或商业——','plans.title.em':'以同样的心服务',
     'plans.tab.church':'⛪ 教会网站','plans.tab.biz':'🏢 商业 · 机构 · 团体',
     'process.eyebrow':'我们同行的旅程',
     'process.title':'像亚伯拉罕一样奔跑 —','process.title.em':'不离开，一直陪伴',
@@ -2243,7 +2237,7 @@ const LANG = {
     'proof.card1.name':'达拉斯伊甸教会','proof.card1.sub':'Eden Church Dallas · 德克萨斯州，美国','proof.card1.desc':'服侍达拉斯韩裔社区的伊甸教会。NanuriWeb从头到尾共同制作，打开了他们的网上之门。','proof.card1.link':'访问 edendallas.org →',
     'proof.card2.name':'韩国两间教会','proof.card2.sub':'京畿道地区教会 · 提案审议进行中','proof.card2.desc':'两间教会目前正在内部审议与NanuriWeb共同准备的长老会提案。我们为这两间即将在网上诞生的教会祷告。',
     'proof.next.text':'下一个是<span style="color:var(--gold);">您的教会</span>','proof.next.sub':'现在申请咨询，我们将在48小时内联系您。<br><span>我们将一起准备长老会提案。</span>','proof.next.cta':'申请免费咨询 →',
-    'plans.desc':'预算和规模可能不同，但服侍的心意和祝愿您成功的心意始终一样。<br>就像亚伯拉罕平等地服侍三位陌生人一样。',
+    'plans.desc':'规模不同，行业不同——服务的心是一样的。<br>请在下方选择适合您的方案。',
     'plan.house.badge':'🏠 家庭教会 — 免费咨询','plan.house.name':'家庭教会方案','plan.house.sub':'为家庭教会牧养系统量身设计','plan.house.desc':'家庭教会不仅仅是一间小教会。它有独特的牧养哲学和系统。让我们从免费咨询开始，共同找到正确的方向。','plan.house.cta':'🤝 申请免费咨询 →','plan.house.choose':'咨询后选择以下方案',
     'plan.plant.badge':'🌱 植堂教会 — 我们先服侍','plan.plant.name':'植堂方案','plan.plant.sub':'成立3年以内 · 50人以下','plan.plant.note':'年维护费<strong>2年免费</strong> — 先服侍，后收费','plan.plant.f1':'包含Growth Plan所有服务','plan.plant.f2':'HebronGuide — 陌生人率先找到您','plan.plant.f3':'长老会提案 — 我们一起准备','plan.plant.f4':'NanuriWeb伙伴社区认证','plan.plant.cta':'我们将先服侍您',
     'plan.starter.name':'基础方案','plan.starter.sub':'小型教会 · 7个页面','plan.starter.note':'年维护费<strong>$240/yr</strong> · 每月$20即可开门','plan.starter.f1':'7个空间讲述您教会的故事','plan.starter.f2':'祷告与新访客联络表格','plan.starter.f3':'与500多个城市的陌生人相连','plan.starter.f4':'让搜索者第一个找到您','plan.starter.f5':'在线传播讲道（可选）','plan.starter.cta':'让我们一起开始',
