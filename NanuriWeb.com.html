@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">NanuriWeb — 교회·사업체 홈페이지 전문 | Hebron Platform LLC</title>
+<meta name="description" content="미국 내 이민자 교회·소수민족 사업체 홈페이지 전문. HebronGuide 연계. 한국어·영어·스페인어·중국어 지원.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ───────────────────────────────────────────── */
+:root {
+  --navy:       #0B1628;
+  --navy-mid:   #1F3864;
+  --navy-light: #2E4A7A;
+  --gold:       #C9A84C;
+  --gold-light: #F0D98A;
+  --gold-pale:  #FDF8EC;
+  --emerald:    #1A7F5A;
+  --emerald-lt: #E8F5EF;
+  --ivory:      #F7F4EE;
+  --blue-lt:    #E8EEF4;
+  --white:      #FFFFFF;
+  --dark:       #1A1A2E;
+  --gray:       #6B7280;
+  --gray-lt:    #F3F4F6;
+  --border:     #E5E7EB;
+  --red:        #DC2626;
+
+  --font-display: 'Noto Serif KR', serif;
+  --font-body:    'Noto Sans KR', sans-serif;
+  --font-data:    'Inter', sans-serif;
+
+  --radius:  12px;
+  --radius-lg: 20px;
+  --shadow:  0 4px 24px rgba(11,22,40,0.10);
+  --shadow-lg: 0 12px 48px rgba(11,22,40,0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--dark);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ──────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(11,22,40,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 24px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-badge {
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-data);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.nav-logo-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-data);
+}
+
+.nav-links {
+  display: flex; align-items: center; gap: 6px;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover { color: white; background: rgba(255,255,255,0.08); }
+
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+}
+
+.nav-cta:hover { background: #e0c05a !important; }
+
+/* 언어 선택 */
+.lang-switcher {
+  display: flex; gap: 4px; margin-right: 8px;
+}
+
+.lang-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.6);
+  font-size: 11px;
+  font-family: var(--font-data);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover, .lang-btn.active {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 24px 80px;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(26,127,90,0.06) 0%, transparent 60%);
+}
+
+.hero-cross {
+  position: absolute;
+  font-size: 400px;
+  color: rgba(255,255,255,0.015);
+  top: -80px; right: -60px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-content { position: relative; max-width: 820px; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-family: var(--font-data);
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.hero-title .typing-container {
+  display: block;
+  color: var(--gold);
+  min-height: 1.3em;
+}
+
+.hero-title .cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.8em;
+  background: var(--gold);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+.hero-sub span { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+.hero-btns {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  border: none; cursor: pointer;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.btn-primary:hover { background: #e0c05a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
+
+.btn-secondary {
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+
+.hero-stats {
+  display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 40px;
+}
+
+.hero-stat { text-align: center; }
+
+.hero-stat-num {
+  font-family: var(--font-data);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.5px;
+}
+
+/* ── SECTIONS COMMON ──────────────────────────────────── */
+section { padding: 80px 24px; }
+
+.section-inner { max-width: 1100px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 11px;
+  font-family: var(--font-data);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.section-title em { color: var(--emerald); font-style: normal; }
+
+.section-desc {
+  font-size: 15px;
+  color: var(--gray);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+/* ── SEGMENT TABS ─────────────────────────────────────── */
+.segment-section { background: var(--ivory); }
+
+.segment-tabs {
+  display: flex; gap: 8px;
+  background: white;
+  border-radius: var(--radius);
+  padding: 6px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.seg-tab {
+  flex: 1; min-width: 160px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none; cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray);
+  background: transparent;
+  transition: all 0.2s;
+  display: flex; align-items: center; gap: 8px;
+  justify-content: center;
+}
+
+.seg-tab:hover { background: var(--gray-lt); color: var(--navy); }
+
+.seg-tab.active {
+  background: var(--navy);
+  color: white;
+  font-weight: 700;
+}
+
+.seg-tab.active.church { background: var(--navy-mid); }
+.seg-tab.active.biz { background: var(--emerald); }
+
+.seg-panel { display: none; }
+.seg-panel.active { display: block; }
+
+/* ── PLAN CARDS ───────────────────────────────────────── */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.plan-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  border: 2px solid var(--border);
+  position: relative;
+  transition: all 0.2s;
+}
+
+.plan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.plan-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(201,168,76,0.12);
+}
+
+.plan-card.plant {
+  border-color: var(--emerald);
+  background: var(--emerald-lt);
+}
+
+.plan-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-data);
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.plan-badge.green {
+  background: var(--emerald);
+  color: white;
+}
+
+.plan-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.plan-name {
+  font-family: var(--font-data);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.plan-name-ko {
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.plan-price-row {
+  display: flex; align-items: baseline; gap: 6px;
+  margin-bottom: 4px;
+}
+
+.plan-price {
+  font-family: var(--font-data);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.plan-price-unit { font-size: 14px; color: var(--gray); }
+
+.plan-annual {
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.plan-annual strong { color: var(--emerald); }
+
+.plan-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+.plan-features {
+  list-style: none;
+  font-size: 13px;
+  color: var(--dark);
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.plan-features li {
+  display: flex; align-items: flex-start; gap: 8px;
+}
+
+.plan-features li::before {
+  content: '✓';
+  color: var(--emerald);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.plan-features li.opt::before { content: '○'; color: var(--gray); }
+.plan-features li.no::before { content: '—'; color: var(--border); }
+.plan-features li.no { color: var(--gray); text-decoration: line-through; }
+
+.plan-cta {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 2px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+}
+
+.plan-cta:hover { background: var(--navy); color: white; }
+.plan-card.featured .plan-cta { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.plan-card.featured .plan-cta:hover { background: #e0c05a; }
+.plan-card.plant .plan-cta { background: var(--emerald); border-color: var(--emerald); color: white; }
+.plan-card.plant .plan-cta:hover { background: #156b4b; }
+
+.plans-note {
+  font-size: 12px;
+  color: var(--gray);
+  text-align: center;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* ── MEDIA OPTIONS ────────────────────────────────────── */
+.media-options {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+.media-options h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.media-options p {
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+.media-toggles {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+
+.media-toggle {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--gray-lt);
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.media-toggle input { display: none; }
+
+.media-toggle.checked {
+  background: var(--blue-lt);
+  border-color: var(--navy-mid);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.media-toggle .toggle-icon { font-size: 18px; }
+
+/* ── HOW IT WORKS ─────────────────────────────────────── */
+.how-section { background: var(--navy); }
+
+.how-section .section-title { color: white; }
+.how-section .section-desc { color: rgba(255,255,255,0.55); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.step {
+  background: var(--navy);
+  padding: 32px 24px;
+  position: relative;
+}
+
+.step-num {
+  font-family: var(--font-data);
+  font-size: 42px;
+  font-weight: 900;
+  color: rgba(201,168,76,0.2);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.step-title {
+  font-weight: 700;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+
+.step-tag {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 10px;
+  font-family: var(--font-data);
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(201,168,76,0.15);
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+/* ── HEBRON SECTION ───────────────────────────────────── */
+.hebron-section { background: var(--blue-lt); }
+
+.hebron-card {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hebron-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+}
+
+.hebron-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.hebron-title span { color: var(--gold); }
+
+.hebron-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.hebron-benefits {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.hebron-benefit {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.hebron-benefit-icon { font-size: 20px; flex-shrink: 0; }
+
+.hebron-benefit-text strong {
+  display: block;
+  font-size: 13px;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.hebron-benefit-text span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+}
+
+.hebron-cities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.hebron-city {
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.hebron-city:hover { background: rgba(201,168,76,0.12); color: var(--gold); }
+
+a.hebron-city {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+a.hebron-city:hover {
+  background: rgba(201,168,76,0.18);
+  color: var(--gold);
+  transform: translateY(-2px);
+  transition: all 0.2s;
+}
+
+a.hebron-city-more {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hebron-city-more {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 12px;
+  color: var(--gold);
+  padding: 8px;
+  font-weight: 600;
+}
+
+/* ── MINORITY MARKET ──────────────────────────────────── */
+.market-section { background: white; }
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.market-card {
+  background: var(--ivory);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.market-card:hover {
+  border-color: var(--gold);
+  background: var(--gold-pale);
+  transform: translateY(-2px);
+}
+
+.market-flag { font-size: 28px; margin-bottom: 8px; display: block; }
+
+.market-lang {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.market-count {
+  font-size: 11px;
+  color: var(--gray);
+  font-family: var(--font-data);
+}
+
+/* ── AI SECTION ───────────────────────────────────────── */
+.ai-section { background: var(--ivory); }
+
+.ai-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  .ai-compare { grid-template-columns: 1fr; }
+  .ai-vs { display: none; }
+}
+
+.ai-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+}
+
+.ai-card.nanuri {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+}
+
+.ai-card-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.ai-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 10px;
+  font-size: 13px;
+}
+
+.ai-list li { display: flex; align-items: flex-start; gap: 8px; }
+
+.ai-list.good li::before { content: '✓'; color: var(--emerald); font-weight: 700; flex-shrink: 0; }
+.ai-list.bad li::before { content: '✗'; color: #DC2626; flex-shrink: 0; }
+.ai-list.nanuri-list li::before { content: '✦'; color: var(--gold); flex-shrink: 0; }
+
+.ai-vs {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-data);
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--gray);
+  padding-top: 80px;
+}
+
+/* ── CONTACT ──────────────────────────────────────────── */
+.contact-section { background: var(--navy); }
+
+.contact-section .section-title { color: white; }
+.contact-section .section-desc { color: rgba(255,255,255,0.55); max-width: none; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+.contact-form {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.form-row {
+  margin-bottom: 16px;
+}
+
+.form-row label {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-row label span { color: var(--gold); }
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: white;
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.1);
+}
+
+.form-row select option { background: var(--navy); }
+.form-row textarea { resize: vertical; min-height: 100px; }
+
+.form-row-2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+
+.media-check-row {
+  display: flex; gap: 12px; margin-top: 8px;
+}
+
+.media-check {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+}
+
+.media-check input[type="checkbox"] { accent-color: var(--gold); }
+
+.form-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--font-body);
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.form-submit:hover { background: #e0c05a; transform: translateY(-1px); }
+
+.contact-info { color: rgba(255,255,255,0.7); }
+
+.contact-info h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.contact-details {
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.contact-detail {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px;
+}
+
+.contact-detail-icon {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.contact-scripture {
+  margin-top: 32px;
+  padding: 20px;
+  background: rgba(201,168,76,0.08);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.contact-scripture p {
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 6px;
+}
+
+.contact-scripture cite {
+  font-size: 12px;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+footer {
+  background: #060e1a;
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-logo {
+  font-family: var(--font-data);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.8;
+}
+
+.footer-sub a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+}
+
+.footer-sub a:hover { color: var(--gold); }
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  section { padding: 60px 16px; }
+  .nav-links { display: none; }
+  .plans-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .hebron-cities { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+  .form-row-2 { grid-template-columns: 1fr; }
+}
+
+/* ── SCROLL REVEAL ────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── I18N ─────────────────────────────────────────────── */
+[data-lang] { display: none; }
+[data-lang="ko"] { display: block; }
+span[data-lang="ko"] { display: inline; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-badge">NanuriWeb</span>
+    <span class="nav-logo-sub" data-lang="ko">나누리웹</span><span class="nav-logo-sub" data-lang="en" style="display:none">Korean Church & Biz Websites</span><span class="nav-logo-sub" data-lang="es" style="display:none">Sitios Web para Iglesias</span><span class="nav-logo-sub" data-lang="zh" style="display:none">教会网站专家</span><span class="nav-logo-sub" data-lang="tl" style="display:none">Website para sa Simbahan</span><span class="nav-logo-sub" data-lang="vi" style="display:none">Website cho Nhà Thờ</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" onclick="setLang('tl')">FIL</button>
+      <button class="lang-btn" onclick="setLang('vi')">VI</button>
+    </div>
+    <div class="nav-links">
+      <a href="#segments" data-lang="ko">서비스</a>
+      <a href="#segments" data-lang="en" style="display:none">Services</a>
+      <a href="#how" data-lang="ko">제작과정</a>
+      <a href="#how" data-lang="en" style="display:none">Process</a>
+      <a href="#hebron" data-lang="ko">HebronGuide</a>
+      <a href="#contact" class="nav-cta" data-lang="ko">무료 상담</a>
+      <a href="#contact" class="nav-cta" data-lang="en" style="display:none">Free Consult</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-cross">✝</div>
+  <div class="hero-content">
+
+    <div class="hero-eyebrow">
+      ✦ Hebron Platform LLC · Seattle, WA
+    </div>
+
+    <h1 class="hero-title">
+      <span data-lang="ko">교회와 사업체가</span>
+      <span data-lang="en" style="display:none">Churches & Businesses</span>
+      <span data-lang="es" style="display:none">Iglesias y Negocios</span>
+      <span data-lang="zh" style="display:none">教会与企业</span>
+      <span data-lang="tl" style="display:none">Mga Simbahan at Negosyo</span>
+      <span data-lang="vi" style="display:none">Nhà thờ và Doanh nghiệp</span>
+      <span class="typing-container">
+        <span id="typing-text"></span><span class="cursor"></span>
+      </span>
+    </h1>
+
+    <p class="hero-sub" data-lang="ko">
+      미국 내 <span>이민자 교회·소수민족 사업체</span>를 위한<br>
+      홈페이지 전문 서비스 · HebronGuide 공식 파트너
+    </p>
+    <p class="hero-sub" data-lang="en" style="display:none">
+      Professional website service for <span>immigrant churches & minority businesses</span> in the USA · Official HebronGuide Partner
+    </p>
+    <p class="hero-sub" data-lang="es" style="display:none">
+      Servicio profesional de sitios web para <span>iglesias y negocios de inmigrantes</span> en EE.UU. · Socio oficial de HebronGuide
+    </p>
+    <p class="hero-sub" data-lang="zh" style="display:none">
+      专为美国<span>移民教会·少数民族企业</span>提供的专业网站服务 · HebronGuide 官方合作伙伴
+    </p>
+    <p class="hero-sub" data-lang="tl" style="display:none">
+      Propesyonal na serbisyo ng website para sa <span>mga simbahan at negosyo ng mga imigrante</span> sa USA
+    </p>
+    <p class="hero-sub" data-lang="vi" style="display:none">
+      Dịch vụ website chuyên nghiệp cho <span>nhà thờ và doanh nghiệp người nhập cư</span> tại Mỹ
+    </p>
+
+    <div class="hero-btns">
+      <a href="#segments" class="btn-primary">
+        <span data-lang="ko">플랜 보기 →</span>
+        <span data-lang="en" style="display:none">See Plans →</span>
+        <span data-lang="es" style="display:none">Ver Planes →</span>
+        <span data-lang="zh" style="display:none">查看方案 →</span>
+        <span data-lang="tl" style="display:none">Tingnan ang Plano →</span>
+        <span data-lang="vi" style="display:none">Xem Gói →</span>
+      </a>
+      <a href="#contact" class="btn-secondary">
+        <span data-lang="ko">무료 상담 신청</span>
+        <span data-lang="en" style="display:none">Free Consultation</span>
+        <span data-lang="es" style="display:none">Consulta Gratis</span>
+        <span data-lang="zh" style="display:none">免费咨询</span>
+        <span data-lang="tl" style="display:none">Libreng Konsulta</span>
+        <span data-lang="vi" style="display:none">Tư vấn miễn phí</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">72+</span>
+        <span class="hero-stat-label" data-lang="ko">HebronGuide 도시</span>
+        <span class="hero-stat-label" data-lang="en" style="display:none">HebronGuide Cities</span>
+        <span class="hero-stat-label" data-lang="es" style="display:none">Ciudades HebronGuide</span>
+        <span class="hero-stat-label" data-lang="zh" style="display:none">HebronGuide城市</span>
+        <span class="hero-stat-label" data-lang="tl" style="display:none">Lungsod ng HebronGuide</span>
+        <span class="hero-stat-label" data-lang="vi" style="display:none">Thành Phố HebronGuide</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">8</span>
+        <span class="hero-stat-label" data-lang="ko">지원 언어</span>
+        <span class="hero-stat-label" data-lang="en" style="display:none">Languages</span>
+        <span class="hero-stat-label" data-lang="es" style="display:none">Idiomas</span>
+        <span class="hero-stat-label" data-lang="zh" style="display:none">支持语言</span>
+        <span class="hero-stat-label" data-lang="tl" style="display:none">Mga Wika</span>
+        <span class="hero-stat-label" data-lang="vi" style="display:none">Ngôn Ngữ</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">$199~</span>
+        <span class="hero-stat-label" data-lang="ko">제작비 시작가</span>
+        <span class="hero-stat-label" data-lang="en" style="display:none">Starting Price</span>
+        <span class="hero-stat-label" data-lang="es" style="display:none">Precio Inicial</span>
+        <span class="hero-stat-label" data-lang="zh" style="display:none">起始价格</span>
+        <span class="hero-stat-label" data-lang="tl" style="display:none">Simula ng Presyo</span>
+        <span class="hero-stat-label" data-lang="vi" style="display:none">Giá Khởi Điểm</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-lang="ko">8주</span>
+        <span class="hero-stat-num" data-lang="en" style="display:none">8 Wks</span>
+        <span class="hero-stat-num" data-lang="es" style="display:none">8 Sem</span>
+        <span class="hero-stat-num" data-lang="zh" style="display:none">8周</span>
+        <span class="hero-stat-num" data-lang="tl" style="display:none">8 Ling</span>
+        <span class="hero-stat-num" data-lang="vi" style="display:none">8 Tuần</span>
+        <span class="hero-stat-label" data-lang="ko">완성까지</span>
+        <span class="hero-stat-label" data-lang="en" style="display:none">To Launch</span>
+        <span class="hero-stat-label" data-lang="es" style="display:none">Al Lanzamiento</span>
+        <span class="hero-stat-label" data-lang="zh" style="display:none">完成时间</span>
+        <span class="hero-stat-label" data-lang="tl" style="display:none">Hanggang Lansad</span>
+        <span class="hero-stat-label" data-lang="vi" style="display:none">Đến Ra Mắt</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SEGMENTS ───────────────────────────────────────── -->
+<section class="segment-section" id="segments">
+<div class="section-inner">
+
+  <span class="section-eyebrow" data-lang="ko">Services · 서비스</span><span class="section-eyebrow" data-lang="en" style="display:none">Our Services</span><span class="section-eyebrow" data-lang="es" style="display:none">Nuestros Servicios</span><span class="section-eyebrow" data-lang="zh" style="display:none">我们的服务</span><span class="section-eyebrow" data-lang="tl" style="display:none">Aming Serbisyo</span><span class="section-eyebrow" data-lang="vi" style="display:none">Dịch Vụ Của Chúng Tôi</span>
+  <h2 class="section-title" data-lang="ko">교회와 <em>사업체</em>, 함께 섬깁니다</h2>
+  <h2 class="section-title" data-lang="en" style="display:none">Serving <em>Churches</em> & Businesses</h2>
+  <h2 class="section-title" data-lang="es" style="display:none">Sirviendo <em>Iglesias</em> y Negocios</h2>
+  <h2 class="section-title" data-lang="zh" style="display:none">服务<em>教会</em>与企业</h2>
+  <p class="section-desc" data-lang="ko">
+    <span data-lang="ko">목사님의 교회, 성도님의 사업체 — 둘 다 세상과 연결되어야 합니다.<br>HebronGuide 네트워크와 함께 디지털 사역과 비즈니스를 동시에 시작하세요.</span><span data-lang="en" style="display:none">Your church, your business — both need to connect with the world.<br>Launch your digital ministry and business presence with the HebronGuide network.</span><span data-lang="es" style="display:none">Tu iglesia, tu negocio — ambos necesitan conectarse con el mundo.<br>Lanza tu presencia digital con la red HebronGuide.</span><span data-lang="zh" style="display:none">您的教会和企业都需要与世界连接。<br>通过HebronGuide网络启动您的数字事工与商业存在。</span><span data-lang="tl" style="display:none">Ang iyong simbahan, ang iyong negosyo — parehong kailangan ng koneksyon sa mundo.</span><span data-lang="vi" style="display:none">Nhà thờ và doanh nghiệp của bạn đều cần kết nối với thế giới.</span>
+  </p>
+  <p class="section-desc" data-lang="en" style="display:none">
+    Your church, your business — both need to connect with the world.<br>
+    Launch your digital ministry and business presence together with the HebronGuide network.
+  </p>
+
+  <!-- 탭 -->
+  <div class="segment-tabs">
+    <button class="seg-tab active church" onclick="showSeg('church')" id="tab-church">
+      ⛪
+      <span data-lang="ko">교회 홈페이지</span>
+      <span data-lang="en" style="display:none">Church Websites</span>
+    </button>
+    <button class="seg-tab biz" onclick="showSeg('biz')" id="tab-biz">
+      🏪
+      <span data-lang="ko">사업체 홈페이지</span>
+      <span data-lang="en" style="display:none">Business Websites</span>
+    </button>
+  </div>
+
+  <!-- 교회 패널 -->
+  <div class="seg-panel active" id="panel-church">
+    <div class="plans-grid">
+
+      <!-- House Church -->
+      <div class="plan-card house-church reveal" style="border-color:var(--gold);background:linear-gradient(135deg,#0B1628 0%,#1a2a4a 100%);color:white;grid-column:1/-1;">
+        <div class="plan-badge" style="background:var(--gold);color:var(--navy);">🏠 House Church</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;margin-top:16px;">
+
+          <!-- 왼쪽: 설명 -->
+          <div>
+            <div class="plan-name" style="color:var(--gold);font-size:22px;margin-bottom:8px;">House Church</div>
+            <span class="plan-name-ko" data-lang="ko" style="color:rgba(255,255,255,0.6);display:block;margin-bottom:16px;">가정교회 목회 시스템</span>
+            <span class="plan-name-ko" data-lang="en" style="display:none;color:rgba(255,255,255,0.6);margin-bottom:16px;">House Church Ministry System</span>
+            <span class="plan-name-ko" data-lang="es" style="display:none;color:rgba(255,255,255,0.6);margin-bottom:16px;">Sistema de Iglesia en Casa</span>
+            <span class="plan-name-ko" data-lang="zh" style="display:none;color:rgba(255,255,255,0.6);margin-bottom:16px;">家庭教会牧养系统</span>
+            <span class="plan-name-ko" data-lang="tl" style="display:none;color:rgba(255,255,255,0.6);margin-bottom:16px;">House Church Ministry System</span>
+            <span class="plan-name-ko" data-lang="vi" style="display:none;color:rgba(255,255,255,0.6);margin-bottom:16px;">Hệ Thống Mục Vụ House Church</span>
+
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:20px;" data-lang="ko">
+              가정교회는 단순한 "소규모 교회"가 아닌 <strong style="color:var(--gold)">독자적인 목회 철학과 시스템</strong>입니다.<br>
+              셀 모임, 구역 중심, 가정 예배 방식 등 교회의 구조와 필요에 따라
+              최적의 플랜을 함께 찾아드립니다.<br><br>
+              먼저 <strong style="color:var(--gold)">무료 상담</strong>을 통해 가정교회 시스템에 맞는 홈페이지 방향을 설계해 드립니다.
+            </p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:20px;" data-lang="en" style="display:none">
+              House Church is not simply a "small church" — it is a <strong style="color:var(--gold)">distinct pastoral philosophy and system</strong>.<br>
+              Cell groups, zone-based ministry, home worship — we design your website to fit your specific structure.<br><br>
+              Start with a <strong style="color:var(--gold)">free consultation</strong> and we'll find the right plan together.
+            </p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:20px;" data-lang="es" style="display:none">
+              La Iglesia en Casa no es simplemente una "iglesia pequeña" — es una <strong style="color:var(--gold)">filosofía pastoral distinta</strong>.<br>
+              Consulta gratuita para diseñar el sitio web que se adapte a tu sistema.
+            </p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:20px;" data-lang="zh" style="display:none">
+              家庭教会不仅仅是"小型教会"——它是一种<strong style="color:var(--gold)">独特的牧养哲学和系统</strong>。<br>
+              免费咨询，为您的家庭教会系统设计最合适的网站方案。
+            </p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:20px;" data-lang="tl" style="display:none">
+              Ang House Church ay hindi lamang isang "maliit na simbahan" — ito ay isang <strong style="color:var(--gold)">natatanging sistema ng ministeryo</strong>.<br>
+              Libreng konsulta para mahanap ang tamang plano para sa inyong simbahan.
+            </p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:20px;" data-lang="vi" style="display:none">
+              House Church không chỉ là "nhà thờ nhỏ" — đây là <strong style="color:var(--gold)">triết lý mục vụ độc đáo</strong>.<br>
+              Tư vấn miễn phí để thiết kế website phù hợp với hệ thống House Church của bạn.
+            </p>
+
+            <button class="plan-cta" onclick="scrollToContact('House Church — 무료 상담')"
+              style="background:var(--gold);border-color:var(--gold);color:var(--navy);font-size:15px;padding:14px;">
+              <span data-lang="ko">🤝 무료 상담 신청 →</span>
+              <span data-lang="en" style="display:none">🤝 Free Consultation →</span>
+              <span data-lang="es" style="display:none">🤝 Consulta Gratuita →</span>
+              <span data-lang="zh" style="display:none">🤝 免费咨询 →</span>
+              <span data-lang="tl" style="display:none">🤝 Libreng Konsulta →</span>
+              <span data-lang="vi" style="display:none">🤝 Tư Vấn Miễn Phí →</span>
+            </button>
+          </div>
+
+          <!-- 오른쪽: 4가지 플랜 선택 -->
+          <div>
+            <p style="font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;" data-lang="ko">상담 후 아래 플랜 중 선택</p>
+            <p style="font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;display:none;" data-lang="en">Choose after consultation</p>
+            <p style="font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;display:none;" data-lang="es">Elige después de la consulta</p>
+            <p style="font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;display:none;" data-lang="zh">咨询后选择方案</p>
+            <p style="font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;display:none;" data-lang="tl">Pumili pagkatapos ng konsulta</p>
+            <p style="font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;display:none;" data-lang="vi">Chọn sau khi tư vấn</p>
+
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-weight:700;font-size:14px;color:white;">Starter Plan</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);" data-lang="ko">7페이지 · 기본 맞춤</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="en">7 pages · Basic custom</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="es">7 páginas · Básico</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="zh">7页面·基础定制</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="tl">7 pahina · Basic</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="vi">7 trang · Cơ bản</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-family:var(--font-data);font-weight:700;color:var(--gold-light);font-size:16px;">$499</div>
+                  <div style="font-size:10px;color:rgba(255,255,255,0.35);">+ $240/yr</div>
+                </div>
+              </div>
+              <div style="background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-weight:700;font-size:14px;color:var(--gold);">Growth Plan ⭐</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.55);" data-lang="ko">10페이지 · 완전 맞춤 · CMS</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.55);display:none;" data-lang="en">10 pages · Full custom · CMS</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.55);display:none;" data-lang="es">10 páginas · Completo · CMS</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.55);display:none;" data-lang="zh">10页面·完整定制·CMS</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.55);display:none;" data-lang="tl">10 pahina · Buong custom · CMS</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.55);display:none;" data-lang="vi">10 trang · Tùy chỉnh · CMS</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-family:var(--font-data);font-weight:700;color:var(--gold);font-size:16px;">$799</div>
+                  <div style="font-size:10px;color:rgba(255,255,255,0.35);">+ $420/yr</div>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-weight:700;font-size:14px;color:white;">Pro Plan</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);" data-lang="ko">15페이지+ · 프리미엄 · 전체기능</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="en">15+ pages · Premium · All features</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="es">15+ páginas · Premium · Todo</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="zh">15+页面·高级·全功能</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="tl">15+ pahina · Premium · Lahat</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.45);display:none;" data-lang="vi">15+ trang · Premium · Tất cả</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-family:var(--font-data);font-weight:700;color:var(--gold-light);font-size:16px;">$1,299</div>
+                  <div style="font-size:10px;color:rgba(255,255,255,0.35);">+ $720/yr</div>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.15);border-radius:10px;padding:12px 16px;text-align:center;">
+                <div style="font-size:12px;color:rgba(255,255,255,0.4);" data-lang="ko">Church Plant 개척교회도 적용 가능</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.4);display:none;" data-lang="en">Church Plant Plan also available</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.4);display:none;" data-lang="es">Plan Church Plant también disponible</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.4);display:none;" data-lang="zh">开拓教会方案也适用</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.4);display:none;" data-lang="tl">Available din ang Church Plant Plan</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.4);display:none;" data-lang="vi">Church Plant Plan cũng có thể áp dụng</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Church Plant -->
+      <div class="plan-card plant reveal">
+        <div class="plan-badge green" data-lang="ko">🌱 개척교회 특별 플랜</div>
+        <div class="plan-badge green" data-lang="en" style="display:none">🌱 Church Plant Special</div>
+        <span class="plan-icon" style="margin-top:16px;">✝</span>
+        <div class="plan-name">Church Plant Plan</div>
+        <span class="plan-name-ko" data-lang="ko">개척교회 플랜</span>
+        <div class="plan-price-row">
+          <span class="plan-price" style="color:var(--emerald)">$299</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 <strong>2년 무료</strong> → 3년차 $240/yr</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Annual fee <strong>FREE 2 years</strong> → $240/yr after</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">Growth Plan 전체 기능 포함</li>
+          <li data-lang="en" style="display:none">All Growth Plan features</li>
+          <li data-lang="ko">설립 3년 이내 · 성도 50명 이하</li>
+          <li data-lang="en" style="display:none">Within 3 years · Under 50 members</li>
+          <li data-lang="ko">HebronGuide 우선 등재</li>
+          <li data-lang="en" style="display:none">Priority HebronGuide listing</li>
+          <li data-lang="ko">NanuriWeb 파트너 인증서</li>
+          <li data-lang="en" style="display:none">NanuriWeb Partner Certificate</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+          <li class="opt" data-lang="ko">오디오 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">Audio link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Church Plant Plan')">
+          <span data-lang="ko">섬김 신청</span>
+          <span data-lang="en" style="display:none">Apply Now</span>
+        </button>
+      </div>
+
+      <!-- Starter -->
+      <div class="plan-card reveal">
+        <span class="plan-icon">⛪</span>
+        <div class="plan-name">Starter Plan</div>
+        <span class="plan-name-ko" data-lang="ko">스타터 플랜</span>
+        <div class="plan-price-row">
+          <span class="plan-price">$499</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 <strong>$240/yr</strong> · 월 $20</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Annual <strong>$240/yr</strong> · $20/mo</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">7페이지 · 맞춤 설계</li>
+          <li data-lang="en" style="display:none">7 pages · Custom design</li>
+          <li data-lang="ko">새 가족 신청 폼</li>
+          <li data-lang="en" style="display:none">New member form</li>
+          <li data-lang="ko">기도 요청 폼</li>
+          <li data-lang="en" style="display:none">Prayer request form</li>
+          <li data-lang="ko">HebronGuide 배너 연동</li>
+          <li data-lang="en" style="display:none">HebronGuide banner</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+          <li class="opt" data-lang="ko">오디오 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">Audio link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Starter Plan')">
+          <span data-lang="ko">상담 신청</span>
+          <span data-lang="en" style="display:none">Get Started</span>
+        </button>
+      </div>
+
+      <!-- Growth -->
+      <div class="plan-card featured reveal">
+        <div class="plan-badge" data-lang="ko">⭐ 가장 인기</div>
+        <div class="plan-badge" data-lang="en" style="display:none">⭐ Most Popular</div>
+        <span class="plan-icon" style="margin-top:12px;">🌟</span>
+        <div class="plan-name">Growth Plan</div>
+        <span class="plan-name-ko" data-lang="ko">그로스 플랜</span>
+        <div class="plan-price-row">
+          <span class="plan-price">$799</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 <strong>$420/yr</strong> · 월 $35</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Annual <strong>$420/yr</strong> · $35/mo</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">10페이지 · 프리미엄 맞춤</li>
+          <li data-lang="en" style="display:none">10 pages · Premium custom</li>
+          <li data-lang="ko">관리자 CMS 포함</li>
+          <li data-lang="en" style="display:none">Admin CMS included</li>
+          <li data-lang="ko">소그룹·새 가족·기도 폼</li>
+          <li data-lang="en" style="display:none">Small group, new member, prayer forms</li>
+          <li data-lang="ko">네이버·구글 SEO 전체 최적화</li>
+          <li data-lang="en" style="display:none">Full Naver & Google SEO</li>
+          <li data-lang="ko">HebronGuide 완전 연동</li>
+          <li data-lang="en" style="display:none">Full HebronGuide integration</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+          <li class="opt" data-lang="ko">오디오 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">Audio link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Growth Plan')">
+          <span data-lang="ko">상담 신청</span>
+          <span data-lang="en" style="display:none">Get Started</span>
+        </button>
+      </div>
+
+      <!-- Pro -->
+      <div class="plan-card reveal">
+        <span class="plan-icon">🏛️</span>
+        <div class="plan-name">Pro Plan</div>
+        <span class="plan-name-ko" data-lang="ko">프로 플랜</span>
+        <div class="plan-price-row">
+          <span class="plan-price">$1,299</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 <strong>$720/yr</strong> · 월 $60</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Annual <strong>$720/yr</strong> · $60/mo</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">15페이지+ · 모든 기능</li>
+          <li data-lang="en" style="display:none">15+ pages · All features</li>
+          <li data-lang="ko">온라인 헌금 연동 (Toss·계좌)</li>
+          <li data-lang="en" style="display:none">Online giving (Toss & bank)</li>
+          <li data-lang="ko">HebronAPP 앱 프로필</li>
+          <li data-lang="en" style="display:none">HebronAPP profile</li>
+          <li data-lang="ko">월간 분석 리포트</li>
+          <li data-lang="en" style="display:none">Monthly analytics report</li>
+          <li data-lang="ko">연간 디자인 상담 1회</li>
+          <li data-lang="en" style="display:none">Annual design consultation</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+          <li class="opt" data-lang="ko">오디오 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">Audio link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Pro Plan')">
+          <span data-lang="ko">상담 신청</span>
+          <span data-lang="en" style="display:none">Get Started</span>
+        </button>
+      </div>
+
+    </div>
+    <p class="plans-note" data-lang="ko">※ 모든 금액 USD 기준 · Church Plant: 설립 3년 이내·성도 50명 이하 교회 적용 · 연관리비 연초 일시납</p>
+    <p class="plans-note" data-lang="en" style="display:none">※ All prices in USD · Church Plant: churches within 3 years, under 50 members · Annual fee prepaid</p>
+  </div>
+
+  <!-- 사업체 패널 -->
+  <div class="seg-panel" id="panel-biz">
+    <div class="plans-grid">
+
+      <!-- Solo -->
+      <div class="plan-card reveal">
+        <span class="plan-icon">👤</span>
+        <div class="plan-name">Solo Plan</div>
+        <span class="plan-name-ko" data-lang="ko">1인 사업·프리랜서</span>
+        <div class="plan-price-row">
+          <span class="plan-price">$299</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 <strong>$150/yr</strong> · 월 $12.50</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Annual <strong>$150/yr</strong> · $12.50/mo</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">5페이지 · 모바일 반응형</li>
+          <li data-lang="en" style="display:none">5 pages · Mobile responsive</li>
+          <li data-lang="ko">서비스 소개 · 연락처 폼</li>
+          <li data-lang="en" style="display:none">Services · Contact form</li>
+          <li data-lang="ko">Google 지도 연동</li>
+          <li data-lang="en" style="display:none">Google Maps</li>
+          <li data-lang="ko">HebronGuide 등재</li>
+          <li data-lang="en" style="display:none">HebronGuide listing</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Solo Plan (Business)')">
+          <span data-lang="ko">상담 신청</span>
+          <span data-lang="en" style="display:none">Get Started</span>
+        </button>
+      </div>
+
+      <!-- Startup -->
+      <div class="plan-card plant reveal">
+        <div class="plan-badge green" data-lang="ko">🌱 창업 1년 50% 할인</div>
+        <div class="plan-badge green" data-lang="en" style="display:none">🌱 50% off 1st year</div>
+        <span class="plan-icon" style="margin-top:16px;">🚀</span>
+        <div class="plan-name">Startup Plan</div>
+        <span class="plan-name-ko" data-lang="ko">신규 창업 플랜</span>
+        <div class="plan-price-row">
+          <span class="plan-price" style="color:var(--emerald)">$449</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 1년 <strong>$150 (50% 할인)</strong> → 2년차 $300/yr</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Year 1 <strong>$150 (50% off)</strong> → $300/yr after</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">Business Growth 전체 기능</li>
+          <li data-lang="en" style="display:none">All Business Growth features</li>
+          <li data-lang="ko">창업 3년 이내 사업체 적용</li>
+          <li data-lang="en" style="display:none">For businesses under 3 years</li>
+          <li data-lang="ko">Google·Yelp 리뷰 연동</li>
+          <li data-lang="en" style="display:none">Google & Yelp reviews</li>
+          <li data-lang="ko">인스타그램 피드 연동</li>
+          <li data-lang="en" style="display:none">Instagram feed</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Startup Plan (Business)')">
+          <span data-lang="ko">창업 지원 신청</span>
+          <span data-lang="en" style="display:none">Apply Now</span>
+        </button>
+      </div>
+
+      <!-- Business Growth -->
+      <div class="plan-card featured reveal">
+        <div class="plan-badge" data-lang="ko">⭐ 가장 인기</div>
+        <div class="plan-badge" data-lang="en" style="display:none">⭐ Most Popular</div>
+        <span class="plan-icon" style="margin-top:12px;">💼</span>
+        <div class="plan-name">Business Growth</div>
+        <span class="plan-name-ko" data-lang="ko">비즈니스 그로스</span>
+        <div class="plan-price-row">
+          <span class="plan-price">$999</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 <strong>$480/yr</strong> · 월 $40</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Annual <strong>$480/yr</strong> · $40/mo</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">10페이지 · 프리미엄 맞춤</li>
+          <li data-lang="en" style="display:none">10 pages · Premium custom</li>
+          <li data-lang="ko">온라인 예약 시스템</li>
+          <li data-lang="en" style="display:none">Online booking system</li>
+          <li data-lang="ko">메뉴·서비스 소개 페이지</li>
+          <li data-lang="en" style="display:none">Menu & services pages</li>
+          <li data-lang="ko">Google·Yelp·인스타 연동</li>
+          <li data-lang="en" style="display:none">Google, Yelp, Instagram</li>
+          <li data-lang="ko">HebronGuide 완전 연동</li>
+          <li data-lang="en" style="display:none">Full HebronGuide listing</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Business Growth Plan')">
+          <span data-lang="ko">상담 신청</span>
+          <span data-lang="en" style="display:none">Get Started</span>
+        </button>
+      </div>
+
+      <!-- Business Pro -->
+      <div class="plan-card reveal">
+        <span class="plan-icon">🏢</span>
+        <div class="plan-name">Business Pro</div>
+        <span class="plan-name-ko" data-lang="ko">비즈니스 프로</span>
+        <div class="plan-price-row">
+          <span class="plan-price">$1,799</span>
+          <span class="plan-price-unit" data-lang="ko">제작비</span><span class="plan-price-unit" data-lang="en" style="display:none">setup</span><span class="plan-price-unit" data-lang="es" style="display:none">inicio</span><span class="plan-price-unit" data-lang="zh" style="display:none">建站费</span><span class="plan-price-unit" data-lang="tl" style="display:none">setup</span><span class="plan-price-unit" data-lang="vi" style="display:none">phí lập</span>
+        </div>
+        <span class="plan-annual" data-lang="ko">연관리비 <strong>$840/yr</strong> · 월 $70</span>
+        <span class="plan-annual" data-lang="en" style="display:none">Annual <strong>$840/yr</strong> · $70/mo</span>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li data-lang="ko">15페이지+ · 모든 기능</li>
+          <li data-lang="en" style="display:none">15+ pages · All features</li>
+          <li data-lang="ko">온라인 결제 (Stripe·PayPal)</li>
+          <li data-lang="en" style="display:none">Online payment (Stripe, PayPal)</li>
+          <li data-lang="ko">다국어 고객 응대 폼</li>
+          <li data-lang="en" style="display:none">Multilingual contact forms</li>
+          <li data-lang="ko">월간 트래픽 분석 리포트</li>
+          <li data-lang="en" style="display:none">Monthly traffic report</li>
+          <li data-lang="ko">SEO + 구글 광고 셋업</li>
+          <li data-lang="en" style="display:none">SEO + Google Ads setup</li>
+          <li class="opt" data-lang="ko">유튜브 링크 (선택)</li>
+          <li class="opt" data-lang="en" style="display:none">YouTube link (optional)</li>
+        </ul>
+        <button class="plan-cta" onclick="scrollToContact('Business Pro Plan')">
+          <span data-lang="ko">상담 신청</span>
+          <span data-lang="en" style="display:none">Get Started</span>
+        </button>
+      </div>
+
+    </div>
+    <p class="plans-note" data-lang="ko">※ 모든 금액 USD 기준 · Startup: 창업 3년 이내 사업체 적용 · 연관리비 연초 일시납</p>
+    <p class="plans-note" data-lang="en" style="display:none">※ All prices in USD · Startup: for businesses within 3 years · Annual fee prepaid</p>
+  </div>
+
+</div>
+</section>
+
+<!-- ── HOW IT WORKS ────────────────────────────────────── -->
+<section class="how-section" id="how">
+<div class="section-inner">
+  <span class="section-eyebrow" data-lang="ko">Process · 제작과정</span><span class="section-eyebrow" data-lang="en" style="display:none">Our Process</span><span class="section-eyebrow" data-lang="es" style="display:none">Nuestro Proceso</span><span class="section-eyebrow" data-lang="zh" style="display:none">制作流程</span><span class="section-eyebrow" data-lang="tl" style="display:none">Ang Aming Proseso</span><span class="section-eyebrow" data-lang="vi" style="display:none">Quy Trình Của Chúng Tôi</span>
+  <h2 class="section-title" style="color:white;" data-lang="ko">8주 안에 <em style="color:var(--gold)">완성</em>됩니다</h2>
+  <h2 class="section-title" style="color:white;" data-lang="en" style="display:none">Completed in <em style="color:var(--gold)">8 Weeks</em></h2>
+  <p class="section-desc" data-lang="ko">교회·사업체 정보만 보내주시면 나머지는 NanuriWeb이 합니다.</p>
+  <p class="section-desc" data-lang="en" style="display:none">Just send us your info — NanuriWeb handles the rest.</p>
+
+  <div class="steps-grid reveal">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title" data-lang="ko">무료 상담</div>
+      <div class="step-title" data-lang="en" style="display:none">Free Consult</div>
+      <div class="step-desc" data-lang="ko">교회·사업체 정보, 원하시는 기능, 예산을 공유해 주세요.</div>
+      <div class="step-desc" data-lang="en" style="display:none">Share your info, needs, and budget.</div>
+      <span class="step-tag">Week 1</span>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title" data-lang="ko">기획 확정</div>
+      <div class="step-title" data-lang="en" style="display:none">Planning</div>
+      <div class="step-desc" data-lang="ko">사이트맵, 디자인 방향, 콘텐츠 구성을 함께 결정합니다.</div>
+      <div class="step-desc" data-lang="en" style="display:none">Sitemap, design direction, and content plan agreed.</div>
+      <span class="step-tag">Week 1–2</span>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title" data-lang="ko">디자인·개발</div>
+      <div class="step-title" data-lang="en" style="display:none">Design & Build</div>
+      <div class="step-desc" data-lang="ko">맞춤 디자인 제작, 기능 구현, 콘텐츠 입력을 진행합니다.</div>
+      <div class="step-desc" data-lang="en" style="display:none">Custom design, development, and content entry.</div>
+      <span class="step-tag">Week 2–6</span>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title" data-lang="ko">검수·수정</div>
+      <div class="step-title" data-lang="en" style="display:none">Review & Fix</div>
+      <div class="step-desc" data-lang="ko">목사님·대표님이 직접 확인하고 수정 요청을 반영합니다.</div>
+      <div class="step-desc" data-lang="en" style="display:none">You review and request changes.</div>
+      <span class="step-tag">Week 6–7</span>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-title" data-lang="ko">오픈·연동</div>
+      <div class="step-title" data-lang="en" style="display:none">Launch</div>
+      <div class="step-desc" data-lang="ko">네이버·구글 등록, HebronGuide 연동, 카카오 연결 완료.</div>
+      <div class="step-desc" data-lang="en" style="display:none">Naver, Google, HebronGuide, KakaoTalk all connected.</div>
+      <span class="step-tag">Week 8</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── HEBRONGUIDE ────────────────────────────────────── -->
+<section class="hebron-section" id="hebron">
+<div class="section-inner">
+  <span class="section-eyebrow">HebronGuide Partnership</span>
+  <h2 class="section-title" data-lang="ko">HebronGuide와 <em>함께</em>합니다</h2>
+  <h2 class="section-title" data-lang="en" style="display:none"><em>Connected</em> with HebronGuide</h2>
+
+  <div class="hebron-card reveal">
+    <div>
+      <div class="hebron-title" data-lang="ko">
+        <span data-lang="ko">낯선 도시에서도<br><span style="color:var(--gold)">당신의 교회가 먼저</span><br>발견됩니다</span><span data-lang="en" style="display:none">Even in an unfamiliar city,<br><span style="color:var(--gold)">your church is found first</span></span><span data-lang="es" style="display:none">Incluso en una ciudad nueva,<br><span style="color:var(--gold)">tu iglesia es encontrada primero</span></span><span data-lang="zh" style="display:none">即使在陌生的城市，<br><span style="color:var(--gold)">您的教会也会被第一个发现</span></span><span data-lang="tl" style="display:none">Kahit sa bagong lungsod,<br><span style="color:var(--gold)">mahahanap muna ang iyong simbahan</span></span><span data-lang="vi" style="display:none">Dù ở thành phố xa lạ,<br><span style="color:var(--gold)">nhà thờ của bạn được tìm thấy đầu tiên</span></span>
+      </div>
+      <div class="hebron-title" data-lang="en" style="display:none">
+        Even in an unfamiliar city,<br><span>your church is found first</span>
+      </div>
+      <p class="hebron-desc" data-lang="ko">
+        <span data-lang="ko">HebronGuide.com은 전 세계 72개+ 도시 한인 이민자를 위한 정착 가이드입니다. NanuriWeb을 통해 제작된 교회·사업체 홈페이지는 HebronGuide에 자동 연동되어 귀국 한인·해외 교포가 당신의 교회와 사업체를 가장 먼저 만납니다.</span><span data-lang="en" style="display:none">HebronGuide.com is a settlement guide for Korean immigrants in 72+ cities. Websites built through NanuriWeb are automatically connected to HebronGuide so returning Koreans and diaspora find your church or business first.</span><span data-lang="es" style="display:none">HebronGuide.com es una guía de asentamiento para inmigrantes coreanos en 72+ ciudades. Los sitios web creados con NanuriWeb se conectan automáticamente a HebronGuide.</span><span data-lang="zh" style="display:none">HebronGuide.com是为全球72+城市韩国移民提供的定居指南。通过NanuriWeb制作的网站自动连接到HebronGuide。</span><span data-lang="tl" style="display:none">Ang HebronGuide.com ay isang gabay sa pamumuhay para sa mga Korean na imigrante sa 72+ lungsod.</span><span data-lang="vi" style="display:none">HebronGuide.com là hướng dẫn định cư cho người Hàn nhập cư tại 72+ thành phố trên thế giới.</span>
+      </p>
+      <p class="hebron-desc" data-lang="en" style="display:none">
+        HebronGuide.com is a settlement guide for Korean immigrants in 72+ cities worldwide.
+        Websites built through NanuriWeb are automatically connected to HebronGuide,
+        so returning Koreans and diaspora find your church or business first.
+      </p>
+      <div class="hebron-benefits">
+        <div class="hebron-benefit">
+          <span class="hebron-benefit-icon">🔍</span>
+          <div class="hebron-benefit-text">
+            <strong data-lang="ko">SEO 백링크 효과</strong>
+            <strong data-lang="en" style="display:none">SEO Backlink Boost</strong>
+            <span data-lang="ko">HebronGuide 도메인 권위로 검색 순위 자연 상승</span>
+            <span data-lang="en" style="display:none">Natural search ranking boost via HebronGuide domain authority</span>
+          </div>
+        </div>
+        <div class="hebron-benefit">
+          <span class="hebron-benefit-icon">✈️</span>
+          <div class="hebron-benefit-text">
+            <strong data-lang="ko">귀국 한인 연결</strong>
+            <strong data-lang="en" style="display:none">Returning Korean Connection</strong>
+            <span data-lang="ko">공항 도착 즉시 교회·가게를 찾는 귀국 한인에게 노출</span>
+            <span data-lang="en" style="display:none">Exposed to Koreans searching from the moment they land</span>
+          </div>
+        </div>
+        <div class="hebron-benefit">
+          <span class="hebron-benefit-icon">🌍</span>
+          <div class="hebron-benefit-text">
+            <strong data-lang="ko">글로벌 네트워크</strong>
+            <strong data-lang="en" style="display:none">Global Network</strong>
+            <span data-lang="ko">GMC Seattle 등 글로벌 한인 교회 네트워크 연결</span>
+            <span data-lang="en" style="display:none">Connected to global Korean church networks including GMC Seattle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-bottom:12px;font-family:var(--font-data);letter-spacing:1px;text-transform:uppercase;">72+ Cities</div>
+      <div class="hebron-cities">
+        <a class="hebron-city" href="https://hebronguide.com/seattle/" target="_blank" rel="noopener">🏔️ Seattle</a>
+        <a class="hebron-city" href="https://hebronguide.com/la/" target="_blank" rel="noopener">🌴 LA</a>
+        <a class="hebron-city" href="https://hebronguide.com/newyork/" target="_blank" rel="noopener">🗽 New York</a>
+        <a class="hebron-city" href="https://hebronguide.com/dallas/" target="_blank" rel="noopener">🤠 Dallas</a>
+        <a class="hebron-city" href="https://hebronguide.com/sf/" target="_blank" rel="noopener">🌉 SF</a>
+        <a class="hebron-city" href="https://hebronguide.com/houston/" target="_blank" rel="noopener">🛢️ Houston</a>
+        <a class="hebron-city" href="https://hebronguide.com/chicago/" target="_blank" rel="noopener">🌆 Chicago</a>
+        <a class="hebron-city" href="https://hebronguide.com/atlanta/" target="_blank" rel="noopener">🍑 Atlanta</a>
+        <a class="hebron-city" href="https://hebronguide.com/dc/" target="_blank" rel="noopener">🏛️ DC</a>
+        <a class="hebron-city" href="https://hebronguide.com/paris/" target="_blank" rel="noopener">🗼 Paris</a>
+        <a class="hebron-city" href="https://hebronguide.com/london/" target="_blank" rel="noopener">🎡 London</a>
+        <a class="hebron-city" href="https://hebronguide.com/singapore/" target="_blank" rel="noopener">🦁 Singapore</a>
+        <a class="hebron-city" href="https://hebronguide.com/seoul/" target="_blank" rel="noopener">🏯 Seoul</a>
+        <a class="hebron-city" href="https://hebronguide.com/busan/" target="_blank" rel="noopener">🌊 Busan</a>
+        <a class="hebron-city" href="https://hebronguide.com/toronto/" target="_blank" rel="noopener">🍁 Toronto</a>
+        <a class="hebron-city" href="https://hebronguide.com/sydney/" target="_blank" rel="noopener">🦘 Sydney</a>
+        <a class="hebron-city" href="https://hebronguide.com/saopaulo/" target="_blank" rel="noopener">🇧🇷 São Paulo</a>
+        <a class="hebron-city" href="https://hebronguide.com/dubai/" target="_blank" rel="noopener">🏙️ Dubai</a>
+        <a class="hebron-city-more" href="https://hebronguide.com" target="_blank" rel="noopener" data-lang="ko">+ 54개 도시 더 →</a><a class="hebron-city-more" href="https://hebronguide.com" target="_blank" rel="noopener" data-lang="en" style="display:none">+ 54 more cities →</a><a class="hebron-city-more" href="https://hebronguide.com" target="_blank" rel="noopener" data-lang="es" style="display:none">+ 54 ciudades más →</a><a class="hebron-city-more" href="https://hebronguide.com" target="_blank" rel="noopener" data-lang="zh" style="display:none">+ 54个城市 →</a><a class="hebron-city-more" href="https://hebronguide.com" target="_blank" rel="noopener" data-lang="tl" style="display:none">+ 54 pang lungsod →</a><a class="hebron-city-more" href="https://hebronguide.com" target="_blank" rel="noopener" data-lang="vi" style="display:none">+ 54 thành phố nữa →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── MINORITY MARKET ────────────────────────────────── -->
+<section class="market-section" id="market">
+<div class="section-inner">
+  <span class="section-eyebrow" data-lang="ko">Multilingual · 다국어 서비스</span><span class="section-eyebrow" data-lang="en" style="display:none">Multilingual Service</span><span class="section-eyebrow" data-lang="es" style="display:none">Servicio Multilingüe</span><span class="section-eyebrow" data-lang="zh" style="display:none">多语言服务</span><span class="section-eyebrow" data-lang="tl" style="display:none">Serbisyong Maraming Wika</span><span class="section-eyebrow" data-lang="vi" style="display:none">Dịch Vụ Đa Ngôn Ngữ</span>
+  <h2 class="section-title" data-lang="ko">미국 <em>소수민족 교회·사업체</em>를 함께 섬깁니다</h2>
+  <h2 class="section-title" data-lang="en" style="display:none">Serving <em>Minority Immigrant</em> Churches & Businesses</h2>
+  <p class="section-desc" data-lang="ko">
+    <span data-lang="ko">한인만을 위한 서비스가 아닙니다. HebronGuide의 비전처럼 — 모든 민족을 향합니다.</span><span data-lang="en" style="display:none">Not just for Koreans. Like HebronGuide's vision — for every nation.</span><span data-lang="es" style="display:none">No solo para coreanos. Como la visión de HebronGuide — para todas las naciones.</span><span data-lang="zh" style="display:none">不仅为韩国人服务。如同HebronGuide的愿景——面向所有民族。</span><span data-lang="tl" style="display:none">Hindi lamang para sa mga Koreano. Tulad ng bisyon ng HebronGuide — para sa lahat ng bansa.</span><span data-lang="vi" style="display:none">Không chỉ cho người Hàn. Như tầm nhìn của HebronGuide — cho mọi dân tộc.</span>
+  </p>
+  <p class="section-desc" data-lang="en" style="display:none">
+    Not just for Koreans. Like HebronGuide's vision — for every nation.
+  </p>
+
+  <div class="market-grid reveal">
+    <div class="market-card">
+      <span class="market-flag">🇰🇷</span>
+      <span class="market-lang" data-lang="ko">한국어 · Korean</span><span class="market-lang" data-lang="en" style="display:none">Korean</span><span class="market-lang" data-lang="es" style="display:none">Coreano</span><span class="market-lang" data-lang="zh" style="display:none">韩语</span><span class="market-lang" data-lang="tl" style="display:none">Korean</span><span class="market-lang" data-lang="vi" style="display:none">Tiếng Hàn</span>
+      <span class="market-count">~3,500 churches in USA</span>
+    </div>
+    <div class="market-card">
+      <span class="market-flag">🇺🇸</span>
+      <span class="market-lang">English</span>
+      <span class="market-count">All immigrant churches</span>
+    </div>
+    <div class="market-card">
+      <span class="market-flag">🇪🇸</span>
+      <span class="market-lang">Español</span>
+      <span class="market-count">~50,000 Hispanic churches</span>
+    </div>
+    <div class="market-card">
+      <span class="market-flag">🇨🇳</span>
+      <span class="market-lang">中文</span>
+      <span class="market-count">~2,000 Chinese churches</span>
+    </div>
+    <div class="market-card">
+      <span class="market-flag">🇵🇭</span>
+      <span class="market-lang">Filipino</span>
+      <span class="market-count">~2,000 Filipino churches</span>
+    </div>
+    <div class="market-card">
+      <span class="market-flag">🇻🇳</span>
+      <span class="market-lang">Tiếng Việt</span>
+      <span class="market-count">~1,500 Vietnamese churches</span>
+    </div>
+    <div class="market-card">
+      <span class="market-flag">🇸🇦</span>
+      <span class="market-lang">العربية</span>
+      <span class="market-count">Arabic-speaking churches</span>
+    </div>
+    <div class="market-card">
+      <span class="market-flag">🇧🇷</span>
+      <span class="market-lang">Português</span>
+      <span class="market-count">Brazilian churches</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── AI COMPARISON ──────────────────────────────────── -->
+<section class="ai-section" id="why">
+<div class="section-inner">
+  <span class="section-eyebrow" data-lang="ko">Why NanuriWeb · 왜 나누리웹인가</span><span class="section-eyebrow" data-lang="en" style="display:none">Why NanuriWeb</span><span class="section-eyebrow" data-lang="es" style="display:none">¿Por Qué NanuriWeb?</span><span class="section-eyebrow" data-lang="zh" style="display:none">为什么选择 NanuriWeb</span><span class="section-eyebrow" data-lang="tl" style="display:none">Bakit NanuriWeb</span><span class="section-eyebrow" data-lang="vi" style="display:none">Tại Sao NanuriWeb</span>
+  <h2 class="section-title" data-lang="ko">AI 빌더로 만든 홈페이지와<br><em>무엇이 다른가요?</em></h2>
+  <h2 class="section-title" data-lang="en" style="display:none">How is NanuriWeb different<br>from <em>AI website builders?</em></h2>
+
+  <div class="ai-compare">
+    <div class="ai-card reveal">
+      <div class="ai-card-title">
+        🤖
+        <span data-lang="ko">AI 빌더 (Wix AI, Squarespace 등)</span>
+        <span data-lang="en" style="display:none">AI Builders (Wix, Squarespace, etc.)</span>
+      </div>
+      <ul class="ai-list good">
+        <li data-lang="ko">빠르게 만들 수 있음</li>
+        <li data-lang="en" style="display:none">Fast to build</li>
+        <li data-lang="ko">디자인이 깔끔함</li>
+        <li data-lang="en" style="display:none">Clean design</li>
+        <li data-lang="ko">저렴한 월 구독료</li>
+        <li data-lang="en" style="display:none">Low monthly cost</li>
+      </ul>
+      <hr class="plan-divider">
+      <ul class="ai-list bad">
+        <li data-lang="ko">한국어 SEO 최적화 불가</li>
+        <li data-lang="en" style="display:none">No Korean SEO optimization</li>
+        <li data-lang="ko">네이버 검색 등록 불가</li>
+        <li data-lang="en" style="display:none">No Naver search registration</li>
+        <li data-lang="ko">카카오채널 실연동 불가</li>
+        <li data-lang="en" style="display:none">No real KakaoTalk integration</li>
+        <li data-lang="ko">HebronGuide 연동 불가</li>
+        <li data-lang="en" style="display:none">No HebronGuide connection</li>
+        <li data-lang="ko">장로회·당회 기획서 없음</li>
+        <li data-lang="en" style="display:none">No church board proposal</li>
+        <li data-lang="ko">6개월 후 방치되는 홈페이지</li>
+        <li data-lang="en" style="display:none">Abandoned after 6 months</li>
+        <li data-lang="ko">한국 교회 문화 이해 없음</li>
+        <li data-lang="en" style="display:none">No Korean church culture understanding</li>
+      </ul>
+    </div>
+
+    <div class="ai-vs">VS</div>
+
+    <div class="ai-card nanuri reveal">
+      <div class="ai-card-title" style="color:var(--gold)">
+        ✦
+        <span data-lang="ko">NanuriWeb (나누리웹)</span>
+        <span data-lang="en" style="display:none">NanuriWeb</span>
+      </div>
+      <ul class="ai-list nanuri-list">
+        <li data-lang="ko">한국어·네이버 SEO 완전 최적화</li>
+        <li data-lang="en" style="display:none">Full Korean & Naver SEO</li>
+        <li data-lang="ko">카카오채널 실계정 연동</li>
+        <li data-lang="en" style="display:none">Real KakaoTalk integration</li>
+        <li data-lang="ko">HebronGuide 72개 도시 연동</li>
+        <li data-lang="en" style="display:none">Connected to 72+ HebronGuide cities</li>
+        <li data-lang="ko">장로회·당회 심의용 기획서 제공</li>
+        <li data-lang="en" style="display:none">Official church board proposal</li>
+        <li data-lang="ko">목사님 1:1 온보딩 파트너십</li>
+        <li data-lang="en" style="display:none">1:1 pastor onboarding partnership</li>
+        <li data-lang="ko">개척교회 2년 무료 섬김</li>
+        <li data-lang="en" style="display:none">Church plant free for 2 years</li>
+        <li data-lang="ko">월 콘텐츠 업로드 대행</li>
+        <li data-lang="en" style="display:none">Monthly content management</li>
+        <li data-lang="ko">한국 교회 문화 완전 이해</li>
+        <li data-lang="en" style="display:none">Full Korean church culture understanding</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section class="contact-section" id="contact">
+<div class="section-inner">
+  <span class="section-eyebrow" data-lang="ko">Contact · 무료 상담</span><span class="section-eyebrow" data-lang="en" style="display:none">Free Consultation</span><span class="section-eyebrow" data-lang="es" style="display:none">Consulta Gratuita</span><span class="section-eyebrow" data-lang="zh" style="display:none">免费咨询</span><span class="section-eyebrow" data-lang="tl" style="display:none">Libreng Konsulta</span><span class="section-eyebrow" data-lang="vi" style="display:none">Tư Vấn Miễn Phí</span>
+  <h2 class="section-title" data-lang="ko">지금 바로 <em style="color:var(--gold)">시작</em>하세요</h2>
+  <h2 class="section-title" data-lang="en" style="display:none"><em style="color:var(--gold)">Start</em> Today</h2>
+  <p class="section-desc" data-lang="ko">무료 상담 신청 후 48시간 이내에 연락드립니다.</p>
+  <p class="section-desc" data-lang="en" style="display:none">We'll contact you within 48 hours after your inquiry.</p>
+
+  <div class="contact-grid">
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <label data-lang="ko">교회·사업체명 <span>*</span></label>
+        <label data-lang="en" style="display:none">Church / Business Name <span>*</span></label>
+        <input type="text" id="c-name" placeholder="예: 예수생명교회 / Jesus Life Church">
+      </div>
+      <div class="form-row-2">
+        <div class="form-row">
+          <label data-lang="ko">담임목사·대표자 <span>*</span></label>
+          <label data-lang="en" style="display:none">Pastor / Owner <span>*</span></label>
+          <input type="text" id="c-pastor" placeholder="홍길동 목사 / Rev. Hong">
+        </div>
+        <div class="form-row">
+          <label data-lang="ko">연락처 <span>*</span></label>
+          <label data-lang="en" style="display:none">Phone <span>*</span></label>
+          <input type="tel" id="c-phone" placeholder="010-0000-0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Email <span>*</span></label>
+        <input type="email" id="c-email" placeholder="pastor@church.com">
+      </div>
+      <div class="form-row">
+        <label data-lang="ko">관심 플랜</label>
+        <label data-lang="en" style="display:none">Interested Plan</label>
+        <select id="c-plan">
+          <option value="" data-ko="-- 선택해 주세요 --" data-en="-- Select a Plan --" data-es="-- Selecciona un Plan --" data-zh="-- 请选择方案 --" data-tl="-- Pumili ng Plano --" data-vi="-- Chọn Gói --">-- 선택해 주세요 / Select --</option>
+          <optgroup id="og-church" label="⛪ 교회 Church">
+            <option>🏠 House Church — 무료 상담 (Free Consultation)</option>
+            <option>Church Plant Plan ($299) — Church Plant Special</option>
+            <option>Starter Plan ($499)</option>
+            <option>Growth Plan ($799) ⭐</option>
+            <option>Pro Plan ($1,299)</option>
+          </optgroup>
+          <optgroup id="og-biz" label="🏪 사업체 Business">
+            <option>Solo Plan ($299)</option>
+            <option>Startup Plan ($449) — New Business Special</option>
+            <option>Business Growth ($999) ⭐</option>
+            <option>Business Pro ($1,799)</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-row">
+        <label data-lang="ko">미디어 연동 (선택)</label>
+        <label data-lang="en" style="display:none">Media Options (optional)</label>
+        <div class="media-check-row">
+          <label class="media-check">
+            <input type="checkbox" id="c-yt">
+            <span data-lang="ko">▶ 유튜브 YouTube</span><span data-lang="en" style="display:none">▶ YouTube</span><span data-lang="es" style="display:none">▶ YouTube</span><span data-lang="zh" style="display:none">▶ YouTube</span><span data-lang="tl" style="display:none">▶ YouTube</span><span data-lang="vi" style="display:none">▶ YouTube</span>
+          </label>
+          <label class="media-check">
+            <input type="checkbox" id="c-audio">
+            <span data-lang="ko">🎵 오디오 Audio</span><span data-lang="en" style="display:none">🎵 Audio</span><span data-lang="es" style="display:none">🎵 Audio</span><span data-lang="zh" style="display:none">🎵 音频</span><span data-lang="tl" style="display:none">🎵 Audio</span><span data-lang="vi" style="display:none">🎵 Âm Thanh</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-row">
+        <label data-lang="ko">메시지</label>
+        <label data-lang="en" style="display:none">Message</label>
+        <textarea id="c-msg" placeholder="교회·사업체 소개 / Describe your church or business..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">
+        <span data-lang="ko">✅ 무료 상담 신청하기</span>
+        <span data-lang="en" style="display:none">✅ Request Free Consultation</span>
+        <span data-lang="es" style="display:none">✅ Solicitar Consulta Gratis</span>
+      </button>
+    </div>
+
+    <div class="contact-info reveal">
+      <h3 data-lang="ko">함께 시작합시다</h3>
+      <h3 data-lang="en" style="display:none">Let's Start Together</h3>
+      <p data-lang="ko">
+        <span data-lang="ko">목사님, 대표님 — 기술이 어렵고 예산이 부담스러우셔도 괜찮습니다.<br>NanuriWeb이 처음부터 끝까지 함께합니다.<br>장로회·당회 심의용 기획서도 함께 준비해 드립니다.</span><span data-lang="en" style="display:none">Pastor, business owner — technology can be intimidating and budgets are tight. NanuriWeb walks with you from start to finish. We'll even prepare your church board proposal.</span><span data-lang="es" style="display:none">Pastor, dueño de negocio — la tecnología puede ser intimidante. NanuriWeb camina contigo de principio a fin. También preparamos tu propuesta para la junta de la iglesia.</span><span data-lang="zh" style="display:none">牧师、企业主——技术可能很难，预算也有限。NanuriWeb从头到尾陪伴您。我们还会准备教会董事会提案。</span><span data-lang="tl" style="display:none">Pastor, may-ari ng negosyo — maaaring mahirap ang teknolohiya. Sasamahan kayo ng NanuriWeb mula simula hanggang katapusan.</span><span data-lang="vi" style="display:none">Mục sư, chủ doanh nghiệp — công nghệ có thể khó khăn. NanuriWeb đồng hành cùng bạn từ đầu đến cuối.</span>
+      </p>
+      <p data-lang="en" style="display:none">
+        Pastor, business owner — technology can be intimidating and budgets are tight.
+        NanuriWeb walks with you from start to finish.
+        We'll even prepare your church board proposal.
+      </p>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📧</span>
+          <span>hebronplatform@gmail.com</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">🌐</span>
+          <span>NanuriWeb.com</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <span>Hebron Platform LLC · Seattle, WA</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">⏱️</span>
+          <span data-i18n="response" data-lang="ko">48시간 이내 답변</span>
+        </div>
+      </div>
+      <div class="contact-scripture">
+        <p data-lang="ko">"나그네 대접하기를 잊지 마십시오. 어떤 사람들은 나그네를 대접하다가 자기도 모르는 사이에 천사들을 대접하였습니다"</p>
+        <p data-lang="en" style="display:none">"Do not forget to show hospitality to strangers, for by so doing some have shown hospitality to angels without knowing it."</p>
+        <cite data-lang="ko">— 히브리서 Hebrews 13:2</cite><cite data-lang="en" style="display:none">— Hebrews 13:2</cite><cite data-lang="es" style="display:none">— Hebreos 13:2</cite><cite data-lang="zh" style="display:none">— 希伯来书 13:2</cite><cite data-lang="tl" style="display:none">— Hebreo 13:2</cite><cite data-lang="vi" style="display:none">— Hê-bơ-rơ 13:2</cite>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">NanuriWeb<span data-lang="ko"> (나누리웹)</span><span data-lang="en" style="display:none"> — Korean Church & Biz Websites</span><span data-lang="es" style="display:none"> — Sitios Web para Iglesias</span><span data-lang="zh" style="display:none"> — 教会网站专家</span><span data-lang="tl" style="display:none"> — Website para sa Simbahan</span><span data-lang="vi" style="display:none"> — Website cho Nhà Thờ</span></div>
+  <p class="footer-sub">
+    Hebron Platform LLC · Seattle, WA · <a href="mailto:hebronplatform@gmail.com">hebronplatform@gmail.com</a><br>
+    Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 72+ Cities Worldwide<br>
+    © 2026 Hebron Platform LLC. All rights reserved.
+  </p>
+</footer>
+
+<script>
+/* ── 타이핑 애니메이션 ──────────────────────────────── */
+const phrases = {
+  ko: ["세상과 연결됩니다", "온라인으로 열립니다", "더 많은 사람을 만납니다"],
+  en: ["Connected to the World", "Open to Everyone Online", "Reaching More People"],
+  es: ["Conectada al Mundo", "Abierta en Línea", "Alcanzando Más Personas"],
+  zh: ["与世界相连", "在线开放", "触达更多人"],
+  tl: ["Kumokonekta sa Mundo", "Bukas Online", "Umaabot sa Mas Marami"],
+  vi: ["Kết Nối Với Thế Giới", "Mở Ra Trực Tuyến", "Tiếp Cận Nhiều Hơn"]
+};
+
+let currentLang = 'ko';
+let phraseIdx = 0;
+let charIdx = 0;
+let isDeleting = false;
+let typingTimer;
+
+function type() {
+  const el = document.getElementById('typing-text');
+  if (!el) return;
+  const list = phrases[currentLang] || phrases.ko;
+  const current = list[phraseIdx % list.length];
+
+  if (!isDeleting) {
+    el.textContent = current.substring(0, ++charIdx);
+    if (charIdx === current.length) {
+      isDeleting = true;
+      typingTimer = setTimeout(type, 2200);
+      return;
+    }
+  } else {
+    el.textContent = current.substring(0, --charIdx);
+    if (charIdx === 0) {
+      isDeleting = false;
+      phraseIdx++;
+    }
+  }
+  typingTimer = setTimeout(type, isDeleting ? 60 : 110);
+}
+
+type();
+
+/* ── 언어 전환 ─────────────────────────────────────── */
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    const tag = el.tagName.toLowerCase();
+    const isInline = ['span','a','strong','em','cite'].includes(tag);
+    el.style.display = el.dataset.lang === lang
+      ? (isInline ? 'inline' : 'block')
+      : 'none';
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang ||
+      (lang === 'ko' && btn.textContent.includes('한국')) ||
+      (lang === 'en' && btn.textContent === 'EN') ||
+      (lang === 'es' && btn.textContent === 'ES') ||
+      (lang === 'zh' && btn.textContent === '中文') ||
+      (lang === 'tl' && btn.textContent === 'FIL') ||
+      (lang === 'vi' && btn.textContent === 'VI')
+    );
+  });
+  charIdx = 0; isDeleting = false; phraseIdx = 0;
+  clearTimeout(typingTimer);
+  type();
+
+  // optgroup 레이블 다국어
+  const ogLabels = {
+    ko: { church: '⛪ 교회 Church', biz: '🏪 사업체 Business' },
+    en: { church: '⛪ Church', biz: '🏪 Business' },
+    es: { church: '⛪ Iglesia', biz: '🏪 Negocio' },
+    zh: { church: '⛪ 教会', biz: '🏪 企业' },
+    tl: { church: '⛪ Simbahan', biz: '🏪 Negosyo' },
+    vi: { church: '⛪ Nhà Thờ', biz: '🏪 Doanh Nghiệp' },
+  };
+  const titles={'ko': 'NanuriWeb — 교회·사업체 홈페이지 전문 | Hebron Platform LLC', 'en': 'NanuriWeb — Church & Business Websites | Hebron Platform LLC', 'es': 'NanuriWeb — Sitios Web para Iglesias | Hebron Platform LLC', 'zh': 'NanuriWeb — 教会网站专家 | Hebron Platform LLC', 'tl': 'NanuriWeb — Website para sa Simbahan | Hebron Platform LLC', 'vi': 'NanuriWeb — Website cho Nhà Thờ | Hebron Platform LLC'};
+  const pt=document.getElementById('page-title');
+  if(pt) pt.textContent=titles[lang]||titles.ko;
+
+  const og = ogLabels[lang] || ogLabels.ko;
+  const ogc = document.getElementById('og-church');
+  const ogb = document.getElementById('og-biz');
+  if (ogc) ogc.label = og.church;
+  if (ogb) ogb.label = og.biz;
+
+  // select placeholder 다국어
+  const ph = document.querySelector('option[data-ko]');
+  if (ph) ph.textContent = ph.dataset[lang] || ph.dataset.ko;
+
+  // contact detail 텍스트
+  const ctLabels = {
+    ko: '48시간 이내 답변', en: 'Response within 48 hours',
+    es: 'Respuesta en 48 horas', zh: '48小时内回复',
+    tl: 'Tugon sa loob ng 48 oras', vi: 'Trả lời trong 48 giờ'
+  };
+  document.querySelectorAll('.contact-detail span[data-i18n="response"]').forEach(el => {
+    el.textContent = ctLabels[lang] || ctLabels.ko;
+  });
+}
+
+/* ── 세그먼트 탭 ────────────────────────────────────── */
+function showSeg(seg) {
+  document.querySelectorAll('.seg-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.seg-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + seg).classList.add('active');
+  document.getElementById('tab-' + seg).classList.add('active');
+}
+
+/* ── 문의폼 플랜 자동입력 ───────────────────────────── */
+function scrollToContact(plan) {
+  document.getElementById('c-plan').value = plan;
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ── 문의 제출 (FormSubmit AJAX) ───────────────────── */
+function submitForm() {
+  const name  = document.getElementById('c-name').value.trim();
+  const email = document.getElementById('c-email').value.trim();
+  if (!name || !email) {
+    alert(currentLang==='ko'
+      ? '교회·사업체명과 이메일을 입력해 주세요.'
+      : 'Please enter your church/business name and email.');
+    return;
+  }
+
+  const pastor = document.getElementById('c-pastor').value.trim();
+  const phone  = document.getElementById('c-phone').value.trim();
+  const plan   = document.getElementById('c-plan').value;
+  const yt     = document.getElementById('c-yt').checked    ? '유튜브 YouTube' : '';
+  const audio  = document.getElementById('c-audio').checked ? '오디오 Audio'   : '';
+  const media  = [yt, audio].filter(Boolean).join(' + ') || '선택 없음';
+  const msg    = document.getElementById('c-msg').value.trim();
+
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = currentLang==='ko' ? '⏳ 전송 중...' : '⏳ Sending...';
+  btn.disabled = true;
+
+  const fd = new FormData();
+  fd.append('교회_사업체명',   name);
+  fd.append('담임목사_대표자', pastor || '—');
+  fd.append('연락처',          phone  || '—');
+  fd.append('email',           email);
+  fd.append('관심_플랜',       plan   || '미선택');
+  fd.append('미디어_연동',     media);
+  fd.append('메시지',          msg    || '—');
+  fd.append('_subject',   '[NanuriWeb] 무료 상담 신청 — ' + name);
+  fd.append('_template',  'table');
+  fd.append('_captcha',   'false');
+
+  fetch('https://formsubmit.co/ajax/Hebronplatform@gmail.com', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: fd
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.success === 'true' || d.success === true) {
+      btn.innerHTML = currentLang==='ko'
+        ? '✅ 신청 완료! 48시간 이내 연락드립니다.'
+        : '✅ Submitted! We will contact you within 48 hours.';
+      btn.style.background = '#1A7F5A';
+      ['c-name','c-pastor','c-phone','c-email','c-msg'].forEach(function(id){
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('c-plan').selectedIndex = 0;
+      document.getElementById('c-yt').checked   = false;
+      document.getElementById('c-audio').checked = false;
+    } else {
+      btn.innerHTML = currentLang==='ko'
+        ? '❌ 오류 발생 — hebronplatform@gmail.com 으로 직접 연락주세요.'
+        : '❌ Error — please email hebronplatform@gmail.com directly.';
+      btn.style.background = '#c0392b';
+      btn.disabled = false;
+    }
+  })
+  .catch(function() {
+    btn.innerHTML = currentLang==='ko'
+      ? '❌ 전송 실패 — hebronplatform@gmail.com 으로 직접 연락주세요.'
+      : '❌ Send failed — please email hebronplatform@gmail.com directly.';
+    btn.style.background = '#c0392b';
+    btn.disabled = false;
+  });
+}
+
+/* ── 스크롤 리빌 ────────────────────────────────────── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
