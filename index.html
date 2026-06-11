@@ -260,6 +260,36 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 .s-btn:hover .s-lbl{color:rgba(255,255,255,.7);}
 .share-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--emerald);color:#fff;padding:12px 28px;border-radius:50px;font-size:14px;font-weight:600;opacity:0;transition:all .3s ease;pointer-events:none;z-index:9999;white-space:nowrap;}
 .share-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ── WHY NANURIWEB SECTION ── */
+.why-section{background:var(--ivory);padding:80px 24px;border-bottom:1px solid rgba(11,22,40,.07);}
+.why-inner{max-width:1060px;margin:0 auto;}
+.why-header{text-align:center;margin-bottom:52px;}
+.why-kicker{font-size:11px;font-family:var(--font-n);font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:block;}
+.why-h2{font-family:var(--font-d);font-size:clamp(22px,3vw,36px);font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:12px;}
+.why-sub{font-size:14px;color:var(--gray);max-width:600px;margin:0 auto;line-height:1.8;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:860px){.why-grid{grid-template-columns:1fr;}}
+.why-card{background:white;border-radius:var(--rl);padding:32px 28px;border:1.5px solid var(--border);transition:all .28s;position:relative;}
+.why-card:hover{box-shadow:var(--shl);transform:translateY(-5px);}
+.why-card.featured{border-color:var(--gold);background:var(--gold-pale);box-shadow:0 6px 28px rgba(201,168,76,.14);}
+.why-card-tag{display:inline-block;font-size:10px;font-family:var(--font-n);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+.why-card-tag.vs{background:rgba(11,22,40,.07);color:var(--navy);border:1px solid rgba(11,22,40,.12);}
+.why-card-tag.excl{background:rgba(201,168,76,.15);color:#8B6914;border:1px solid rgba(201,168,76,.3);}
+.why-card-tag.spec{background:rgba(26,127,90,.1);color:#0f5237;border:1px solid rgba(26,127,90,.25);}
+.why-card-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.why-card-icon svg{width:28px;height:28px;}
+.why-card-title{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.4;}
+.why-card-body{font-size:13px;color:var(--gray);line-height:1.85;margin-bottom:16px;}
+.why-card-note{font-size:12px;font-weight:700;color:var(--navy);font-family:var(--font-n);opacity:.6;}
+
+/* ── URGENCY STRIP ── */
+.urgency-strip{background:linear-gradient(90deg,#0a1524 0%,#0d1e38 50%,#0a1524 100%);border-top:1px solid rgba(201,168,76,.25);border-bottom:1px solid rgba(201,168,76,.25);padding:13px 24px;text-align:center;font-size:13px;color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.urgency-strip strong{color:var(--gold-light);font-weight:700;}
+.urgency-strip a{color:var(--gold);font-weight:700;text-decoration:none;padding:3px 10px;border:1px solid rgba(201,168,76,.4);border-radius:6px;transition:all .2s;}
+.urgency-strip a:hover{background:rgba(201,168,76,.12);border-color:var(--gold);}
+.urgency-pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:#f87171;animation:upulse 1.9s ease-in-out infinite;flex-shrink:0;}
+@keyframes upulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(248,113,113,.4);}50%{opacity:.7;box-shadow:0 0 0 5px rgba(248,113,113,0);}}
 </style>
 </head>
 <body>
@@ -299,13 +329,13 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="hero-eyebrow" data-i18n="hero.eyebrow">✦ 교회 · 사업체 홈페이지 전문</div>
 
     <h1 class="hero-title">
-      <span data-i18n="hero.title1">홈페이지가 필요하세요?</span><br>
-      <span class="gold" data-i18n="hero.title2">요금을 먼저 확인하세요</span>
+      <span data-i18n="hero.title1">교회도, 사업체도</span><br>
+      <span class="gold" data-i18n="hero.title2">온라인에서 첫날부터 발견됩니다</span>
     </h1>
 
     <p class="hero-desc" data-i18n-html="hero.desc">
-      교회도, 사업체도. <strong>$299~부터, 빠른 제작.</strong><br>
-      아래에서 원하시는 유형을 선택해 주세요.
+      제작 즉시 <strong>HebronGuide 500개+ 도시 자동 등재.</strong><br>
+      한국어 전담 상담 · 일회 제작비 · 숨겨진 비용 없음 · <strong>$299~</strong>
     </p>
 
     <div class="hero-fork">
@@ -338,6 +368,72 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
   </div>
 </section>
+
+
+<!-- WHY NANURIWEB — 경쟁 차별화 섹션 -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-header">
+      <span class="why-kicker">왜 NanuriWeb인가 · Why NanuriWeb</span>
+      <h2 class="why-h2">템플릿 서비스와는 다릅니다<br><span style="color:var(--gold);">한인 교회·사업체 전문 맞춤 제작</span></h2>
+      <p class="why-sub">Ministry Brands·Wix·Squarespace는 모든 교회가 같아 보입니다. 우리는 처음부터 당신의 교회·사업체만을 위해 설계합니다.</p>
+    </div>
+
+    <div class="why-grid">
+
+      <!-- 카드 1: 맞춤 제작 vs 템플릿 -->
+      <div class="why-card reveal">
+        <div class="why-card-tag vs">vs 템플릿 서비스</div>
+        <div class="why-card-icon" style="background:rgba(11,22,40,.07);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <h3 class="why-card-title">100% 완전 맞춤 제작</h3>
+        <p class="why-card-body">Ministry Brands·Wix는 수백 교회가 똑같은 템플릿을 씁니다. NanuriWeb은 처음부터 당신의 교회·사업체만을 위해 설계합니다. 비슷한 홈페이지? 없습니다.</p>
+        <div class="why-card-note">→ 당회·장로회 기획서도 함께 준비해 드립니다</div>
+      </div>
+
+      <!-- 카드 2: HebronGuide 독점 혜택 (featured) -->
+      <div class="why-card featured reveal">
+        <div class="why-card-tag excl">독점 혜택 · Exclusive</div>
+        <div class="why-card-icon" style="background:rgba(201,168,76,.15);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9.5"/>
+            <path d="M12 2.5C9.5 6 9.5 18 12 21.5M12 2.5C14.5 6 14.5 18 12 21.5"/>
+            <path d="M2.5 12Q7 10 12 12Q17 14 21.5 12"/>
+          </svg>
+        </div>
+        <h3 class="why-card-title">HebronGuide 500개+ 도시<br>자동 등재 — 어디도 없는 혜택</h3>
+        <p class="why-card-body">홈페이지 완성 즉시 전 세계 500개+ 도시 한인 네트워크에 자동 등재됩니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.</p>
+        <div class="why-card-note">→ HebronGuide.com — 한인 최대 글로벌 디렉터리</div>
+      </div>
+
+      <!-- 카드 3: 한국어 전담 파트너십 -->
+      <div class="why-card reveal">
+        <div class="why-card-tag spec">한인 교회·사업체 전문</div>
+        <div class="why-card-icon" style="background:rgba(26,127,90,.1);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+            <path d="M12 7V3M8 7V4M16 7V4"/>
+          </svg>
+        </div>
+        <h3 class="why-card-title">한국어 전담 · 48시간 응답<br>만족할 때까지 무제한 수정</h3>
+        <p class="why-card-body">영어 장벽 없이 목사님·대표님과 한국어로 직접 소통합니다. 오픈 후에도 연관리비 내에서 끝까지 함께합니다. 숨겨진 비용, 없습니다.</p>
+        <div class="why-card-note">→ 일회 제작비 · 연관리비 투명 공개</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY STRIP — 이달 마감 -->
+<div class="urgency-strip">
+  <span class="urgency-pulse"></span>
+  <span>이번 달 신규 접수 <strong>3건 남음</strong> — Church Plant 무료 기획서 포함</span>
+  <a href="#contact">지금 신청하기 →</a>
+</div>
 
 
 <!-- PLANS -->
@@ -965,8 +1061,8 @@ const LANG = {
     'nav.sub':'교회 · 사업체 홈페이지 전문',
     'nav.plans':'요금 보기','nav.about':'회사 소개','nav.cta':'신청하기',
     'hero.eyebrow':'✦ 교회 · 사업체 홈페이지 전문',
-    'hero.title1':'홈페이지가 필요하세요?','hero.title2':'요금을 먼저 확인하세요',
-    'hero.desc':'교회도, 사업체도. <strong>$299~부터, 빠른 제작.</strong><br>아래에서 원하시는 유형을 선택해 주세요.',
+    'hero.title1':'교회도, 사업체도','hero.title2':'온라인에서 첫날부터 발견됩니다',
+    'hero.desc':'제작 즉시 <strong>HebronGuide 500개+ 도시 자동 등재.</strong><br>한국어 전담 상담 · 일회 제작비 · 숨겨진 비용 없음 · <strong>$299~</strong>',
     'fork.church.title':'교회 홈페이지','fork.church.desc':'Starter $499 · Growth $799 · Pro $1,299',
     'fork.church.tag':'Church Plant $299 · House Church 무료 상담',
     'fork.biz.title':'사업체 · 기관 · 단체','fork.biz.desc':'Solo $299 · Growth $999 · Pro $1,799',
@@ -1079,8 +1175,8 @@ const LANG = {
     'nav.sub':'Church & Business Websites',
     'nav.plans':'Pricing','nav.about':'About','nav.cta':'Get Started',
     'hero.eyebrow':'✦ Church & Business Website Specialists',
-    'hero.title1':'Need a website?','hero.title2':'Check pricing first',
-    'hero.desc':'Church or business. <strong>From $299, fast turnaround.</strong><br>Choose your type below.',
+    'hero.title1':'Church or Business —','hero.title2':'Found online from Day One',
+    'hero.desc':'Instantly listed on <strong>HebronGuide 500+ cities</strong> worldwide.<br>Korean-speaking partner · One-time fee · No hidden costs · <strong>From $299</strong>',
     'fork.church.title':'Church Website','fork.church.desc':'Starter $499 · Growth $799 · Pro $1,299',
     'fork.church.tag':'Church Plant $299 · House Church Free Consult',
     'fork.biz.title':'Business · Org · Group','fork.biz.desc':'Solo $299 · Growth $999 · Pro $1,799',
