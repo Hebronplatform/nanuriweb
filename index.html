@@ -4,7 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NanuriWeb — 교회 · 사업체 홈페이지 전문</title>
-<meta name="description" content="교회, 사업체, 단체 홈페이지 제작 전문. $299~부터, 신속 완성. HebronGuide 500개+ 도시 자동 연동.">
+<meta name="description" content="한인 교회·사업체 홈페이지 전문 맞춤 제작. 제작 즉시 HebronGuide 500개+ 도시 자동 등재. Church Plant $299~. 한국어 전담 상담, 숨겨진 비용 없음. 기획서 무료.">
+<meta name="keywords" content="교회 홈페이지, 한인 교회 웹사이트, Korean church website, 교회 홈페이지 제작, 사업체 홈페이지, NanuriWeb, HebronGuide">
+<meta property="og:title" content="NanuriWeb — 교회·사업체 홈페이지 전문 | HebronGuide 500개+ 도시 자동 연동">
+<meta property="og:description" content="제작 즉시 HebronGuide 500개+ 도시 자동 등재. Church Plant $299~. 한국어 전담 상담.">
+<meta property="og:url" content="https://nanuriweb.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nanuriweb.com">
+<!-- JSON-LD 구조화 데이터 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "NanuriWeb — 나누리웹",
+  "description": "한인 교회·사업체 홈페이지 전문 맞춤 제작. HebronGuide 500개+ 도시 자동 연동. Church Plant $299~.",
+  "url": "https://nanuriweb.com",
+  "telephone": "",
+  "email": "Hebronplatform@gmail.com",
+  "address": {"@type":"PostalAddress","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"},
+  "areaServed": "Worldwide",
+  "serviceType": ["Church Website Design","Business Website Design","Korean Website Design"],
+  "priceRange": "$299-$1799",
+  "knowsLanguage": ["Korean","English"],
+  "sameAs": ["https://hebronguide.com","https://github.com/Hebronplatform/nanuriweb"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -261,6 +286,34 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 .share-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--emerald);color:#fff;padding:12px 28px;border-radius:50px;font-size:14px;font-weight:600;opacity:0;transition:all .3s ease;pointer-events:none;z-index:9999;white-space:nowrap;}
 .share-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
+/* ── FAQ SECTION ── */
+.faq-section{background:white;padding:80px 24px;border-bottom:1px solid var(--border);}
+.faq-inner{max-width:780px;margin:0 auto;}
+.faq-header{text-align:center;margin-bottom:48px;}
+.faq-kicker{font-size:11px;font-family:var(--font-n);font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:12px;}
+.faq-h2{font-family:var(--font-d);font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--navy);margin-bottom:10px;}
+.faq-sub{font-size:14px;color:var(--gray);}
+.faq-list{display:flex;flex-direction:column;gap:0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item:first-of-type{border-top:1px solid var(--border);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:20px 4px;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-b);font-size:15px;font-weight:700;color:var(--navy);line-height:1.5;}
+.faq-q:hover{color:var(--gold);}
+.faq-q .faq-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;color:var(--gold);font-weight:900;}
+.faq-item.open .faq-q .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:300px;}
+.faq-a-inner{padding:0 4px 20px;font-size:14px;color:var(--gray);line-height:1.85;}
+.faq-a-inner strong{color:var(--navy);}
+.faq-a-inner a{color:var(--gold);text-decoration:none;font-weight:700;}
+.faq-cta-row{margin-top:40px;text-align:center;}
+
+/* ── 카카오 플로팅 버튼 ── */
+.kakao-float{position:fixed;bottom:28px;right:22px;z-index:999;display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+.kakao-float-btn{width:56px;height:56px;border-radius:18px;background:#FEE500;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.22);transition:transform .2s,box-shadow .2s;}
+.kakao-float:hover .kakao-float-btn{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.28);}
+.kakao-float-lbl{font-size:10px;font-family:var(--font-n);font-weight:700;color:rgba(0,0,0,.55);background:rgba(255,255,255,.92);padding:3px 8px;border-radius:8px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+@media(max-width:480px){.kakao-float{bottom:20px;right:16px;}}
+
 /* ── WHY NANURIWEB SECTION ── */
 .why-section{background:var(--ivory);padding:80px 24px;border-bottom:1px solid rgba(11,22,40,.07);}
 .why-inner{max-width:1060px;margin:0 auto;}
@@ -304,6 +357,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   </a>
   <div class="nav-links">
     <a href="#plans" data-i18n="nav.plans">요금 보기</a>
+    <a href="#faq">FAQ</a>
     <a href="#about" data-i18n="nav.about">회사 소개</a>
     <a href="#contact" class="nav-cta" data-i18n="nav.cta">신청하기</a>
   </div>
@@ -649,12 +703,129 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 </section>
 
 
+<!-- FAQ — 자주 묻는 질문 -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="faq-kicker">자주 묻는 질문 · FAQ</span>
+      <h2 class="faq-h2">궁금하신 게 있으시죠?</h2>
+      <p class="faq-sub">가장 많이 받는 질문들을 정리했습니다. 더 궁금하신 건 언제든 연락주세요.</p>
+    </div>
+
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          HebronGuide 500개+ 도시 자동 등재, 어떻게 되는 건가요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            홈페이지가 완성되는 즉시, <strong>HebronGuide.com에 교회·사업체 정보가 자동으로 등재</strong>됩니다. 전 세계 한인이 새로운 도시에 이사하거나 여행할 때 HebronGuide에서 교회와 한인 사업체를 검색합니다. 별도 신청 없이 NanuriWeb 홈페이지를 만드는 것만으로 500개+ 도시 네트워크에 연결됩니다. <strong>어느 경쟁사도 제공할 수 없는 NanuriWeb만의 독점 혜택</strong>입니다. <a href="https://hebronguide.com" target="_blank">HebronGuide 보기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          홈페이지 제작에 얼마나 걸리나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            상담 후 기획서 제공까지 약 <strong>3~5 영업일</strong>, 기획서 확정 후 제작 완성까지 보통 <strong>2~3주</strong>가 소요됩니다. 플랜 규모와 콘텐츠 준비 속도에 따라 달라질 수 있습니다. 제작 중 중간 확인을 함께 진행하며, 만족하실 때까지 수정합니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          기술을 전혀 몰라도 괜찮나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <strong>완전히 괜찮습니다.</strong> 처음 상담부터 오픈까지 전 과정을 목사님·대표님이 이해하실 수 있는 언어로 설명해 드립니다. 완성 후에도 <strong>직접 소식을 업데이트하는 방법(CMS)</strong>을 알려드리며, 어려우시면 언제든 연락 주시면 도와드립니다. 기술 지식은 필요 없습니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          제작비 말고 추가 비용이 있나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <strong>숨겨진 비용은 없습니다.</strong> 제작비(일회)와 연관리비만 있습니다. 연관리비는 도메인·호스팅·유지관리를 포함하며 연초에 일시 납부합니다. Church Plant 플랜은 <strong>2년 관리비 무료</strong>입니다. 추가 페이지나 기능은 상담 시 미리 안내드립니다. 진행 중 깜짝 청구서는 없습니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Church Plant 플랜($299)은 누가 신청할 수 있나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <strong>설립 3년 이내, 성도 50명 이하</strong>의 개척교회라면 신청 가능합니다. Growth Plan의 모든 기능(10페이지·CMS·HebronGuide 연동)이 포함되며, 연관리비 2년 무료입니다. 개척교회를 우선 섬기는 마음으로 운영하는 특별 플랜입니다. 조건이 애매하시면 먼저 무료 상담을 신청해 주세요.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          당회 기획서가 무엇인가요? 꼭 필요한가요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            장로교 등 당회·제직회 심의가 필요한 교회에서는 <strong>홈페이지 제작 기획서를 공식 안건으로 제출</strong>해야 합니다. NanuriWeb은 이 기획서를 무료로 함께 준비해 드립니다. 예산 계획, 제작 범위, 기대 효과 등을 포함한 전문 문서로, 당회 심의를 통과하는 데 실질적으로 도움이 됩니다. 당회 기획서가 필요 없는 교회는 그냥 건너뛰셔도 됩니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          오픈 후에도 계속 관리해 주시나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <strong>연관리비 내에서 오픈 후에도 끝까지 함께합니다.</strong> 간단한 내용 수정, 문의 폼 점검, 속도 최적화 등을 포함합니다. 큰 기능 추가나 디자인 개편은 별도 협의하지만, 일상적인 유지관리는 걱정 없이 연락 주시면 됩니다. NanuriWeb은 '한 번 만들고 끝'이 아니라 <strong>끝까지 함께하는 파트너</strong>입니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          사업체도 교회처럼 같은 수준의 서비스를 받을 수 있나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <strong>네, 동일한 마음으로 섬깁니다.</strong> 한인 식당, 미용실, 부동산, 의원, 학원 등 모든 사업체에 대해 맞춤 제작을 제공합니다. HebronGuide 500개+ 도시 자동 등재도 동일하게 적용됩니다. Solo Plan $299~부터 시작하며, 창업 3년 이내 사업체는 Startup Plan으로 50% 할인 혜택이 있습니다.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /faq-list -->
+
+    <div class="faq-cta-row">
+      <p style="font-size:14px;color:var(--gray);margin-bottom:16px;">더 궁금하신 게 있으시면 언제든 연락주세요. 기획서 제공까지는 비용이 없습니다.</p>
+      <a href="#contact" class="btn-p">무료 상담 신청하기 →</a>
+    </div>
+  </div>
+</section>
+
+
 <!-- CONTACT / ORDER -->
 <section class="contact-section" id="contact">
 <div class="contact-inner">
   <span class="eyebrow" style="color:var(--gold);" data-i18n="contact.eyebrow">신청하기 · Contact</span>
   <h2 class="sec-title" style="color:var(--navy);" data-i18n="contact.title">지금 신청하세요</h2>
-  <p class="sec-desc" style="color:var(--gray);" data-i18n="contact.desc">문의 접수 후 48시간 이내 연락드립니다.</p>
+  <p class="sec-desc" style="color:var(--gray);" data-i18n="contact.desc">목사님·대표님이 직접 이해하실 때까지 함께합니다. 기획서 제공까지는 비용이 없습니다.</p>
 
   <!-- PROCESS FLOW -->
   <div class="process-flow reveal">
@@ -771,8 +942,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div>
 
     <div class="cinfo reveal">
-      <h3 data-i18n="contact.info.h3">신청 접수 후 48시간 이내 연락드립니다</h3>
-      <p data-i18n="contact.info.p">기술 모르셔도 됩니다. 어떤 플랜이 맞는지 모르셔도 됩니다. 연락 주시면 함께 방향을 잡아드립니다.</p>
+      <h3 data-i18n="contact.info.h3">목사님·대표님이 이해하실 때까지 함께합니다</h3>
+      <p data-i18n="contact.info.p">기술 모르셔도 됩니다. 플랜이 맞는지 몰라도 됩니다. 오픈 후에도 끝까지 — 연관리비 내에서 계속 관리합니다.</p>
       <div class="cdetails">
         <div class="cdetail"><span class="c-ico">📧</span><span>hello@nanuriweb.com</span></div>
         <div class="cdetail"><span class="c-ico">💬</span><span data-i18n="contact.info.kakao">카카오톡 문의 가능 · ID: nanuriweb</span></div>
@@ -1128,7 +1299,7 @@ const LANG = {
     'bizplan.bizpro.f5':'고급 SEO 및 분석','bizplan.bizpro.cta':'신청하기',
     'bizplans.note':'※ 모든 금액 USD · 연관리비 연초 일시납 · Startup: 창업 3년 이내 사업체',
     'contact.eyebrow':'신청하기 · Contact','contact.title':'지금 신청하세요',
-    'contact.desc':'문의 접수 후 48시간 이내 연락드립니다.',
+    'contact.desc':'목사님·대표님이 직접 이해하실 때까지 함께합니다. 기획서 제공까지는 비용이 없습니다.',
     'contact.f.name':'교회·사업체명 *','contact.f.name.ph':'예: 행복한교회 / 서울 김치식당',
     'contact.f.pastor':'담임목사·대표자','contact.f.pastor.ph':'홍길동 목사',
     'contact.f.phone':'연락처','contact.f.phone.ph':'010-0000-0000',
@@ -1149,8 +1320,8 @@ const LANG = {
     'contact.f.source.opt4':'페이스북 (Facebook)','contact.f.source.opt5':'지인 추천',
     'contact.f.source.opt6':'기타',
     'contact.f.submit':'신청하기 →',
-    'contact.info.h3':'신청 접수 후 48시간 이내 연락드립니다',
-    'contact.info.p':'기술 모르셔도 됩니다. 어떤 플랜이 맞는지 모르셔도 됩니다. 연락 주시면 함께 방향을 잡아드립니다.',
+    'contact.info.h3':'목사님·대표님이 이해하실 때까지 함께합니다',
+    'contact.info.p':'기술 모르셔도 됩니다. 플랜이 맞는지 몰라도 됩니다. 오픈 후에도 끝까지 — 연관리비 내에서 계속 관리합니다.',
     'contact.info.response':'48시간 이내 응답 보장',
     'contact.info.kakao':'카카오톡 문의 가능 · ID: nanuriweb',
     'trust.nohidden':'숨겨진 비용 없음','trust.revisions':'만족할 때까지 무제한 수정',
@@ -1401,6 +1572,40 @@ function showToast(msg) {
   t.classList.add('show');
   setTimeout(function(){ t.classList.remove('show'); }, 3000);
 }
+</script>
+<!-- 카카오톡 플로팅 상담 버튼 -->
+<a href="https://open.kakao.com/o/sNanuriWeb" target="_blank" rel="noopener" class="kakao-float" aria-label="카카오톡 상담">
+  <div class="kakao-float-btn">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#3A1D1D">
+      <path d="M12 3C6.48 3 2 6.48 2 10.8c0 2.72 1.64 5.12 4.13 6.56L5 21l4.61-2.4c.77.12 1.57.19 2.39.19 5.52 0 10-3.48 10-7.99C22 6.48 17.52 3 12 3z"/>
+    </svg>
+  </div>
+  <span class="kakao-float-lbl">카카오 상담</span>
+</a>
+
+<script>
+/* ── FAQ 아코디언 ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── Google Analytics 4 (GA4) — 추적 ID 입력 필요 ── */
+// TODO: GA_MEASUREMENT_ID를 실제 GA4 ID로 교체하세요
+// window.dataLayer = window.dataLayer || [];
+// (function(){var s=document.createElement('script');s.async=true;
+//   s.src='https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID';
+//   document.head.appendChild(s);})();
+// function gtag(){dataLayer.push(arguments);}
+// gtag('js',new Date()); gtag('config','GA_MEASUREMENT_ID');
+
+/* ── Meta Pixel — 광고 ROI 추적 ── */
+// TODO: YOUR_PIXEL_ID를 실제 Meta Pixel ID로 교체하세요
+// !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){...};
+//   ...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+// fbq('init','YOUR_PIXEL_ID'); fbq('track','PageView');
 </script>
 </body>
 </html>
