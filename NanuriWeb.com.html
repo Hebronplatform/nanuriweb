@@ -395,9 +395,17 @@ section { padding: 80px 24px; }
 }
 
 .plan-icon {
-  font-size: 28px;
-  margin-bottom: 12px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  margin: 0 auto 14px;
+}
+.plan-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .plan-name {
@@ -647,7 +655,8 @@ section { padding: 80px 24px; }
   padding: 14px 16px;
 }
 
-.hebron-benefit-icon { font-size: 20px; flex-shrink: 0; }
+.hebron-benefit-icon { width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+.hebron-benefit-icon svg { width:20px;height:20px; }
 
 .hebron-benefit-text strong {
   display: block;
@@ -1314,7 +1323,13 @@ span[data-lang="ko"] { display: inline; }
       <div class="plan-card plant reveal">
         <div class="plan-badge green" data-lang="ko">🌱 개척교회 특별 플랜</div>
         <div class="plan-badge green" data-lang="en" style="display:none">🌱 Church Plant Special</div>
-        <span class="plan-icon" style="margin-top:16px;">✝</span>
+        <span class="plan-icon" style="background:rgba(26,127,90,.15);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1A7F5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v14"/><path d="M7.5 8.5h9"/>
+            <path d="M12 18c0 0-4-2-4-4.5s1.8-3.5 4-3.5 4 1 4 3.5-4 4.5-4 4.5z" fill="rgba(26,127,90,.25)"/>
+            <path d="M12 18v2"/><path d="M10 20h4"/>
+          </svg>
+        </span>
         <div class="plan-name">Church Plant Plan</div>
         <span class="plan-name-ko" data-lang="ko">개척교회 플랜</span>
         <div class="plan-price-row">
@@ -1346,7 +1361,15 @@ span[data-lang="ko"] { display: inline; }
 
       <!-- Starter -->
       <div class="plan-card reveal">
-        <span class="plan-icon">⛪</span>
+        <span class="plan-icon" style="background:rgba(201,168,76,.12);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21V11.5L12 4l9 7.5V21"/><path d="M3 21h18"/>
+            <path d="M9.5 21v-5.5a2.5 2.5 0 015 0V21"/>
+            <rect x="5" y="13.5" width="2.5" height="3" rx="0.5"/>
+            <rect x="16.5" y="13.5" width="2.5" height="3" rx="0.5"/>
+            <path d="M12 1v4.5M10.5 3.5h3"/>
+          </svg>
+        </span>
         <div class="plan-name">Starter Plan</div>
         <span class="plan-name-ko" data-lang="ko">스타터 플랜</span>
         <div class="plan-price-row">
@@ -1380,7 +1403,11 @@ span[data-lang="ko"] { display: inline; }
       <div class="plan-card featured reveal">
         <div class="plan-badge" data-lang="ko">⭐ 가장 인기</div>
         <div class="plan-badge" data-lang="en" style="display:none">⭐ Most Popular</div>
-        <span class="plan-icon" style="margin-top:12px;">🌟</span>
+        <span class="plan-icon" style="background:rgba(201,168,76,.15);">
+          <svg viewBox="0 0 24 24" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l2.6 8h8.4l-6.8 4.9 2.6 7.9L12 18l-6.8 4.8 2.6-7.9L1 10h8.4L12 2z" fill="rgba(201,168,76,.22)"/>
+          </svg>
+        </span>
         <div class="plan-name">Growth Plan</div>
         <span class="plan-name-ko" data-lang="ko">그로스 플랜</span>
         <div class="plan-price-row">
@@ -1414,7 +1441,12 @@ span[data-lang="ko"] { display: inline; }
 
       <!-- Pro -->
       <div class="plan-card reveal">
-        <span class="plan-icon">🏛️</span>
+        <span class="plan-icon" style="background:rgba(201,168,76,.12);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 21h20"/><path d="M5 21V9M12 21V9M19 21V9"/>
+            <path d="M3 9h18"/><path d="M3 9V5l9-3 9 3v4"/>
+          </svg>
+        </span>
         <div class="plan-name">Pro Plan</div>
         <span class="plan-name-ko" data-lang="ko">프로 플랜</span>
         <div class="plan-price-row">
@@ -1457,7 +1489,12 @@ span[data-lang="ko"] { display: inline; }
 
       <!-- Solo -->
       <div class="plan-card reveal">
-        <span class="plan-icon">👤</span>
+        <span class="plan-icon" style="background:rgba(201,168,76,.12);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 22a8 8 0 0116 0"/>
+          </svg>
+        </span>
         <div class="plan-name">Solo Plan</div>
         <span class="plan-name-ko" data-lang="ko">1인 사업·프리랜서</span>
         <div class="plan-price-row">
@@ -1489,7 +1526,14 @@ span[data-lang="ko"] { display: inline; }
       <div class="plan-card plant reveal">
         <div class="plan-badge green" data-lang="ko">🌱 창업 1년 50% 할인</div>
         <div class="plan-badge green" data-lang="en" style="display:none">🌱 50% off 1st year</div>
-        <span class="plan-icon" style="margin-top:16px;">🚀</span>
+        <span class="plan-icon" style="background:rgba(26,127,90,.15);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1A7F5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c5 2 8 6 8 11l-2 5.5-6 2-6-2L4 13c0-5 3-9 8-11z"/>
+            <circle cx="12" cy="9.5" r="2.5" fill="rgba(26,127,90,.35)"/>
+            <path d="M8 15.5L5 18.5M16 15.5L19 18.5"/>
+            <path d="M11.5 20l.5 2.5.5-2.5"/>
+          </svg>
+        </span>
         <div class="plan-name">Startup Plan</div>
         <span class="plan-name-ko" data-lang="ko">신규 창업 플랜</span>
         <div class="plan-price-row">
@@ -1521,7 +1565,13 @@ span[data-lang="ko"] { display: inline; }
       <div class="plan-card featured reveal">
         <div class="plan-badge" data-lang="ko">⭐ 가장 인기</div>
         <div class="plan-badge" data-lang="en" style="display:none">⭐ Most Popular</div>
-        <span class="plan-icon" style="margin-top:12px;">💼</span>
+        <span class="plan-icon" style="background:rgba(201,168,76,.12);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="8" width="20" height="13" rx="2"/>
+            <path d="M8.5 8V5.5a3.5 3.5 0 017 0V8"/>
+            <path d="M2 13.5h20M8.5 13.5v2.5M15.5 13.5v2.5"/>
+          </svg>
+        </span>
         <div class="plan-name">Business Growth</div>
         <span class="plan-name-ko" data-lang="ko">비즈니스 그로스</span>
         <div class="plan-price-row">
@@ -1553,7 +1603,14 @@ span[data-lang="ko"] { display: inline; }
 
       <!-- Business Pro -->
       <div class="plan-card reveal">
-        <span class="plan-icon">🏢</span>
+        <span class="plan-icon" style="background:rgba(201,168,76,.12);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="2" width="18" height="20" rx="1.5"/>
+            <path d="M3 22h18"/>
+            <path d="M7 6h2M11 6h2M15 6h2M7 10h2M11 10h2M15 10h2M7 14h2M11 14h2M15 14h2"/>
+            <path d="M10 22v-5h4v5"/>
+          </svg>
+        </span>
         <div class="plan-name">Business Pro</div>
         <span class="plan-name-ko" data-lang="ko">비즈니스 프로</span>
         <div class="plan-price-row">
@@ -1670,7 +1727,9 @@ span[data-lang="ko"] { display: inline; }
       </p>
       <div class="hebron-benefits">
         <div class="hebron-benefit">
-          <span class="hebron-benefit-icon">🔍</span>
+          <span class="hebron-benefit-icon" style="background:rgba(201,168,76,.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16L21.5 21.5"/></svg>
+          </span>
           <div class="hebron-benefit-text">
             <strong data-lang="ko">SEO 백링크 효과</strong>
             <strong data-lang="en" style="display:none">SEO Backlink Boost</strong>
@@ -1679,7 +1738,9 @@ span[data-lang="ko"] { display: inline; }
           </div>
         </div>
         <div class="hebron-benefit">
-          <span class="hebron-benefit-icon">✈️</span>
+          <span class="hebron-benefit-icon" style="background:rgba(80,140,255,.12);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(120,170,255,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z" fill="rgba(100,160,255,.15)"/></svg>
+          </span>
           <div class="hebron-benefit-text">
             <strong data-lang="ko">귀국 한인 연결</strong>
             <strong data-lang="en" style="display:none">Returning Korean Connection</strong>
@@ -1688,7 +1749,9 @@ span[data-lang="ko"] { display: inline; }
           </div>
         </div>
         <div class="hebron-benefit">
-          <span class="hebron-benefit-icon">🌍</span>
+          <span class="hebron-benefit-icon" style="background:rgba(26,127,90,.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1A7F5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2c-3 4-4.5 7-4.5 10s1.5 6 4.5 10c3-4 4.5-7 4.5-10S15 6 12 2z"/></svg>
+          </span>
           <div class="hebron-benefit-text">
             <strong data-lang="ko">글로벌 네트워크</strong>
             <strong data-lang="en" style="display:none">Global Network</strong>
@@ -1947,19 +2010,27 @@ span[data-lang="ko"] { display: inline; }
       </p>
       <div class="contact-details">
         <div class="contact-detail">
-          <span class="contact-detail-icon">📧</span>
+          <span class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </span>
           <span>hebronplatform@gmail.com</span>
         </div>
         <div class="contact-detail">
-          <span class="contact-detail-icon">🌐</span>
+          <span class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2c-3 4-4.5 7-4.5 10s1.5 6 4.5 10c3-4 4.5-7 4.5-10S15 6 12 2z"/></svg>
+          </span>
           <span>NanuriWeb.com</span>
         </div>
         <div class="contact-detail">
-          <span class="contact-detail-icon">📍</span>
+          <span class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2a7 7 0 017 7c0 5.5-7 13-7 13S5 14.5 5 9a7 7 0 017-7z"/><circle cx="12" cy="9" r="2.5" fill="rgba(201,168,76,.35)"/></svg>
+          </span>
           <span>Hebron Platform LLC · Seattle, WA</span>
         </div>
         <div class="contact-detail">
-          <span class="contact-detail-icon">⏱️</span>
+          <span class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3.5 2.5"/></svg>
+          </span>
           <span data-i18n="response" data-lang="ko">48시간 이내 답변</span>
         </div>
       </div>
