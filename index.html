@@ -95,6 +95,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .hw-vs s{color:rgba(255,100,100,.35);text-decoration-color:rgba(255,100,100,.4);}
 .hw-answer-tag{display:inline-block;margin-top:14px;font-size:11px;font-family:var(--font-n);color:var(--gold);letter-spacing:.5px;font-weight:600;}
 
+/* PRICE TRUTH (싼 게 무조건 좋은 건가?) */
+.hw-item-full{grid-column:1/-1;background:rgba(239,68,68,.05);border-color:rgba(239,68,68,.22)!important;}
+.hw-item-full:hover{border-color:rgba(239,68,68,.42)!important;}
+.hw-pt-headline{font-size:13px;font-weight:700;color:#fca5a5;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.hw-pt-headline span{font-family:var(--font-n);letter-spacing:.3px;}
+.hw-pt-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:540px){.hw-pt-cols{grid-template-columns:1fr;gap:8px;}}
+.hw-pt-col{border-radius:9px;padding:11px 13px;}
+.hw-pt-col.bad{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.18);}
+.hw-pt-col.good{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.22);}
+.hw-pt-col-label{font-size:10.5px;font-family:var(--font-n);font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px;display:block;}
+.hw-pt-col.bad .hw-pt-col-label{color:rgba(252,165,165,.7);}
+.hw-pt-col.good .hw-pt-col-label{color:var(--gold);}
+.hw-pt-li{font-size:12px;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:5px;display:flex;align-items:flex-start;gap:6px;}
+.hw-pt-li .mk{flex-shrink:0;font-size:11px;margin-top:1px;}
+.hw-pt-col.bad .mk{color:rgba(239,68,68,.7);}
+.hw-pt-col.good .mk{color:#4ade80;}
+.hw-pt-total{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.07);font-size:12px;font-weight:700;}
+.hw-pt-col.bad .hw-pt-total{color:rgba(252,100,100,.75);}
+.hw-pt-col.good .hw-pt-total{color:var(--gold-light);}
+
 /* FORK BUTTONS */
 .hero-fork{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:0 auto 56px;}
 @media(max-width:600px){.hero-fork{grid-template-columns:1fr;}}
@@ -490,6 +511,33 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
             <span class="hw-vs">완성 후 <s>월정액·유지비 추가청구</s> 없습니다</span>
           </div>
         </div>
+
+        <!-- 전체너비: 가격 함정 폭로 -->
+        <div class="hw-item hw-item-full">
+          <span class="hw-icon">⚠️</span>
+          <div class="hw-body" style="width:100%;">
+            <div class="hw-pt-headline"><span>싼 게 무조건 좋은 건 아닙니다 — 저가 홈페이지의 진짜 비용</span></div>
+            <div class="hw-pt-cols">
+              <div class="hw-pt-col bad">
+                <span class="hw-pt-col-label">💸 저가 업체 · 동네 프리랜서</span>
+                <div class="hw-pt-li"><span class="mk">✗</span><span>Google·Naver에 안 잡히는 홈페이지 → 기회 손실</span></div>
+                <div class="hw-pt-li"><span class="mk">✗</span><span>완성 후 혼자 남겨짐 — 수정할 때마다 별도 청구</span></div>
+                <div class="hw-pt-li"><span class="mk">✗</span><span>1~2년 후 재작업 → 처음부터 다시 비용 발생</span></div>
+                <div class="hw-pt-li"><span class="mk">✗</span><span>교회·한인 사역 구조 이해 없이 일반 템플릿 적용</span></div>
+                <div class="hw-pt-total">진짜 총비용 = 처음 가격의 2~3배</div>
+              </div>
+              <div class="hw-pt-col good">
+                <span class="hw-pt-col-label">✦ NanuriWeb 처음부터 제대로</span>
+                <div class="hw-pt-li"><span class="mk">✓</span><span>제작 즉시 HebronGuide 500+ 도시 자동 노출</span></div>
+                <div class="hw-pt-li"><span class="mk">✓</span><span>한국어 담당자 — 완성 후에도 함께합니다</span></div>
+                <div class="hw-pt-li"><span class="mk">✓</span><span>SEO 최적화 기본 포함 → 재작업 없음</span></div>
+                <div class="hw-pt-li"><span class="mk">✓</span><span>교회·사역·한인 커뮤니티 맞춤 설계</span></div>
+                <div class="hw-pt-total">일회 제작비로 끝 · $299~ · 재투자 없음</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <span class="hw-answer-tag">✦ 그래서 NanuriWeb입니다 — 아래에서 요금을 확인하세요 ↓</span>
     </div>
