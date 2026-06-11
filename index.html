@@ -283,6 +283,39 @@ hr.pdiv{border:none;border-top:1px solid rgba(255,255,255,.08);margin:16px 0;}
 .fact-item .f-ico{font-size:18px;flex-shrink:0;margin-top:1px;}
 .fact-item .f-text{font-size:13px;color:var(--dark);line-height:1.7;}
 .fact-item .f-text strong{color:var(--navy);display:block;margin-bottom:2px;font-size:14px;}
+
+/* VISION · MISSION · PHILOSOPHY · VALUES */
+.about-vmpc{margin-top:72px;padding-top:64px;border-top:1px solid var(--border);}
+.vmpc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:56px;}
+@media(max-width:900px){.vmpc-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.vmpc-grid{grid-template-columns:1fr;}}
+.vmpc-card{border-radius:16px;padding:26px 22px;border:1px solid var(--border);background:var(--ivory);transition:all .25s;position:relative;overflow:hidden;}
+.vmpc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;}
+.vmpc-card.v::before{background:linear-gradient(90deg,var(--gold),#f0d98a);}
+.vmpc-card.m::before{background:linear-gradient(90deg,var(--emerald),#4ade80);}
+.vmpc-card.p::before{background:linear-gradient(90deg,var(--navy),var(--navy-mid));}
+.vmpc-card.val::before{background:linear-gradient(90deg,#7c3aed,#a78bfa);}
+.vmpc-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(11,22,40,.1);border-color:transparent;}
+.vmpc-icon{font-size:28px;margin-bottom:14px;display:block;}
+.vmpc-label{font-size:10px;font-family:var(--font-n);font-weight:700;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:8px;display:block;}
+.vmpc-card.v .vmpc-label{color:var(--gold);}
+.vmpc-card.m .vmpc-label{color:var(--emerald);}
+.vmpc-card.p .vmpc-label{color:var(--navy);}
+.vmpc-card.val .vmpc-label{color:#7c3aed;}
+.vmpc-title{font-family:var(--font-d);font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.4;}
+.vmpc-text{font-size:13px;color:var(--gray);line-height:1.85;}
+.vmpc-text strong{color:var(--navy);display:block;margin-bottom:3px;}
+
+/* 감동 선언문 */
+.about-mission-stmt{background:var(--navy);border-radius:22px;padding:52px 48px;text-align:center;position:relative;overflow:hidden;}
+@media(max-width:600px){.about-mission-stmt{padding:38px 26px;}}
+.about-mission-stmt::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% -10%,rgba(201,168,76,.12),transparent 65%);}
+.stmt-eyebrow{font-size:10px;font-family:var(--font-n);font-weight:700;letter-spacing:2.5px;color:rgba(201,168,76,.7);text-transform:uppercase;margin-bottom:24px;display:block;position:relative;}
+.stmt-main{font-family:var(--font-d);font-size:clamp(16px,2.2vw,22px);color:rgba(255,255,255,.92);line-height:1.95;margin-bottom:20px;position:relative;font-weight:600;}
+.stmt-main em{color:var(--gold);font-style:normal;}
+.stmt-sub{font-size:14px;color:rgba(255,255,255,.42);line-height:1.9;max-width:560px;margin:0 auto 32px;position:relative;}
+.stmt-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:30px;padding:10px 22px;font-size:13px;font-weight:700;color:var(--gold);position:relative;}
+
 .portfolio-card{background:var(--navy);border-radius:var(--rl);padding:28px 32px;margin-bottom:16px;}
 .pc-live{font-size:10px;font-family:var(--font-n);font-weight:700;color:var(--emerald);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
 .pc-live::before{content:'●';animation:pulse 1.6s ease-in-out infinite;}
@@ -1326,6 +1359,64 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       </div>
     </div>
   </div>
+
+  <!-- 비전·사명·철학·가치 + 감동 선언문 -->
+  <div class="about-vmpc reveal">
+
+    <div class="vmpc-grid">
+
+      <div class="vmpc-card v">
+        <span class="vmpc-icon">🌏</span>
+        <span class="vmpc-label">Vision · 비전</span>
+        <div class="vmpc-title">디지털 환대로<br>세계 어디서나 발견되는 한인 커뮤니티</div>
+        <p class="vmpc-text">낯선 땅의 교회와 사업체가 온라인에서 올바르게 발견되고, 연결되고, 섬김받는 세상을 만들어갑니다.</p>
+      </div>
+
+      <div class="vmpc-card m">
+        <span class="vmpc-icon">🤝</span>
+        <span class="vmpc-label">Mission · 사명</span>
+        <div class="vmpc-title">환대의 정신이 스며든<br>웹사이트로 처음부터 제대로</div>
+        <p class="vmpc-text">교회와 사업체가 온라인 첫날부터 발견되도록, 철학이 깊이 배어든 웹사이트를 한국어로 함께 만듭니다.</p>
+      </div>
+
+      <div class="vmpc-card p">
+        <span class="vmpc-icon">🕊</span>
+        <span class="vmpc-label">Philosophy · 철학</span>
+        <div class="vmpc-title">웹사이트는<br>사람을 맞이하는 공간입니다</div>
+        <p class="vmpc-text">단순한 디지털 명함이 아닙니다. 방문자를 귀한 손님으로 맞이하는 환대의 마음이 모든 페이지에 배어 있어야 합니다.</p>
+      </div>
+
+      <div class="vmpc-card val">
+        <span class="vmpc-icon">⚖️</span>
+        <span class="vmpc-label">Values · 가치</span>
+        <div class="vmpc-title">우리가 지키는<br>네 가지 약속</div>
+        <p class="vmpc-text">
+          <strong>🏠 환대 (Hospitality)</strong> 방문자를 손님처럼<br>
+          <strong>🤝 동반 (Partnership)</strong> 완성 후에도 함께<br>
+          <strong>✦ 진실 (Integrity)</strong> 숨겨진 비용 없음<br>
+          <strong>🕊 사명 (Mission)</strong> 수익보다 섬김이 먼저
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 감동 선언문 -->
+    <div class="about-mission-stmt reveal">
+      <span class="stmt-eyebrow">✦ NanuriWeb과 함께한다는 것의 의미</span>
+      <p class="stmt-main">
+        NanuriWeb에 웹사이트를 맡기는 순간,<br>
+        단순히 홈페이지를 구입하는 것이 아닙니다.<br>
+        <em>낯선 땅의 교회와 한인 사업체가 세상에 올바르게 발견되도록<br>돕는 이 숭고하고 좋은 일에 함께 동참하시는 것입니다.</em>
+      </p>
+      <p class="stmt-sub">
+        이것은 돈으로 환산할 수 없는 가치입니다.<br>
+        당신의 웹사이트 하나가 누군가의 첫 번째 환대의 문이 됩니다.
+      </p>
+      <span class="stmt-badge">🕊 당신의 참여가 환대의 생태계를 만듭니다</span>
+    </div>
+
+  </div>
+
 </div>
 </section>
 
