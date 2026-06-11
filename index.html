@@ -573,13 +573,13 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <!-- 모바일 드로어 메뉴 — 페이지 스크롤 순서 -->
 <div class="mob-drawer" id="mob-drawer" role="navigation" aria-label="모바일 메뉴">
   <div class="mob-drawer-inner">
-    <span class="mob-drawer-label">페이지 바로가기</span>
+    <span class="mob-drawer-label" data-i18n="mob.section">페이지 바로가기</span>
 
     <a href="#top" class="mob-nav-item" onclick="closeMobMenu()">
       <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);">🏠</div>
       <div class="mob-nav-body">
-        <span class="mob-nav-label">홈</span>
-        <span class="mob-nav-desc">처음으로 돌아가기</span>
+        <span class="mob-nav-label" data-i18n="mob.nav.home">홈</span>
+        <span class="mob-nav-desc" data-i18n="mob.nav.home.desc">처음으로 돌아가기</span>
       </div>
       <span class="mob-nav-arr">›</span>
     </a>
@@ -587,8 +587,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <a href="#philosophy" class="mob-nav-item" onclick="closeMobMenu()">
       <div class="mob-nav-icon" style="background:rgba(201,168,76,.1);">🕊</div>
       <div class="mob-nav-body">
-        <span class="mob-nav-label">철학</span>
-        <span class="mob-nav-desc">환대의 정신 · NanuriWeb의 이유</span>
+        <span class="mob-nav-label" data-i18n="mob.nav.phil">철학</span>
+        <span class="mob-nav-desc" data-i18n="mob.nav.phil.desc">환대의 정신 · NanuriWeb의 이유</span>
       </div>
       <span class="mob-nav-arr">›</span>
     </a>
@@ -598,8 +598,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <a href="#plans" class="mob-nav-item" onclick="closeMobMenu()">
       <div class="mob-nav-icon" style="background:rgba(201,168,76,.12);">💰</div>
       <div class="mob-nav-body">
-        <span class="mob-nav-label">요금 보기</span>
-        <span class="mob-nav-desc">교회 $499~ · 사업체 $299~</span>
+        <span class="mob-nav-label" data-i18n="mob.nav.plans">요금 보기</span>
+        <span class="mob-nav-desc" data-i18n="mob.nav.plans.desc">교회 $499~ · 사업체 $299~</span>
       </div>
       <span class="mob-nav-arr">›</span>
     </a>
@@ -608,7 +608,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);">❓</div>
       <div class="mob-nav-body">
         <span class="mob-nav-label">FAQ</span>
-        <span class="mob-nav-desc">자주 묻는 질문 8가지</span>
+        <span class="mob-nav-desc" data-i18n="mob.nav.faq.desc">자주 묻는 질문 8가지</span>
       </div>
       <span class="mob-nav-arr">›</span>
     </a>
@@ -618,8 +618,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <a href="#about" class="mob-nav-item" onclick="closeMobMenu()">
       <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);">🏢</div>
       <div class="mob-nav-body">
-        <span class="mob-nav-label">회사 소개</span>
-        <span class="mob-nav-desc">비전 · 사명 · 철학 · 가치</span>
+        <span class="mob-nav-label" data-i18n="mob.nav.about">회사 소개</span>
+        <span class="mob-nav-desc" data-i18n="mob.nav.about.desc">비전 · 사명 · 철학 · 가치</span>
       </div>
       <span class="mob-nav-arr">›</span>
     </a>
@@ -629,8 +629,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <a href="#contact" class="mob-nav-item gold-item" onclick="closeMobMenu()">
       <div class="mob-nav-icon" style="background:rgba(201,168,76,.18);">📩</div>
       <div class="mob-nav-body">
-        <span class="mob-nav-label">신청하기</span>
-        <span class="mob-nav-desc">무료 상담 · 기획서 비용 없음</span>
+        <span class="mob-nav-label" data-i18n="mob.nav.cta">신청하기</span>
+        <span class="mob-nav-desc" data-i18n="mob.nav.cta.desc">무료 상담 · 기획서 비용 없음</span>
       </div>
       <span class="mob-nav-arr">›</span>
     </a>
@@ -660,37 +660,37 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="hero-why">
       <div class="hw-q">
         <div class="hw-q-bubble">
-          <span class="hw-q-label">자주 받는 질문</span>
-          "동네 청년도, 웹사이트 회사도 싸게 해준다던데 — 왜 NanuriWeb이어야 하나요?"
+          <span class="hw-q-label" data-i18n="hero.why.qlabel">자주 받는 질문</span>
+          <span data-i18n-html="hero.why.qbubble">"동네 청년도, 웹사이트 회사도 싸게 해준다던데 — 왜 NanuriWeb이어야 하나요?"</span>
         </div>
       </div>
       <div class="hw-grid">
         <div class="hw-item">
           <span class="hw-icon">🌐</span>
           <div class="hw-body">
-            <span class="hw-strong">만들면 바로 72개 도시에 노출됩니다</span>
-            <span class="hw-vs">일반 업체는 완성 후 <s>홍보를 따로</s> 해야 합니다 <em style="color:rgba(201,168,76,.5);font-style:normal;">(현재 72개 → 목표 500개)</em></span>
+            <span class="hw-strong" data-i18n="hero.why.item1.strong">만들면 바로 72개 도시에 노출됩니다</span>
+            <span class="hw-vs" data-i18n-html="hero.why.item1.vs">일반 업체는 완성 후 <s>홍보를 따로</s> 해야 합니다 <em style="color:rgba(201,168,76,.5);font-style:normal;">(현재 72개 → 목표 500개)</em></span>
           </div>
         </div>
         <div class="hw-item">
           <span class="hw-icon">🤝</span>
           <div class="hw-body">
-            <span class="hw-strong">한국어로, 끝까지 함께하는 담당자</span>
-            <span class="hw-vs">영어 티켓 <s>기다릴 필요 없이</s> 직접 상담합니다</span>
+            <span class="hw-strong" data-i18n="hero.why.item2.strong">한국어로, 끝까지 함께하는 담당자</span>
+            <span class="hw-vs" data-i18n-html="hero.why.item2.vs">영어 티켓 <s>기다릴 필요 없이</s> 직접 상담합니다</span>
           </div>
         </div>
         <div class="hw-item">
           <span class="hw-icon">⛪</span>
           <div class="hw-body">
-            <span class="hw-strong">교회·한인 사역 구조를 이해합니다</span>
-            <span class="hw-vs">청년 프리랜서는 <s>예배·사역 구조</s>를 모릅니다</span>
+            <span class="hw-strong" data-i18n="hero.why.item3.strong">교회·한인 사역 구조를 이해합니다</span>
+            <span class="hw-vs" data-i18n-html="hero.why.item3.vs">청년 프리랜서는 <s>예배·사역 구조</s>를 모릅니다</span>
           </div>
         </div>
         <div class="hw-item">
           <span class="hw-icon">💳</span>
           <div class="hw-body">
-            <span class="hw-strong">일회 제작비, 숨겨진 비용 없음 $299~</span>
-            <span class="hw-vs">완성 후 <s>월정액·유지비 추가청구</s> 없습니다</span>
+            <span class="hw-strong" data-i18n="hero.why.item4.strong">일회 제작비, 숨겨진 비용 없음 $299~</span>
+            <span class="hw-vs" data-i18n-html="hero.why.item4.vs">완성 후 <s>월정액·유지비 추가청구</s> 없습니다</span>
           </div>
         </div>
 
@@ -698,30 +698,30 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
         <div class="hw-item hw-item-full">
           <span class="hw-icon">⚠️</span>
           <div class="hw-body" style="width:100%;">
-            <div class="hw-pt-headline"><span>싼 게 무조건 좋은 건 아닙니다 — 저가 홈페이지의 진짜 비용</span></div>
+            <div class="hw-pt-headline"><span data-i18n-html="hero.why.pt.head">싼 게 무조건 좋은 건 아닙니다 — 저가 홈페이지의 진짜 비용</span></div>
             <div class="hw-pt-cols">
               <div class="hw-pt-col bad">
-                <span class="hw-pt-col-label">💸 저가 업체 · 동네 프리랜서</span>
-                <div class="hw-pt-li"><span class="mk">✗</span><span>Google·Naver에 안 잡히는 홈페이지 → 기회 손실</span></div>
-                <div class="hw-pt-li"><span class="mk">✗</span><span>완성 후 혼자 남겨짐 — 수정할 때마다 별도 청구</span></div>
-                <div class="hw-pt-li"><span class="mk">✗</span><span>1~2년 후 재작업 → 처음부터 다시 비용 발생</span></div>
-                <div class="hw-pt-li"><span class="mk">✗</span><span>교회·한인 사역 구조 이해 없이 일반 템플릿 적용</span></div>
-                <div class="hw-pt-total">진짜 총비용 = 처음 가격의 2~3배</div>
+                <span class="hw-pt-col-label" data-i18n="hero.why.bad.label">💸 저가 업체 · 동네 프리랜서</span>
+                <div class="hw-pt-li"><span class="mk">✗</span><span data-i18n="hero.why.bad.li1">Google·Naver에 안 잡히는 홈페이지 → 기회 손실</span></div>
+                <div class="hw-pt-li"><span class="mk">✗</span><span data-i18n="hero.why.bad.li2">완성 후 혼자 남겨짐 — 수정할 때마다 별도 청구</span></div>
+                <div class="hw-pt-li"><span class="mk">✗</span><span data-i18n="hero.why.bad.li3">1~2년 후 재작업 → 처음부터 다시 비용 발생</span></div>
+                <div class="hw-pt-li"><span class="mk">✗</span><span data-i18n="hero.why.bad.li4">교회·한인 사역 구조 이해 없이 일반 템플릿 적용</span></div>
+                <div class="hw-pt-total" data-i18n="hero.why.bad.total">진짜 총비용 = 처음 가격의 2~3배</div>
               </div>
               <div class="hw-pt-col good">
-                <span class="hw-pt-col-label">✦ NanuriWeb 처음부터 제대로</span>
-                <div class="hw-pt-li"><span class="mk">✓</span><span>제작 즉시 HebronGuide 72개 도시 자동 노출</span></div>
-                <div class="hw-pt-li"><span class="mk">✓</span><span>한국어 담당자 — 완성 후에도 함께합니다</span></div>
-                <div class="hw-pt-li"><span class="mk">✓</span><span>SEO 최적화 기본 포함 → 재작업 없음</span></div>
-                <div class="hw-pt-li"><span class="mk">✓</span><span>교회·사역·한인 커뮤니티 맞춤 설계</span></div>
-                <div class="hw-pt-total">일회 제작비로 끝 · $299~ · 재투자 없음</div>
+                <span class="hw-pt-col-label" data-i18n="hero.why.good.label">✦ NanuriWeb 처음부터 제대로</span>
+                <div class="hw-pt-li"><span class="mk">✓</span><span data-i18n="hero.why.good.li1">제작 즉시 HebronGuide 72개 도시 자동 노출</span></div>
+                <div class="hw-pt-li"><span class="mk">✓</span><span data-i18n="hero.why.good.li2">한국어 담당자 — 완성 후에도 함께합니다</span></div>
+                <div class="hw-pt-li"><span class="mk">✓</span><span data-i18n="hero.why.good.li3">SEO 최적화 기본 포함 → 재작업 없음</span></div>
+                <div class="hw-pt-li"><span class="mk">✓</span><span data-i18n="hero.why.good.li4">교회·사역·한인 커뮤니티 맞춤 설계</span></div>
+                <div class="hw-pt-total" data-i18n="hero.why.good.total">일회 제작비로 끝 · $299~ · 재투자 없음</div>
               </div>
             </div>
           </div>
         </div>
 
       </div>
-      <span class="hw-answer-tag">✦ 그래서 NanuriWeb입니다 — 아래에서 요금을 확인하세요 ↓</span>
+      <span class="hw-answer-tag" data-i18n="hero.why.answer">✦ 그래서 NanuriWeb입니다 — 아래에서 요금을 확인하세요 ↓</span>
     </div>
 
     <div class="hero-fork">
@@ -760,35 +760,35 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <section class="phil-section" id="philosophy">
   <div class="phil-inner">
 
-    <span class="phil-kicker reveal">NanuriWeb의 철학 · Our Philosophy</span>
+    <span class="phil-kicker reveal" data-i18n="phil.kicker">NanuriWeb의 철학 · Our Philosophy</span>
 
     <!-- 수학 비유: 초등생 vs 대학생 -->
     <div class="phil-analogy-wrap">
 
       <div class="phil-col bad reveal">
-        <span class="phil-col-label">목적과 철학 없는 제작</span>
-        <div class="phil-col-title">초등학생의<br>수학 문제 풀기</div>
+        <span class="phil-col-label" data-i18n="phil.bad.label">목적과 철학 없는 제작</span>
+        <div class="phil-col-title" data-i18n-html="phil.bad.title">초등학생의<br>수학 문제 풀기</div>
         <div class="phil-col-items">
-          <div class="phil-col-item"><span class="phil-bk">–</span><span>공식을 외워서 적용합니다</span></div>
-          <div class="phil-col-item"><span class="phil-bk">–</span><span>정답을 맞히면 끝입니다</span></div>
-          <div class="phil-col-item"><span class="phil-bk">–</span><span>왜 푸는지 모릅니다</span></div>
-          <div class="phil-col-item"><span class="phil-bk">–</span><span>접근 동기가 없습니다</span></div>
+          <div class="phil-col-item"><span class="phil-bk">–</span><span data-i18n="phil.bad.item1">공식을 외워서 적용합니다</span></div>
+          <div class="phil-col-item"><span class="phil-bk">–</span><span data-i18n="phil.bad.item2">정답을 맞히면 끝입니다</span></div>
+          <div class="phil-col-item"><span class="phil-bk">–</span><span data-i18n="phil.bad.item3">왜 푸는지 모릅니다</span></div>
+          <div class="phil-col-item"><span class="phil-bk">–</span><span data-i18n="phil.bad.item4">접근 동기가 없습니다</span></div>
         </div>
-        <div class="phil-col-result">→ 방문자가 보이지 않는 웹사이트</div>
+        <div class="phil-col-result" data-i18n="phil.bad.result">→ 방문자가 보이지 않는 웹사이트</div>
       </div>
 
       <div class="phil-vs-divider">vs</div>
 
       <div class="phil-col good reveal">
-        <span class="phil-col-label">환대의 철학이 스며든 제작</span>
-        <div class="phil-col-title">대학생의<br>수학 문제 풀기</div>
+        <span class="phil-col-label" data-i18n="phil.good.label">환대의 철학이 스며든 제작</span>
+        <div class="phil-col-title" data-i18n-html="phil.good.title">대학생의<br>수학 문제 풀기</div>
         <div class="phil-col-items">
-          <div class="phil-col-item"><span class="phil-bk">✦</span><span>원리를 이해하고 접근합니다</span></div>
-          <div class="phil-col-item"><span class="phil-bk">✦</span><span>문제의 본질을 봅니다</span></div>
-          <div class="phil-col-item"><span class="phil-bk">✦</span><span><strong style="color:var(--gold-light);">왜 만드는지 알고 있습니다</strong></span></div>
-          <div class="phil-col-item"><span class="phil-bk">✦</span><span>동기와 의도가 고도로 스며듭니다</span></div>
+          <div class="phil-col-item"><span class="phil-bk">✦</span><span data-i18n="phil.good.item1">원리를 이해하고 접근합니다</span></div>
+          <div class="phil-col-item"><span class="phil-bk">✦</span><span data-i18n="phil.good.item2">문제의 본질을 봅니다</span></div>
+          <div class="phil-col-item"><span class="phil-bk">✦</span><span data-i18n-html="phil.good.item3"><strong style="color:var(--gold-light);">왜 만드는지 알고 있습니다</strong></span></div>
+          <div class="phil-col-item"><span class="phil-bk">✦</span><span data-i18n="phil.good.item4">동기와 의도가 고도로 스며듭니다</span></div>
         </div>
-        <div class="phil-col-result">→ 방문자의 마음이 보이는 웹사이트</div>
+        <div class="phil-col-result" data-i18n="phil.good.result">→ 방문자의 마음이 보이는 웹사이트</div>
       </div>
 
     </div>
@@ -796,11 +796,11 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <!-- 브랜드 선언문 -->
     <div class="phil-declaration reveal">
       <span class="phil-decl-deco">"</span>
-      <p class="phil-decl-text">
+      <p class="phil-decl-text" data-i18n-html="phil.decl.text">
         NanuriWeb은 단순히 웹사이트를 만드는 회사가 아닙니다.
         <em>'환대의 정신'을 심고 전하는 회사입니다.</em>
       </p>
-      <p class="phil-decl-sub">
+      <p class="phil-decl-sub" data-i18n-html="phil.decl.sub">
         목적과 철학 없이 만든 웹사이트와 환대의 정신이 깊이 스며든 웹사이트의 차이는,<br>
         코드 한 줄이 아니라 <strong>접근의 동기와 의도</strong>에서부터 시작됩니다.
       </p>
@@ -810,19 +810,19 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="phil-hwandae reveal">
       <div class="phil-hwandae-hd">
         <span style="font-size:16px;">🕊</span>
-        <span class="phil-hwandae-hd-text">환대의 정신 · Spirit of Hospitality</span>
+        <span class="phil-hwandae-hd-text" data-i18n="phil.hwandae.title">환대의 정신 · Spirit of Hospitality</span>
       </div>
       <div class="phil-hwandae-item">
         <span class="phil-hwandae-num">01</span>
-        <span class="phil-hwandae-text"><strong>낯선 땅에서도 누구든 따뜻하게 맞이하는 마음</strong> — 방문자를 고객이 아닌 귀한 손님으로 대합니다</span>
+        <span class="phil-hwandae-text" data-i18n-html="phil.hwandae.item1"><strong>낯선 땅에서도 누구든 따뜻하게 맞이하는 마음</strong> — 방문자를 고객이 아닌 귀한 손님으로 대합니다</span>
       </div>
       <div class="phil-hwandae-item">
         <span class="phil-hwandae-num">02</span>
-        <span class="phil-hwandae-text"><strong>모든 페이지, 모든 문장에 그 마음이 배어 있어야 합니다</strong> — 철학은 소개 페이지 한 곳에만 있지 않습니다</span>
+        <span class="phil-hwandae-text" data-i18n-html="phil.hwandae.item2"><strong>모든 페이지, 모든 문장에 그 마음이 배어 있어야 합니다</strong> — 철학은 소개 페이지 한 곳에만 있지 않습니다</span>
       </div>
       <div class="phil-hwandae-item">
         <span class="phil-hwandae-num">03</span>
-        <span class="phil-hwandae-text"><strong>HebronGuide 72개 도시에서 실천해온 정신</strong> — 500개 도시를 향해 지금도 확장 중이며, 그 환대를 웹사이트로 이어갑니다</span>
+        <span class="phil-hwandae-text" data-i18n-html="phil.hwandae.item3"><strong>HebronGuide 72개 도시에서 실천해온 정신</strong> — 500개 도시를 향해 지금도 확장 중이며, 그 환대를 웹사이트로 이어갑니다</span>
       </div>
     </div>
 
@@ -834,30 +834,30 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <section class="why-section">
   <div class="why-inner">
     <div class="why-header">
-      <span class="why-kicker">왜 NanuriWeb인가 · Why NanuriWeb</span>
-      <h2 class="why-h2">템플릿 서비스와는 다릅니다<br><span style="color:var(--gold);">한인 교회·사업체 전문 맞춤 제작</span></h2>
-      <p class="why-sub">Ministry Brands·Wix·Squarespace는 모든 교회가 같아 보입니다. 우리는 처음부터 당신의 교회·사업체만을 위해 설계합니다.</p>
+      <span class="why-kicker" data-i18n="why.kicker">왜 NanuriWeb인가 · Why NanuriWeb</span>
+      <h2 class="why-h2" data-i18n-html="why.h2">템플릿 서비스와는 다릅니다<br><span style="color:var(--gold);">한인 교회·사업체 전문 맞춤 제작</span></h2>
+      <p class="why-sub" data-i18n="why.sub">Ministry Brands·Wix·Squarespace는 모든 교회가 같아 보입니다. 우리는 처음부터 당신의 교회·사업체만을 위해 설계합니다.</p>
     </div>
 
     <div class="why-grid">
 
       <!-- 카드 1: 맞춤 제작 vs 템플릿 -->
       <div class="why-card reveal">
-        <div class="why-card-tag vs">vs 템플릿 서비스</div>
+        <div class="why-card-tag vs" data-i18n="why.c1.tag">vs 템플릿 서비스</div>
         <div class="why-card-icon" style="background:rgba(11,22,40,.07);">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="3"/>
             <path d="M3 9h18M9 21V9"/>
           </svg>
         </div>
-        <h3 class="why-card-title">100% 완전 맞춤 제작</h3>
-        <p class="why-card-body">Ministry Brands·Wix는 수백 교회가 똑같은 템플릿을 씁니다. NanuriWeb은 처음부터 당신의 교회·사업체만을 위해 설계합니다. 비슷한 홈페이지? 없습니다.</p>
-        <div class="why-card-note">→ 당회·장로회 기획서도 함께 준비해 드립니다</div>
+        <h3 class="why-card-title" data-i18n="why.c1.title">100% 완전 맞춤 제작</h3>
+        <p class="why-card-body" data-i18n="why.c1.body">Ministry Brands·Wix는 수백 교회가 똑같은 템플릿을 씁니다. NanuriWeb은 처음부터 당신의 교회·사업체만을 위해 설계합니다. 비슷한 홈페이지? 없습니다.</p>
+        <div class="why-card-note" data-i18n="why.c1.note">→ 당회·장로회 기획서도 함께 준비해 드립니다</div>
       </div>
 
       <!-- 카드 2: HebronGuide 독점 혜택 (featured) -->
       <div class="why-card featured reveal">
-        <div class="why-card-tag excl">독점 혜택 · Exclusive</div>
+        <div class="why-card-tag excl" data-i18n="why.c2.tag">독점 혜택 · Exclusive</div>
         <div class="why-card-icon" style="background:rgba(201,168,76,.15);">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="9.5"/>
@@ -865,23 +865,23 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
             <path d="M2.5 12Q7 10 12 12Q17 14 21.5 12"/>
           </svg>
         </div>
-        <h3 class="why-card-title">HebronGuide 현재 72개 도시<br>자동 등재 — 어디도 없는 혜택</h3>
-        <p class="why-card-body">홈페이지 완성 즉시 <strong>현재 72개 도시</strong> 한인 네트워크에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.</p>
-        <div class="why-card-note">→ HebronGuide.com — 한인 최대 글로벌 디렉터리</div>
+        <h3 class="why-card-title" data-i18n-html="why.c2.title">HebronGuide 현재 72개 도시<br>자동 등재 — 어디도 없는 혜택</h3>
+        <p class="why-card-body" data-i18n-html="why.c2.body">홈페이지 완성 즉시 <strong>현재 72개 도시</strong> 한인 네트워크에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.</p>
+        <div class="why-card-note" data-i18n="why.c2.note">→ HebronGuide.com — 한인 최대 글로벌 디렉터리</div>
       </div>
 
       <!-- 카드 3: 한국어 전담 파트너십 -->
       <div class="why-card reveal">
-        <div class="why-card-tag spec">한인 교회·사업체 전문</div>
+        <div class="why-card-tag spec" data-i18n="why.c3.tag">한인 교회·사업체 전문</div>
         <div class="why-card-icon" style="background:rgba(26,127,90,.1);">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
             <path d="M12 7V3M8 7V4M16 7V4"/>
           </svg>
         </div>
-        <h3 class="why-card-title">한국어 전담 · 48시간 응답<br>만족할 때까지 무제한 수정</h3>
-        <p class="why-card-body">영어 장벽 없이 목사님·대표님과 한국어로 직접 소통합니다. 오픈 후에도 연관리비 내에서 끝까지 함께합니다. 숨겨진 비용, 없습니다.</p>
-        <div class="why-card-note">→ 일회 제작비 · 연관리비 투명 공개</div>
+        <h3 class="why-card-title" data-i18n-html="why.c3.title">한국어 전담 · 48시간 응답<br>만족할 때까지 무제한 수정</h3>
+        <p class="why-card-body" data-i18n="why.c3.body">영어 장벽 없이 목사님·대표님과 한국어로 직접 소통합니다. 오픈 후에도 연관리비 내에서 끝까지 함께합니다. 숨겨진 비용, 없습니다.</p>
+        <div class="why-card-note" data-i18n="why.c3.note">→ 일회 제작비 · 연관리비 투명 공개</div>
       </div>
 
     </div>
@@ -891,8 +891,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <!-- URGENCY STRIP — 이달 마감 -->
 <div class="urgency-strip">
   <span class="urgency-pulse"></span>
-  <span>이번 달 신규 접수 <strong>3건 남음</strong> — Church Plant 무료 기획서 포함</span>
-  <a href="#contact">지금 신청하기 →</a>
+  <span data-i18n-html="urgency.text">이번 달 신규 접수 <strong>3건 남음</strong> — Church Plant 무료 기획서 포함</span>
+  <a href="#contact" data-i18n="urgency.cta">지금 신청하기 →</a>
 </div>
 
 
@@ -1113,104 +1113,104 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <section class="faq-section" id="faq">
   <div class="faq-inner">
     <div class="faq-header">
-      <span class="faq-kicker">자주 묻는 질문 · FAQ</span>
-      <h2 class="faq-h2">궁금하신 게 있으시죠?</h2>
-      <p class="faq-sub">가장 많이 받는 질문들을 정리했습니다. 더 궁금하신 건 언제든 연락주세요.</p>
+      <span class="faq-kicker" data-i18n="faq.kicker">자주 묻는 질문 · FAQ</span>
+      <h2 class="faq-h2" data-i18n="faq.h2">궁금하신 게 있으시죠?</h2>
+      <p class="faq-sub" data-i18n="faq.sub">가장 많이 받는 질문들을 정리했습니다. 더 궁금하신 건 언제든 연락주세요.</p>
     </div>
 
     <div class="faq-list" id="faqList">
 
       <div class="faq-item open">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q1">
           HebronGuide 자동 등재, 어떻게 되는 건가요? (현재 72개 도시)
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a1">
             홈페이지가 완성되는 즉시, <strong>HebronGuide.com에 교회·사업체 정보가 자동으로 등재</strong>됩니다. 전 세계 한인이 새로운 도시에 이사하거나 여행할 때 HebronGuide에서 교회와 한인 사업체를 검색합니다. 별도 신청 없이 NanuriWeb 홈페이지를 만드는 것만으로 현재 72개 도시 네트워크에 자동 연결됩니다. HebronGuide는 72개 도시에서 운영 중이며, 500개 도시를 목표로 지속 확장 중입니다. <strong>어느 경쟁사도 제공할 수 없는 NanuriWeb만의 독점 혜택</strong>입니다. <a href="https://hebronguide.com" target="_blank">HebronGuide 보기 →</a>
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q2">
           홈페이지 제작에 얼마나 걸리나요?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a2">
             상담 후 기획서 제공까지 약 <strong>3~5 영업일</strong>, 기획서 확정 후 제작 완성까지 보통 <strong>2~3주</strong>가 소요됩니다. 플랜 규모와 콘텐츠 준비 속도에 따라 달라질 수 있습니다. 제작 중 중간 확인을 함께 진행하며, 만족하실 때까지 수정합니다.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q3">
           기술을 전혀 몰라도 괜찮나요?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a3">
             <strong>완전히 괜찮습니다.</strong> 처음 상담부터 오픈까지 전 과정을 목사님·대표님이 이해하실 수 있는 언어로 설명해 드립니다. 완성 후에도 <strong>직접 소식을 업데이트하는 방법(CMS)</strong>을 알려드리며, 어려우시면 언제든 연락 주시면 도와드립니다. 기술 지식은 필요 없습니다.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q4">
           제작비 말고 추가 비용이 있나요?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a4">
             <strong>숨겨진 비용은 없습니다.</strong> 제작비(일회)와 연관리비만 있습니다. 연관리비는 도메인·호스팅·유지관리를 포함하며 연초에 일시 납부합니다. Church Plant 플랜은 <strong>2년 관리비 무료</strong>입니다. 추가 페이지나 기능은 상담 시 미리 안내드립니다. 진행 중 깜짝 청구서는 없습니다.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q5">
           Church Plant 플랜($299)은 누가 신청할 수 있나요?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a5">
             <strong>설립 3년 이내, 성도 50명 이하</strong>의 개척교회라면 신청 가능합니다. Growth Plan의 모든 기능(10페이지·CMS·HebronGuide 연동)이 포함되며, 연관리비 2년 무료입니다. 개척교회를 우선 섬기는 마음으로 운영하는 특별 플랜입니다. 조건이 애매하시면 먼저 무료 상담을 신청해 주세요.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q6">
           당회 기획서가 무엇인가요? 꼭 필요한가요?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a6">
             장로교 등 당회·제직회 심의가 필요한 교회에서는 <strong>홈페이지 제작 기획서를 공식 안건으로 제출</strong>해야 합니다. NanuriWeb은 이 기획서를 무료로 함께 준비해 드립니다. 예산 계획, 제작 범위, 기대 효과 등을 포함한 전문 문서로, 당회 심의를 통과하는 데 실질적으로 도움이 됩니다. 당회 기획서가 필요 없는 교회는 그냥 건너뛰셔도 됩니다.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q7">
           오픈 후에도 계속 관리해 주시나요?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a7">
             <strong>연관리비 내에서 오픈 후에도 끝까지 함께합니다.</strong> 간단한 내용 수정, 문의 폼 점검, 속도 최적화 등을 포함합니다. 큰 기능 추가나 디자인 개편은 별도 협의하지만, 일상적인 유지관리는 걱정 없이 연락 주시면 됩니다. NanuriWeb은 '한 번 만들고 끝'이 아니라 <strong>끝까지 함께하는 파트너</strong>입니다.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="faq.q8">
           사업체도 교회처럼 같은 수준의 서비스를 받을 수 있나요?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">
+          <div class="faq-a-inner" data-i18n-html="faq.a8">
             <strong>네, 동일한 마음으로 섬깁니다.</strong> 한인 식당, 미용실, 부동산, 의원, 학원 등 모든 사업체에 대해 맞춤 제작을 제공합니다. HebronGuide 72개 도시 자동 등재도 동일하게 적용됩니다. Solo Plan $299~부터 시작하며, 창업 3년 이내 사업체는 Startup Plan으로 50% 할인 혜택이 있습니다.
           </div>
         </div>
@@ -1219,8 +1219,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div><!-- /faq-list -->
 
     <div class="faq-cta-row">
-      <p style="font-size:14px;color:var(--gray);margin-bottom:16px;">더 궁금하신 게 있으시면 언제든 연락주세요. 기획서 제공까지는 비용이 없습니다.</p>
-      <a href="#contact" class="btn-p">무료 상담 신청하기 →</a>
+      <p style="font-size:14px;color:var(--gray);margin-bottom:16px;" data-i18n-html="faq.cta.text">더 궁금하신 게 있으시면 언제든 연락주세요. 기획서 제공까지는 비용이 없습니다.</p>
+      <a href="#contact" class="btn-p" data-i18n="faq.cta.btn">무료 상담 신청하기 →</a>
     </div>
   </div>
 </section>
@@ -1352,7 +1352,6 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <p data-i18n="contact.info.p">기술 모르셔도 됩니다. 플랜이 맞는지 몰라도 됩니다. 오픈 후에도 끝까지 — 연관리비 내에서 계속 관리합니다.</p>
       <div class="cdetails">
         <div class="cdetail"><span class="c-ico">📧</span><span>hello@nanuriweb.com</span></div>
-        <div class="cdetail"><span class="c-ico">💬</span><span data-i18n="contact.info.kakao">카카오톡 문의 가능 · ID: nanuriweb</span></div>
         <div class="cdetail"><span class="c-ico">🌐</span><span>NanuriWeb.com</span></div>
         <div class="cdetail"><span class="c-ico">📍</span><span>Hebron Platform LLC · Seattle, WA</span></div>
       </div>
@@ -1379,19 +1378,19 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <div class="about-facts reveal">
         <div class="fact-item">
           <span class="f-ico">⏱️</span>
-          <div class="f-text"><strong>빠른 완성</strong>상담부터 오픈까지 신속하게 진행합니다. 중간중간 함께 확인합니다.</div>
+          <div class="f-text" data-i18n-html="about.fact1"><strong>빠른 완성</strong>상담부터 오픈까지 신속하게 진행합니다. 중간중간 함께 확인합니다.</div>
         </div>
         <div class="fact-item">
           <span class="f-ico">🌍</span>
-          <div class="f-text"><strong>HebronGuide 자동 연동</strong>홈페이지 오픈과 동시에 현재 72개 도시 네트워크에 자동 등재됩니다.</div>
+          <div class="f-text" data-i18n-html="about.fact2"><strong>HebronGuide 자동 연동</strong>홈페이지 오픈과 동시에 현재 72개 도시 네트워크에 자동 등재됩니다.</div>
         </div>
         <div class="fact-item">
           <span class="f-ico">🔧</span>
-          <div class="f-text"><strong>오픈 후 유지관리 포함</strong>완성 후에도 연관리비 내에서 지속 관리합니다.</div>
+          <div class="f-text" data-i18n-html="about.fact3"><strong>오픈 후 유지관리 포함</strong>완성 후에도 연관리비 내에서 지속 관리합니다.</div>
         </div>
         <div class="fact-item">
           <span class="f-ico">📋</span>
-          <div class="f-text"><strong>당회 기획서 지원 (교회)</strong>장로회 심의에 필요한 기획서를 함께 준비해 드립니다.</div>
+          <div class="f-text" data-i18n-html="about.fact4"><strong>당회 기획서 지원 (교회)</strong>장로회 심의에 필요한 기획서를 함께 준비해 드립니다.</div>
         </div>
       </div>
 
@@ -1446,8 +1445,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
           <a href="https://edendallas.org" target="_blank" class="pc-link">edendallas.org →</a>
         </div>
         <div class="pc-progress">
-          <div class="pc-progress-label">진행 중</div>
-          <div class="pc-progress-text">한국 교회 2곳 — 경기도 지역 · 장로회 기획서 심의 중</div>
+          <div class="pc-progress-label" data-i18n="about.prog.label">진행 중</div>
+          <div class="pc-progress-text" data-i18n="about.prog.text">한국 교회 2곳 — 경기도 지역 · 장로회 기획서 심의 중</div>
         </div>
 
         <div class="testimonial-card reveal">
@@ -1468,30 +1467,30 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
       <div class="vmpc-card v">
         <span class="vmpc-icon">🌏</span>
-        <span class="vmpc-label">비전 · Vision</span>
-        <div class="vmpc-title">디지털 환대로<br>세계 어디서나 발견되는 한인 커뮤니티</div>
-        <p class="vmpc-text">낯선 땅의 교회와 사업체가 온라인에서 올바르게 발견되고, 연결되고, 섬김받는 세상을 만들어갑니다.</p>
+        <span class="vmpc-label" data-i18n="vmpc.v.label">비전 · Vision</span>
+        <div class="vmpc-title" data-i18n-html="vmpc.v.title">디지털 환대로<br>세계 어디서나 발견되는 한인 커뮤니티</div>
+        <p class="vmpc-text" data-i18n="vmpc.v.text">낯선 땅의 교회와 사업체가 온라인에서 올바르게 발견되고, 연결되고, 섬김받는 세상을 만들어갑니다.</p>
       </div>
 
       <div class="vmpc-card m">
         <span class="vmpc-icon">🤝</span>
-        <span class="vmpc-label">사명 · Mission</span>
-        <div class="vmpc-title">환대의 정신이 스며든<br>웹사이트로 처음부터 제대로</div>
-        <p class="vmpc-text">교회와 사업체가 온라인 첫날부터 발견되도록, 철학이 깊이 배어든 웹사이트를 한국어로 함께 만듭니다.</p>
+        <span class="vmpc-label" data-i18n="vmpc.m.label">사명 · Mission</span>
+        <div class="vmpc-title" data-i18n-html="vmpc.m.title">환대의 정신이 스며든<br>웹사이트로 처음부터 제대로</div>
+        <p class="vmpc-text" data-i18n="vmpc.m.text">교회와 사업체가 온라인 첫날부터 발견되도록, 철학이 깊이 배어든 웹사이트를 한국어로 함께 만듭니다.</p>
       </div>
 
       <div class="vmpc-card p">
         <span class="vmpc-icon">🕊</span>
-        <span class="vmpc-label">철학 · Philosophy</span>
-        <div class="vmpc-title">웹사이트는<br>사람을 맞이하는 공간입니다</div>
-        <p class="vmpc-text">단순한 디지털 명함이 아닙니다. 방문자를 귀한 손님으로 맞이하는 환대의 마음이 모든 페이지에 배어 있어야 합니다.</p>
+        <span class="vmpc-label" data-i18n="vmpc.p.label">철학 · Philosophy</span>
+        <div class="vmpc-title" data-i18n-html="vmpc.p.title">웹사이트는<br>사람을 맞이하는 공간입니다</div>
+        <p class="vmpc-text" data-i18n="vmpc.p.text">단순한 디지털 명함이 아닙니다. 방문자를 귀한 손님으로 맞이하는 환대의 마음이 모든 페이지에 배어 있어야 합니다.</p>
       </div>
 
       <div class="vmpc-card val">
         <span class="vmpc-icon">⚖️</span>
-        <span class="vmpc-label">가치 · Values</span>
-        <div class="vmpc-title">우리가 지키는<br>네 가지 약속</div>
-        <p class="vmpc-text">
+        <span class="vmpc-label" data-i18n="vmpc.val.label">가치 · Values</span>
+        <div class="vmpc-title" data-i18n-html="vmpc.val.title">우리가 지키는<br>네 가지 약속</div>
+        <p class="vmpc-text" data-i18n-html="vmpc.val.text">
           <strong>🏠 환대 (Hospitality)</strong> 방문자를 손님처럼<br>
           <strong>🤝 동반 (Partnership)</strong> 완성 후에도 함께<br>
           <strong>✦ 진실 (Integrity)</strong> 숨겨진 비용 없음<br>
@@ -1503,17 +1502,17 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
     <!-- 감동 선언문 -->
     <div class="about-mission-stmt reveal">
-      <span class="stmt-eyebrow">✦ NanuriWeb과 함께한다는 것의 의미</span>
-      <p class="stmt-main">
+      <span class="stmt-eyebrow" data-i18n="stmt.eyebrow">✦ NanuriWeb과 함께한다는 것의 의미</span>
+      <p class="stmt-main" data-i18n-html="stmt.main">
         NanuriWeb에 웹사이트를 맡기는 순간,<br>
         단순히 홈페이지를 구입하는 것이 아닙니다.<br>
         <em>낯선 땅의 교회와 한인 사업체가 세상에 올바르게 발견되도록<br>돕는 이 숭고하고 좋은 일에 함께 동참하시는 것입니다.</em>
       </p>
-      <p class="stmt-sub">
+      <p class="stmt-sub" data-i18n-html="stmt.sub">
         이것은 돈으로 환산할 수 없는 가치입니다.<br>
         당신의 웹사이트 하나가 누군가의 첫 번째 환대의 문이 됩니다.
       </p>
-      <span class="stmt-badge">🕊 당신의 참여가 환대의 생태계를 만듭니다</span>
+      <span class="stmt-badge" data-i18n="stmt.badge">🕊 당신의 참여가 환대의 생태계를 만듭니다</span>
     </div>
 
   </div>
@@ -1526,53 +1525,53 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <section class="eco-section">
   <div class="eco-inner">
     <div class="eco-header">
-      <span class="eco-kicker">Nanuri Platform · 나누리 플랫폼</span>
-      <h2 class="eco-h2">교회도, 사업체도, 집도 —<br><span style="color:var(--gold);">한인 커뮤니티의 모든 필요를 섬깁니다</span></h2>
-      <p class="eco-sub">HebronGuide 생태계 위에서 나누리 플랫폼이 확장됩니다. 홈페이지부터 집까지, 한국어로 함께합니다.</p>
+      <span class="eco-kicker" data-i18n="eco.kicker">Nanuri Platform · 나누리 플랫폼</span>
+      <h2 class="eco-h2" data-i18n-html="eco.h2">교회도, 사업체도, 집도 —<br><span style="color:var(--gold);">한인 커뮤니티의 모든 필요를 섬깁니다</span></h2>
+      <p class="eco-sub" data-i18n="eco.sub">HebronGuide 생태계 위에서 나누리 플랫폼이 확장됩니다. 홈페이지부터 집까지, 한국어로 함께합니다.</p>
     </div>
 
     <div class="eco-grid">
 
       <!-- NanuriWeb 카드 (운영 중) -->
       <div class="eco-card ew reveal">
-        <div class="eco-status live"><span class="s-dot"></span>운영 중 · LIVE</div>
+        <div class="eco-status live"><span class="s-dot"></span><span data-i18n="eco.web.status">운영 중 · LIVE</span></div>
         <div class="eco-logo"><span class="ew-accent">Nanuri</span>Web</div>
-        <div class="eco-tagline">교회·사업체 홈페이지 전문 맞춤 제작<br>HebronGuide 72개 도시 자동 연동 (500개 목표)</div>
+        <div class="eco-tagline" data-i18n-html="eco.web.tagline">교회·사업체 홈페이지 전문 맞춤 제작<br>HebronGuide 72개 도시 자동 연동 (500개 목표)</div>
         <ul class="eco-feats">
-          <li>100% 맞춤 제작 — 템플릿 없음</li>
-          <li>제작 즉시 HebronGuide 72개 도시 자동 등재</li>
-          <li>한국어 전담 상담 · 당회 기획서 지원</li>
-          <li>Church Plant $299 · 2년 관리비 무료</li>
-          <li>오픈 후에도 끝까지 함께하는 파트너</li>
+          <li data-i18n="eco.web.feat1">100% 맞춤 제작 — 템플릿 없음</li>
+          <li data-i18n="eco.web.feat2">제작 즉시 HebronGuide 72개 도시 자동 등재</li>
+          <li data-i18n="eco.web.feat3">한국어 전담 상담 · 당회 기획서 지원</li>
+          <li data-i18n="eco.web.feat4">Church Plant $299 · 2년 관리비 무료</li>
+          <li data-i18n="eco.web.feat5">오픈 후에도 끝까지 함께하는 파트너</li>
         </ul>
         <div class="eco-link-row">
-          <a href="#plans" class="eco-btn gold">요금 보기 →</a>
-          <a href="#contact" class="eco-btn" style="background:rgba(201,168,76,.12);border:1.5px solid rgba(201,168,76,.35);color:var(--gold);">무료 상담</a>
+          <a href="#plans" class="eco-btn gold" data-i18n="eco.web.btn.plans">요금 보기 →</a>
+          <a href="#contact" class="eco-btn" style="background:rgba(201,168,76,.12);border:1.5px solid rgba(201,168,76,.35);color:var(--gold);" data-i18n="eco.web.btn.contact">무료 상담</a>
         </div>
       </div>
 
       <!-- NanuriHome 카드 (준비중) -->
       <div class="eco-card eh reveal">
         <div class="eco-coming-badge">準備中 · Coming Soon</div>
-        <div class="eco-status soon"><span class="s-dot"></span>준비중 · 2026년 하반기</div>
+        <div class="eco-status soon"><span class="s-dot"></span><span data-i18n="eco.home.status">준비중 · 2026년 하반기</span></div>
         <div class="eco-logo"><span class="eh-accent">Nanuri</span>Home</div>
-        <div class="eco-tagline">부동산·집 관련 전문가 연결 정보 서비스<br>NanuriHome.com — 집을 찾고, 고치고, 꾸미는 모든 것</div>
+        <div class="eco-tagline" data-i18n-html="eco.home.tagline">부동산·집 관련 전문가 연결 정보 서비스<br>NanuriHome.com — 집을 찾고, 고치고, 꾸미는 모든 것</div>
         <ul class="eco-feats eh-list">
-          <li>한인 부동산 중개인 직접 연결</li>
-          <li>인테리어·리모델링 전문가 매칭</li>
-          <li>이사·정착 서비스 안내 (HebronGuide 연동)</li>
-          <li>집 수리·청소·조경 등 홈서비스 제공자 연결</li>
-          <li>모기지·보험·세금 등 집 관련 전문 상담</li>
+          <li data-i18n="eco.home.feat1">한인 부동산 중개인 직접 연결</li>
+          <li data-i18n="eco.home.feat2">인테리어·리모델링 전문가 매칭</li>
+          <li data-i18n="eco.home.feat3">이사·정착 서비스 안내 (HebronGuide 연동)</li>
+          <li data-i18n="eco.home.feat4">집 수리·청소·조경 등 홈서비스 제공자 연결</li>
+          <li data-i18n="eco.home.feat5">모기지·보험·세금 등 집 관련 전문 상담</li>
         </ul>
 
         <!-- 출시 알림 사전 등록 -->
         <div class="eco-notify" id="homeNotify">
-          <span class="eco-notify-label">🏠 출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다</span>
+          <span class="eco-notify-label" data-i18n="eco.home.notify.label">🏠 출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다</span>
           <div class="eco-notify-row">
-            <input type="email" class="eco-notify-input" id="homeEmail" placeholder="이메일 주소를 입력해 주세요">
-            <button class="eco-notify-btn" onclick="registerHome()">알림 신청</button>
+            <input type="email" class="eco-notify-input" id="homeEmail" placeholder="이메일 주소를 입력해 주세요" data-i18n-placeholder="eco.home.notify.ph">
+            <button class="eco-notify-btn" onclick="registerHome()" data-i18n="eco.home.notify.btn">알림 신청</button>
           </div>
-          <div class="eco-notify-ok" id="homeOk">✓ 등록되었습니다! 출시 시 가장 먼저 연락드립니다.</div>
+          <div class="eco-notify-ok" id="homeOk" data-i18n="eco.home.notify.ok">✓ 등록되었습니다! 출시 시 가장 먼저 연락드립니다.</div>
         </div>
       </div>
 
@@ -1584,9 +1583,9 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <!-- SHARE BAR -->
 <section class="share-section">
   <div class="share-inner">
-    <div class="share-eyebrow">Share · 공유하기</div>
-    <div class="share-heading">NanuriWeb을 소개해 주세요 🙏</div>
-    <div class="share-sub">홈페이지가 필요한 교회나 사업체에 이 페이지를 전달해 주세요</div>
+    <div class="share-eyebrow" data-i18n="share.eyebrow">Share · 공유하기</div>
+    <div class="share-heading" data-i18n="share.heading">NanuriWeb을 소개해 주세요 🙏</div>
+    <div class="share-sub" data-i18n="share.sub">홈페이지가 필요한 교회나 사업체에 이 페이지를 전달해 주세요</div>
     <div class="share-bar">
 
       <!-- KakaoTalk -->
@@ -1596,7 +1595,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
             <path d="M12 3C6.48 3 2 6.48 2 10.8c0 2.72 1.64 5.12 4.13 6.56L5 21l4.61-2.4c.77.12 1.57.19 2.39.19 5.52 0 10-3.48 10-7.99C22 6.48 17.52 3 12 3z"/>
           </svg>
         </span>
-        <span class="s-lbl">카카오톡</span>
+        <span class="s-lbl" data-i18n="share.kakao">카카오톡</span>
       </button>
 
       <!-- Instagram -->
@@ -1606,7 +1605,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
             <path d="M12 2c2.717 0 3.056.01 4.122.06 2.908.133 4.26 1.502 4.399 4.399.05 1.065.06 1.404.06 4.122 0 2.717-.01 3.056-.06 4.122-.139 2.897-1.487 4.267-4.399 4.399-1.066.05-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-2.908-.132-4.26-1.502-4.399-4.399C3.01 15.056 3 14.717 3 12c0-2.717.01-3.056.06-4.122.14-2.9 1.49-4.268 4.399-4.399C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.059-2.008.092-2.947 1.044-3.038 3.038C4.813 7.953 4.802 8.269 4.802 12c0 2.73.011 3.047.059 4.101.091 1.99 1.026 2.944 3.038 3.038 1.054.048 1.37.059 4.101.059 2.73 0 3.047-.011 4.101-.059 2.008-.094 2.944-1.049 3.038-3.038.048-1.054.059-1.37.059-4.101 0-2.73-.011-3.046-.059-4.101-.094-1.992-1.028-2.946-3.038-3.038C15.047 3.812 14.731 3.802 12 3.802zm0 3.064a5.134 5.134 0 110 10.268A5.134 5.134 0 0112 6.866zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
           </svg>
         </span>
-        <span class="s-lbl">인스타그램</span>
+        <span class="s-lbl" data-i18n="share.insta">인스타그램</span>
       </button>
 
       <!-- Facebook -->
@@ -1616,7 +1615,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
             <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97H15.83c-1.491 0-1.956.93-1.956 1.886v2.273h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
           </svg>
         </span>
-        <span class="s-lbl">페이스북</span>
+        <span class="s-lbl" data-i18n="share.fb">페이스북</span>
       </button>
 
       <!-- X (Twitter) -->
@@ -1657,7 +1656,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
             <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
           </svg>
         </span>
-        <span class="s-lbl">링크 복사</span>
+        <span class="s-lbl" data-i18n="share.copy">링크 복사</span>
       </button>
 
     </div>
@@ -1672,7 +1671,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <span style="color:var(--gold);">Nanuri</span><span style="color:rgba(255,255,255,.7);">Web</span>
     <span style="color:rgba(255,255,255,.35);font-weight:300;margin:0 8px;">·</span>
     <span style="color:#93c5fd;font-weight:600;">Nanuri</span><span style="color:rgba(255,255,255,.5);">Home</span>
-    <span style="font-size:11px;color:rgba(59,130,246,.7);margin-left:4px;font-weight:400;">준비중</span>
+    <span data-i18n="footer.home.badge" style="font-size:11px;color:rgba(59,130,246,.7);margin-left:4px;font-weight:400;">준비중</span>
   </div>
   <p class="footer-sub" data-i18n-html="footer.sub">
     Hebron Platform LLC · Seattle, WA · <a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>
@@ -1749,9 +1748,9 @@ async function submitForm() {
   const source = document.getElementById('c-source').value;
   const plan = document.getElementById('c-plan').value;
   const msg = document.getElementById('c-msg').value.trim();
-  if (!name || !email) { alert('교회·사업체명과 이메일을 입력해 주세요.'); return; }
+  if (!name || !email) { alert(LANG[currentLang]['contact.err.required'] || LANG['ko']['contact.err.required']); return; }
   const btn = document.querySelector('.fsubmit');
-  btn.textContent = '⏳ 전송 중...';
+  btn.textContent = LANG[currentLang]['contact.btn.sending'] || '⏳ 전송 중...';
   btn.disabled = true;
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
@@ -1769,15 +1768,15 @@ async function submitForm() {
     });
     const data = await res.json();
     if (data.success) {
-      btn.textContent = '✅ 신청 완료! 48시간 이내 연락드립니다.';
+      btn.textContent = LANG[currentLang]['contact.btn.success'] || '✅ 신청 완료! 48시간 이내 연락드립니다.';
       btn.style.background = '#1A7F5A';
     } else {
-      btn.textContent = '❌ 오류가 발생했습니다. 다시 시도해 주세요.';
+      btn.textContent = LANG[currentLang]['contact.btn.error'] || '❌ 오류가 발생했습니다. 다시 시도해 주세요.';
       btn.style.background = '#dc2626';
       btn.disabled = false;
     }
   } catch(e) {
-    btn.textContent = '❌ 네트워크 오류. 다시 시도해 주세요.';
+    btn.textContent = LANG[currentLang]['contact.btn.network'] || '❌ 네트워크 오류. 다시 시도해 주세요.';
     btn.style.background = '#dc2626';
     btn.disabled = false;
   }
@@ -1803,6 +1802,30 @@ const LANG = {
     'hero.chip2':'한국 교회 2곳 — 기획서 진행 중',
     'hero.chip3':'HebronGuide 72개 도시 연결 · 500개 목표',
     'hero.chip4':'한국어 직접 상담 · 숨겨진 비용 없음',
+    'hero.why.qlabel':'자주 받는 질문',
+    'hero.why.qbubble':'"동네 청년도, 웹사이트 회사도 싸게 해준다던데 — 왜 NanuriWeb이어야 하나요?"',
+    'hero.why.item1.strong':'만들면 바로 72개 도시에 노출됩니다',
+    'hero.why.item1.vs':'일반 업체는 완성 후 <s>홍보를 따로</s> 해야 합니다 <em style="color:rgba(201,168,76,.5);font-style:normal;">(현재 72개 → 목표 500개)</em>',
+    'hero.why.item2.strong':'한국어로, 끝까지 함께하는 담당자',
+    'hero.why.item2.vs':'영어 티켓 <s>기다릴 필요 없이</s> 직접 상담합니다',
+    'hero.why.item3.strong':'교회·한인 사역 구조를 이해합니다',
+    'hero.why.item3.vs':'청년 프리랜서는 <s>예배·사역 구조</s>를 모릅니다',
+    'hero.why.item4.strong':'일회 제작비, 숨겨진 비용 없음 $299~',
+    'hero.why.item4.vs':'완성 후 <s>월정액·유지비 추가청구</s> 없습니다',
+    'hero.why.pt.head':'싼 게 무조건 좋은 건 아닙니다 — 저가 홈페이지의 진짜 비용',
+    'hero.why.bad.label':'💸 저가 업체 · 동네 프리랜서',
+    'hero.why.bad.li1':'Google·Naver에 안 잡히는 홈페이지 → 기회 손실',
+    'hero.why.bad.li2':'완성 후 혼자 남겨짐 — 수정할 때마다 별도 청구',
+    'hero.why.bad.li3':'1~2년 후 재작업 → 처음부터 다시 비용 발생',
+    'hero.why.bad.li4':'교회·한인 사역 구조 이해 없이 일반 템플릿 적용',
+    'hero.why.bad.total':'진짜 총비용 = 처음 가격의 2~3배',
+    'hero.why.good.label':'✦ NanuriWeb 처음부터 제대로',
+    'hero.why.good.li1':'제작 즉시 HebronGuide 72개 도시 자동 노출',
+    'hero.why.good.li2':'한국어 담당자 — 완성 후에도 함께합니다',
+    'hero.why.good.li3':'SEO 최적화 기본 포함 → 재작업 없음',
+    'hero.why.good.li4':'교회·사역·한인 커뮤니티 맞춤 설계',
+    'hero.why.good.total':'일회 제작비로 끝 · $299~ · 재투자 없음',
+    'hero.why.answer':'✦ 그래서 NanuriWeb입니다 — 아래에서 요금을 확인하세요 ↓',
     'plans.eyebrow':'요금 · Plans','plans.title':'교회도, 사업체도',
     'plans.desc':'아래에서 원하시는 플랜을 선택하세요. 플랜 버튼을 누르시면 신청 폼으로 바로 연결됩니다.',
     'plans.tab.church':'⛪ 교회 Church','plans.tab.biz':'🏪 사업체 Business',
@@ -1884,7 +1907,6 @@ const LANG = {
     'contact.info.h3':'목사님·대표님이 이해하실 때까지 함께합니다',
     'contact.info.p':'기술 모르셔도 됩니다. 플랜이 맞는지 몰라도 됩니다. 오픈 후에도 끝까지 — 연관리비 내에서 계속 관리합니다.',
     'contact.info.response':'48시간 이내 응답 보장',
-    'contact.info.kakao':'카카오톡 문의 가능 · ID: nanuriweb',
     'trust.nohidden':'숨겨진 비용 없음','trust.revisions':'만족할 때까지 무제한 수정',
     'trust.korean':'한국어로 직접 소통','trust.response':'48시간 이내 응답 보장',
     'testimonial.quote':'처음에는 어떻게 시작해야 할지 막막했는데, 한국어로 차근차근 설명해 주셔서 편하게 진행할 수 있었습니다. 기대 이상의 결과물이었어요.',
@@ -1902,6 +1924,129 @@ const LANG = {
     'process.s3.title':'제작 & 검토','process.s3.desc':'제작하면서 중간 확인합니다. 만족하실 때까지 수정합니다.',
     'process.s4.title':'오픈 & 운영','process.s4.desc':'구글·네이버·HebronGuide 등록. 오픈 후에도 연관리비 내에서 계속 관리합니다.',
     'footer.sub':'Hebron Platform LLC · Seattle, WA · <a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 현재 72개 도시 · 500개 목표<br>© 2026 Hebron Platform LLC. All rights reserved.',
+    'mob.section':'페이지 바로가기',
+    'mob.nav.home':'홈','mob.nav.home.desc':'처음으로 돌아가기',
+    'mob.nav.phil':'철학','mob.nav.phil.desc':'환대의 정신 · NanuriWeb의 이유',
+    'mob.nav.plans':'요금 보기','mob.nav.plans.desc':'교회 $499~ · 사업체 $299~',
+    'mob.nav.faq.desc':'자주 묻는 질문 8가지',
+    'mob.nav.about':'회사 소개','mob.nav.about.desc':'비전 · 사명 · 철학 · 가치',
+    'mob.nav.cta':'신청하기','mob.nav.cta.desc':'무료 상담 · 기획서 비용 없음',
+    'phil.kicker':'NanuriWeb의 철학 · Our Philosophy',
+    'phil.bad.label':'목적과 철학 없는 제작',
+    'phil.bad.title':'초등학생의<br>수학 문제 풀기',
+    'phil.bad.item1':'공식을 외워서 적용합니다',
+    'phil.bad.item2':'정답을 맞히면 끝입니다',
+    'phil.bad.item3':'왜 푸는지 모릅니다',
+    'phil.bad.item4':'접근 동기가 없습니다',
+    'phil.bad.result':'→ 방문자가 보이지 않는 웹사이트',
+    'phil.good.label':'환대의 철학이 스며든 제작',
+    'phil.good.title':'대학생의<br>수학 문제 풀기',
+    'phil.good.item1':'원리를 이해하고 접근합니다',
+    'phil.good.item2':'문제의 본질을 봅니다',
+    'phil.good.item3':'<strong style="color:var(--gold-light);">왜 만드는지 알고 있습니다</strong>',
+    'phil.good.item4':'동기와 의도가 고도로 스며듭니다',
+    'phil.good.result':'→ 방문자의 마음이 보이는 웹사이트',
+    'phil.decl.text':'NanuriWeb은 단순히 웹사이트를 만드는 회사가 아닙니다.\n        <em>\'환대의 정신\'을 심고 전하는 회사입니다.</em>',
+    'phil.decl.sub':'목적과 철학 없이 만든 웹사이트와 환대의 정신이 깊이 스며든 웹사이트의 차이는,<br>코드 한 줄이 아니라 <strong>접근의 동기와 의도</strong>에서부터 시작됩니다.',
+    'phil.hwandae.title':'환대의 정신 · Spirit of Hospitality',
+    'phil.hwandae.item1':'<strong>낯선 땅에서도 누구든 따뜻하게 맞이하는 마음</strong> — 방문자를 고객이 아닌 귀한 손님으로 대합니다',
+    'phil.hwandae.item2':'<strong>모든 페이지, 모든 문장에 그 마음이 배어 있어야 합니다</strong> — 철학은 소개 페이지 한 곳에만 있지 않습니다',
+    'phil.hwandae.item3':'<strong>HebronGuide 72개 도시에서 실천해온 정신</strong> — 500개 도시를 향해 지금도 확장 중이며, 그 환대를 웹사이트로 이어갑니다',
+    'why.kicker':'왜 NanuriWeb인가 · Why NanuriWeb',
+    'why.h2':'템플릿 서비스와는 다릅니다<br><span style="color:var(--gold);">한인 교회·사업체 전문 맞춤 제작</span>',
+    'why.sub':'Ministry Brands·Wix·Squarespace는 모든 교회가 같아 보입니다. 우리는 처음부터 당신의 교회·사업체만을 위해 설계합니다.',
+    'why.c1.tag':'vs 템플릿 서비스',
+    'why.c1.title':'100% 완전 맞춤 제작',
+    'why.c1.body':'Ministry Brands·Wix는 수백 교회가 똑같은 템플릿을 씁니다. NanuriWeb은 처음부터 당신의 교회·사업체만을 위해 설계합니다. 비슷한 홈페이지? 없습니다.',
+    'why.c1.note':'→ 당회·장로회 기획서도 함께 준비해 드립니다',
+    'why.c2.tag':'독점 혜택 · Exclusive',
+    'why.c2.title':'HebronGuide 현재 72개 도시<br>자동 등재 — 어디도 없는 혜택',
+    'why.c2.body':'홈페이지 완성 즉시 <strong>현재 72개 도시</strong> 한인 네트워크에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.',
+    'why.c2.note':'→ HebronGuide.com — 한인 최대 글로벌 디렉터리',
+    'why.c3.tag':'한인 교회·사업체 전문',
+    'why.c3.title':'한국어 전담 · 48시간 응답<br>만족할 때까지 무제한 수정',
+    'why.c3.body':'영어 장벽 없이 목사님·대표님과 한국어로 직접 소통합니다. 오픈 후에도 연관리비 내에서 끝까지 함께합니다. 숨겨진 비용, 없습니다.',
+    'why.c3.note':'→ 일회 제작비 · 연관리비 투명 공개',
+    'urgency.text':'이번 달 신규 접수 <strong>3건 남음</strong> — Church Plant 무료 기획서 포함',
+    'urgency.cta':'지금 신청하기 →',
+    'share.eyebrow':'Share · 공유하기','share.heading':'NanuriWeb을 소개해 주세요 🙏',
+    'share.sub':'홈페이지가 필요한 교회나 사업체에 이 페이지를 전달해 주세요',
+    'share.kakao':'카카오톡','share.insta':'인스타그램','share.fb':'페이스북','share.copy':'링크 복사',
+    'faq.kicker':'자주 묻는 질문 · FAQ',
+    'faq.h2':'궁금하신 게 있으시죠?',
+    'faq.sub':'가장 많이 받는 질문들을 정리했습니다. 더 궁금하신 건 언제든 연락주세요.',
+    'faq.q1':'HebronGuide 자동 등재, 어떻게 되는 건가요? (현재 72개 도시)',
+    'faq.a1':'홈페이지가 완성되는 즉시, <strong>HebronGuide.com에 교회·사업체 정보가 자동으로 등재</strong>됩니다. 전 세계 한인이 새로운 도시에 이사하거나 여행할 때 HebronGuide에서 교회와 한인 사업체를 검색합니다. 별도 신청 없이 NanuriWeb 홈페이지를 만드는 것만으로 현재 72개 도시 네트워크에 자동 연결됩니다. HebronGuide는 72개 도시에서 운영 중이며, 500개 도시를 목표로 지속 확장 중입니다. <strong>어느 경쟁사도 제공할 수 없는 NanuriWeb만의 독점 혜택</strong>입니다. <a href="https://hebronguide.com" target="_blank">HebronGuide 보기 →</a>',
+    'faq.q2':'홈페이지 제작에 얼마나 걸리나요?',
+    'faq.a2':'상담 후 기획서 제공까지 약 <strong>3~5 영업일</strong>, 기획서 확정 후 제작 완성까지 보통 <strong>2~3주</strong>가 소요됩니다. 플랜 규모와 콘텐츠 준비 속도에 따라 달라질 수 있습니다. 제작 중 중간 확인을 함께 진행하며, 만족하실 때까지 수정합니다.',
+    'faq.q3':'기술을 전혀 몰라도 괜찮나요?',
+    'faq.a3':'<strong>완전히 괜찮습니다.</strong> 처음 상담부터 오픈까지 전 과정을 목사님·대표님이 이해하실 수 있는 언어로 설명해 드립니다. 완성 후에도 <strong>직접 소식을 업데이트하는 방법(CMS)</strong>을 알려드리며, 어려우시면 언제든 연락 주시면 도와드립니다. 기술 지식은 필요 없습니다.',
+    'faq.q4':'제작비 말고 추가 비용이 있나요?',
+    'faq.a4':'<strong>숨겨진 비용은 없습니다.</strong> 제작비(일회)와 연관리비만 있습니다. 연관리비는 도메인·호스팅·유지관리를 포함하며 연초에 일시 납부합니다. Church Plant 플랜은 <strong>2년 관리비 무료</strong>입니다. 추가 페이지나 기능은 상담 시 미리 안내드립니다. 진행 중 깜짝 청구서는 없습니다.',
+    'faq.q5':'Church Plant 플랜($299)은 누가 신청할 수 있나요?',
+    'faq.a5':'<strong>설립 3년 이내, 성도 50명 이하</strong>의 개척교회라면 신청 가능합니다. Growth Plan의 모든 기능(10페이지·CMS·HebronGuide 연동)이 포함되며, 연관리비 2년 무료입니다. 개척교회를 우선 섬기는 마음으로 운영하는 특별 플랜입니다. 조건이 애매하시면 먼저 무료 상담을 신청해 주세요.',
+    'faq.q6':'당회 기획서가 무엇인가요? 꼭 필요한가요?',
+    'faq.a6':'장로교 등 당회·제직회 심의가 필요한 교회에서는 <strong>홈페이지 제작 기획서를 공식 안건으로 제출</strong>해야 합니다. NanuriWeb은 이 기획서를 무료로 함께 준비해 드립니다. 예산 계획, 제작 범위, 기대 효과 등을 포함한 전문 문서로, 당회 심의를 통과하는 데 실질적으로 도움이 됩니다. 당회 기획서가 필요 없는 교회는 그냥 건너뛰셔도 됩니다.',
+    'faq.q7':'오픈 후에도 계속 관리해 주시나요?',
+    'faq.a7':'<strong>연관리비 내에서 오픈 후에도 끝까지 함께합니다.</strong> 간단한 내용 수정, 문의 폼 점검, 속도 최적화 등을 포함합니다. 큰 기능 추가나 디자인 개편은 별도 협의하지만, 일상적인 유지관리는 걱정 없이 연락 주시면 됩니다. NanuriWeb은 \'한 번 만들고 끝\'이 아니라 <strong>끝까지 함께하는 파트너</strong>입니다.',
+    'faq.q8':'사업체도 교회처럼 같은 수준의 서비스를 받을 수 있나요?',
+    'faq.a8':'<strong>네, 동일한 마음으로 섬깁니다.</strong> 한인 식당, 미용실, 부동산, 의원, 학원 등 모든 사업체에 대해 맞춤 제작을 제공합니다. HebronGuide 72개 도시 자동 등재도 동일하게 적용됩니다. Solo Plan $299~부터 시작하며, 창업 3년 이내 사업체는 Startup Plan으로 50% 할인 혜택이 있습니다.',
+    'faq.cta.text':'더 궁금하신 게 있으시면 언제든 연락주세요. 기획서 제공까지는 비용이 없습니다.',
+    'faq.cta.btn':'무료 상담 신청하기 →',
+    'about.fact1':'<strong>빠른 완성</strong>상담부터 오픈까지 신속하게 진행합니다. 중간중간 함께 확인합니다.',
+    'about.fact2':'<strong>HebronGuide 자동 연동</strong>홈페이지 오픈과 동시에 현재 72개 도시 네트워크에 자동 등재됩니다.',
+    'about.fact3':'<strong>오픈 후 유지관리 포함</strong>완성 후에도 연관리비 내에서 지속 관리합니다.',
+    'about.fact4':'<strong>당회 기획서 지원 (교회)</strong>장로회 심의에 필요한 기획서를 함께 준비해 드립니다.',
+    'about.prog.label':'진행 중',
+    'about.prog.text':'한국 교회 2곳 — 경기도 지역 · 장로회 기획서 심의 중',
+    'vmpc.v.label':'비전 · Vision',
+    'vmpc.v.title':'디지털 환대로<br>세계 어디서나 발견되는 한인 커뮤니티',
+    'vmpc.v.text':'낯선 땅의 교회와 사업체가 온라인에서 올바르게 발견되고, 연결되고, 섬김받는 세상을 만들어갑니다.',
+    'vmpc.m.label':'사명 · Mission',
+    'vmpc.m.title':'환대의 정신이 스며든<br>웹사이트로 처음부터 제대로',
+    'vmpc.m.text':'교회와 사업체가 온라인 첫날부터 발견되도록, 철학이 깊이 배어든 웹사이트를 한국어로 함께 만듭니다.',
+    'vmpc.p.label':'철학 · Philosophy',
+    'vmpc.p.title':'웹사이트는<br>사람을 맞이하는 공간입니다',
+    'vmpc.p.text':'단순한 디지털 명함이 아닙니다. 방문자를 귀한 손님으로 맞이하는 환대의 마음이 모든 페이지에 배어 있어야 합니다.',
+    'vmpc.val.label':'가치 · Values',
+    'vmpc.val.title':'우리가 지키는<br>네 가지 약속',
+    'vmpc.val.text':'<strong>🏠 환대 (Hospitality)</strong> 방문자를 손님처럼<br><strong>🤝 동반 (Partnership)</strong> 완성 후에도 함께<br><strong>✦ 진실 (Integrity)</strong> 숨겨진 비용 없음<br><strong>🕊 사명 (Mission)</strong> 수익보다 섬김이 먼저',
+    'stmt.eyebrow':'✦ NanuriWeb과 함께한다는 것의 의미',
+    'stmt.main':'NanuriWeb에 웹사이트를 맡기는 순간,<br>단순히 홈페이지를 구입하는 것이 아닙니다.<br><em>낯선 땅의 교회와 한인 사업체가 세상에 올바르게 발견되도록<br>돕는 이 숭고하고 좋은 일에 함께 동참하시는 것입니다.</em>',
+    'stmt.sub':'이것은 돈으로 환산할 수 없는 가치입니다.<br>당신의 웹사이트 하나가 누군가의 첫 번째 환대의 문이 됩니다.',
+    'stmt.badge':'🕊 당신의 참여가 환대의 생태계를 만듭니다',
+    'eco.kicker':'Nanuri Platform · 나누리 플랫폼',
+    'eco.h2':'교회도, 사업체도, 집도 —<br><span style="color:var(--gold);">한인 커뮤니티의 모든 필요를 섬깁니다</span>',
+    'eco.sub':'HebronGuide 생태계 위에서 나누리 플랫폼이 확장됩니다. 홈페이지부터 집까지, 한국어로 함께합니다.',
+    'eco.web.status':'운영 중 · LIVE',
+    'eco.web.tagline':'교회·사업체 홈페이지 전문 맞춤 제작<br>HebronGuide 72개 도시 자동 연동 (500개 목표)',
+    'eco.web.feat1':'100% 맞춤 제작 — 템플릿 없음',
+    'eco.web.feat2':'제작 즉시 HebronGuide 72개 도시 자동 등재',
+    'eco.web.feat3':'한국어 전담 상담 · 당회 기획서 지원',
+    'eco.web.feat4':'Church Plant $299 · 2년 관리비 무료',
+    'eco.web.feat5':'오픈 후에도 끝까지 함께하는 파트너',
+    'eco.web.btn.plans':'요금 보기 →',
+    'eco.web.btn.contact':'무료 상담',
+    'eco.home.status':'준비중 · 2026년 하반기',
+    'eco.home.tagline':'부동산·집 관련 전문가 연결 정보 서비스<br>NanuriHome.com — 집을 찾고, 고치고, 꾸미는 모든 것',
+    'eco.home.feat1':'한인 부동산 중개인 직접 연결',
+    'eco.home.feat2':'인테리어·리모델링 전문가 매칭',
+    'eco.home.feat3':'이사·정착 서비스 안내 (HebronGuide 연동)',
+    'eco.home.feat4':'집 수리·청소·조경 등 홈서비스 제공자 연결',
+    'eco.home.feat5':'모기지·보험·세금 등 집 관련 전문 상담',
+    'eco.home.notify.label':'🏠 출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다',
+    'eco.home.notify.ph':'이메일 주소를 입력해 주세요',
+    'eco.home.notify.btn':'알림 신청',
+    'eco.home.notify.ok':'✓ 등록되었습니다! 출시 시 가장 먼저 연락드립니다.',
+    'contact.err.required':'교회·사업체명과 이메일을 입력해 주세요.',
+    'contact.btn.sending':'⏳ 전송 중...',
+    'contact.btn.success':'✅ 신청 완료! 48시간 이내 연락드립니다.',
+    'contact.btn.error':'❌ 오류가 발생했습니다. 다시 시도해 주세요.',
+    'contact.btn.network':'❌ 네트워크 오류. 다시 시도해 주세요.',
+    'share.toast.kakao':'링크 복사됨 — 카카오톡에 붙여넣기 하세요 📋',
+    'share.toast.insta':'링크 복사됨 — 인스타 앱에 붙여넣기 하세요 📋',
+    'share.toast.copy':'링크가 복사되었습니다! ✅',
+    'footer.home.badge':'준비중',
   },
   en: {
     'nav.sub':'Church & Business Websites',
@@ -1917,6 +2062,30 @@ const LANG = {
     'hero.chip2':'2 Churches in Korea — proposal in review',
     'hero.chip3':'HebronGuide — 72+ cities connected (growing to 500)',
     'hero.chip4':'Korean-friendly service · No hidden fees',
+    'hero.why.qlabel':'Frequently Asked',
+    'hero.why.qbubble':'"Local freelancers and web companies offer cheap sites — <em>why should I choose NanuriWeb?</em>"',
+    'hero.why.item1.strong':'Immediate exposure in 72 cities upon launch',
+    'hero.why.item1.vs':'Regular agencies require <s>separate promotion</s> after completion <em style="color:rgba(201,168,76,.5);font-style:normal;">(72 cities now → goal: 500)</em>',
+    'hero.why.item2.strong':'A dedicated Korean-speaking person, with you until the end',
+    'hero.why.item2.vs':'No waiting for <s>English support tickets</s> — direct consultation',
+    'hero.why.item3.strong':'We understand church and Korean ministry structure',
+    'hero.why.item3.vs':'Young freelancers don\'t know <s>worship &amp; ministry structure</s>',
+    'hero.why.item4.strong':'One-time fee, no hidden costs — from $299~',
+    'hero.why.item4.vs':'No <s>monthly fees or maintenance charges</s> after completion',
+    'hero.why.pt.head':'⚠️ <strong>Cheap doesn\'t always mean good</strong> — here\'s the real cost',
+    'hero.why.bad.label':'💸 Cheap Agency · Local Freelancer',
+    'hero.why.bad.li1':'Site invisible on Google &amp; Naver → lost opportunities',
+    'hero.why.bad.li2':'Left on your own after launch — extra charge every revision',
+    'hero.why.bad.li3':'Redo in 1~2 years → full cost again from scratch',
+    'hero.why.bad.li4':'Generic template applied with no understanding of church ministry',
+    'hero.why.bad.total':'Real total cost = 2~3× the original price',
+    'hero.why.good.label':'✦ NanuriWeb — Done Right from the Start',
+    'hero.why.good.li1':'Instant exposure in HebronGuide 72 cities upon launch',
+    'hero.why.good.li2':'Korean-speaking partner — with you even after launch',
+    'hero.why.good.li3':'SEO optimization built in → no redo needed',
+    'hero.why.good.li4':'Custom-designed for church, ministry &amp; Korean community',
+    'hero.why.good.total':'One-time fee · $299~ · no reinvestment needed',
+    'hero.why.answer':'✦ That\'s why NanuriWeb ↓',
     'plans.eyebrow':'Pricing · Plans','plans.title':'Church or Business',
     'plans.desc':'Select a plan below. Click any plan button to jump to the order form.',
     'plans.tab.church':'⛪ Church','plans.tab.biz':'🏪 Business',
@@ -1946,7 +2115,6 @@ const LANG = {
     'contact.info.h3':'We\'ll respond within 48 hours',
     'contact.info.p':'No tech knowledge needed. Not sure which plan fits? Just reach out — we\'ll figure it out together.',
     'contact.info.response':'48-hour response guaranteed',
-    'contact.info.kakao':'KakaoTalk available · ID: nanuriweb',
     'trust.nohidden':'No Hidden Fees','trust.revisions':'Revisions Until Satisfied',
     'trust.korean':'Korean-Friendly Service','trust.response':'48-hr Response Guaranteed',
     'testimonial.quote':'I didn\'t know where to start, but the team walked me through everything step by step. The result was beyond what I expected.',
@@ -1964,6 +2132,213 @@ const LANG = {
     'process.s3.title':'Build & Review','process.s3.desc':'We build and check in regularly. Revisions until you\'re satisfied.',
     'process.s4.title':'Launch & Maintain','process.s4.desc':'Listed on Google, Naver, HebronGuide. Ongoing maintenance included in annual fee.',
     'footer.sub':'Hebron Platform LLC · Seattle, WA · <a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 현재 72개 도시 · 500개 목표<br>© 2026 Hebron Platform LLC. All rights reserved.',
+    'mob.section':'Quick Navigation',
+    'mob.nav.home':'Home','mob.nav.home.desc':'Back to top',
+    'mob.nav.phil':'Philosophy','mob.nav.phil.desc':'Spirit of Hospitality · Why NanuriWeb',
+    'mob.nav.plans':'Plans','mob.nav.plans.desc':'Church $499~ · Business $299~',
+    'mob.nav.faq.desc':'8 frequently asked questions',
+    'mob.nav.about':'About','mob.nav.about.desc':'Vision · Mission · Philosophy · Values',
+    'mob.nav.cta':'Apply','mob.nav.cta.desc':'Free consultation · No proposal fee',
+    'phil.kicker':'NanuriWeb Philosophy · Our Philosophy',
+    'phil.bad.label':'Building Without Purpose or Philosophy',
+    'phil.bad.title':'Elementary Student<br>Solving Math Problems',
+    'phil.bad.item1':'Memorizes formulas and applies them',
+    'phil.bad.item2':'Gets the answer and stops there',
+    'phil.bad.item3':'Doesn\'t know why they\'re solving it',
+    'phil.bad.item4':'No motivation in the approach',
+    'phil.bad.result':'→ A website no one visits',
+    'phil.good.label':'Building Infused with the Spirit of Hospitality',
+    'phil.good.title':'University Student<br>Solving Math Problems',
+    'phil.good.item1':'Understands the principle before approaching',
+    'phil.good.item2':'Grasps the essence of the problem',
+    'phil.good.item3':'<strong style="color:var(--gold-light);">Knows why it\'s being built</strong>',
+    'phil.good.item4':'Intent and motivation run deeply through everything',
+    'phil.good.result':'→ A website that sees the visitor\'s heart',
+    'phil.decl.text':'NanuriWeb is not simply a company that builds websites. We are a company that plants and spreads <em>the spirit of hospitality.</em>',
+    'phil.decl.sub':'The difference between a website built without purpose or philosophy and one deeply infused with the spirit of hospitality<br>begins not in a single line of code, but in <strong>the motivation and intent behind the approach.</strong>',
+    'phil.hwandae.title':'Spirit of Hospitality · Spirit of Hospitality',
+    'phil.hwandae.item1':'<strong>A heart that warmly welcomes anyone, even in a strange land</strong> — we treat every visitor not as a customer, but as a valued guest',
+    'phil.hwandae.item2':'<strong>That heart must be woven into every page, every sentence</strong> — our philosophy does not live on just one About page',
+    'phil.hwandae.item3':'<strong>The spirit we have practiced across HebronGuide\'s 72 cities</strong> — still expanding toward 500 cities, and carried forward through every website we build',
+    'why.kicker':'Why NanuriWeb · Why NanuriWeb',
+    'why.h2':'Different from template services<br><span style="color:var(--gold);">Tailored for Korean churches &amp; businesses</span>',
+    'why.sub':'Ministry Brands · Wix · Squarespace make every church look the same. We design exclusively for your church or business from the very start.',
+    'why.c1.tag':'vs Template Services',
+    'why.c1.title':'100% Fully Custom',
+    'why.c1.body':'Ministry Brands and Wix have hundreds of churches using the exact same templates. NanuriWeb designs exclusively for your church or business from day one. Look-alike websites? Not here.',
+    'why.c1.note':'→ Deacon board / elder board proposal included',
+    'why.c2.tag':'Exclusive Benefit · Exclusive',
+    'why.c2.title':'HebronGuide — Now 72 Cities<br>Auto-Listed — A Benefit No One Else Offers',
+    'why.c2.body':'The moment your website is complete, you are automatically listed in <strong>72 cities</strong> of the Korean network. HebronGuide is still expanding toward its goal of 500 cities. This is an exclusive NanuriWeb benefit that Ministry Brands and Card&amp;Beyond cannot offer.',
+    'why.c2.note':'→ HebronGuide.com — Largest global Korean directory',
+    'why.c3.tag':'Specialist for Korean Churches &amp; Businesses',
+    'why.c3.title':'Korean-Dedicated · 48hr Response<br>Unlimited Revisions Until You\'re Satisfied',
+    'why.c3.body':'We communicate directly in Korean with pastors and business owners — no language barrier. We stay with you after launch, within your annual maintenance fee. No hidden costs.',
+    'why.c3.note':'→ One-time build fee · Transparent annual maintenance cost',
+    'urgency.text':'Only <strong>3 spots left</strong> this month — Church Plant includes free proposal',
+    'urgency.cta':'Apply Now →',
+    'share.eyebrow':'Share','share.heading':'Share NanuriWeb 🙏',
+    'share.sub':'Know a church or business that needs a website? Please share!',
+    'share.kakao':'KakaoTalk','share.insta':'Instagram','share.fb':'Facebook','share.copy':'Copy Link',
+    'faq.kicker':'Frequently Asked Questions · FAQ',
+    'faq.h2':'Got questions?',
+    'faq.sub':'Here are the questions we hear most often. Feel free to reach out anytime if yours isn\'t listed.',
+    'faq.q1':'How does the automatic HebronGuide listing work? (Currently 72 cities)',
+    'faq.a1':'The moment your website is complete, <strong>your church or business is automatically listed on HebronGuide.com</strong>. Korean diaspora around the world use HebronGuide to search for churches and Korean-owned businesses whenever they move to or visit a new city. Simply by building your NanuriWeb site, you are automatically connected to the current 72-city network — no separate application needed. HebronGuide operates in 72 cities and is continuously expanding toward a goal of 500. <strong>This is an exclusive NanuriWeb benefit that no competitor can offer.</strong> <a href="https://hebronguide.com" target="_blank">Visit HebronGuide →</a>',
+    'faq.q2':'How long does it take to build the website?',
+    'faq.a2':'After your consultation, the proposal is typically delivered within <strong>3–5 business days</strong>. Once the proposal is approved, the completed website usually takes <strong>2–3 weeks</strong>. Timelines may vary depending on the plan size and how quickly content is prepared. We check in with you throughout the build and revise until you are fully satisfied.',
+    'faq.q3':'Is it okay if I know nothing about technology?',
+    'faq.a3':'<strong>Absolutely.</strong> From the first consultation to launch, every step is explained in plain language that pastors and business owners can follow. After launch, we also show you <strong>how to update your own news and content (CMS)</strong>, and you can always reach out if anything feels difficult. No technical knowledge is required.',
+    'faq.q4':'Are there any costs beyond the build fee?',
+    'faq.a4':'<strong>No hidden costs.</strong> There is only the one-time build fee and an annual maintenance fee. The annual fee covers your domain, hosting, and ongoing maintenance, paid once at the start of each year. The Church Plant plan includes <strong>2 years of maintenance at no charge</strong>. Any additional pages or features are discussed and quoted upfront. There are no surprise invoices mid-project.',
+    'faq.q5':'Who can apply for the Church Plant plan ($299)?',
+    'faq.a5':'Any church plant <strong>founded within the past 3 years with 50 or fewer members</strong> is eligible. It includes everything in the Growth Plan (10 pages, CMS, HebronGuide integration) plus 2 years of maintenance free. This is a special plan offered out of our heart to serve church plants first. If you\'re unsure whether you qualify, just apply for a free consultation.',
+    'faq.q6':'What is the elder board proposal, and is it required?',
+    'faq.a6':'Presbyterian and other churches where the session or deacon board must approve major expenditures typically need to <strong>submit a formal website proposal as an agenda item</strong>. NanuriWeb prepares this proposal for you at no charge. It is a professional document covering the budget plan, scope of work, and expected outcomes — and it is genuinely helpful for getting session approval. If your church does not require one, you can simply skip this step.',
+    'faq.q7':'Do you continue managing the site after launch?',
+    'faq.a7':'<strong>Yes — within your annual maintenance fee, we stay with you all the way.</strong> This includes minor content updates, contact form checks, and performance optimization. Major feature additions or design overhauls are discussed separately, but for day-to-day upkeep, just reach out anytime. NanuriWeb is not a "build and walk away" service — we are <strong>a long-term partner, with you until the end.</strong>',
+    'faq.q8':'Do businesses receive the same quality of service as churches?',
+    'faq.a8':'<strong>Yes, we serve businesses with the same heart.</strong> Korean restaurants, hair salons, real estate agencies, clinics, tutoring centers — we offer fully custom builds for every type of business. The automatic HebronGuide listing across 72 cities applies equally. Pricing starts at Solo Plan $299, and businesses under 3 years old qualify for the Startup Plan with a 50% discount.',
+    'faq.cta.text':'Still have questions? Reach out anytime. There is no cost until after you approve the proposal.',
+    'faq.cta.btn':'Free Consultation →',
+    'about.fact1':'<strong>Fast Completion</strong> From consultation to launch in as little as 2 weeks, with check-ins along the way.',
+    'about.fact2':'<strong>HebronGuide Auto-Sync</strong> Listed in the 72-city Korean network the moment your site goes live.',
+    'about.fact3':'<strong>Post-Launch Maintenance Included</strong> Ongoing management within your annual maintenance fee.',
+    'about.fact4':'<strong>Church Board Proposal Support</strong> Documentation support for elder board &amp; deacon committee review.',
+    'about.prog.label':'In Progress',
+    'about.prog.text':'2 Korean churches — Gyeonggi Province · Elder board proposal under review',
+    'vmpc.v.label':'비전 · Vision',
+    'vmpc.v.title':'A Korean community discovered<br>anywhere in the world through digital hospitality',
+    'vmpc.v.text':'We are building a world where churches and businesses in foreign lands are properly found, connected, and served online.',
+    'vmpc.m.label':'사명 · Mission',
+    'vmpc.m.title':'Done right from day one —<br>a website infused with the spirit of hospitality',
+    'vmpc.m.text':'We build websites deeply rooted in philosophy — together in Korean — so churches and businesses are found online from their very first day.',
+    'vmpc.p.label':'철학 · Philosophy',
+    'vmpc.p.title':'A website is a space<br>that welcomes people',
+    'vmpc.p.text':'It is not a simple digital business card. The spirit of hospitality — welcoming every visitor as a valued guest — must be woven into every page.',
+    'vmpc.val.label':'가치 · Values',
+    'vmpc.val.title':'Four Promises We Keep',
+    'vmpc.val.text':'<strong>🏠 Hospitality</strong> Treat every visitor as a guest<br><strong>🤝 Partnership</strong> With you even after launch<br><strong>✦ Integrity</strong> No hidden costs<br><strong>🕊 Mission</strong> Service before profit',
+    'stmt.eyebrow':'✦ What it means to work with NanuriWeb',
+    'stmt.main':'The moment you entrust your website to NanuriWeb,<br>you are not simply purchasing a homepage.<br><em>You are joining this noble and good work —<br>helping churches and Korean businesses in foreign lands<br>be properly discovered by the world.</em>',
+    'stmt.sub':'This is a value that cannot be measured in money.<br>Your single website becomes someone\'s very first door of welcome.',
+    'stmt.badge':'🕊 Your participation creates the ecosystem of hospitality',
+    'eco.kicker':'Nanuri Platform · Nanuri Platform',
+    'eco.h2':'Church, Business, and Home —<br><span style="color:var(--gold);">One Platform Serving Every Need</span>',
+    'eco.sub':'The Nanuri platform expands on the HebronGuide ecosystem — from websites to homes, together in Korean.',
+    'eco.web.status':'Live · LIVE',
+    'eco.web.tagline':'Custom websites for churches &amp; businesses<br>Auto-listed in HebronGuide 72 cities (goal: 500)',
+    'eco.web.feat1':'100% fully custom — no templates',
+    'eco.web.feat2':'Instantly listed in HebronGuide 72 cities upon launch',
+    'eco.web.feat3':'Korean-dedicated support · Elder board proposal included',
+    'eco.web.feat4':'Church Plant $299 · 2 years maintenance free',
+    'eco.web.feat5':'A long-term partner with you even after launch',
+    'eco.web.btn.plans':'View Plans →',
+    'eco.web.btn.contact':'Free Consultation',
+    'eco.home.status':'Coming Soon · 2026 Second Half',
+    'eco.home.tagline':'Expert connection service for real estate &amp; home needs<br>NanuriHome.com — find, fix, and furnish your home',
+    'eco.home.feat1':'Direct connection to Korean real estate agents',
+    'eco.home.feat2':'Interior &amp; remodeling expert matching',
+    'eco.home.feat3':'Moving &amp; settlement services (HebronGuide integrated)',
+    'eco.home.feat4':'Home repair, cleaning, landscaping service providers',
+    'eco.home.feat5':'Mortgage, insurance &amp; tax professional consultations',
+    'eco.home.notify.label':'🏠 Get launch notification · Early access benefits await',
+    'eco.home.notify.ph':'Enter your email address',
+    'eco.home.notify.btn':'Notify Me',
+    'eco.home.notify.ok':'✓ Registered! You will be the first to hear when we launch.',
+    'contact.err.required':'Please enter your church/business name and email.',
+    'contact.btn.sending':'⏳ Sending...',
+    'contact.btn.success':'✅ Submitted! We\'ll contact you within 48 hours.',
+    'contact.btn.error':'❌ An error occurred. Please try again.',
+    'contact.btn.network':'❌ Network error. Please try again.',
+    'share.toast.kakao':'Link copied — paste into KakaoTalk 📋',
+    'share.toast.insta':'Link copied — paste into Instagram 📋',
+    'share.toast.copy':'Link copied! ✅',
+    'footer.home.badge':'Coming Soon',
+    'plan.house.badge':'🏠 House Church — Free Consultation',
+    'plan.house.name':'House Church Plan',
+    'plan.house.sub':'Custom ministry system for house churches',
+    'plan.house.desc':'A house church is not simply a small church. It is a distinct pastoral philosophy and system. Let us help you find the right direction with a free consultation.',
+    'plan.house.cta':'🤝 Request Free Consultation →',
+    'plan.house.choose':'Choose a plan below after consultation',
+    'plan.plant.badge':'🌱 Church Plant — We Serve You First',
+    'plan.plant.name':'Church Plant',
+    'plan.plant.sub':'Within 3 years of founding · Under 50 members',
+    'plan.plant.note':'Annual maintenance <strong>2 years FREE</strong>',
+    'plan.plant.f1':'All Growth Plan features included',
+    'plan.plant.f2':'HebronGuide auto-sync to 72 cities (goal: 500)',
+    'plan.plant.f3':'Elder board proposal prepared together',
+    'plan.plant.f4':'NanuriWeb Partner Community certification',
+    'plan.plant.cta':'Apply Now',
+    'plan.starter.name':'Starter Plan',
+    'plan.starter.sub':'Small Church · 7 pages',
+    'plan.starter.note':'Annual maintenance <strong>$240/yr</strong>',
+    'plan.starter.f1':'7-page fully custom build',
+    'plan.starter.f2':'New member &amp; prayer inquiry forms',
+    'plan.starter.f3':'HebronGuide 72-city sync',
+    'plan.starter.f4':'Google &amp; Naver SEO optimization',
+    'plan.starter.f5':'Sermon &amp; media integration (optional)',
+    'plan.starter.cta':'Apply Now',
+    'plan.growth.badge':'⭐ Most Popular',
+    'plan.growth.name':'Growth Plan',
+    'plan.growth.sub':'Mid-size Church · 10 pages',
+    'plan.growth.note':'Annual maintenance <strong>$420/yr</strong>',
+    'plan.growth.f1':'10-page fully custom build',
+    'plan.growth.f2':'CMS — pastor updates news directly',
+    'plan.growth.f3':'Small group · new member · prayer connection forms',
+    'plan.growth.f4':'SNS &amp; YouTube integration',
+    'plan.growth.f5':'HebronGuide worldwide sync',
+    'plan.growth.f6':'Elder board proposal prepared together',
+    'plan.growth.f7':'Multilingual EN·ES·中 (optional)',
+    'plan.growth.cta':'Apply Now',
+    'plan.pro.name':'Pro Plan',
+    'plan.pro.sub':'Large Church · 15+ pages',
+    'plan.pro.note':'Annual maintenance <strong>$720/yr</strong>',
+    'plan.pro.f1':'15+ pages fully custom build',
+    'plan.pro.f2':'Online giving &amp; registration system',
+    'plan.pro.f3':'HebronAPP global church profile',
+    'plan.pro.f4':'Monthly maintenance report',
+    'plan.pro.f5':'Annual redesign included',
+    'plan.pro.f6':'Multilingual EN·ES·中 included',
+    'plan.pro.cta':'Apply Now',
+    'plans.note':'※ All prices in USD · Annual maintenance paid upfront · Church Plant: within 3 yrs of founding, under 50 members',
+    'bizplan.solo.name':'Solo Plan',
+    'bizplan.solo.sub':'Solo business · Freelancer',
+    'bizplan.solo.note':'Annual maintenance <strong>$150/yr</strong>',
+    'bizplan.solo.f1':'5-page fully custom build',
+    'bizplan.solo.f2':'Contact &amp; booking inquiry form',
+    'bizplan.solo.f3':'Google Maps &amp; directions',
+    'bizplan.solo.f4':'HebronGuide 72-city listing',
+    'bizplan.solo.cta':'Apply Now',
+    'bizplan.startup.badge':'🌱 Under 3 yrs in business — 50% off',
+    'bizplan.startup.name':'Startup Plan',
+    'bizplan.startup.sub':'New business within 3 years',
+    'bizplan.startup.note':'First year <strong>$150 (50% off)</strong> → Year 2: $300/yr',
+    'bizplan.startup.f1':'All Business Growth features included',
+    'bizplan.startup.f2':'Build brand trust',
+    'bizplan.startup.f3':'Online search visibility optimization',
+    'bizplan.startup.f4':'HebronGuide Korean community sync',
+    'bizplan.startup.cta':'Apply Now',
+    'bizplan.bizgrowth.badge':'⭐ Most Popular',
+    'bizplan.bizgrowth.name':'Business Growth',
+    'bizplan.bizgrowth.sub':'Small-mid business · 10 pages',
+    'bizplan.bizgrowth.note':'Annual maintenance <strong>$480/yr</strong>',
+    'bizplan.bizgrowth.f1':'10-page fully custom build',
+    'bizplan.bizgrowth.f2':'Online booking &amp; inquiry system',
+    'bizplan.bizgrowth.f3':'Review &amp; SNS integration',
+    'bizplan.bizgrowth.f4':'HebronGuide Korean community sync',
+    'bizplan.bizgrowth.f5':'Google &amp; Naver SEO optimization',
+    'bizplan.bizgrowth.cta':'Apply Now',
+    'bizplan.bizpro.name':'Business Pro',
+    'bizplan.bizpro.sub':'Mid-size business · 15+ pages',
+    'bizplan.bizpro.note':'Annual maintenance <strong>$840/yr</strong>',
+    'bizplan.bizpro.f1':'15+ pages fully custom build',
+    'bizplan.bizpro.f2':'Online payment &amp; booking system',
+    'bizplan.bizpro.f3':'Multilingual support',
+    'bizplan.bizpro.f4':'Monthly maintenance report',
+    'bizplan.bizpro.f5':'Advanced SEO &amp; analytics',
+    'bizplan.bizpro.cta':'Apply Now',
+    'bizplans.note':'※ All prices in USD · Annual maintenance paid upfront · Startup: business within 3 years of founding',
   },
   es: {
     'nav.sub':'Sitios para Iglesias y Negocios',
@@ -1979,6 +2354,30 @@ const LANG = {
     'hero.chip2':'2 iglesias en Corea — propuesta en revisión',
     'hero.chip3':'HebronGuide — 72+ ciudades conectadas (en expansión)',
     'hero.chip4':'Servicio en coreano · Sin costos ocultos',
+    'hero.why.qlabel':'Pregunta Frecuente',
+    'hero.why.qbubble':'"Los freelancers locales y empresas web ofrecen sitios baratos — <em>¿por qué elegir NanuriWeb?</em>"',
+    'hero.why.item1.strong':'Exposición inmediata en 72 ciudades al lanzar',
+    'hero.why.item1.vs':'Las agencias comunes requieren <s>promoción aparte</s> después de entregar <em style="color:rgba(201,168,76,.5);font-style:normal;">(72 ciudades ahora → meta: 500)</em>',
+    'hero.why.item2.strong':'Un representante de habla coreana, contigo hasta el final',
+    'hero.why.item2.vs':'Sin esperar <s>tickets de soporte en inglés</s> — consulta directa',
+    'hero.why.item3.strong':'Entendemos la estructura de iglesias y ministerios coreanos',
+    'hero.why.item3.vs':'Los freelancers jóvenes no conocen <s>la estructura de culto y ministerio</s>',
+    'hero.why.item4.strong':'Pago único, sin costos ocultos desde $299~',
+    'hero.why.item4.vs':'Sin <s>mensualidades ni cobros de mantenimiento</s> al terminar',
+    'hero.why.pt.head':'⚠️ <strong>Lo barato no siempre es bueno</strong> — el costo real',
+    'hero.why.bad.label':'💸 Agencia Barata · Freelancer Local',
+    'hero.why.bad.li1':'Sitio invisible en Google y Naver → oportunidades perdidas',
+    'hero.why.bad.li2':'Abandonado al lanzar — cargo extra por cada revisión',
+    'hero.why.bad.li3':'Rehacer en 1~2 años → costo completo desde cero otra vez',
+    'hero.why.bad.li4':'Plantilla genérica sin entender la estructura del ministerio',
+    'hero.why.bad.total':'Costo real total = 2~3× el precio original',
+    'hero.why.good.label':'✦ NanuriWeb — Bien desde el Principio',
+    'hero.why.good.li1':'Exposición inmediata en HebronGuide 72 ciudades al lanzar',
+    'hero.why.good.li2':'Representante en coreano — contigo incluso después del lanzamiento',
+    'hero.why.good.li3':'SEO optimizado incluido → sin necesidad de rehacer',
+    'hero.why.good.li4':'Diseño personalizado para iglesia, ministerio y comunidad coreana',
+    'hero.why.good.total':'Pago único · $299~ · sin reinversión',
+    'hero.why.answer':'✦ Por eso NanuriWeb ↓',
     'plans.eyebrow':'Precios · Planes','plans.title':'Iglesia o Negocio',
     'plans.desc':'Selecciona un plan. Al hacer clic en cualquier botón serás llevado al formulario.',
     'plans.tab.church':'⛪ Iglesia','plans.tab.biz':'🏪 Negocio',
@@ -2008,7 +2407,6 @@ const LANG = {
     'contact.info.h3':'Te respondemos en 48 horas',
     'contact.info.p':'No necesitas saber de tecnología. ¿No sabes qué plan elegir? Escríbenos y lo resolvemos juntos.',
     'contact.info.response':'Respuesta garantizada en 48h',
-    'contact.info.kakao':'KakaoTalk disponible · ID: nanuriweb',
     'trust.nohidden':'Sin Costos Ocultos','trust.revisions':'Revisiones Ilimitadas',
     'trust.korean':'Servicio en Coreano','trust.response':'Respuesta en 48h',
     'testimonial.quote':'No sabía por dónde empezar, pero el equipo me guió paso a paso. El resultado superó mis expectativas.',
@@ -2024,6 +2422,213 @@ const LANG = {
     'process.s3.title':'Construcción & Revisión','process.s3.desc':'Construimos con revisiones hasta que estés satisfecho.',
     'process.s4.title':'Lanzamiento & Mantenimiento','process.s4.desc':'Listado en Google, Naver, HebronGuide. Mantenimiento incluido.',
     'footer.sub':'Hebron Platform LLC · Seattle, WA · <a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 현재 72개 도시 · 500개 목표<br>© 2026 Hebron Platform LLC. All rights reserved.',
+    'mob.section':'Navegación Rápida',
+    'mob.nav.home':'Inicio','mob.nav.home.desc':'Volver al inicio',
+    'mob.nav.phil':'Filosofía','mob.nav.phil.desc':'Espíritu de hospitalidad · Por qué NanuriWeb',
+    'mob.nav.plans':'Planes','mob.nav.plans.desc':'Iglesia $499~ · Negocio $299~',
+    'mob.nav.faq.desc':'8 preguntas frecuentes',
+    'mob.nav.about':'Nosotros','mob.nav.about.desc':'Visión · Misión · Filosofía · Valores',
+    'mob.nav.cta':'Aplicar','mob.nav.cta.desc':'Consulta gratis · Sin costo de propuesta',
+    'phil.kicker':'Filosofía de NanuriWeb · Our Philosophy',
+    'phil.bad.label':'Crear Sin Propósito ni Filosofía',
+    'phil.bad.title':'Estudiante de Primaria<br>Resolviendo Matemáticas',
+    'phil.bad.item1':'Memoriza fórmulas y las aplica',
+    'phil.bad.item2':'Obtiene la respuesta y ya termina',
+    'phil.bad.item3':'No sabe por qué lo está resolviendo',
+    'phil.bad.item4':'No hay motivación en el enfoque',
+    'phil.bad.result':'→ Un sitio web que nadie visita',
+    'phil.good.label':'Crear Impregnado del Espíritu de Hospitalidad',
+    'phil.good.title':'Estudiante Universitario<br>Resolviendo Matemáticas',
+    'phil.good.item1':'Comprende el principio antes de abordar el problema',
+    'phil.good.item2':'Capta la esencia del problema',
+    'phil.good.item3':'<strong style="color:var(--gold-light);">Sabe por qué se está construyendo</strong>',
+    'phil.good.item4':'La intención y motivación impregnan profundamente todo',
+    'phil.good.result':'→ Un sitio web que ve el corazón del visitante',
+    'phil.decl.text':'NanuriWeb no es simplemente una empresa que crea sitios web. Somos una empresa que planta y difunde <em>el espíritu de hospitalidad.</em>',
+    'phil.decl.sub':'La diferencia entre un sitio web construido sin propósito ni filosofía y uno profundamente impregnado del espíritu de hospitalidad<br>no comienza en una sola línea de código, sino en <strong>la motivación e intención detrás del enfoque.</strong>',
+    'phil.hwandae.title':'Espíritu de Hospitalidad · Spirit of Hospitality',
+    'phil.hwandae.item1':'<strong>Un corazón que acoge calurosamente a cualquiera, incluso en tierra extraña</strong> — tratamos a cada visitante no como cliente, sino como un huésped valioso',
+    'phil.hwandae.item2':'<strong>Ese corazón debe estar tejido en cada página, cada frase</strong> — nuestra filosofía no vive solo en una página de presentación',
+    'phil.hwandae.item3':'<strong>El espíritu que hemos practicado en las 72 ciudades de HebronGuide</strong> — aún expandiéndose hacia 500 ciudades, y llevado adelante en cada sitio web que construimos',
+    'why.kicker':'Por Qué NanuriWeb · Why NanuriWeb',
+    'why.h2':'Diferente a los servicios de plantillas<br><span style="color:var(--gold);">Especializado para iglesias y negocios coreanos</span>',
+    'why.sub':'Ministry Brands · Wix · Squarespace hacen que todas las iglesias se vean igual. Nosotros diseñamos exclusivamente para tu iglesia o negocio desde el principio.',
+    'why.c1.tag':'vs Servicios de Plantillas',
+    'why.c1.title':'100% Completamente Personalizado',
+    'why.c1.body':'Ministry Brands y Wix tienen cientos de iglesias usando exactamente las mismas plantillas. NanuriWeb diseña exclusivamente para tu iglesia o negocio desde el primer día. ¿Sitios similares? Aquí no.',
+    'why.c1.note':'→ Propuesta para la junta de diáconos / ancianos incluida',
+    'why.c2.tag':'Beneficio Exclusivo · Exclusive',
+    'why.c2.title':'HebronGuide — Ahora 72 Ciudades<br>Registro Automático — Un Beneficio Sin Igual',
+    'why.c2.body':'En el momento que tu sitio web está completo, quedas automáticamente registrado en la red coreana de <strong>72 ciudades</strong>. HebronGuide sigue expandiéndose hacia su meta de 500 ciudades. Este es un beneficio exclusivo de NanuriWeb que Ministry Brands y Card&amp;Beyond no pueden ofrecer.',
+    'why.c2.note':'→ HebronGuide.com — El directorio global coreano más grande',
+    'why.c3.tag':'Especialista en Iglesias y Negocios Coreanos',
+    'why.c3.title':'Dedicado al Coreano · Respuesta en 48h<br>Revisiones Ilimitadas Hasta Tu Satisfacción',
+    'why.c3.body':'Nos comunicamos directamente en coreano con pastores y dueños de negocios — sin barreras de idioma. Permanecemos contigo después del lanzamiento, dentro de tu tarifa anual de mantenimiento. Sin costos ocultos.',
+    'why.c3.note':'→ Tarifa única de construcción · Costo de mantenimiento anual transparente',
+    'urgency.text':'Solo <strong>3 cupos</strong> este mes — Church Plant incluye propuesta gratis',
+    'urgency.cta':'Aplicar Ahora →',
+    'share.eyebrow':'Compartir','share.heading':'Comparte NanuriWeb 🙏',
+    'share.sub':'¿Conoces una iglesia o negocio que necesite un sitio web? ¡Comparte!',
+    'share.kakao':'KakaoTalk','share.insta':'Instagram','share.fb':'Facebook','share.copy':'Copiar enlace',
+    'faq.kicker':'Preguntas Frecuentes · FAQ',
+    'faq.h2':'¿Tienes preguntas?',
+    'faq.sub':'Aquí están las preguntas que más recibimos. Si la tuya no está, contáctanos en cualquier momento.',
+    'faq.q1':'¿Cómo funciona el registro automático en HebronGuide? (Actualmente 72 ciudades)',
+    'faq.a1':'En el momento en que tu sitio web esté listo, <strong>la información de tu iglesia o negocio quedará registrada automáticamente en HebronGuide.com</strong>. Los coreanos de todo el mundo usan HebronGuide para buscar iglesias y negocios coreanos cuando se mudan o viajan a una nueva ciudad. Solo con crear tu sitio NanuriWeb, quedas automáticamente conectado a la red actual de 72 ciudades — sin trámites adicionales. HebronGuide opera en 72 ciudades y sigue expandiéndose hacia la meta de 500. <strong>Este es un beneficio exclusivo de NanuriWeb que ningún competidor puede ofrecer.</strong> <a href="https://hebronguide.com" target="_blank">Ver HebronGuide →</a>',
+    'faq.q2':'¿Cuánto tiempo tarda en construirse el sitio web?',
+    'faq.a2':'Después de la consulta, la propuesta se entrega en aproximadamente <strong>3–5 días hábiles</strong>. Una vez aprobada la propuesta, el sitio web completado suele tardar <strong>2–3 semanas</strong>. El tiempo puede variar según el tamaño del plan y la rapidez en preparar el contenido. Realizamos revisiones intermedias durante el proceso y corregimos hasta que estés completamente satisfecho.',
+    'faq.q3':'¿Está bien si no sé nada de tecnología?',
+    'faq.a3':'<strong>Completamente bien.</strong> Desde la primera consulta hasta el lanzamiento, explicamos cada paso en un lenguaje que pastores y dueños de negocios puedan entender. Después del lanzamiento también te enseñamos <strong>cómo actualizar tus propias noticias y contenido (CMS)</strong>, y puedes contactarnos en cualquier momento si algo se siente difícil. No se requiere ningún conocimiento técnico.',
+    'faq.q4':'¿Hay algún costo más allá del precio de construcción?',
+    'faq.a4':'<strong>Sin costos ocultos.</strong> Solo hay la tarifa única de construcción y una tarifa anual de mantenimiento. La tarifa anual cubre tu dominio, alojamiento y mantenimiento continuo, pagado una vez al inicio de cada año. El plan Church Plant incluye <strong>2 años de mantenimiento sin cargo</strong>. Cualquier página o función adicional se habla y se cotiza por adelantado. No hay facturas sorpresa en medio del proyecto.',
+    'faq.q5':'¿Quién puede solicitar el plan Church Plant ($299)?',
+    'faq.a5':'Cualquier iglesia nueva <strong>fundada en los últimos 3 años con 50 miembros o menos</strong> es elegible. Incluye todo lo del plan Growth (10 páginas, CMS, integración con HebronGuide) más 2 años de mantenimiento gratuito. Es un plan especial que ofrecemos por nuestro deseo de servir primero a las iglesias nuevas. Si no estás seguro de si calificas, simplemente solicita una consulta gratis.',
+    'faq.q6':'¿Qué es la propuesta para la junta de ancianos y es obligatoria?',
+    'faq.a6':'Las iglesias presbiterianas y otras donde la junta de ancianos o diáconos debe aprobar gastos importantes normalmente necesitan <strong>presentar una propuesta formal de sitio web como punto de agenda</strong>. NanuriWeb prepara esta propuesta por ti sin costo. Es un documento profesional que cubre el plan de presupuesto, el alcance del trabajo y los resultados esperados — y es realmente útil para obtener la aprobación de la junta. Si tu iglesia no lo requiere, simplemente puedes omitir este paso.',
+    'faq.q7':'¿Siguen gestionando el sitio después del lanzamiento?',
+    'faq.a7':'<strong>Sí — dentro de tu tarifa anual de mantenimiento, nos quedamos contigo hasta el final.</strong> Esto incluye actualizaciones menores de contenido, revisión del formulario de contacto y optimización de rendimiento. Las adiciones de funciones mayores o rediseños se discuten por separado, pero para el mantenimiento diario, comunícate en cualquier momento. NanuriWeb no es un servicio de "construir y olvidar" — somos <strong>un socio a largo plazo, contigo hasta el final.</strong>',
+    'faq.q8':'¿Los negocios reciben la misma calidad de servicio que las iglesias?',
+    'faq.a8':'<strong>Sí, servimos a los negocios con el mismo corazón.</strong> Restaurantes coreanos, peluquerías, agencias inmobiliarias, clínicas, centros de tutoría — ofrecemos sitios completamente personalizados para todo tipo de negocios. El registro automático en HebronGuide en 72 ciudades aplica igualmente. El precio comienza en el plan Solo desde $299, y los negocios con menos de 3 años califican para el plan Startup con un 50% de descuento.',
+    'faq.cta.text':'¿Aún tienes preguntas? Contáctanos en cualquier momento. No hay costo hasta que apruebes la propuesta.',
+    'faq.cta.btn':'Consulta Gratis →',
+    'about.fact1':'<strong>Finalización Rápida</strong> Desde la consulta hasta el lanzamiento en tan solo 2 semanas, con revisiones intermedias.',
+    'about.fact2':'<strong>Sincronización Automática HebronGuide</strong> Listado en la red de 72 ciudades coreanas al momento del lanzamiento.',
+    'about.fact3':'<strong>Mantenimiento Post-Lanzamiento Incluido</strong> Gestión continua dentro de tu tarifa anual de mantenimiento.',
+    'about.fact4':'<strong>Apoyo para Propuesta de Junta Eclesiástica</strong> Documentación para revisión del consejo de ancianos y diáconos.',
+    'about.prog.label':'En Progreso',
+    'about.prog.text':'2 iglesias en Corea — Provincia de Gyeonggi · Propuesta para junta de ancianos en revisión',
+    'vmpc.v.label':'비전 · Vision',
+    'vmpc.v.title':'Una comunidad coreana descubierta<br>en cualquier parte del mundo mediante hospitalidad digital',
+    'vmpc.v.text':'Estamos construyendo un mundo donde las iglesias y los negocios en tierras extranjeras sean correctamente encontrados, conectados y servidos en línea.',
+    'vmpc.m.label':'사명 · Mission',
+    'vmpc.m.title':'Bien desde el primer día —<br>un sitio web impregnado del espíritu de hospitalidad',
+    'vmpc.m.text':'Construimos sitios web profundamente arraigados en filosofía — juntos en coreano — para que iglesias y negocios sean encontrados en línea desde su primer día.',
+    'vmpc.p.label':'철학 · Philosophy',
+    'vmpc.p.title':'Un sitio web es un espacio<br>que da la bienvenida a las personas',
+    'vmpc.p.text':'No es una simple tarjeta digital. El espíritu de hospitalidad — recibir a cada visitante como un huésped valioso — debe estar tejido en cada página.',
+    'vmpc.val.label':'가치 · Values',
+    'vmpc.val.title':'Cuatro Promesas que Cumplimos',
+    'vmpc.val.text':'<strong>🏠 Hospitalidad</strong> Tratar a cada visitante como un huésped<br><strong>🤝 Alianza</strong> Contigo incluso después del lanzamiento<br><strong>✦ Integridad</strong> Sin costos ocultos<br><strong>🕊 Misión</strong> El servicio antes que el beneficio',
+    'stmt.eyebrow':'✦ Lo que significa trabajar con NanuriWeb',
+    'stmt.main':'En el momento en que confías tu sitio web a NanuriWeb,<br>no estás simplemente comprando una página de inicio.<br><em>Te estás uniendo a esta noble y buena labor —<br>ayudando a que iglesias y negocios coreanos en tierras extranjeras<br>sean correctamente descubiertos por el mundo.</em>',
+    'stmt.sub':'Este es un valor que no se puede medir en dinero.<br>Tu único sitio web se convierte en la primera puerta de bienvenida para alguien.',
+    'stmt.badge':'🕊 Tu participación crea el ecosistema de hospitalidad',
+    'eco.kicker':'Plataforma Nanuri · Nanuri Platform',
+    'eco.h2':'Iglesia, Negocio y Hogar —<br><span style="color:var(--gold);">Una Plataforma para Cada Necesidad</span>',
+    'eco.sub':'La plataforma Nanuri se expande sobre el ecosistema HebronGuide — desde sitios web hasta hogares, juntos en coreano.',
+    'eco.web.status':'En vivo · LIVE',
+    'eco.web.tagline':'Sitios personalizados para iglesias y negocios<br>Listado automático en HebronGuide 72 ciudades (meta: 500)',
+    'eco.web.feat1':'100% completamente personalizado — sin plantillas',
+    'eco.web.feat2':'Listado instantáneo en HebronGuide 72 ciudades al lanzar',
+    'eco.web.feat3':'Soporte dedicado en coreano · Propuesta para junta incluida',
+    'eco.web.feat4':'Church Plant $299 · 2 años de mantenimiento gratis',
+    'eco.web.feat5':'Un socio a largo plazo, contigo incluso después del lanzamiento',
+    'eco.web.btn.plans':'Ver Planes →',
+    'eco.web.btn.contact':'Consulta Gratis',
+    'eco.home.status':'Próximamente · 2do semestre 2026',
+    'eco.home.tagline':'Servicio de conexión con expertos en bienes raíces y hogar<br>NanuriHome.com — encuentra, repara y decora tu hogar',
+    'eco.home.feat1':'Conexión directa con agentes inmobiliarios coreanos',
+    'eco.home.feat2':'Matching con expertos en interiorismo y remodelación',
+    'eco.home.feat3':'Servicios de mudanza y asentamiento (integrado con HebronGuide)',
+    'eco.home.feat4':'Proveedores de servicios del hogar: reparación, limpieza, jardinería',
+    'eco.home.feat5':'Consultas especializadas en hipoteca, seguros e impuestos',
+    'eco.home.notify.label':'🏠 Recibe notificación de lanzamiento — Beneficios especiales para registros anticipados',
+    'eco.home.notify.ph':'Ingresa tu correo electrónico',
+    'eco.home.notify.btn':'Notificarme',
+    'eco.home.notify.ok':'✓ ¡Registrado! Serás el primero en recibir noticias del lanzamiento.',
+    'contact.err.required':'Por favor ingresa el nombre y correo.',
+    'contact.btn.sending':'⏳ Enviando...',
+    'contact.btn.success':'✅ ¡Enviado! Te contactaremos en 48 horas.',
+    'contact.btn.error':'❌ Ocurrió un error. Inténtalo de nuevo.',
+    'contact.btn.network':'❌ Error de red. Inténtalo de nuevo.',
+    'share.toast.kakao':'Enlace copiado — pégalo en KakaoTalk 📋',
+    'share.toast.insta':'Enlace copiado — pégalo en Instagram 📋',
+    'share.toast.copy':'¡Enlace copiado! ✅',
+    'footer.home.badge':'Próximamente',
+    'plan.house.badge':'🏠 Iglesia en Casa — Consulta Gratuita',
+    'plan.house.name':'Plan Iglesia en Casa',
+    'plan.house.sub':'Diseño personalizado del sistema ministerial para iglesias en casa',
+    'plan.house.desc':'Una iglesia en casa no es simplemente una iglesia pequeña. Es una filosofía y sistema pastoral único. Juntos encontramos la dirección correcta con una consulta gratuita.',
+    'plan.house.cta':'🤝 Solicitar Consulta Gratuita →',
+    'plan.house.choose':'Elige un plan a continuación después de la consulta',
+    'plan.plant.badge':'🌱 Iglesia en Fundación — Te Servimos Primero',
+    'plan.plant.name':'Church Plant',
+    'plan.plant.sub':'Menos de 3 años · Hasta 50 miembros',
+    'plan.plant.note':'Mantenimiento anual <strong>2 años GRATIS</strong>',
+    'plan.plant.f1':'Todas las funciones del Plan Crecimiento incluidas',
+    'plan.plant.f2':'Sincronización automática con HebronGuide en 72 ciudades (meta: 500)',
+    'plan.plant.f3':'Propuesta para la junta de ancianos preparada juntos',
+    'plan.plant.f4':'Certificación de comunidad asociada NanuriWeb',
+    'plan.plant.cta':'Solicitar',
+    'plan.starter.name':'Plan Inicial',
+    'plan.starter.sub':'Iglesia pequeña · 7 páginas',
+    'plan.starter.note':'Mantenimiento anual <strong>$240/yr</strong>',
+    'plan.starter.f1':'Sitio de 7 páginas 100% personalizado',
+    'plan.starter.f2':'Formularios de nuevos miembros y solicitudes de oración',
+    'plan.starter.f3':'Sincronización HebronGuide 72 ciudades',
+    'plan.starter.f4':'Optimización SEO en Google y Naver',
+    'plan.starter.f5':'Integración de sermones y medios (opcional)',
+    'plan.starter.cta':'Solicitar',
+    'plan.growth.badge':'⭐ El más elegido',
+    'plan.growth.name':'Plan Crecimiento',
+    'plan.growth.sub':'Iglesia mediana · 10 páginas',
+    'plan.growth.note':'Mantenimiento anual <strong>$420/yr</strong>',
+    'plan.growth.f1':'Sitio de 10 páginas 100% personalizado',
+    'plan.growth.f2':'CMS — el pastor actualiza las noticias directamente',
+    'plan.growth.f3':'Formularios de grupos pequeños, nuevos miembros y oración',
+    'plan.growth.f4':'Integración con redes sociales y YouTube',
+    'plan.growth.f5':'Sincronización mundial con HebronGuide',
+    'plan.growth.f6':'Propuesta para la junta de ancianos preparada juntos',
+    'plan.growth.f7':'Multilingüe EN·ES·中 (opcional)',
+    'plan.growth.cta':'Solicitar',
+    'plan.pro.name':'Plan Pro',
+    'plan.pro.sub':'Iglesia grande · 15+ páginas',
+    'plan.pro.note':'Mantenimiento anual <strong>$720/yr</strong>',
+    'plan.pro.f1':'15+ páginas 100% personalizado',
+    'plan.pro.f2':'Sistema de ofrendas y registro en línea',
+    'plan.pro.f3':'Perfil global de iglesia en HebronAPP',
+    'plan.pro.f4':'Informe mensual de mantenimiento',
+    'plan.pro.f5':'Renovación anual incluida',
+    'plan.pro.f6':'Multilingüe EN·ES·中 incluido',
+    'plan.pro.cta':'Solicitar',
+    'plans.note':'※ Todos los precios en USD · Mantenimiento anual pago al inicio del año · Church Plant: menos de 3 años, hasta 50 miembros',
+    'bizplan.solo.name':'Plan Solo',
+    'bizplan.solo.sub':'Negocio individual · Freelancer',
+    'bizplan.solo.note':'Mantenimiento anual <strong>$150/yr</strong>',
+    'bizplan.solo.f1':'Sitio de 5 páginas 100% personalizado',
+    'bizplan.solo.f2':'Formulario de contacto y reservas',
+    'bizplan.solo.f3':'Google Maps y cómo llegar',
+    'bizplan.solo.f4':'Listado en HebronGuide 72 ciudades',
+    'bizplan.solo.cta':'Solicitar',
+    'bizplan.startup.badge':'🌱 Menos de 3 años — 50% de descuento',
+    'bizplan.startup.name':'Plan Startup',
+    'bizplan.startup.sub':'Negocio nuevo menos de 3 años',
+    'bizplan.startup.note':'Primer año <strong>$150 (50% descuento)</strong> → Año 2: $300/yr',
+    'bizplan.startup.f1':'Todas las funciones de Business Growth incluidas',
+    'bizplan.startup.f2':'Construcción de confianza de marca',
+    'bizplan.startup.f3':'Optimización de visibilidad en búsquedas en línea',
+    'bizplan.startup.f4':'Sincronización con comunidad coreana en HebronGuide',
+    'bizplan.startup.cta':'Solicitar',
+    'bizplan.bizgrowth.badge':'⭐ El más elegido',
+    'bizplan.bizgrowth.name':'Business Growth',
+    'bizplan.bizgrowth.sub':'Pequeña y mediana empresa · 10 páginas',
+    'bizplan.bizgrowth.note':'Mantenimiento anual <strong>$480/yr</strong>',
+    'bizplan.bizgrowth.f1':'Sitio de 10 páginas 100% personalizado',
+    'bizplan.bizgrowth.f2':'Sistema de reservas y consultas en línea',
+    'bizplan.bizgrowth.f3':'Integración de reseñas y redes sociales',
+    'bizplan.bizgrowth.f4':'Sincronización con comunidad coreana en HebronGuide',
+    'bizplan.bizgrowth.f5':'Optimización SEO en Google y Naver',
+    'bizplan.bizgrowth.cta':'Solicitar',
+    'bizplan.bizpro.name':'Business Pro',
+    'bizplan.bizpro.sub':'Empresa mediana · 15+ páginas',
+    'bizplan.bizpro.note':'Mantenimiento anual <strong>$840/yr</strong>',
+    'bizplan.bizpro.f1':'15+ páginas 100% personalizado',
+    'bizplan.bizpro.f2':'Sistema de pagos y reservas en línea',
+    'bizplan.bizpro.f3':'Soporte multilingüe',
+    'bizplan.bizpro.f4':'Informe mensual de mantenimiento',
+    'bizplan.bizpro.f5':'SEO avanzado y análisis',
+    'bizplan.bizpro.cta':'Solicitar',
+    'bizplans.note':'※ Todos los precios en USD · Mantenimiento anual pago al inicio del año · Startup: negocio con menos de 3 años',
   },
   zh: {
     'nav.sub':'教会与商业网站专业',
@@ -2039,6 +2644,30 @@ const LANG = {
     'hero.chip2':'韩国2间教会 — 提案审议中',
     'hero.chip3':'HebronGuide — 72+城市连接（扩展至500）',
     'hero.chip4':'韩语服务 · 无隐藏费用',
+    'hero.why.qlabel':'常见问题',
+    'hero.why.qbubble':'"本地自由职业者和网络公司提供便宜的网站 — <em>为什么要选择NanuriWeb？</em>"',
+    'hero.why.item1.strong':'网站上线即在72个城市曝光',
+    'hero.why.item1.vs':'一般机构完成后需要<s>单独推广</s> <em style="color:rgba(201,168,76,.5);font-style:normal;">（目前72个城市 → 目标500个）</em>',
+    'hero.why.item2.strong':'专属韩语负责人，全程陪伴',
+    'hero.why.item2.vs':'无需等待<s>英文客服工单</s> — 直接咨询',
+    'hero.why.item3.strong':'深度了解韩人教会与事工结构',
+    'hero.why.item3.vs':'年轻自由职业者不了解<s>礼拜与事工架构</s>',
+    'hero.why.item4.strong':'一次性费用，无隐藏收费，低至$299起',
+    'hero.why.item4.vs':'完成后无<s>月费或维护费追加</s>',
+    'hero.why.pt.head':'⚠️ <strong>便宜不一定好</strong> — 看看真实成本',
+    'hero.why.bad.label':'💸 低价机构 · 本地自由职业者',
+    'hero.why.bad.li1':'网站在Google和Naver上搜不到 → 机会损失',
+    'hero.why.bad.li2':'上线后无人跟进 — 每次修改单独收费',
+    'hero.why.bad.li3':'1~2年后需返工 → 再次支付全额费用',
+    'hero.why.bad.li4':'不了解教会事工结构，套用通用模板',
+    'hero.why.bad.total':'真实总费用 = 初始价格的2~3倍',
+    'hero.why.good.label':'✦ NanuriWeb — 从一开始就做对',
+    'hero.why.good.li1':'上线即在HebronGuide 72个城市自动曝光',
+    'hero.why.good.li2':'韩语专属负责人 — 上线后持续陪伴',
+    'hero.why.good.li3':'SEO优化基础包含 → 无需返工',
+    'hero.why.good.li4':'针对教会、事工及韩人社区定制设计',
+    'hero.why.good.total':'一次性费用 · $299起 · 无需再次投入',
+    'hero.why.answer':'✦ 这就是为什么选NanuriWeb ↓',
     'plans.eyebrow':'价格 · 方案','plans.title':'教会或商业',
     'plans.desc':'请在下方选择方案。点击方案按钮即跳转至申请表。',
     'plans.tab.church':'⛪ 教会','plans.tab.biz':'🏪 商业',
@@ -2068,7 +2697,6 @@ const LANG = {
     'contact.info.h3':'提交后48小时内联系您',
     'contact.info.p':'无需技术知识。不确定选哪个方案？联系我们一起确定。',
     'contact.info.response':'48小时内回复保证',
-    'contact.info.kakao':'支持KakaoTalk · ID: nanuriweb',
     'trust.nohidden':'无隐藏费用','trust.revisions':'修改直到满意',
     'trust.korean':'韩语服务','trust.response':'48小时内回复',
     'testimonial.quote':'起初不知从何开始，但团队一步步耐心指导，最终结果超出了我的期望。',
@@ -2084,6 +2712,213 @@ const LANG = {
     'process.s3.title':'制作与审核','process.s3.desc':'边制作边确认，修改直到满意为止。',
     'process.s4.title':'上线与维护','process.s4.desc':'在Google、Naver、HebronGuide登记。年费内持续维护。',
     'footer.sub':'Hebron Platform LLC · Seattle, WA · <a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 현재 72개 도시 · 500개 목표<br>© 2026 Hebron Platform LLC. All rights reserved.',
+    'mob.section':'快速导航',
+    'mob.nav.home':'首页','mob.nav.home.desc':'返回顶部',
+    'mob.nav.phil':'理念','mob.nav.phil.desc':'款待精神 · 为何选择NanuriWeb',
+    'mob.nav.plans':'方案','mob.nav.plans.desc':'教会 $499起 · 商业 $299起',
+    'mob.nav.faq.desc':'8个常见问题',
+    'mob.nav.about':'关于我们','mob.nav.about.desc':'愿景 · 使命 · 理念 · 价值观',
+    'mob.nav.cta':'申请','mob.nav.cta.desc':'免费咨询 · 无提案费用',
+    'phil.kicker':'NanuriWeb理念 · Our Philosophy',
+    'phil.bad.label':'没有目标与理念的建站',
+    'phil.bad.title':'小学生<br>解数学题',
+    'phil.bad.item1':'记忆公式然后套用',
+    'phil.bad.item2':'得到答案就结束了',
+    'phil.bad.item3':'不知道为什么要解题',
+    'phil.bad.item4':'没有任何解题动机',
+    'phil.bad.result':'→ 无人访问的网站',
+    'phil.good.label':'融入款待精神的建站',
+    'phil.good.title':'大学生<br>解数学题',
+    'phil.good.item1':'先理解原理再着手解题',
+    'phil.good.item2':'看到问题的本质',
+    'phil.good.item3':'<strong style="color:var(--gold-light);">清楚知道为什么要建这个网站</strong>',
+    'phil.good.item4':'动机与意图深深融入每一个细节',
+    'phil.good.result':'→ 能看见访客内心的网站',
+    'phil.decl.text':'NanuriWeb不只是一家建站公司。我们是一家播种并传递<em>款待精神</em>的公司。',
+    'phil.decl.sub':'没有目标与理念建出的网站，与深深融入款待精神的网站之间的差异，<br>不在于某一行代码，而在于<strong>方法背后的动机与意图。</strong>',
+    'phil.hwandae.title':'款待精神 · Spirit of Hospitality',
+    'phil.hwandae.item1':'<strong>即使在陌生的土地上也能温暖迎接每一个人的心</strong> — 我们把每位访客当作尊贵的宾客，而非客户',
+    'phil.hwandae.item2':'<strong>这份心意必须渗透在每一页、每一句话中</strong> — 我们的理念不只存在于介绍页面',
+    'phil.hwandae.item3':'<strong>在HebronGuide 72个城市中持续践行的精神</strong> — 仍在向500个城市扩展，并通过每一个我们建造的网站延续这份款待',
+    'why.kicker':'为何选择NanuriWeb · Why NanuriWeb',
+    'why.h2':'与模板服务截然不同<br><span style="color:var(--gold);">专为韩人教会与商业量身定制</span>',
+    'why.sub':'Ministry Brands · Wix · Squarespace 让所有教会看起来一模一样。我们从一开始就专门为您的教会或商业设计。',
+    'why.c1.tag':'vs 模板服务',
+    'why.c1.title':'100% 完全定制',
+    'why.c1.body':'Ministry Brands 和 Wix 让数百间教会使用完全相同的模板。NanuriWeb 从第一天起就专门为您的教会或商业设计。相似的网站？这里没有。',
+    'why.c1.note':'→ 含执事会 / 长老会提案文件',
+    'why.c2.tag':'独家权益 · Exclusive',
+    'why.c2.title':'HebronGuide — 目前72个城市<br>自动收录 — 独一无二的权益',
+    'why.c2.body':'网站完成后，立即自动收录到韩人网络<strong>72个城市</strong>。HebronGuide 仍在向500个城市的目标扩展。这是 Ministry Brands 和 Card&amp;Beyond 无法提供的 NanuriWeb 独家权益。',
+    'why.c2.note':'→ HebronGuide.com — 全球最大韩人目录',
+    'why.c3.tag':'韩人教会与商业专家',
+    'why.c3.title':'韩语专属 · 48小时响应<br>无限次修改直到满意',
+    'why.c3.body':'直接用韩语与牧师和业主沟通，无语言障碍。上线后在年维护费范围内持续陪伴。没有隐藏费用。',
+    'why.c3.note':'→ 一次性制作费 · 年维护费透明公开',
+    'urgency.text':'本月仅剩 <strong>3个名额</strong> — Church Plant 含免费提案',
+    'urgency.cta':'立即申请 →',
+    'share.eyebrow':'分享','share.heading':'分享 NanuriWeb 🙏',
+    'share.sub':'认识需要网站的教会或商家吗？请分享！',
+    'share.kakao':'KakaoTalk','share.insta':'Instagram','share.fb':'Facebook','share.copy':'复制链接',
+    'faq.kicker':'常见问题 · FAQ',
+    'faq.h2':'有疑问吗？',
+    'faq.sub':'这里整理了我们最常收到的问题。如果没有找到您的问题，欢迎随时联系我们。',
+    'faq.q1':'HebronGuide 自动收录是怎么运作的？（目前72个城市）',
+    'faq.a1':'网站完成的瞬间，<strong>您的教会或商业信息就会自动收录到 HebronGuide.com</strong>。全球韩人在搬到新城市或旅行时，都会使用 HebronGuide 搜索教会和韩人商家。只需建立您的 NanuriWeb 网站，无需单独申请，即可自动连接到目前的72个城市网络。HebronGuide 目前在72个城市运营，并持续朝500个城市的目标扩展。<strong>这是任何竞争对手都无法提供的 NanuriWeb 独家权益。</strong> <a href="https://hebronguide.com" target="_blank">访问 HebronGuide →</a>',
+    'faq.q2':'网站制作需要多长时间？',
+    'faq.a2':'咨询后，提案通常在 <strong>3~5个工作日</strong>内提供。提案确认后，网站制作通常需要 <strong>2~3周</strong>。所需时间可能因方案规模和内容准备速度而有所不同。制作过程中我们会进行中间确认，修改直到您完全满意为止。',
+    'faq.q3':'完全不懂技术也没关系吗？',
+    'faq.a3':'<strong>完全没问题。</strong> 从第一次咨询到上线的整个过程，我们都会用牧师和业主能理解的语言来说明。完成后，我们还会教您<strong>如何自己更新消息和内容（CMS）</strong>，如果有任何困难，随时联系我们即可。无需任何技术知识。',
+    'faq.q4':'除了制作费之外，还有其他费用吗？',
+    'faq.a4':'<strong>没有隐藏费用。</strong> 只有一次性制作费和年维护费。年维护费涵盖域名、托管和持续维护，每年初一次性支付。Church Plant 方案包含 <strong>2年免费维护</strong>。任何额外页面或功能都会在咨询时提前告知并报价。项目进行中不会有意外账单。',
+    'faq.q5':'谁可以申请 Church Plant 方案（$299）？',
+    'faq.a5':'凡是<strong>成立3年以内、会众50人以下</strong>的植堂教会均可申请。包含 Growth Plan 的所有功能（10页、CMS、HebronGuide 联动），并享有2年免费年维护费。这是我们出于优先服务植堂教会的心意而设立的特别方案。如果不确定是否符合条件，请先申请免费咨询。',
+    'faq.q6':'长老会提案是什么？是必须的吗？',
+    'faq.a6':'在长老会等需要当会或执事会审议的教会，通常需要<strong>将网站制作提案作为正式议题提交</strong>。NanuriWeb 会免费协助您准备这份提案。这是一份包含预算计划、制作范围和预期效果的专业文件，对通过当会审议有切实的帮助。不需要当会提案的教会可以直接跳过这一步。',
+    'faq.q7':'上线后还会持续管理吗？',
+    'faq.a7':'<strong>在年维护费范围内，上线后我们始终陪伴到最后。</strong> 包括简单内容修改、联系表单检查、速度优化等。较大的功能添加或设计改版需另行协商，但日常维护只需随时联系我们即可。NanuriWeb 不是"做完就结束"的服务，而是<strong>陪伴到最后的长期伙伴</strong>。',
+    'faq.q8':'商业客户也能获得与教会一样水准的服务吗？',
+    'faq.a8':'<strong>是的，我们以同样的心服务商业客户。</strong> 韩人餐厅、美容院、房地产、诊所、补习班等各类商业均提供定制制作。HebronGuide 72个城市自动收录同样适用。Solo Plan 从 $299 起，成立3年以内的商家可通过 Startup Plan 享受50%折扣优惠。',
+    'faq.cta.text':'还有其他疑问吗？随时联系我们。提案提供之前无需任何费用。',
+    'faq.cta.btn':'免费咨询 →',
+    'about.fact1':'<strong>快速完成</strong> 从咨询到上线，最快2周，全程中间确认。',
+    'about.fact2':'<strong>HebronGuide自动同步</strong> 网站上线即自动收录至72个城市韩人网络。',
+    'about.fact3':'<strong>上线后维护包含在内</strong> 年度维护费范围内持续管理。',
+    'about.fact4':'<strong>教会长老会提案支持</strong> 为长老会与执事会审议提供专业文件支持。',
+    'about.prog.label':'进行中',
+    'about.prog.text':'韩国2间教会 — 京畿道地区 · 长老会提案审议中',
+    'vmpc.v.label':'비전 · Vision',
+    'vmpc.v.title':'通过数字款待，在世界任何地方<br>都能被发现的韩人社区',
+    'vmpc.v.text':'我们正在构建一个世界，让异乡的教会与商业在网络上被正确发现、连接并获得服务。',
+    'vmpc.m.label':'사명 · Mission',
+    'vmpc.m.title':'从第一天就做对 —<br>融入款待精神的网站',
+    'vmpc.m.text':'我们用韩语共同打造深植理念的网站，让教会与商业从上线第一天起就被发现。',
+    'vmpc.p.label':'철학 · Philosophy',
+    'vmpc.p.title':'网站是一个<br>迎接人的空间',
+    'vmpc.p.text':'这不只是简单的数字名片。款待的心意——将每位访客视为尊贵宾客——必须渗透在每一个页面中。',
+    'vmpc.val.label':'가치 · Values',
+    'vmpc.val.title':'我们遵守的四项承诺',
+    'vmpc.val.text':'<strong>🏠 款待 (Hospitality)</strong> 将每位访客视为宾客<br><strong>🤝 同行 (Partnership)</strong> 上线后持续陪伴<br><strong>✦ 诚信 (Integrity)</strong> 无隐藏费用<br><strong>🕊 使命 (Mission)</strong> 服务优先于利润',
+    'stmt.eyebrow':'✦ 与NanuriWeb合作意味着什么',
+    'stmt.main':'当您将网站托付给NanuriWeb的那一刻，<br>您不只是在购买一个主页。<br><em>您是在加入这份崇高而美好的事业——<br>帮助异乡的教会与韩人商业<br>被世界正确地发现。</em>',
+    'stmt.sub':'这是一种无法用金钱衡量的价值。<br>您的一个网站，将成为某人第一扇款待之门。',
+    'stmt.badge':'🕊 您的参与创造款待的生态系统',
+    'eco.kicker':'Nanuri平台 · Nanuri Platform',
+    'eco.h2':'教会、商业与家居 —<br><span style="color:var(--gold);">满足韩人社区每一项需求</span>',
+    'eco.sub':'Nanuri平台在HebronGuide生态系统上扩展——从网站到家居，用韩语共同前行。',
+    'eco.web.status':'运营中 · LIVE',
+    'eco.web.tagline':'教会与商业专业定制网站<br>自动收录至HebronGuide 72个城市（目标500个）',
+    'eco.web.feat1':'100%完全定制 — 无模板',
+    'eco.web.feat2':'上线即自动收录至HebronGuide 72个城市',
+    'eco.web.feat3':'韩语专属咨询 · 含长老会提案支持',
+    'eco.web.feat4':'Church Plant $299 · 2年维护费免费',
+    'eco.web.feat5':'上线后持续陪伴的长期伙伴',
+    'eco.web.btn.plans':'查看方案 →',
+    'eco.web.btn.contact':'免费咨询',
+    'eco.home.status':'即将推出 · 2026年下半年',
+    'eco.home.tagline':'房产与家居专家连接信息服务<br>NanuriHome.com — 找房、装修、布置一站搞定',
+    'eco.home.feat1':'直接连接韩人房产中介',
+    'eco.home.feat2':'室内设计与装修专家匹配',
+    'eco.home.feat3':'搬家与安家服务（HebronGuide联动）',
+    'eco.home.feat4':'房屋维修、清洁、园艺等家居服务提供者',
+    'eco.home.feat5':'房贷、保险、税务等专业咨询',
+    'eco.home.notify.label':'🏠 获取上线通知 — 提前登记即享特别优惠',
+    'eco.home.notify.ph':'请输入您的邮箱地址',
+    'eco.home.notify.btn':'通知我',
+    'eco.home.notify.ok':'✓ 已登记！上线时将第一时间与您联系。',
+    'contact.err.required':'请输入教会/商家名称和邮箱。',
+    'contact.btn.sending':'⏳ 发送中...',
+    'contact.btn.success':'✅ 已提交！我们将在48小时内联系您。',
+    'contact.btn.error':'❌ 发生错误，请重试。',
+    'contact.btn.network':'❌ 网络错误，请重试。',
+    'share.toast.kakao':'链接已复制 — 粘贴到KakaoTalk 📋',
+    'share.toast.insta':'链接已复制 — 粘贴到Instagram 📋',
+    'share.toast.copy':'链接已复制！✅',
+    'footer.home.badge':'即将推出',
+    'plan.house.badge':'🏠 家庭教会 — 免费咨询',
+    'plan.house.name':'家庭教会方案',
+    'plan.house.sub':'为家庭教会量身定制的牧养系统设计',
+    'plan.house.desc':'家庭教会不仅仅是一个小型教会，而是一种独特的牧养哲学与体系。我们通过免费咨询，帮您找到正确的方向。',
+    'plan.house.cta':'🤝 申请免费咨询 →',
+    'plan.house.choose':'咨询后从以下方案中选择',
+    'plan.plant.badge':'🌱 植堂教会 — 优先服务',
+    'plan.plant.name':'植堂教会方案',
+    'plan.plant.sub':'成立3年以内 · 会众50人以下',
+    'plan.plant.note':'年维护费 <strong>2年免费</strong>',
+    'plan.plant.f1':'包含成长方案所有功能',
+    'plan.plant.f2':'HebronGuide自动同步72个城市（目标：500个）',
+    'plan.plant.f3':'协助准备长执会企划书',
+    'plan.plant.f4':'NanuriWeb合作伙伴社区认证',
+    'plan.plant.cta':'立即申请',
+    'plan.starter.name':'入门方案',
+    'plan.starter.sub':'小型教会 · 7页',
+    'plan.starter.note':'年维护费 <strong>$240/yr</strong>',
+    'plan.starter.f1':'7页全定制网站',
+    'plan.starter.f2':'新会众与祷告咨询表单',
+    'plan.starter.f3':'HebronGuide 72城市同步',
+    'plan.starter.f4':'谷歌与Naver SEO优化',
+    'plan.starter.f5':'讲道与媒体整合（可选）',
+    'plan.starter.cta':'立即申请',
+    'plan.growth.badge':'⭐ 最受欢迎',
+    'plan.growth.name':'成长方案',
+    'plan.growth.sub':'中型教会 · 10页',
+    'plan.growth.note':'年维护费 <strong>$420/yr</strong>',
+    'plan.growth.f1':'10页全定制网站',
+    'plan.growth.f2':'CMS — 牧师直接更新消息',
+    'plan.growth.f3':'小组·新会众·祷告连接表单',
+    'plan.growth.f4':'社交媒体与YouTube整合',
+    'plan.growth.f5':'HebronGuide全球同步',
+    'plan.growth.f6':'协助准备长执会企划书',
+    'plan.growth.f7':'多语言 EN·ES·中（可选）',
+    'plan.growth.cta':'立即申请',
+    'plan.pro.name':'专业方案',
+    'plan.pro.sub':'大型教会 · 15页以上',
+    'plan.pro.note':'年维护费 <strong>$720/yr</strong>',
+    'plan.pro.f1':'15页以上全定制网站',
+    'plan.pro.f2':'线上奉献与注册系统',
+    'plan.pro.f3':'HebronAPP全球教会档案',
+    'plan.pro.f4':'每月维护报告',
+    'plan.pro.f5':'每年一次改版更新',
+    'plan.pro.f6':'多语言 EN·ES·中（已包含）',
+    'plan.pro.cta':'立即申请',
+    'plans.note':'※ 所有金额均为美元 · 年维护费年初一次性支付 · 植堂教会：成立3年内且会众50人以下',
+    'bizplan.solo.name':'单人方案',
+    'bizplan.solo.sub':'个人业务 · 自由职业者',
+    'bizplan.solo.note':'年维护费 <strong>$150/yr</strong>',
+    'bizplan.solo.f1':'5页全定制网站',
+    'bizplan.solo.f2':'联系与预约咨询表单',
+    'bizplan.solo.f3':'谷歌地图与路线',
+    'bizplan.solo.f4':'HebronGuide 72城市收录',
+    'bizplan.solo.cta':'立即申请',
+    'bizplan.startup.badge':'🌱 创业3年以内 — 享50%折扣',
+    'bizplan.startup.name':'创业方案',
+    'bizplan.startup.sub':'3年内新创业企业',
+    'bizplan.startup.note':'首年 <strong>$150（5折优惠）</strong> → 第2年起 $300/yr',
+    'bizplan.startup.f1':'包含Business Growth全部功能',
+    'bizplan.startup.f2':'建立品牌信任度',
+    'bizplan.startup.f3':'优化线上搜索曝光',
+    'bizplan.startup.f4':'HebronGuide韩人社区同步',
+    'bizplan.startup.cta':'立即申请',
+    'bizplan.bizgrowth.badge':'⭐ 最受欢迎',
+    'bizplan.bizgrowth.name':'商业成长方案',
+    'bizplan.bizgrowth.sub':'中小企业 · 10页',
+    'bizplan.bizgrowth.note':'年维护费 <strong>$480/yr</strong>',
+    'bizplan.bizgrowth.f1':'10页全定制网站',
+    'bizplan.bizgrowth.f2':'线上预约与咨询系统',
+    'bizplan.bizgrowth.f3':'评价与社交媒体整合',
+    'bizplan.bizgrowth.f4':'HebronGuide韩人社区同步',
+    'bizplan.bizgrowth.f5':'谷歌与Naver SEO优化',
+    'bizplan.bizgrowth.cta':'立即申请',
+    'bizplan.bizpro.name':'商业专业方案',
+    'bizplan.bizpro.sub':'中型企业 · 15页以上',
+    'bizplan.bizpro.note':'年维护费 <strong>$840/yr</strong>',
+    'bizplan.bizpro.f1':'15页以上全定制网站',
+    'bizplan.bizpro.f2':'线上支付与预约系统',
+    'bizplan.bizpro.f3':'多语言支持',
+    'bizplan.bizpro.f4':'每月维护报告',
+    'bizplan.bizpro.f5':'高级SEO与数据分析',
+    'bizplan.bizpro.cta':'立即申请',
+    'bizplans.note':'※ 所有金额均为美元 · 年维护费年初一次性支付 · 创业方案：创业3年以内企业',
   }
 };
 
@@ -2111,10 +2946,10 @@ function shareVia(p) {
     if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
       window.location.href = 'kakaotalk://msg/text/' + encodeURIComponent(text);
     } else {
-      navigator.clipboard.writeText(url).then(function(){ showToast('링크 복사됨 — 카카오톡에 붙여넣기 하세요 📋'); });
+      navigator.clipboard.writeText(url).then(function(){ showToast(LANG[currentLang]['share.toast.kakao'] || '링크 복사됨 — 카카오톡에 붙여넣기 하세요 📋'); });
     }
   } else if (p === 'insta') {
-    navigator.clipboard.writeText(url).then(function(){ showToast('링크 복사됨 — 인스타 앱에 붙여넣기 하세요 📋'); });
+    navigator.clipboard.writeText(url).then(function(){ showToast(LANG[currentLang]['share.toast.insta'] || '링크 복사됨 — 인스타 앱에 붙여넣기 하세요 📋'); });
   } else if (p === 'fb') {
     window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank', 'width=600,height=400');
   } else if (p === 'x') {
@@ -2124,7 +2959,7 @@ function shareVia(p) {
   } else if (p === 'line') {
     window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url), '_blank');
   } else if (p === 'copy') {
-    navigator.clipboard.writeText(url).then(function(){ showToast('링크가 복사되었습니다! ✅'); });
+    navigator.clipboard.writeText(url).then(function(){ showToast(LANG[currentLang]['share.toast.copy'] || '링크가 복사되었습니다! ✅'); });
   }
 }
 function showToast(msg) {
