@@ -314,6 +314,51 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 .kakao-float-lbl{font-size:10px;font-family:var(--font-n);font-weight:700;color:rgba(0,0,0,.55);background:rgba(255,255,255,.92);padding:3px 8px;border-radius:8px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.12);}
 @media(max-width:480px){.kakao-float{bottom:20px;right:16px;}}
 
+/* ── NANURI PLATFORM ECOSYSTEM ── */
+.eco-section{background:var(--navy);padding:84px 24px;border-top:1px solid rgba(255,255,255,.06);}
+.eco-inner{max-width:1040px;margin:0 auto;}
+.eco-header{text-align:center;margin-bottom:52px;}
+.eco-kicker{font-size:11px;font-family:var(--font-n);font-weight:700;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;display:block;margin-bottom:12px;}
+.eco-h2{font-family:var(--font-d);font-size:clamp(22px,3vw,34px);font-weight:700;color:white;margin-bottom:10px;}
+.eco-sub{font-size:14px;color:rgba(255,255,255,.45);max-width:540px;margin:0 auto;line-height:1.8;}
+.eco-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:780px){.eco-grid{grid-template-columns:1fr;}}
+/* 공통 카드 */
+.eco-card{border-radius:var(--rl);padding:32px 28px;position:relative;overflow:hidden;}
+/* NanuriWeb 카드 */
+.eco-card.ew{background:rgba(201,168,76,.08);border:1.5px solid rgba(201,168,76,.35);}
+/* NanuriHome 카드 */
+.eco-card.eh{background:rgba(59,130,246,.06);border:1.5px solid rgba(59,130,246,.28);border-style:dashed;}
+.eco-status{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-family:var(--font-n);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:20px;}
+.eco-status.live{background:rgba(26,127,90,.2);border:1px solid rgba(26,127,90,.4);color:#4ade80;}
+.eco-status.soon{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:#93c5fd;}
+.eco-status .s-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.eco-status.live .s-dot{background:#4ade80;animation:upulse 2s infinite;}
+.eco-status.soon .s-dot{background:#93c5fd;opacity:.7;}
+.eco-logo{font-family:var(--font-n);font-size:22px;font-weight:900;color:white;margin-bottom:6px;letter-spacing:-.5px;}
+.eco-logo .ew-accent{color:var(--gold);}
+.eco-logo .eh-accent{color:#60a5fa;}
+.eco-tagline{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:20px;line-height:1.6;}
+.eco-feats{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+.eco-feats li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.65);line-height:1.5;}
+.eco-feats li::before{content:'✓';color:var(--emerald);font-weight:900;flex-shrink:0;margin-top:1px;}
+.eco-feats.eh-list li::before{color:#60a5fa;}
+.eco-btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none;transition:all .2s;}
+.eco-btn.gold{background:var(--gold);color:var(--navy);}
+.eco-btn.gold:hover{background:#ddb94e;}
+/* 출시 알림 폼 */
+.eco-notify{margin-top:24px;background:rgba(255,255,255,.04);border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:18px 16px;}
+.eco-notify-label{font-size:12px;font-weight:700;color:#93c5fd;margin-bottom:10px;display:block;}
+.eco-notify-row{display:flex;gap:8px;}
+.eco-notify-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:9px 13px;font-size:13px;color:white;font-family:var(--font-b);outline:none;}
+.eco-notify-input::placeholder{color:rgba(255,255,255,.25);}
+.eco-notify-input:focus{border-color:rgba(59,130,246,.5);}
+.eco-notify-btn{background:#3B82F6;color:white;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font-b);white-space:nowrap;transition:background .2s;}
+.eco-notify-btn:hover{background:#2563eb;}
+.eco-notify-ok{display:none;font-size:12px;color:#4ade80;margin-top:8px;font-weight:700;}
+.eco-coming-badge{position:absolute;top:20px;right:20px;font-size:10px;font-family:var(--font-n);font-weight:700;background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.3);color:#93c5fd;padding:3px 10px;border-radius:99px;letter-spacing:.8px;}
+.eco-link-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+
 /* ── WHY NANURIWEB SECTION ── */
 .why-section{background:var(--ivory);padding:80px 24px;border-bottom:1px solid rgba(11,22,40,.07);}
 .why-inner{max-width:1060px;margin:0 auto;}
@@ -1058,6 +1103,65 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 </section>
 
 
+<!-- NANURI PLATFORM 생태계 -->
+<section class="eco-section">
+  <div class="eco-inner">
+    <div class="eco-header">
+      <span class="eco-kicker">Nanuri Platform · 나누리 플랫폼</span>
+      <h2 class="eco-h2">교회도, 사업체도, 집도 —<br><span style="color:var(--gold);">한인 커뮤니티의 모든 필요를 섬깁니다</span></h2>
+      <p class="eco-sub">HebronGuide 생태계 위에서 나누리 플랫폼이 확장됩니다. 홈페이지부터 집까지, 한국어로 함께합니다.</p>
+    </div>
+
+    <div class="eco-grid">
+
+      <!-- NanuriWeb 카드 (운영 중) -->
+      <div class="eco-card ew reveal">
+        <div class="eco-status live"><span class="s-dot"></span>운영 중 · LIVE</div>
+        <div class="eco-logo"><span class="ew-accent">Nanuri</span>Web</div>
+        <div class="eco-tagline">교회·사업체 홈페이지 전문 맞춤 제작<br>HebronGuide 500개+ 도시 자동 연동</div>
+        <ul class="eco-feats">
+          <li>100% 맞춤 제작 — 템플릿 없음</li>
+          <li>제작 즉시 HebronGuide 500개+ 도시 자동 등재</li>
+          <li>한국어 전담 상담 · 당회 기획서 지원</li>
+          <li>Church Plant $299 · 2년 관리비 무료</li>
+          <li>오픈 후에도 끝까지 함께하는 파트너</li>
+        </ul>
+        <div class="eco-link-row">
+          <a href="#plans" class="eco-btn gold">요금 보기 →</a>
+          <a href="#contact" class="eco-btn" style="background:rgba(201,168,76,.12);border:1.5px solid rgba(201,168,76,.35);color:var(--gold);">무료 상담</a>
+        </div>
+      </div>
+
+      <!-- NanuriHome 카드 (준비중) -->
+      <div class="eco-card eh reveal">
+        <div class="eco-coming-badge">準備中 · Coming Soon</div>
+        <div class="eco-status soon"><span class="s-dot"></span>준비중 · 2026년 하반기</div>
+        <div class="eco-logo"><span class="eh-accent">Nanuri</span>Home</div>
+        <div class="eco-tagline">부동산·집 관련 전문가 연결 정보 서비스<br>NanuriHome.com — 집을 찾고, 고치고, 꾸미는 모든 것</div>
+        <ul class="eco-feats eh-list">
+          <li>한인 부동산 중개인 직접 연결</li>
+          <li>인테리어·리모델링 전문가 매칭</li>
+          <li>이사·정착 서비스 안내 (HebronGuide 연동)</li>
+          <li>집 수리·청소·조경 등 홈서비스 제공자 연결</li>
+          <li>모기지·보험·세금 등 집 관련 전문 상담</li>
+        </ul>
+
+        <!-- 출시 알림 사전 등록 -->
+        <div class="eco-notify" id="homeNotify">
+          <span class="eco-notify-label">🏠 출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다</span>
+          <div class="eco-notify-row">
+            <input type="email" class="eco-notify-input" id="homeEmail" placeholder="이메일 주소를 입력해 주세요">
+            <button class="eco-notify-btn" onclick="registerHome()">알림 신청</button>
+          </div>
+          <div class="eco-notify-ok" id="homeOk">✓ 등록되었습니다! 출시 시 가장 먼저 연락드립니다.</div>
+        </div>
+      </div>
+
+    </div><!-- /eco-grid -->
+  </div>
+</section>
+
+
 <!-- SHARE BAR -->
 <section class="share-section">
   <div class="share-inner">
@@ -1145,7 +1249,12 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><span style="color:var(--gold);">Nanuri</span><span style="color:rgba(255,255,255,.7);">Web</span> <span style="color:rgba(255,255,255,.65);font-weight:400;font-size:14px;">나누리웹</span></div>
+  <div class="footer-logo">
+    <span style="color:var(--gold);">Nanuri</span><span style="color:rgba(255,255,255,.7);">Web</span>
+    <span style="color:rgba(255,255,255,.35);font-weight:300;margin:0 8px;">·</span>
+    <span style="color:#93c5fd;font-weight:600;">Nanuri</span><span style="color:rgba(255,255,255,.5);">Home</span>
+    <span style="font-size:11px;color:rgba(59,130,246,.7);margin-left:4px;font-weight:400;">준비중</span>
+  </div>
   <p class="footer-sub" data-i18n-html="footer.sub">
     Hebron Platform LLC · Seattle, WA · <a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>
     Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 500+ Cities Worldwide<br>
@@ -1590,6 +1699,36 @@ function toggleFaq(btn) {
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
+}
+
+async function registerHome() {
+  const input = document.getElementById('homeEmail');
+  const okDiv = document.getElementById('homeOk');
+  const email = (input ? input.value : '').trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    input && (input.style.borderColor = '#f87171');
+    setTimeout(() => { if (input) input.style.borderColor = ''; }, 1800);
+    return;
+  }
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/Hebronplatform@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: '[NanuriHome] 출시 알림 사전 등록',
+        email: email,
+        message: 'NanuriHome.com 출시 알림 신청',
+        _template: 'table'
+      })
+    });
+    if (res.ok) {
+      if (input) input.style.display = 'none';
+      document.querySelector('#homeNotify .eco-notify-btn') && (document.querySelector('#homeNotify .eco-notify-btn').style.display = 'none');
+      if (okDiv) okDiv.style.display = 'block';
+    } else { throw new Error('server'); }
+  } catch(e) {
+    if (okDiv) { okDiv.textContent = '⚠ 잠시 후 다시 시도해 주세요.'; okDiv.style.display = 'block'; }
+  }
 }
 
 /* ── Google Analytics 4 (GA4) — 추적 ID 입력 필요 ── */
