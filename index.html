@@ -696,7 +696,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <div class="mob-nav-icon" style="background:rgba(201,168,76,.12);"><svg class="icon"><use href="#ic-coin"/></svg></div>
       <div class="mob-nav-body">
         <span class="mob-nav-label" data-i18n="mob.nav.plans">요금 보기</span>
-        <span class="mob-nav-desc" data-i18n="mob.nav.plans.desc">교회 $499~ · 사업체 $299~</span>
+        <span class="mob-nav-desc" data-i18n="mob.nav.plans.desc">사업체 $299~ · 교회 $499~</span>
       </div>
       <span class="mob-nav-arr">›</span>
     </a>
@@ -1451,8 +1451,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       </div>
       <div class="fr2">
         <div class="fr">
-          <label data-i18n="contact.f.pastor">담임목사·대표자</label>
-          <input type="text" id="c-pastor" placeholder="홍길동 목사" data-i18n-placeholder="contact.f.pastor.ph">
+          <label data-i18n="contact.f.pastor">대표자</label>
+          <input type="text" id="c-pastor" placeholder="홍길동" data-i18n-placeholder="contact.f.pastor.ph">
         </div>
         <div class="fr">
           <label data-i18n="contact.f.phone">연락처</label>
@@ -1461,7 +1461,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       </div>
       <div class="fr">
         <label data-i18n="contact.f.email">Email <span>*</span></label>
-        <input type="email" id="c-email" placeholder="pastor@church.com">
+        <input type="email" id="c-email" placeholder="info@mybusiness.com">
       </div>
       <div class="fr2">
         <div class="fr">
@@ -1502,7 +1502,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       </div>
       <div class="fr">
         <label data-i18n="contact.f.msg">메시지</label>
-        <textarea id="c-msg" placeholder="교회나 사업체를 간단히 소개해 주세요." data-i18n-placeholder="contact.f.msg.ph"></textarea>
+        <textarea id="c-msg" placeholder="사업체나 교회를 간단히 소개해 주세요." data-i18n-placeholder="contact.f.msg.ph"></textarea>
       </div>
       <button class="fsubmit" onclick="submitForm()" data-i18n="contact.f.submit">신청하기 →</button>
     </div>
@@ -2056,10 +2056,10 @@ const LANG = {
     'contact.eyebrow':'신청하기 · Contact','contact.title':'지금 신청하세요',
     'contact.desc':'사업체, 교회, 단체 — 누구나 신청하실 수 있습니다. 기획서 제공까지는 비용이 없습니다.',
     'contact.f.name':'사업체명 / 교회명 *','contact.f.name.ph':'예: 서울 김치식당 / 행복한교회',
-    'contact.f.pastor':'담임목사·대표자','contact.f.pastor.ph':'홍길동 목사',
+    'contact.f.pastor':'대표자','contact.f.pastor.ph':'홍길동',
     'contact.f.phone':'연락처','contact.f.phone.ph':'010-0000-0000',
     'contact.f.email':'Email *','contact.f.plan':'관심 플랜',
-    'contact.f.msg':'메시지','contact.f.msg.ph':'교회나 사업체를 간단히 소개해 주세요.',
+    'contact.f.msg':'메시지','contact.f.msg.ph':'사업체나 교회를 간단히 소개해 주세요.',
     'pf.step':'STEP 01','pf.step2':'STEP 02','pf.step3':'STEP 03','pf.step4':'STEP 04','pf.step5':'STEP 05','pf.step6':'STEP 06',
     'pf.s1.title':'신청서 작성','pf.s1.desc':'아래 폼에 간단히\n작성해 주세요',
     'pf.s2.title':'48시간 내 연락','pf.s2.desc':'카카오톡 또는\n이메일로 연락드립니다',
@@ -2098,7 +2098,7 @@ const LANG = {
     'mob.section':'페이지 바로가기',
     'mob.nav.home':'홈','mob.nav.home.desc':'처음으로 돌아가기',
     'mob.nav.phil':'철학','mob.nav.phil.desc':'환대의 정신 · NanuriWeb의 이유',
-    'mob.nav.plans':'요금 보기','mob.nav.plans.desc':'교회 $499~ · 사업체 $299~',
+    'mob.nav.plans':'요금 보기','mob.nav.plans.desc':'사업체 $299~ · 교회 $499~',
     'mob.nav.faq.desc':'자주 묻는 질문 8가지',
     'mob.nav.about':'회사 소개','mob.nav.about.desc':'비전 · 사명 · 철학 · 가치',
     'mob.nav.cta':'신청하기','mob.nav.cta.desc':'무료 상담 · 기획서 비용 없음',
@@ -2273,11 +2273,11 @@ const LANG = {
     'bridge.text':'Church or <strong>business — served with the same heart</strong>',
     'contact.eyebrow':'Contact · Get Started','contact.title':'Apply Now',
     'contact.desc':'Anyone can apply — church, business, or organization. No cost until you approve the proposal.',
-    'contact.f.name':'Church / Business Name *','contact.f.name.ph':'e.g. Eden Church / Seoul Kitchen',
-    'contact.f.pastor':'Pastor / Owner','contact.f.pastor.ph':'John Kim, Pastor',
+    'contact.f.name':'Business / Church Name *','contact.f.name.ph':'e.g. Seoul Kitchen / Eden Church',
+    'contact.f.pastor':'Owner / Representative','contact.f.pastor.ph':'John Kim',
     'contact.f.phone':'Phone','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan of Interest',
-    'contact.f.msg':'Message','contact.f.msg.ph':'Tell us briefly about your church or business.',
+    'contact.f.msg':'Message','contact.f.msg.ph':'Tell us briefly about your business or church.',
     'pf.step':'STEP 01','pf.step2':'STEP 02','pf.step3':'STEP 03','pf.step4':'STEP 04','pf.step5':'STEP 05','pf.step6':'STEP 06',
     'pf.s1.title':'Fill Out Form','pf.s1.desc':'Quick form below,\n2 minutes max',
     'pf.s2.title':'We Contact You','pf.s2.desc':'Within 48 hours\nvia KakaoTalk or email',
@@ -2316,7 +2316,7 @@ const LANG = {
     'mob.section':'Quick Navigation',
     'mob.nav.home':'Home','mob.nav.home.desc':'Back to top',
     'mob.nav.phil':'Philosophy','mob.nav.phil.desc':'Spirit of Hospitality · Why NanuriWeb',
-    'mob.nav.plans':'Plans','mob.nav.plans.desc':'Church $499~ · Business $299~',
+    'mob.nav.plans':'Plans','mob.nav.plans.desc':'Business $299~ · Church $499~',
     'mob.nav.faq.desc':'8 frequently asked questions',
     'mob.nav.about':'About','mob.nav.about.desc':'Vision · Mission · Philosophy · Values',
     'mob.nav.cta':'Apply','mob.nav.cta.desc':'Free consultation · No proposal fee',
@@ -2575,11 +2575,11 @@ const LANG = {
     'bridge.text':'Iglesias y <strong>negocios — servidos con el mismo corazón</strong>',
     'contact.eyebrow':'Contacto · Empezar','contact.title':'Solicita Ahora',
     'contact.desc':'Cualquiera puede aplicar — iglesia, negocio u organización. Sin costo hasta aprobar la propuesta.',
-    'contact.f.name':'Iglesia / Negocio *','contact.f.name.ph':'Ej: Eden Church / Restaurante Seoul',
-    'contact.f.pastor':'Pastor / Dueño','contact.f.pastor.ph':'Juan Kim, Pastor',
+    'contact.f.name':'Negocio / Iglesia *','contact.f.name.ph':'Ej: Restaurante Seoul / Eden Church',
+    'contact.f.pastor':'Dueño / Representante','contact.f.pastor.ph':'Juan Kim',
     'contact.f.phone':'Teléfono','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan de Interés',
-    'contact.f.msg':'Mensaje','contact.f.msg.ph':'Cuéntanos sobre tu iglesia o negocio.',
+    'contact.f.msg':'Mensaje','contact.f.msg.ph':'Cuéntanos sobre tu negocio o iglesia.',
     'pf.step':'PASO 01','pf.step2':'PASO 02','pf.step3':'PASO 03','pf.step4':'PASO 04','pf.step5':'PASO 05','pf.step6':'PASO 06',
     'pf.s1.title':'Llenar Formulario','pf.s1.desc':'Formulario rápido,\n2 minutos',
     'pf.s2.title':'Te Contactamos','pf.s2.desc':'En 48 horas\npor KakaoTalk o email',
@@ -2616,7 +2616,7 @@ const LANG = {
     'mob.section':'Navegación Rápida',
     'mob.nav.home':'Inicio','mob.nav.home.desc':'Volver al inicio',
     'mob.nav.phil':'Filosofía','mob.nav.phil.desc':'Espíritu de hospitalidad · Por qué NanuriWeb',
-    'mob.nav.plans':'Planes','mob.nav.plans.desc':'Iglesia $499~ · Negocio $299~',
+    'mob.nav.plans':'Planes','mob.nav.plans.desc':'Negocio $299~ · Iglesia $499~',
     'mob.nav.faq.desc':'8 preguntas frecuentes',
     'mob.nav.about':'Nosotros','mob.nav.about.desc':'Visión · Misión · Filosofía · Valores',
     'mob.nav.cta':'Aplicar','mob.nav.cta.desc':'Consulta gratis · Sin costo de propuesta',
