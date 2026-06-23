@@ -491,6 +491,30 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 .share-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
 /* ── FAQ SECTION ── */
+/* PARTNERS */
+.partners-section{background:var(--ivory);padding:80px 24px;border-bottom:1px solid var(--border);}
+.partners-inner{max-width:960px;margin:0 auto;text-align:center;}
+.partners-title{font-family:var(--font-d);font-size:clamp(22px,4vw,32px);color:var(--navy);margin:8px 0 12px;}
+.partners-sub{color:var(--gray);font-size:15px;margin-bottom:40px;}
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left;}
+.partner-card{border-radius:16px;padding:24px;border:1px solid var(--border);background:white;transition:all .25s;}
+.partner-card.in-progress{border-color:var(--gold);background:linear-gradient(135deg,#fffdf5 0%,#fff 100%);}
+.partner-card.in-progress:hover{transform:translateY(-4px);box-shadow:var(--shl);}
+.partner-card-top{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.partner-badge{font-size:11px;font-family:var(--font-n);font-weight:700;letter-spacing:.5px;background:var(--gold);color:#0B1628;padding:3px 10px;border-radius:20px;}
+.partner-type{font-size:11px;font-family:var(--font-n);font-weight:600;padding:3px 10px;border-radius:20px;}
+.partner-type.church{background:rgba(11,22,40,.06);color:var(--navy);}
+.partner-name{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.partner-city{font-size:13px;color:var(--gray);margin-bottom:10px;}
+.partner-plan{font-size:12px;color:#aaa;font-style:italic;}
+.partner-card.cta-card{border:1.5px dashed var(--border);background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:32px 20px;cursor:pointer;transition:all .25s;}
+.partner-card.cta-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:var(--shl);}
+.partner-cta-icon{font-size:28px;}
+.partner-cta-text{font-size:14px;color:var(--gray);line-height:1.6;}
+.partner-cta-btn{display:inline-block;background:var(--navy);color:#fff;font-family:var(--font-n);font-size:13px;font-weight:700;padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s;}
+.partner-cta-btn:hover{background:var(--gold);color:var(--navy);}
+@media(max-width:768px){.partners-grid{grid-template-columns:1fr;}}
+
 .faq-section{background:white;padding:80px 24px;border-bottom:1px solid var(--border);}
 .faq-inner{max-width:780px;margin:0 auto;}
 .faq-header{text-align:center;margin-bottom:48px;}
@@ -1310,6 +1334,39 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 </div>
 </section>
 
+
+<!-- PARTNERS — 함께하는 파트너 -->
+<section class="partners-section" id="partners">
+  <div class="partners-inner">
+    <span class="eyebrow" data-i18n="partners.eyebrow">함께하는 파트너</span>
+    <h2 class="partners-title" data-i18n="partners.title">지금 이 순간도 함께 만들어가고 있습니다</h2>
+    <p class="partners-sub" data-i18n="partners.sub">NanuriWeb과 함께 온라인 문을 여는 교회와 사업체입니다.</p>
+    <div class="partners-grid">
+      <!-- Card 1: 시애틀지구촌교회 — in progress -->
+      <div class="partner-card in-progress reveal">
+        <div class="partner-card-top">
+          <span class="partner-badge" data-i18n="partners.badge.inprogress">제작 중</span>
+          <span class="partner-type church" data-i18n="partners.type.church">교회</span>
+        </div>
+        <div class="partner-name">시애틀지구촌교회</div>
+        <div class="partner-city">📍 Seattle, WA</div>
+        <div class="partner-plan" data-i18n="partners.plan.label">플랜 준비 중</div>
+      </div>
+      <!-- Card 2: CTA slot -->
+      <div class="partner-card cta-card reveal">
+        <div class="partner-cta-icon">🌐</div>
+        <div class="partner-cta-text" data-i18n="partners.cta.text">다음 주인공이<br>되어 보세요</div>
+        <a href="#contact" class="partner-cta-btn" data-i18n="partners.cta.btn">무료 상담 신청</a>
+      </div>
+      <!-- Card 3: CTA slot -->
+      <div class="partner-card cta-card reveal">
+        <div class="partner-cta-icon">✝️</div>
+        <div class="partner-cta-text" data-i18n="partners.cta.text2">우리 교회도<br>디지털 문을 열고 싶다면</div>
+        <a href="#contact" class="partner-cta-btn" data-i18n="partners.cta.btn2">지금 시작하기</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FAQ — 자주 묻는 질문 -->
 <section class="faq-section" id="faq">
@@ -2193,6 +2250,16 @@ const LANG = {
     'process.s2.title':'기획 & 디자인','process.s2.desc':'구조와 디자인을 함께 정합니다. 교회는 당회 기획서도 이 단계에서 준비합니다.',
     'process.s3.title':'제작 & 검토','process.s3.desc':'제작하면서 중간 확인합니다. 만족하실 때까지 수정합니다.',
     'process.s4.title':'오픈 & 운영','process.s4.desc':'구글·네이버·HebronGuide 등록. 오픈 후에도 연관리비 내에서 계속 관리합니다.',
+    'partners.eyebrow':'함께하는 파트너',
+    'partners.title':'지금 이 순간도 함께 만들어가고 있습니다',
+    'partners.sub':'NanuriWeb과 함께 온라인 문을 여는 교회와 사업체입니다.',
+    'partners.badge.inprogress':'제작 중',
+    'partners.type.church':'교회',
+    'partners.plan.label':'플랜 준비 중',
+    'partners.cta.text':'다음 주인공이\n되어 보세요',
+    'partners.cta.btn':'무료 상담 신청',
+    'partners.cta.text2':'우리 교회도\n디지털 문을 열고 싶다면',
+    'partners.cta.btn2':'지금 시작하기',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 현재 72개 도시 · 500개 목표<br>© 2026 Hebron Platform LLC. All rights reserved.',
     'mob.section':'페이지 바로가기',
     'mob.nav.home':'홈','mob.nav.home.desc':'처음으로 돌아가기',
@@ -2420,6 +2487,16 @@ const LANG = {
     'process.s2.title':'Plan & Design','process.s2.desc':'We plan the structure and design together. Church clients: elder board proposal prepared at this stage.',
     'process.s3.title':'Build & Review','process.s3.desc':'We build and check in regularly. Revisions until you\'re satisfied.',
     'process.s4.title':'Launch & Maintain','process.s4.desc':'Listed on Google, Naver, HebronGuide. Ongoing maintenance included in annual fee.',
+    'partners.eyebrow':'Our Partners',
+    'partners.title':'Building Together, Right Now',
+    'partners.sub':'Churches and businesses opening their digital doors with NanuriWeb.',
+    'partners.badge.inprogress':'In Progress',
+    'partners.type.church':'Church',
+    'partners.plan.label':'Plan in preparation',
+    'partners.cta.text':'Be the next\nsuccess story',
+    'partners.cta.btn':'Free Consultation',
+    'partners.cta.text2':'Ready to open\nyour church\'s digital door?',
+    'partners.cta.btn2':'Get Started',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 72 Cities &amp; Growing · Goal: 500<br>© 2026 Hebron Platform LLC. All rights reserved.',
     'mob.section':'Quick Navigation',
     'mob.nav.home':'Home','mob.nav.home.desc':'Back to top',
@@ -2729,6 +2806,16 @@ const LANG = {
     'process.s2.title':'Plan & Diseño','process.s2.desc':'Definimos estructura y diseño juntos.',
     'process.s3.title':'Construcción & Revisión','process.s3.desc':'Construimos con revisiones hasta que estés satisfecho.',
     'process.s4.title':'Lanzamiento & Mantenimiento','process.s4.desc':'Listado en Google, Naver, HebronGuide. Mantenimiento incluido.',
+    'partners.eyebrow':'Nuestros Socios',
+    'partners.title':'Construyendo Juntos, Ahora Mismo',
+    'partners.sub':'Iglesias y negocios que abren sus puertas digitales con NanuriWeb.',
+    'partners.badge.inprogress':'En Progreso',
+    'partners.type.church':'Iglesia',
+    'partners.plan.label':'Plan en preparación',
+    'partners.cta.text':'Sé el próximo\ncaso de éxito',
+    'partners.cta.btn':'Consulta Gratuita',
+    'partners.cta.text2':'¿Lista tu iglesia para\nabrir su puerta digital?',
+    'partners.cta.btn2':'Comenzar Ahora',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Socio Oficial de <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 72 Ciudades y Creciendo · Meta: 500<br>© 2026 Hebron Platform LLC. All rights reserved.',
     'mob.section':'Navegación Rápida',
     'mob.nav.home':'Inicio','mob.nav.home.desc':'Volver al inicio',
