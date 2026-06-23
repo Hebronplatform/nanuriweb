@@ -348,6 +348,14 @@ hr.pdiv{border:none;border-top:1px solid rgba(255,255,255,.08);margin:16px 0;}
 .team-loc{font-size:12px;color:var(--gray);margin-bottom:14px;}
 .team-skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
 .team-skill{font-size:11px;font-family:var(--font-n);font-weight:600;background:rgba(124,58,237,.08);color:#7c3aed;padding:3px 10px;border-radius:20px;}
+.icon{width:20px;height:20px;display:inline-block;vertical-align:middle;flex-shrink:0;}
+.hw-icon svg,.hw-icon{display:flex;align-items:center;justify-content:center;}
+.fork-icon svg{width:28px;height:28px;}
+.mob-nav-icon svg{width:22px;height:22px;}
+.pf-icon-wrap svg{width:26px;height:26px;}
+.f-ico svg{width:22px;height:22px;}
+.vmpc-icon svg{width:26px;height:26px;}
+.c-ico svg{width:16px;height:16px;}
 @media(max-width:768px){.team-grid{grid-template-columns:1fr;}}
 
 /* 감동 선언문 */
@@ -547,6 +555,34 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 </style>
 </head>
 <body>
+<!-- SVG Icon Sprite -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="ic-church" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V9.5L12 3l9 6.5V22"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="9.5" y1="5" x2="14.5" y2="5"/><rect x="8.5" y="14" width="7" height="8"/></symbol>
+  <symbol id="ic-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+  <symbol id="ic-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="ic-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="ic-feather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></symbol>
+  <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="22" x2="9" y2="12"/><line x1="15" y1="22" x2="15" y2="12"/><rect x="9" y="12" width="6" height="10"/><line x1="8" y1="6" x2="8.01" y2="6"/><line x1="12" y1="6" x2="12.01" y2="6"/><line x1="16" y1="6" x2="16.01" y2="6"/><line x1="8" y1="9.5" x2="8.01" y2="9.5"/><line x1="12" y1="9.5" x2="12.01" y2="9.5"/><line x1="16" y1="9.5" x2="16.01" y2="9.5"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="ic-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+  <symbol id="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="ic-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+  <symbol id="ic-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></symbol>
+  <symbol id="ic-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+  <symbol id="ic-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="ic-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14z"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="ic-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="ic-scales" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 6l9 3 9-3"/><path d="M3 6a3 3 0 0 0 6 0"/><path d="M15 6a3 3 0 0 0 6 0"/></symbol>
+  <symbol id="ic-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+  <symbol id="ic-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2h18l-2 7H5L3 2z"/><path d="M5 9v13h14V9"/><path d="M9 22V14h6v8"/></symbol>
+  <symbol id="ic-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><line x1="12" y1="8" x2="12" y2="16"/><path d="M15 10.5a3 3 0 0 0-3-2.5 3 3 0 0 0 0 6 3 3 0 0 1 0 6 3 3 0 0 1-3-2.5"/></symbol>
+  <symbol id="ic-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+</svg>
 
 <!-- NAV -->
 <nav>
@@ -588,7 +624,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <span class="mob-drawer-label" data-i18n="mob.section">페이지 바로가기</span>
 
     <a href="#top" class="mob-nav-item" onclick="closeMobMenu()">
-      <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);">🏠</div>
+      <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);"><svg class="icon"><use href="#ic-home"/></svg></div>
       <div class="mob-nav-body">
         <span class="mob-nav-label" data-i18n="mob.nav.home">홈</span>
         <span class="mob-nav-desc" data-i18n="mob.nav.home.desc">처음으로 돌아가기</span>
@@ -597,7 +633,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </a>
 
     <a href="#philosophy" class="mob-nav-item" onclick="closeMobMenu()">
-      <div class="mob-nav-icon" style="background:rgba(201,168,76,.1);">🕊</div>
+      <div class="mob-nav-icon" style="background:rgba(201,168,76,.1);"><svg class="icon"><use href="#ic-feather"/></svg></div>
       <div class="mob-nav-body">
         <span class="mob-nav-label" data-i18n="mob.nav.phil">철학</span>
         <span class="mob-nav-desc" data-i18n="mob.nav.phil.desc">환대의 정신 · NanuriWeb의 이유</span>
@@ -608,7 +644,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="mob-nav-sep"></div>
 
     <a href="#plans" class="mob-nav-item" onclick="closeMobMenu()">
-      <div class="mob-nav-icon" style="background:rgba(201,168,76,.12);">💰</div>
+      <div class="mob-nav-icon" style="background:rgba(201,168,76,.12);"><svg class="icon"><use href="#ic-coin"/></svg></div>
       <div class="mob-nav-body">
         <span class="mob-nav-label" data-i18n="mob.nav.plans">요금 보기</span>
         <span class="mob-nav-desc" data-i18n="mob.nav.plans.desc">교회 $499~ · 사업체 $299~</span>
@@ -617,7 +653,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </a>
 
     <a href="#faq" class="mob-nav-item" onclick="closeMobMenu()">
-      <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);">❓</div>
+      <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);"><svg class="icon"><use href="#ic-help"/></svg></div>
       <div class="mob-nav-body">
         <span class="mob-nav-label">FAQ</span>
         <span class="mob-nav-desc" data-i18n="mob.nav.faq.desc">자주 묻는 질문 8가지</span>
@@ -628,7 +664,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="mob-nav-sep"></div>
 
     <a href="#about" class="mob-nav-item" onclick="closeMobMenu()">
-      <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);">🏢</div>
+      <div class="mob-nav-icon" style="background:rgba(255,255,255,.05);"><svg class="icon"><use href="#ic-building"/></svg></div>
       <div class="mob-nav-body">
         <span class="mob-nav-label" data-i18n="mob.nav.about">회사 소개</span>
         <span class="mob-nav-desc" data-i18n="mob.nav.about.desc">비전 · 사명 · 철학 · 가치</span>
@@ -639,7 +675,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="mob-nav-sep"></div>
 
     <a href="#contact" class="mob-nav-item gold-item" onclick="closeMobMenu()">
-      <div class="mob-nav-icon" style="background:rgba(201,168,76,.18);">📩</div>
+      <div class="mob-nav-icon" style="background:rgba(201,168,76,.18);"><svg class="icon"><use href="#ic-mail"/></svg></div>
       <div class="mob-nav-body">
         <span class="mob-nav-label" data-i18n="mob.nav.cta">신청하기</span>
         <span class="mob-nav-desc" data-i18n="mob.nav.cta.desc">무료 상담 · 기획서 비용 없음</span>
@@ -678,28 +714,28 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       </div>
       <div class="hw-grid">
         <div class="hw-item">
-          <span class="hw-icon">🌐</span>
+          <span class="hw-icon"><svg class="icon"><use href="#ic-globe"/></svg></span>
           <div class="hw-body">
             <span class="hw-strong" data-i18n="hero.why.item1.strong">만들면 바로 72개 도시에 노출됩니다</span>
             <span class="hw-vs" data-i18n-html="hero.why.item1.vs">일반 업체는 완성 후 <s>홍보를 따로</s> 해야 합니다 <em style="color:rgba(201,168,76,.5);font-style:normal;">(현재 72개 → 목표 500개)</em></span>
           </div>
         </div>
         <div class="hw-item">
-          <span class="hw-icon">🤝</span>
+          <span class="hw-icon"><svg class="icon"><use href="#ic-users"/></svg></span>
           <div class="hw-body">
             <span class="hw-strong" data-i18n="hero.why.item2.strong">한국어로, 끝까지 함께하는 담당자</span>
             <span class="hw-vs" data-i18n-html="hero.why.item2.vs">영어 티켓 <s>기다릴 필요 없이</s> 직접 상담합니다</span>
           </div>
         </div>
         <div class="hw-item">
-          <span class="hw-icon">⛪</span>
+          <span class="hw-icon"><svg class="icon"><use href="#ic-church"/></svg></span>
           <div class="hw-body">
             <span class="hw-strong" data-i18n="hero.why.item3.strong">교회·한인 사역 구조를 이해합니다</span>
             <span class="hw-vs" data-i18n-html="hero.why.item3.vs">청년 프리랜서는 <s>예배·사역 구조</s>를 모릅니다</span>
           </div>
         </div>
         <div class="hw-item">
-          <span class="hw-icon">💳</span>
+          <span class="hw-icon"><svg class="icon"><use href="#ic-tag"/></svg></span>
           <div class="hw-body">
             <span class="hw-strong" data-i18n="hero.why.item4.strong">일회 제작비, 숨겨진 비용 없음 $299~</span>
             <span class="hw-vs" data-i18n-html="hero.why.item4.vs">완성 후 <s>월정액·유지비 추가청구</s> 없습니다</span>
@@ -708,12 +744,12 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
         <!-- 전체너비: 가격 함정 폭로 -->
         <div class="hw-item hw-item-full">
-          <span class="hw-icon">⚠️</span>
+          <span class="hw-icon"><svg class="icon"><use href="#ic-warning"/></svg></span>
           <div class="hw-body" style="width:100%;">
             <div class="hw-pt-headline"><span data-i18n-html="hero.why.pt.head">싼 게 무조건 좋은 건 아닙니다 — 저가 홈페이지의 진짜 비용</span></div>
             <div class="hw-pt-cols">
               <div class="hw-pt-col bad">
-                <span class="hw-pt-col-label" data-i18n="hero.why.bad.label">💸 저가 업체 · 동네 프리랜서</span>
+                <span class="hw-pt-col-label" data-i18n="hero.why.bad.label"><svg class="icon"><use href="#ic-dollar"/></svg> 저가 업체 · 동네 프리랜서</span>
                 <div class="hw-pt-li"><span class="mk">✗</span><span data-i18n="hero.why.bad.li1">Google·Naver에 안 잡히는 홈페이지 → 기회 손실</span></div>
                 <div class="hw-pt-li"><span class="mk">✗</span><span data-i18n="hero.why.bad.li2">완성 후 혼자 남겨짐 — 수정할 때마다 별도 청구</span></div>
                 <div class="hw-pt-li"><span class="mk">✗</span><span data-i18n="hero.why.bad.li3">1~2년 후 재작업 → 처음부터 다시 비용 발생</span></div>
@@ -739,7 +775,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="hero-fork">
       <a href="#plans" class="fork-btn church-fork" onclick="switchPlanTab('church', document.querySelectorAll('.plan-tab')[0])">
         <div class="fork-row">
-          <span class="fork-icon">⛪</span>
+          <span class="fork-icon"><svg><use href="#ic-church"/></svg></span>
           <span class="fork-title" data-i18n="fork.church.title">교회 홈페이지</span>
           <span class="fork-arr">→</span>
         </div>
@@ -748,7 +784,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       </a>
       <a href="#plans" class="fork-btn biz-fork" onclick="switchPlanTab('biz', document.querySelectorAll('.plan-tab')[1])">
         <div class="fork-row">
-          <span class="fork-icon">🏢</span>
+          <span class="fork-icon"><svg><use href="#ic-building"/></svg></span>
           <span class="fork-title" data-i18n="fork.biz.title">사업체 · 기관 · 단체</span>
           <span class="fork-arr">→</span>
         </div>
@@ -821,7 +857,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <!-- 환대의 정신 정의 -->
     <div class="phil-hwandae reveal">
       <div class="phil-hwandae-hd">
-        <span style="font-size:16px;">🕊</span>
+        <svg class="icon"><use href="#ic-feather"/></svg>
         <span class="phil-hwandae-hd-text" data-i18n="phil.hwandae.title">환대의 정신 · Spirit of Hospitality</span>
       </div>
       <div class="phil-hwandae-item">
@@ -916,8 +952,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <p class="sec-desc" data-i18n="plans.desc">아래에서 원하시는 플랜을 선택하세요. 플랜 버튼을 누르시면 신청 폼으로 바로 연결됩니다.</p>
 
   <div class="plan-tabs">
-    <button class="plan-tab active" onclick="switchPlanTab('church',this)" data-i18n="plans.tab.church">⛪ 교회 Church</button>
-    <button class="plan-tab" onclick="switchPlanTab('biz',this)" data-i18n="plans.tab.biz">🏪 사업체 Business</button>
+    <button class="plan-tab active" onclick="switchPlanTab('church',this)" data-i18n="plans.tab.church"><svg class="icon"><use href="#ic-church"/></svg> 교회 Church</button>
+    <button class="plan-tab" onclick="switchPlanTab('biz',this)" data-i18n="plans.tab.biz"><svg class="icon"><use href="#ic-store"/></svg> 사업체 Business</button>
   </div>
 
   <!-- CHURCH PANEL -->
@@ -925,14 +961,14 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <div class="plans-grid">
 
     <div class="plan-card special reveal" style="grid-column:1/-1;">
-      <div class="plan-badge green" data-i18n="plan.house.badge">🏠 House Church — 가정교회 무료 상담</div>
+      <div class="plan-badge green" data-i18n="plan.house.badge"><svg class="icon"><use href="#ic-home"/></svg> House Church — 가정교회 무료 상담</div>
       <div class="plan-card-img-wrap"><img src="https://images.unsplash.com/photo-1651514645933-c26e0eb4ace3?auto=format&fit=crop&w=1200&h=380&q=85" alt="House Church" loading="lazy"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
         <div>
           <div class="plan-name2" style="color:#4ade80;" data-i18n="plan.house.name">House Church Plan</div>
           <span class="plan-sub2" data-i18n="plan.house.sub">가정교회 목회 시스템 맞춤 설계</span>
           <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.9;margin-top:12px;" data-i18n="plan.house.desc">가정교회는 단순한 소규모 교회가 아닙니다. 독자적인 목회 철학과 시스템입니다. 함께 무료 상담으로 방향을 먼저 잡아드립니다.</p>
-          <button class="plan-cta2" style="margin-top:18px;background:var(--emerald);border-color:var(--emerald);" onclick="goContact('House Church')" data-i18n="plan.house.cta">🤝 무료 상담 신청 →</button>
+          <button class="plan-cta2" style="margin-top:18px;background:var(--emerald);border-color:var(--emerald);" onclick="goContact('House Church')" data-i18n="plan.house.cta">무료 상담 신청 →</button>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
           <div style="font-size:11px;color:#4ade80;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;" data-i18n="plan.house.choose">상담 후 아래 플랜 중 선택</div>
@@ -953,7 +989,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </div>
 
     <div class="plan-card special reveal">
-      <div class="plan-badge green" data-i18n="plan.plant.badge">🌱 개척교회 — 우선 섬깁니다</div>
+      <div class="plan-badge green" data-i18n="plan.plant.badge"><svg class="icon"><use href="#ic-feather"/></svg> 개척교회 — 우선 섬깁니다</div>
       <div class="plan-card-img-wrap"><img src="https://images.unsplash.com/photo-1679110663825-c6ec1ad51884?auto=format&fit=crop&w=600&h=380&q=85" alt="Church Plant" loading="lazy"></div>
       <div class="plan-name2" data-i18n="plan.plant.name">Church Plant</div>
       <span class="plan-sub2" data-i18n="plan.plant.sub">설립 3년 이내 · 성도 50명 이하</span>
@@ -1058,7 +1094,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <button class="plan-cta2" onclick="goContact('Solo Plan')" data-i18n="bizplan.solo.cta">신청하기</button>
     </div>
     <div class="plan-card special reveal">
-      <div class="plan-badge green" data-i18n="bizplan.startup.badge">🌱 창업 3년 이내 — 50% 할인</div>
+      <div class="plan-badge green" data-i18n="bizplan.startup.badge"><svg class="icon"><use href="#ic-feather"/></svg> 창업 3년 이내 — 50% 할인</div>
       <div class="plan-card-img-wrap"><img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&h=380&q=85" alt="Startup Plan" loading="lazy"></div>
       <div class="plan-name2" data-i18n="bizplan.startup.name">Startup Plan</div>
       <span class="plan-sub2" data-i18n="bizplan.startup.sub">신규 창업 3년 이내</span>
@@ -1249,28 +1285,28 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <div class="process-flow reveal">
     <div class="pf-step">
       <div class="pf-num" data-i18n="pf.step">STEP 01</div>
-      <div class="pf-icon-wrap">📝</div>
+      <div class="pf-icon-wrap"><svg class="icon"><use href="#ic-edit"/></svg></div>
       <div class="pf-title" data-i18n="pf.s1.title">신청서 작성</div>
       <div class="pf-desc" data-i18n="pf.s1.desc">아래 폼에 간단히<br>작성해 주세요</div>
     </div>
     <div class="pf-connector">→</div>
     <div class="pf-step">
       <div class="pf-num" data-i18n="pf.step2">STEP 02</div>
-      <div class="pf-icon-wrap">💬</div>
+      <div class="pf-icon-wrap"><svg class="icon"><use href="#ic-chat"/></svg></div>
       <div class="pf-title" data-i18n="pf.s2.title">48시간 내 연락</div>
       <div class="pf-desc" data-i18n="pf.s2.desc">카카오톡 또는<br>이메일로 연락드립니다</div>
     </div>
     <div class="pf-connector">→</div>
     <div class="pf-step">
       <div class="pf-num" data-i18n="pf.step3">STEP 03</div>
-      <div class="pf-icon-wrap">🎙️</div>
+      <div class="pf-icon-wrap"><svg class="icon"><use href="#ic-mic"/></svg></div>
       <div class="pf-title" data-i18n="pf.s3.title">무료 상담</div>
       <div class="pf-desc" data-i18n="pf.s3.desc">어떤 홈페이지가<br>필요한지 이야기합니다</div>
     </div>
     <div class="pf-connector">→</div>
     <div class="pf-step pf-key">
       <div class="pf-num" data-i18n="pf.step4">STEP 04</div>
-      <div class="pf-icon-wrap">📋</div>
+      <div class="pf-icon-wrap"><svg class="icon"><use href="#ic-clipboard"/></svg></div>
       <div class="pf-title" data-i18n="pf.s4.title">맞춤 기획서 제공</div>
       <div class="pf-desc" data-i18n="pf.s4.desc">견적 포함 기획서를<br>무료로 드립니다</div>
       <span class="pf-badge" data-i18n="pf.s4.badge">무료</span>
@@ -1278,20 +1314,20 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="pf-connector">→</div>
     <div class="pf-step">
       <div class="pf-num" data-i18n="pf.step5">STEP 05</div>
-      <div class="pf-icon-wrap">✅</div>
+      <div class="pf-icon-wrap"><svg class="icon"><use href="#ic-check-circle"/></svg></div>
       <div class="pf-title" data-i18n="pf.s5.title">검토 후 결정</div>
       <div class="pf-desc" data-i18n="pf.s5.desc">기획서 확인 후<br>진행 여부를 결정하세요</div>
     </div>
     <div class="pf-connector">→</div>
     <div class="pf-step">
       <div class="pf-num" data-i18n="pf.step6">STEP 06</div>
-      <div class="pf-icon-wrap">🚀</div>
+      <div class="pf-icon-wrap"><svg class="icon"><use href="#ic-rocket"/></svg></div>
       <div class="pf-title" data-i18n="pf.s6.title">제작 & 오픈</div>
       <div class="pf-desc" data-i18n="pf.s6.desc">신속하게 제작<br>중간 확인 포함</div>
     </div>
   </div>
   <div class="pf-note reveal">
-    <span>💡</span>
+    <svg class="icon"><use href="#ic-bulb"/></svg>
     <span data-i18n="pf.note">기획서를 받아보신 후 결정하세요 — 기획서 제공까지는 비용이 없습니다</span>
   </div>
 
@@ -1337,17 +1373,17 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
         <label data-i18n="contact.f.plan">관심 플랜</label>
         <select id="c-plan">
           <option value="">-- 선택해 주세요 --</option>
-          <optgroup label="⛪ 교회 Church">
-            <option>🏠 House Church — 무료 상담</option>
-            <option>🌱 Church Plant ($299) — 2년 무료</option>
+          <optgroup label="교회 Church">
+            <option>House Church — 무료 상담</option>
+            <option>Church Plant ($299) — 2년 무료</option>
             <option>Starter Plan ($499)</option>
-            <option>Growth Plan ($799) ⭐</option>
+            <option>Growth Plan ($799) ★</option>
             <option>Pro Plan ($1,299)</option>
           </optgroup>
-          <optgroup label="🏪 사업체 Business">
+          <optgroup label="사업체 Business">
             <option>Solo Plan ($299)</option>
-            <option>🌱 Startup Plan ($449) — 창업 특별</option>
-            <option>Business Growth ($999) ⭐</option>
+            <option>Startup Plan ($449) — 창업 특별</option>
+            <option>Business Growth ($999) ★</option>
             <option>Business Pro ($1,799)</option>
           </optgroup>
         </select>
@@ -1363,9 +1399,9 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <h3 data-i18n="contact.info.h3">목사님·대표님이 이해하실 때까지 함께합니다</h3>
       <p data-i18n="contact.info.p">기술 모르셔도 됩니다. 플랜이 맞는지 몰라도 됩니다. 오픈 후에도 끝까지 — 연관리비 내에서 계속 관리합니다.</p>
       <div class="cdetails">
-        <div class="cdetail"><span class="c-ico">📧</span><span>hello@nanuriweb.com</span></div>
-        <div class="cdetail"><span class="c-ico">🌐</span><span>NanuriWeb.com</span></div>
-        <div class="cdetail"><span class="c-ico">📍</span><span>Hebron Platform LLC · Seattle, WA</span></div>
+        <div class="cdetail"><span class="c-ico"><svg class="icon"><use href="#ic-mail"/></svg></span><span>hello@nanuriweb.com</span></div>
+        <div class="cdetail"><span class="c-ico"><svg class="icon"><use href="#ic-globe"/></svg></span><span>NanuriWeb.com</span></div>
+        <div class="cdetail"><span class="c-ico"><svg class="icon"><use href="#ic-pin"/></svg></span><span>Hebron Platform LLC · Seattle, WA</span></div>
       </div>
       <div class="cresponse">
         <div class="dot"></div>
@@ -1389,19 +1425,19 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
       <div class="about-facts reveal">
         <div class="fact-item">
-          <span class="f-ico">⏱️</span>
+          <span class="f-ico"><svg class="icon"><use href="#ic-clock"/></svg></span>
           <div class="f-text" data-i18n-html="about.fact1"><strong>빠른 완성</strong>상담부터 오픈까지 신속하게 진행합니다. 중간중간 함께 확인합니다.</div>
         </div>
         <div class="fact-item">
-          <span class="f-ico">🌍</span>
+          <span class="f-ico"><svg class="icon"><use href="#ic-globe"/></svg></span>
           <div class="f-text" data-i18n-html="about.fact2"><strong>HebronGuide 자동 연동</strong>홈페이지 오픈과 동시에 현재 72개 도시 네트워크에 자동 등재됩니다.</div>
         </div>
         <div class="fact-item">
-          <span class="f-ico">🔧</span>
+          <span class="f-ico"><svg class="icon"><use href="#ic-tool"/></svg></span>
           <div class="f-text" data-i18n-html="about.fact3"><strong>오픈 후 유지관리 포함</strong>완성 후에도 연관리비 내에서 지속 관리합니다.</div>
         </div>
         <div class="fact-item">
-          <span class="f-ico">📋</span>
+          <span class="f-ico"><svg class="icon"><use href="#ic-clipboard"/></svg></span>
           <div class="f-text" data-i18n-html="about.fact4"><strong>당회 기획서 지원 (교회)</strong>장로회 심의에 필요한 기획서를 함께 준비해 드립니다.</div>
         </div>
       </div>
@@ -1478,35 +1514,35 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     <div class="vmpc-grid">
 
       <div class="vmpc-card v">
-        <span class="vmpc-icon">🌏</span>
+        <span class="vmpc-icon"><svg class="icon"><use href="#ic-globe"/></svg></span>
         <span class="vmpc-label" data-i18n="vmpc.v.label">비전 · Vision</span>
         <div class="vmpc-title" data-i18n-html="vmpc.v.title">디지털 환대로<br>세계 어디서나 발견되는 한인 커뮤니티</div>
         <p class="vmpc-text" data-i18n="vmpc.v.text">낯선 땅의 교회와 사업체가 온라인에서 올바르게 발견되고, 연결되고, 섬김받는 세상을 만들어갑니다.</p>
       </div>
 
       <div class="vmpc-card m">
-        <span class="vmpc-icon">🤝</span>
+        <span class="vmpc-icon"><svg class="icon"><use href="#ic-users"/></svg></span>
         <span class="vmpc-label" data-i18n="vmpc.m.label">사명 · Mission</span>
         <div class="vmpc-title" data-i18n-html="vmpc.m.title">환대의 정신이 스며든<br>웹사이트로 처음부터 제대로</div>
         <p class="vmpc-text" data-i18n="vmpc.m.text">교회와 사업체가 온라인 첫날부터 발견되도록, 철학이 깊이 배어든 웹사이트를 한국어로 함께 만듭니다.</p>
       </div>
 
       <div class="vmpc-card p">
-        <span class="vmpc-icon">🕊</span>
+        <span class="vmpc-icon"><svg class="icon"><use href="#ic-feather"/></svg></span>
         <span class="vmpc-label" data-i18n="vmpc.p.label">철학 · Philosophy</span>
         <div class="vmpc-title" data-i18n-html="vmpc.p.title">웹사이트는<br>사람을 맞이하는 공간입니다</div>
         <p class="vmpc-text" data-i18n="vmpc.p.text">단순한 디지털 명함이 아닙니다. 방문자를 귀한 손님으로 맞이하는 환대의 마음이 모든 페이지에 배어 있어야 합니다.</p>
       </div>
 
       <div class="vmpc-card val">
-        <span class="vmpc-icon">⚖️</span>
+        <span class="vmpc-icon"><svg class="icon"><use href="#ic-scales"/></svg></span>
         <span class="vmpc-label" data-i18n="vmpc.val.label">가치 · Values</span>
         <div class="vmpc-title" data-i18n-html="vmpc.val.title">우리가 지키는<br>네 가지 약속</div>
         <p class="vmpc-text" data-i18n-html="vmpc.val.text">
-          <strong>🏠 환대 (Hospitality)</strong> 방문자를 손님처럼<br>
-          <strong>🤝 동반 (Partnership)</strong> 완성 후에도 함께<br>
+          <strong><svg class="icon" style="color:#7c3aed"><use href="#ic-home"/></svg> 환대 (Hospitality)</strong> 방문자를 손님처럼<br>
+          <strong><svg class="icon" style="color:#7c3aed"><use href="#ic-users"/></svg> 동반 (Partnership)</strong> 완성 후에도 함께<br>
           <strong>✦ 진실 (Integrity)</strong> 숨겨진 비용 없음<br>
-          <strong>🕊 사명 (Mission)</strong> 수익보다 섬김이 먼저
+          <strong><svg class="icon" style="color:#7c3aed"><use href="#ic-feather"/></svg> 사명 (Mission)</strong> 수익보다 섬김이 먼저
         </p>
       </div>
 
@@ -1524,7 +1560,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
         이것은 돈으로 환산할 수 없는 가치입니다.<br>
         당신의 웹사이트 하나가 누군가의 첫 번째 환대의 문이 됩니다.
       </p>
-      <span class="stmt-badge" data-i18n="stmt.badge">🕊 당신의 참여가 환대의 생태계를 만듭니다</span>
+      <svg class="icon"><use href="#ic-feather"/></svg><span class="stmt-badge" data-i18n="stmt.badge">당신의 참여가 환대의 생태계를 만듭니다</span>
     </div>
 
   </div>
@@ -1536,7 +1572,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <div class="team-card reveal">
         <span class="team-role" data-i18n="team.k.role">그래픽 디자이너 · 일러스트레이터</span>
         <div class="team-name">Kristin Kim</div>
-        <div class="team-loc">📍 Seattle, WA</div>
+        <div class="team-loc"><svg class="icon"><use href="#ic-pin"/></svg> Seattle, WA</div>
         <div class="team-skills">
           <span class="team-skill">Branding</span>
           <span class="team-skill">Illustration</span>
@@ -1597,7 +1633,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
         <!-- 출시 알림 사전 등록 -->
         <div class="eco-notify" id="homeNotify">
-          <span class="eco-notify-label" data-i18n="eco.home.notify.label">🏠 출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다</span>
+          <span class="eco-notify-label" data-i18n="eco.home.notify.label"><svg class="icon"><use href="#ic-home"/></svg> 출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다</span>
           <div class="eco-notify-row">
             <input type="email" class="eco-notify-input" id="homeEmail" placeholder="이메일 주소를 입력해 주세요" data-i18n-placeholder="eco.home.notify.ph">
             <button class="eco-notify-btn" onclick="registerHome()" data-i18n="eco.home.notify.btn">알림 신청</button>
@@ -1615,7 +1651,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <section class="share-section">
   <div class="share-inner">
     <div class="share-eyebrow" data-i18n="share.eyebrow">Share · 공유하기</div>
-    <div class="share-heading" data-i18n="share.heading">NanuriWeb을 소개해 주세요 🙏</div>
+    <div class="share-heading" data-i18n="share.heading">NanuriWeb을 소개해 주세요 <svg class="icon"><use href="#ic-share"/></svg></div>
     <div class="share-sub" data-i18n="share.sub">홈페이지가 필요한 교회나 사업체에 이 페이지를 전달해 주세요</div>
     <div class="share-bar">
 
@@ -1844,7 +1880,7 @@ const LANG = {
     'hero.why.item4.strong':'일회 제작비, 숨겨진 비용 없음 $299~',
     'hero.why.item4.vs':'완성 후 <s>월정액·유지비 추가청구</s> 없습니다',
     'hero.why.pt.head':'싼 게 무조건 좋은 건 아닙니다 — 저가 홈페이지의 진짜 비용',
-    'hero.why.bad.label':'💸 저가 업체 · 동네 프리랜서',
+    'hero.why.bad.label':'저가 업체 · 동네 프리랜서',
     'hero.why.bad.li1':'Google·Naver에 안 잡히는 홈페이지 → 기회 손실',
     'hero.why.bad.li2':'완성 후 혼자 남겨짐 — 수정할 때마다 별도 청구',
     'hero.why.bad.li3':'1~2년 후 재작업 → 처음부터 다시 비용 발생',
@@ -1859,12 +1895,12 @@ const LANG = {
     'hero.why.answer':'✦ 그래서 NanuriWeb입니다 — 아래에서 요금을 확인하세요 ↓',
     'plans.eyebrow':'요금 · Plans','plans.title':'교회도, 사업체도',
     'plans.desc':'아래에서 원하시는 플랜을 선택하세요. 플랜 버튼을 누르시면 신청 폼으로 바로 연결됩니다.',
-    'plans.tab.church':'⛪ 교회 Church','plans.tab.biz':'🏪 사업체 Business',
-    'plan.house.badge':'🏠 House Church — 가정교회 무료 상담','plan.house.name':'House Church Plan',
+    'plans.tab.church':'교회 Church','plans.tab.biz':'사업체 Business',
+    'plan.house.badge':'House Church — 가정교회 무료 상담','plan.house.name':'House Church Plan',
     'plan.house.sub':'가정교회 목회 시스템 맞춤 설계',
     'plan.house.desc':'가정교회는 단순한 소규모 교회가 아닙니다. 독자적인 목회 철학과 시스템입니다. 함께 무료 상담으로 방향을 먼저 잡아드립니다.',
-    'plan.house.cta':'🤝 무료 상담 신청 →','plan.house.choose':'상담 후 아래 플랜 중 선택',
-    'plan.plant.badge':'🌱 개척교회 — 우선 섬깁니다','plan.plant.name':'Church Plant',
+    'plan.house.cta':'무료 상담 신청 →','plan.house.choose':'상담 후 아래 플랜 중 선택',
+    'plan.plant.badge':'개척교회 — 우선 섬깁니다','plan.plant.name':'Church Plant',
     'plan.plant.sub':'설립 3년 이내 · 성도 50명 이하',
     'plan.plant.note':'연관리비 <strong>2년 무료</strong>',
     'plan.plant.f1':'Growth Plan 모든 기능 포함','plan.plant.f2':'HebronGuide 72개 도시 자동 연동 (500개 목표)',
@@ -1895,7 +1931,7 @@ const LANG = {
     'bizplan.solo.f1':'5페이지 풀 커스텀 제작','bizplan.solo.f2':'연락·예약 문의 폼',
     'bizplan.solo.f3':'구글 맵 & 오시는 길','bizplan.solo.f4':'HebronGuide 72개 도시 등재',
     'bizplan.solo.cta':'신청하기',
-    'bizplan.startup.badge':'🌱 창업 3년 이내 — 50% 할인','bizplan.startup.name':'Startup Plan',
+    'bizplan.startup.badge':'창업 3년 이내 — 50% 할인','bizplan.startup.name':'Startup Plan',
     'bizplan.startup.sub':'신규 창업 3년 이내',
     'bizplan.startup.note':'첫 해 <strong>$150 (50% 할인)</strong> → 2년차 $300/yr',
     'bizplan.startup.f1':'Business Growth 전체 기능 포함','bizplan.startup.f2':'브랜드 신뢰 구축',
@@ -2000,7 +2036,7 @@ const LANG = {
     'why.c3.note':'→ 일회 제작비 · 연관리비 투명 공개',
     'urgency.text':'이번 달 신규 접수 <strong>3건 남음</strong> — Church Plant 무료 기획서 포함',
     'urgency.cta':'지금 신청하기 →',
-    'share.eyebrow':'Share · 공유하기','share.heading':'NanuriWeb을 소개해 주세요 🙏',
+    'share.eyebrow':'Share · 공유하기','share.heading':'NanuriWeb을 소개해 주세요',
     'share.sub':'홈페이지가 필요한 교회나 사업체에 이 페이지를 전달해 주세요',
     'share.kakao':'카카오톡','share.insta':'인스타그램','share.fb':'페이스북','share.copy':'링크 복사',
     'faq.kicker':'자주 묻는 질문 · FAQ',
@@ -2041,11 +2077,11 @@ const LANG = {
     'vmpc.p.text':'단순한 디지털 명함이 아닙니다. 방문자를 귀한 손님으로 맞이하는 환대의 마음이 모든 페이지에 배어 있어야 합니다.',
     'vmpc.val.label':'가치 · Values',
     'vmpc.val.title':'우리가 지키는<br>네 가지 약속',
-    'vmpc.val.text':'<strong>🏠 환대 (Hospitality)</strong> 방문자를 손님처럼<br><strong>🤝 동반 (Partnership)</strong> 완성 후에도 함께<br><strong>✦ 진실 (Integrity)</strong> 숨겨진 비용 없음<br><strong>🕊 사명 (Mission)</strong> 수익보다 섬김이 먼저',
+    'vmpc.val.text':'<strong><svg class="icon" style="color:#7c3aed"><use href="#ic-home"/></svg> 환대 (Hospitality)</strong> 방문자를 손님처럼<br><strong><svg class="icon" style="color:#7c3aed"><use href="#ic-users"/></svg> 동반 (Partnership)</strong> 완성 후에도 함께<br><strong>✦ 진실 (Integrity)</strong> 숨겨진 비용 없음<br><strong><svg class="icon" style="color:#7c3aed"><use href="#ic-feather"/></svg> 사명 (Mission)</strong> 수익보다 섬김이 먼저',
     'stmt.eyebrow':'✦ NanuriWeb과 함께한다는 것의 의미',
     'stmt.main':'NanuriWeb에 웹사이트를 맡기는 순간,<br>단순히 홈페이지를 구입하는 것이 아닙니다.<br><em>낯선 땅의 교회와 한인 사업체가 세상에 올바르게 발견되도록<br>돕는 이 숭고하고 좋은 일에 함께 동참하시는 것입니다.</em>',
     'stmt.sub':'이것은 돈으로 환산할 수 없는 가치입니다.<br>당신의 웹사이트 하나가 누군가의 첫 번째 환대의 문이 됩니다.',
-    'stmt.badge':'🕊 당신의 참여가 환대의 생태계를 만듭니다',
+    'stmt.badge':'당신의 참여가 환대의 생태계를 만듭니다',
     'team.eyebrow':'팀 소개 · Our Team','team.k.role':'그래픽 디자이너 · 일러스트레이터',
     'eco.kicker':'Nanuri Platform · 나누리 플랫폼',
     'eco.h2':'교회도, 사업체도, 집도 —<br><span style="color:var(--gold);">한인 커뮤니티의 모든 필요를 섬깁니다</span>',
@@ -2066,7 +2102,7 @@ const LANG = {
     'eco.home.feat3':'이사·정착 서비스 안내 (HebronGuide 연동)',
     'eco.home.feat4':'집 수리·청소·조경 등 홈서비스 제공자 연결',
     'eco.home.feat5':'모기지·보험·세금 등 집 관련 전문 상담',
-    'eco.home.notify.label':'🏠 출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다',
+    'eco.home.notify.label':'출시 알림 받기 — 사전 등록하시면 런칭 특별 혜택을 드립니다',
     'eco.home.notify.ph':'이메일 주소를 입력해 주세요',
     'eco.home.notify.btn':'알림 신청',
     'eco.home.notify.ok':'✓ 등록되었습니다! 출시 시 가장 먼저 연락드립니다.',
@@ -2104,8 +2140,8 @@ const LANG = {
     'hero.why.item3.vs':'Young freelancers don\'t know <s>worship &amp; ministry structure</s>',
     'hero.why.item4.strong':'One-time fee, no hidden costs — from $299~',
     'hero.why.item4.vs':'No <s>monthly fees or maintenance charges</s> after completion',
-    'hero.why.pt.head':'⚠️ <strong>Cheap doesn\'t always mean good</strong> — here\'s the real cost',
-    'hero.why.bad.label':'💸 Cheap Agency · Local Freelancer',
+    'hero.why.pt.head':'<strong>Cheap doesn\'t always mean good</strong> — here\'s the real cost',
+    'hero.why.bad.label':'Cheap Agency · Local Freelancer',
     'hero.why.bad.li1':'Site invisible on Google &amp; Naver → lost opportunities',
     'hero.why.bad.li2':'Left on your own after launch — extra charge every revision',
     'hero.why.bad.li3':'Redo in 1~2 years → full cost again from scratch',
@@ -2120,7 +2156,7 @@ const LANG = {
     'hero.why.answer':'✦ That\'s why NanuriWeb ↓',
     'plans.eyebrow':'Pricing · Plans','plans.title':'Church or Business',
     'plans.desc':'Select a plan below. Click any plan button to jump to the order form.',
-    'plans.tab.church':'⛪ Church','plans.tab.biz':'🏪 Business',
+    'plans.tab.church':'Church','plans.tab.biz':'Business',
     'bridge.text':'Church or <strong>business — served with the same heart</strong>',
     'contact.eyebrow':'Contact · Get Started','contact.title':'Apply Now',
     'contact.desc':'We\'ll respond within 48 hours.',
@@ -2209,7 +2245,7 @@ const LANG = {
     'why.c3.note':'→ One-time build fee · Transparent annual maintenance cost',
     'urgency.text':'Only <strong>3 spots left</strong> this month — Church Plant includes free proposal',
     'urgency.cta':'Apply Now →',
-    'share.eyebrow':'Share','share.heading':'Share NanuriWeb 🙏',
+    'share.eyebrow':'Share','share.heading':'Share NanuriWeb',
     'share.sub':'Know a church or business that needs a website? Please share!',
     'share.kakao':'KakaoTalk','share.insta':'Instagram','share.fb':'Facebook','share.copy':'Copy Link',
     'faq.kicker':'Frequently Asked Questions · FAQ',
@@ -2250,11 +2286,11 @@ const LANG = {
     'vmpc.p.text':'It is not a simple digital business card. The spirit of hospitality — welcoming every visitor as a valued guest — must be woven into every page.',
     'vmpc.val.label':'가치 · Values',
     'vmpc.val.title':'Four Promises We Keep',
-    'vmpc.val.text':'<strong>🏠 Hospitality</strong> Treat every visitor as a guest<br><strong>🤝 Partnership</strong> With you even after launch<br><strong>✦ Integrity</strong> No hidden costs<br><strong>🕊 Mission</strong> Service before profit',
+    'vmpc.val.text':'<strong><svg class="icon" style="color:#7c3aed"><use href="#ic-home"/></svg> Hospitality</strong> Treat every visitor as a guest<br><strong><svg class="icon" style="color:#7c3aed"><use href="#ic-users"/></svg> Partnership</strong> With you even after launch<br><strong>✦ Integrity</strong> No hidden costs<br><strong><svg class="icon" style="color:#7c3aed"><use href="#ic-feather"/></svg> Mission</strong> Service before profit',
     'stmt.eyebrow':'✦ What it means to work with NanuriWeb',
     'stmt.main':'The moment you entrust your website to NanuriWeb,<br>you are not simply purchasing a homepage.<br><em>You are joining this noble and good work —<br>helping churches and Korean businesses in foreign lands<br>be properly discovered by the world.</em>',
     'stmt.sub':'This is a value that cannot be measured in money.<br>Your single website becomes someone\'s very first door of welcome.',
-    'stmt.badge':'🕊 Your participation creates the ecosystem of hospitality',
+    'stmt.badge':'Your participation creates the ecosystem of hospitality',
     'team.eyebrow':'Our Team','team.k.role':'Graphic Designer · Illustrator',
     'eco.kicker':'Nanuri Platform · Nanuri Platform',
     'eco.h2':'Church, Business, and Home —<br><span style="color:var(--gold);">One Platform Serving Every Need</span>',
@@ -2275,7 +2311,7 @@ const LANG = {
     'eco.home.feat3':'Moving &amp; settlement services (HebronGuide integrated)',
     'eco.home.feat4':'Home repair, cleaning, landscaping service providers',
     'eco.home.feat5':'Mortgage, insurance &amp; tax professional consultations',
-    'eco.home.notify.label':'🏠 Get launch notification · Early access benefits await',
+    'eco.home.notify.label':'Get launch notification · Early access benefits await',
     'eco.home.notify.ph':'Enter your email address',
     'eco.home.notify.btn':'Notify Me',
     'eco.home.notify.ok':'✓ Registered! You will be the first to hear when we launch.',
@@ -2288,13 +2324,13 @@ const LANG = {
     'share.toast.insta':'Link copied — paste into Instagram 📋',
     'share.toast.copy':'Link copied! ✅',
     'footer.home.badge':'Coming Soon',
-    'plan.house.badge':'🏠 House Church — Free Consultation',
+    'plan.house.badge':'House Church — Free Consultation',
     'plan.house.name':'House Church Plan',
     'plan.house.sub':'Custom ministry system for house churches',
     'plan.house.desc':'A house church is not simply a small church. It is a distinct pastoral philosophy and system. Let us help you find the right direction with a free consultation.',
-    'plan.house.cta':'🤝 Request Free Consultation →',
+    'plan.house.cta':'Request Free Consultation →',
     'plan.house.choose':'Choose a plan below after consultation',
-    'plan.plant.badge':'🌱 Church Plant — We Serve You First',
+    'plan.plant.badge':'Church Plant — We Serve You First',
     'plan.plant.name':'Church Plant',
     'plan.plant.sub':'Within 3 years of founding · Under 50 members',
     'plan.plant.note':'Annual maintenance <strong>2 years FREE</strong>',
@@ -2343,7 +2379,7 @@ const LANG = {
     'bizplan.solo.f3':'Google Maps &amp; directions',
     'bizplan.solo.f4':'HebronGuide 72-city listing',
     'bizplan.solo.cta':'Apply Now',
-    'bizplan.startup.badge':'🌱 Under 3 yrs in business — 50% off',
+    'bizplan.startup.badge':'Under 3 yrs in business — 50% off',
     'bizplan.startup.name':'Startup Plan',
     'bizplan.startup.sub':'New business within 3 years',
     'bizplan.startup.note':'First year <strong>$150 (50% off)</strong> → Year 2: $300/yr',
@@ -2397,8 +2433,8 @@ const LANG = {
     'hero.why.item3.vs':'Los freelancers jóvenes no conocen <s>la estructura de culto y ministerio</s>',
     'hero.why.item4.strong':'Pago único, sin costos ocultos desde $299~',
     'hero.why.item4.vs':'Sin <s>mensualidades ni cobros de mantenimiento</s> al terminar',
-    'hero.why.pt.head':'⚠️ <strong>Lo barato no siempre es bueno</strong> — el costo real',
-    'hero.why.bad.label':'💸 Agencia Barata · Freelancer Local',
+    'hero.why.pt.head':'<strong>Lo barato no siempre es bueno</strong> — el costo real',
+    'hero.why.bad.label':'Agencia Barata · Freelancer Local',
     'hero.why.bad.li1':'Sitio invisible en Google y Naver → oportunidades perdidas',
     'hero.why.bad.li2':'Abandonado al lanzar — cargo extra por cada revisión',
     'hero.why.bad.li3':'Rehacer en 1~2 años → costo completo desde cero otra vez',
@@ -2413,7 +2449,7 @@ const LANG = {
     'hero.why.answer':'✦ Por eso NanuriWeb ↓',
     'plans.eyebrow':'Precios · Planes','plans.title':'Iglesia o Negocio',
     'plans.desc':'Selecciona un plan. Al hacer clic en cualquier botón serás llevado al formulario.',
-    'plans.tab.church':'⛪ Iglesia','plans.tab.biz':'🏪 Negocio',
+    'plans.tab.church':'Iglesia','plans.tab.biz':'Negocio',
     'bridge.text':'Iglesias y <strong>negocios — servidos con el mismo corazón</strong>',
     'contact.eyebrow':'Contacto · Empezar','contact.title':'Solicita Ahora',
     'contact.desc':'Respondemos en 48 horas.',
@@ -2500,7 +2536,7 @@ const LANG = {
     'why.c3.note':'→ Tarifa única de construcción · Costo de mantenimiento anual transparente',
     'urgency.text':'Solo <strong>3 cupos</strong> este mes — Church Plant incluye propuesta gratis',
     'urgency.cta':'Aplicar Ahora →',
-    'share.eyebrow':'Compartir','share.heading':'Comparte NanuriWeb 🙏',
+    'share.eyebrow':'Compartir','share.heading':'Comparte NanuriWeb',
     'share.sub':'¿Conoces una iglesia o negocio que necesite un sitio web? ¡Comparte!',
     'share.kakao':'KakaoTalk','share.insta':'Instagram','share.fb':'Facebook','share.copy':'Copiar enlace',
     'faq.kicker':'Preguntas Frecuentes · FAQ',
@@ -2541,11 +2577,11 @@ const LANG = {
     'vmpc.p.text':'No es una simple tarjeta digital. El espíritu de hospitalidad — recibir a cada visitante como un huésped valioso — debe estar tejido en cada página.',
     'vmpc.val.label':'가치 · Values',
     'vmpc.val.title':'Cuatro Promesas que Cumplimos',
-    'vmpc.val.text':'<strong>🏠 Hospitalidad</strong> Tratar a cada visitante como un huésped<br><strong>🤝 Alianza</strong> Contigo incluso después del lanzamiento<br><strong>✦ Integridad</strong> Sin costos ocultos<br><strong>🕊 Misión</strong> El servicio antes que el beneficio',
+    'vmpc.val.text':'<strong><svg class="icon" style="color:#7c3aed"><use href="#ic-home"/></svg> Hospitalidad</strong> Tratar a cada visitante como un huésped<br><strong><svg class="icon" style="color:#7c3aed"><use href="#ic-users"/></svg> Alianza</strong> Contigo incluso después del lanzamiento<br><strong>✦ Integridad</strong> Sin costos ocultos<br><strong><svg class="icon" style="color:#7c3aed"><use href="#ic-feather"/></svg> Misión</strong> El servicio antes que el beneficio',
     'stmt.eyebrow':'✦ Lo que significa trabajar con NanuriWeb',
     'stmt.main':'En el momento en que confías tu sitio web a NanuriWeb,<br>no estás simplemente comprando una página de inicio.<br><em>Te estás uniendo a esta noble y buena labor —<br>ayudando a que iglesias y negocios coreanos en tierras extranjeras<br>sean correctamente descubiertos por el mundo.</em>',
     'stmt.sub':'Este es un valor que no se puede medir en dinero.<br>Tu único sitio web se convierte en la primera puerta de bienvenida para alguien.',
-    'stmt.badge':'🕊 Tu participación crea el ecosistema de hospitalidad',
+    'stmt.badge':'Tu participación crea el ecosistema de hospitalidad',
     'team.eyebrow':'Nuestro Equipo','team.k.role':'Diseñadora Gráfica · Ilustradora',
     'eco.kicker':'Plataforma Nanuri · Nanuri Platform',
     'eco.h2':'Iglesia, Negocio y Hogar —<br><span style="color:var(--gold);">Una Plataforma para Cada Necesidad</span>',
@@ -2566,7 +2602,7 @@ const LANG = {
     'eco.home.feat3':'Servicios de mudanza y asentamiento (integrado con HebronGuide)',
     'eco.home.feat4':'Proveedores de servicios del hogar: reparación, limpieza, jardinería',
     'eco.home.feat5':'Consultas especializadas en hipoteca, seguros e impuestos',
-    'eco.home.notify.label':'🏠 Recibe notificación de lanzamiento — Beneficios especiales para registros anticipados',
+    'eco.home.notify.label':'Recibe notificación de lanzamiento — Beneficios especiales para registros anticipados',
     'eco.home.notify.ph':'Ingresa tu correo electrónico',
     'eco.home.notify.btn':'Notificarme',
     'eco.home.notify.ok':'✓ ¡Registrado! Serás el primero en recibir noticias del lanzamiento.',
@@ -2579,13 +2615,13 @@ const LANG = {
     'share.toast.insta':'Enlace copiado — pégalo en Instagram 📋',
     'share.toast.copy':'¡Enlace copiado! ✅',
     'footer.home.badge':'Próximamente',
-    'plan.house.badge':'🏠 Iglesia en Casa — Consulta Gratuita',
+    'plan.house.badge':'Iglesia en Casa — Consulta Gratuita',
     'plan.house.name':'Plan Iglesia en Casa',
     'plan.house.sub':'Diseño personalizado del sistema ministerial para iglesias en casa',
     'plan.house.desc':'Una iglesia en casa no es simplemente una iglesia pequeña. Es una filosofía y sistema pastoral único. Juntos encontramos la dirección correcta con una consulta gratuita.',
-    'plan.house.cta':'🤝 Solicitar Consulta Gratuita →',
+    'plan.house.cta':'Solicitar Consulta Gratuita →',
     'plan.house.choose':'Elige un plan a continuación después de la consulta',
-    'plan.plant.badge':'🌱 Iglesia en Fundación — Te Servimos Primero',
+    'plan.plant.badge':'Iglesia en Fundación — Te Servimos Primero',
     'plan.plant.name':'Church Plant',
     'plan.plant.sub':'Menos de 3 años · Hasta 50 miembros',
     'plan.plant.note':'Mantenimiento anual <strong>2 años GRATIS</strong>',
@@ -2634,7 +2670,7 @@ const LANG = {
     'bizplan.solo.f3':'Google Maps y cómo llegar',
     'bizplan.solo.f4':'Listado en HebronGuide 72 ciudades',
     'bizplan.solo.cta':'Solicitar',
-    'bizplan.startup.badge':'🌱 Menos de 3 años — 50% de descuento',
+    'bizplan.startup.badge':'Menos de 3 años — 50% de descuento',
     'bizplan.startup.name':'Plan Startup',
     'bizplan.startup.sub':'Negocio nuevo menos de 3 años',
     'bizplan.startup.note':'Primer año <strong>$150 (50% descuento)</strong> → Año 2: $300/yr',
