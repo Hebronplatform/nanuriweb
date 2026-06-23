@@ -595,7 +595,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 /* ── INDUSTRIES SECTION ── */
 .indus-section{padding:80px 24px;background:#fff;}
 .indus-inner{max-width:1080px;margin:0 auto;text-align:center;}
-.indus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 28px;}
+.indus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0 28px;}
 .indus-card{background:var(--ivory);border:1.5px solid var(--border);border-radius:18px;padding:28px 14px 24px;text-align:center;transition:all .25s;}
 .indus-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(11,22,40,.1);border-color:var(--gold);}
 .indus-card-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
@@ -1068,6 +1068,16 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
         <div class="indus-card-icon" style="background:rgba(99,102,241,.08);"><svg class="icon"><use href="#ic-users"/></svg></div>
         <div class="indus-card-type" data-i18n="indus.c5.type">한인회 · 기관 · 단체</div>
         <div class="indus-card-hook" data-i18n-html="indus.c5.hook">커뮤니티가 하나로<br>연결되는 기관 홈페이지</div>
+      </div>
+      <div class="indus-card reveal">
+        <div class="indus-card-icon" style="background:rgba(201,168,76,.1);"><svg class="icon"><use href="#ic-church"/></svg></div>
+        <div class="indus-card-type" data-i18n="indus.c6.type">교회 · 사역 · 선교단체</div>
+        <div class="indus-card-hook" data-i18n-html="indus.c6.hook">새 가족이 저절로<br>등록되는 교회 홈페이지</div>
+      </div>
+      <div class="indus-card reveal">
+        <div class="indus-card-icon" style="background:rgba(16,185,129,.08);"><svg class="icon"><use href="#ic-heart"/></svg></div>
+        <div class="indus-card-type" data-i18n="indus.c7.type">병원 · 치과 · 한의원</div>
+        <div class="indus-card-hook" data-i18n-html="indus.c7.hook">초진 환자가 자동으로<br>들어오는 클리닉 홈페이지</div>
       </div>
     </div>
 
@@ -1984,11 +1994,13 @@ async function submitForm() {
       body: JSON.stringify({
         access_key: 'a82c6c13-be2d-4095-9721-55e54d8cd080',
         subject: '[NanuriWeb] 새 문의: ' + name,
-        from_name: 'NanuriWeb Contact Form',
+        from_name: 'NanuriWeb',
+        reply_to: email,
         name, email, pastor, phone, plan,
         kakao_id: kakao || '(미입력)',
         referral_source: source || '(미선택)',
-        message: msg || '(메시지 없음)'
+        message: msg || '(메시지 없음)',
+        autoresponse: '안녕하세요, ' + name + '님!\n\nNanuriWeb 문의가 접수되었습니다. 48시간 내에 한국어로 직접 연락드리겠습니다.\n\n신청하신 플랜: ' + plan + '\n\n감사합니다.\nNanuriWeb Team\nhello@nanuriweb.com\nnanuriweb.com'
       })
     });
     const data = await res.json();
@@ -2036,6 +2048,8 @@ const LANG = {
     'indus.c3.type':'미용실 · 뷰티샵','indus.c3.hook':'예약이 자동으로<br>채워지는 미용실 홈페이지',
     'indus.c4.type':'학원 · 코칭 · 강사','indus.c4.hook':'수강 문의가 저절로<br>오는 학원 홈페이지',
     'indus.c5.type':'한인회 · 기관 · 단체','indus.c5.hook':'커뮤니티가 하나로<br>연결되는 기관 홈페이지',
+    'indus.c6.type':'교회 · 사역 · 선교단체','indus.c6.hook':'새 가족이 저절로<br>등록되는 교회 홈페이지',
+    'indus.c7.type':'병원 · 치과 · 한의원','indus.c7.hook':'초진 환자가 자동으로<br>들어오는 클리닉 홈페이지',
     'indus.note':'위 업종 외에도 모두 가능합니다','indus.cta':'무료 기획서 신청하기 →',
     'hero.why.qlabel':'자주 받는 질문',
     'hero.why.qbubble':'"동네 청년도, 웹사이트 회사도 싸게 해준다던데 — 왜 NanuriWeb이어야 하나요?"',
@@ -2308,6 +2322,8 @@ const LANG = {
     'indus.c3.type':'Hair Salon · Beauty','indus.c3.hook':'A salon website that<br>keeps appointments coming in',
     'indus.c4.type':'Academy · Coaching · Instructor','indus.c4.hook':'A website that brings in<br>enrollment inquiries on autopilot',
     'indus.c5.type':'Association · Organization','indus.c5.hook':'A community website that<br>brings your members together',
+    'indus.c6.type':'Church · Ministry · Mission','indus.c6.hook':'A church website that<br>brings new members in automatically',
+    'indus.c7.type':'Clinic · Dental · Oriental Med','indus.c7.hook':'A clinic website that<br>brings in new patients on autopilot',
     'indus.note':'Other industries welcome too','indus.cta':'Get a free proposal →',
     'hero.why.qlabel':'Frequently Asked',
     'hero.why.qbubble':'"Why not just use Squarespace, Wix, or hire a cheap local freelancer?"',
@@ -2612,6 +2628,8 @@ const LANG = {
     'indus.c3.type':'Salón · Belleza','indus.c3.hook':'Un sitio que mantiene<br>las citas llegando sin parar',
     'indus.c4.type':'Academia · Coaching · Instructor','indus.c4.hook':'Un sitio que trae<br>consultas de inscripción solo',
     'indus.c5.type':'Asociación · Organización','indus.c5.hook':'Un sitio que une<br>a toda tu comunidad',
+    'indus.c6.type':'Iglesia · Ministerio · Misión','indus.c6.hook':'Un sitio que trae<br>nuevos miembros automáticamente',
+    'indus.c7.type':'Clínica · Dental · Med. Oriental','indus.c7.hook':'Un sitio que llena<br>tu agenda de pacientes solo',
     'indus.note':'Otras industrias también son bienvenidas','indus.cta':'Obtener propuesta gratis →',
     'hero.why.qlabel':'Pregunta Frecuente',
     'hero.why.qbubble':'"¿Por qué NanuriWeb y no Wix, Squarespace o un diseñador local más barato?"',
