@@ -1539,19 +1539,19 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <div class="fr">
         <label data-i18n="contact.f.plan">관심 플랜</label>
         <select id="c-plan">
-          <option value="">-- 선택해 주세요 --</option>
-          <optgroup label="교회 Church">
-            <option>House Church — 무료 상담</option>
-            <option>Church Plant ($299) — 2년 무료</option>
-            <option>Starter Plan ($499)</option>
-            <option>Growth Plan ($799) ★</option>
-            <option>Pro Plan ($1,299)</option>
+          <option value="" data-i18n="contact.plan.ph">-- 선택해 주세요 --</option>
+          <optgroup data-i18n-label="contact.plan.grp1" label="교회 Church">
+            <option data-i18n="contact.plan.g1o1">House Church — 무료 상담</option>
+            <option data-i18n="contact.plan.g1o2">Church Plant ($299) — 2년 관리 무료</option>
+            <option data-i18n="contact.plan.g1o3">Starter Plan ($499)</option>
+            <option data-i18n="contact.plan.g1o4">Growth Plan ($799) ★</option>
+            <option data-i18n="contact.plan.g1o5">Pro Plan ($1,299)</option>
           </optgroup>
-          <optgroup label="사업체 Business">
-            <option>Solo Plan ($299)</option>
-            <option>Startup Plan ($449) — 창업 특별</option>
-            <option>Business Growth ($999) ★</option>
-            <option>Business Pro ($1,799)</option>
+          <optgroup data-i18n-label="contact.plan.grp2" label="사업체 Business">
+            <option data-i18n="contact.plan.g2o1">Solo Plan ($299)</option>
+            <option data-i18n="contact.plan.g2o2">Startup Plan ($449) — 창업 특별</option>
+            <option data-i18n="contact.plan.g2o3">Business Growth ($999) ★</option>
+            <option data-i18n="contact.plan.g2o4">Business Pro ($1,799)</option>
           </optgroup>
         </select>
       </div>
@@ -2155,6 +2155,9 @@ const LANG = {
     'contact.f.pastor':'대표자','contact.f.pastor.ph':'홍길동',
     'contact.f.phone':'연락처','contact.f.phone.ph':'010-0000-0000',
     'contact.f.email':'Email *','contact.f.plan':'관심 플랜',
+    'contact.plan.ph':'-- 선택해 주세요 --','contact.plan.grp1':'교회 Church','contact.plan.grp2':'사업체 Business',
+    'contact.plan.g1o1':'House Church — 무료 상담','contact.plan.g1o2':'Church Plant ($299) — 2년 관리 무료','contact.plan.g1o3':'Starter Plan ($499)','contact.plan.g1o4':'Growth Plan ($799) ★','contact.plan.g1o5':'Pro Plan ($1,299)',
+    'contact.plan.g2o1':'Solo Plan ($299)','contact.plan.g2o2':'Startup Plan ($449) — 창업 특별','contact.plan.g2o3':'Business Growth ($999) ★','contact.plan.g2o4':'Business Pro ($1,799)',
     'contact.f.msg':'메시지','contact.f.msg.ph':'사업체나 교회를 간단히 소개해 주세요.',
     'pf.step':'STEP 01','pf.step2':'STEP 02','pf.step3':'STEP 03','pf.step4':'STEP 04','pf.step5':'STEP 05','pf.step6':'STEP 06',
     'pf.s1.title':'신청서 작성','pf.s1.desc':'아래 폼에 간단히\n작성해 주세요',
@@ -2379,6 +2382,9 @@ const LANG = {
     'contact.f.pastor':'Owner / Representative','contact.f.pastor.ph':'John Kim',
     'contact.f.phone':'Phone','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan of Interest',
+    'contact.plan.ph':'-- Please select --','contact.plan.grp1':'Church','contact.plan.grp2':'Business',
+    'contact.plan.g1o1':'House Church — Free Consultation','contact.plan.g1o2':'Church Plant ($299) — 2 yrs maintenance free','contact.plan.g1o3':'Starter Plan ($499)','contact.plan.g1o4':'Growth Plan ($799) ★','contact.plan.g1o5':'Pro Plan ($1,299)',
+    'contact.plan.g2o1':'Solo Plan ($299)','contact.plan.g2o2':'Startup Plan ($449) — New Business Special','contact.plan.g2o3':'Business Growth ($999) ★','contact.plan.g2o4':'Business Pro ($1,799)',
     'contact.f.msg':'Message','contact.f.msg.ph':'Tell us briefly about your business or church.',
     'pf.step':'STEP 01','pf.step2':'STEP 02','pf.step3':'STEP 03','pf.step4':'STEP 04','pf.step5':'STEP 05','pf.step6':'STEP 06',
     'pf.s1.title':'Fill Out Form','pf.s1.desc':'Quick form below,\n2 minutes max',
@@ -2687,6 +2693,9 @@ const LANG = {
     'contact.f.pastor':'Dueño / Representante','contact.f.pastor.ph':'Juan Kim',
     'contact.f.phone':'Teléfono','contact.f.phone.ph':'+1-000-000-0000',
     'contact.f.email':'Email *','contact.f.plan':'Plan de Interés',
+    'contact.plan.ph':'-- Seleccione --','contact.plan.grp1':'Iglesia','contact.plan.grp2':'Negocio',
+    'contact.plan.g1o1':'House Church — Consulta Gratuita','contact.plan.g1o2':'Church Plant ($299) — 2 años mantenimiento gratis','contact.plan.g1o3':'Starter Plan ($499)','contact.plan.g1o4':'Growth Plan ($799) ★','contact.plan.g1o5':'Pro Plan ($1,299)',
+    'contact.plan.g2o1':'Solo Plan ($299)','contact.plan.g2o2':'Startup Plan ($449) — Especial Nuevo Negocio','contact.plan.g2o3':'Business Growth ($999) ★','contact.plan.g2o4':'Business Pro ($1,799)',
     'contact.f.msg':'Mensaje','contact.f.msg.ph':'Cuéntanos sobre tu negocio o iglesia.',
     'pf.step':'PASO 01','pf.step2':'PASO 02','pf.step3':'PASO 03','pf.step4':'PASO 04','pf.step5':'PASO 05','pf.step6':'PASO 06',
     'pf.s1.title':'Llenar Formulario','pf.s1.desc':'Formulario rápido,\n2 minutos',
