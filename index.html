@@ -53,7 +53,7 @@ body{font-family:var(--font-b);background:var(--white);color:var(--dark);font-si
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.15);padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:0;text-decoration:none;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-wordmark{font-family:var(--font-n);font-weight:800;font-size:22px;letter-spacing:-.5px;line-height:1;}
 .nav-wordmark .w-nanuri{color:var(--gold);}
 .nav-wordmark .w-web{color:rgba(255,255,255,.75);}
@@ -618,6 +618,24 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <defs><clipPath id="nav-gc"><circle cx="17" cy="17" r="13"/></clipPath></defs>
+      <g clip-path="url(#nav-gc)" stroke="#C9A84C" stroke-width="0.75">
+        <ellipse cx="17" cy="17" rx="13" ry="3.9"/>
+        <ellipse cx="17" cy="11" rx="11.2" ry="3.3"/>
+        <ellipse cx="17" cy="23" rx="11.2" ry="3.3"/>
+        <line x1="17" y1="4" x2="17" y2="30"/>
+        <path d="M17,4 C9,11 9,23 17,30"/>
+        <path d="M17,4 C25,11 25,23 17,30"/>
+      </g>
+      <circle cx="17" cy="17" r="13" stroke="#C9A84C" stroke-width="1.1"/>
+      <circle cx="17" cy="2" r="1.8" fill="#C9A84C"/>
+      <line x1="17" y1="3.8" x2="17" y2="4" stroke="#C9A84C" stroke-width="0.6" stroke-dasharray="1 1"/>
+      <circle cx="28.5" cy="8" r="1.8" fill="#C9A84C"/>
+      <line x1="27.3" y1="9.2" x2="26" y2="10.4" stroke="#C9A84C" stroke-width="0.6" stroke-dasharray="1 1"/>
+      <circle cx="28.5" cy="26" r="1.8" fill="#C9A84C"/>
+      <line x1="27.3" y1="24.8" x2="26" y2="23.6" stroke="#C9A84C" stroke-width="0.6" stroke-dasharray="1 1"/>
+    </svg>
     <div>
       <div class="nav-wordmark"><span class="w-nanuri">Nanuri</span><span class="w-web">Web</span></div>
       <span class="nav-sub" data-i18n="nav.sub">Korean · English · Español 홈페이지 전문</span>
