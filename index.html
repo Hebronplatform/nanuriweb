@@ -62,7 +62,7 @@ body{font-family:var(--font-b);background:var(--white);color:var(--dark);font-si
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.15);padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{display:flex;align-items:center;gap:6px;text-decoration:none;}
 .nav-wordmark{font-family:var(--font-n);font-weight:800;font-size:22px;letter-spacing:-.5px;line-height:1;}
 .nav-wordmark .w-nanuri{color:rgba(255,255,255,.9);}
 .nav-wordmark .w-web{color:var(--gold);}
@@ -73,6 +73,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;}
 .nav-cta:hover{background:#ddb94e!important;}
 .lang-switcher{display:flex;align-items:center;gap:3px;margin-left:10px;border-left:1px solid rgba(255,255,255,.1);padding-left:10px;}
+.lang-label{font-size:10px;font-family:var(--font-n);color:rgba(255,255,255,.38);letter-spacing:.4px;margin-right:4px;white-space:nowrap;}
 .lang-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);font-family:var(--font-n);font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;cursor:pointer;transition:all .18s;letter-spacing:.8px;text-transform:uppercase;}
 .lang-btn:hover{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.08);}
 .lang-btn.active{background:rgba(201,168,76,.2);border-color:var(--gold);color:var(--gold);}
@@ -698,11 +699,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </button>
   </div>
   <div class="lang-switcher">
-    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;opacity:.38;" aria-hidden="true">
-      <circle cx="7" cy="7" r="5.8" stroke="rgba(255,255,255,0.85)" stroke-width="1.1"/>
-      <path d="M7 1.2 C5.7 3.6 5.7 10.4 7 12.8M7 1.2 C8.3 3.6 8.3 10.4 7 12.8" stroke="rgba(255,255,255,0.65)" stroke-width="0.85" fill="none"/>
-      <path d="M1.2 7 Q4 5.8 7 7 Q10 8.2 12.8 7" stroke="rgba(255,255,255,0.65)" stroke-width="0.85" fill="none"/>
-    </svg>
+    <span class="lang-label" data-i18n="nav.lang.label">언어 선택</span>
     <button class="lang-btn active" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('ko')">한국어</button>
     <button class="lang-btn" onclick="setLang('es')">ES</button>
@@ -2068,7 +2065,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 /* MULTILINGUAL */
 const LANG = {
   ko: {
-    'nav.sub':'한국어 · EN · ES',
+    'nav.sub':'한국어 · EN · ES','nav.lang.label':'언어 선택',
     'nav.plans':'요금 보기','nav.about':'회사 소개','nav.cta':'신청하기',
     'hero.eyebrow':'✦ 홈페이지 없어서 기회를 놓치고 있진 않으신가요?',
     'hero.cta.btn':'무료 기획서 — 지금 바로 신청하기 →',
@@ -2354,7 +2351,7 @@ const LANG = {
     'footer.home.badge':'준비중',
   },
   en: {
-    'nav.sub':'Korean · English · Español',
+    'nav.sub':'Korean · English · Español','nav.lang.label':'Language',
     'nav.plans':'Pricing','nav.about':'About','nav.cta':'Get Started',
     'hero.eyebrow':'✦ YOUR COMPETITORS ARE ONLINE — ARE YOU?',
     'hero.cta.btn':'Get My Free Proposal →',
@@ -2672,7 +2669,7 @@ const LANG = {
     'bizplans.note':'※ All prices in USD · Annual maintenance paid upfront · Startup: business within 3 years of founding',
   },
   es: {
-    'nav.sub':'Ko · En · Español',
+    'nav.sub':'Ko · En · Español','nav.lang.label':'Idioma',
     'nav.plans':'Precios','nav.about':'Nosotros','nav.cta':'Solicitar',
     'hero.eyebrow':'✦ ¿TU NEGOCIO MERECE MÁS CLIENTES?',
     'hero.cta.btn':'Quiero Mi Propuesta Gratis →',
