@@ -10,8 +10,17 @@
 <meta property="og:description" content="Custom websites for businesses, churches & organizations. Korean · English · Spanish support. From $299. Instantly listed on HebronGuide 72+ cities.">
 <meta property="og:url" content="https://nanuriweb.com">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://nanuriweb.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NanuriWeb — Korean · English · Spanish Web Design from $299">
+<meta name="twitter:image" content="https://nanuriweb.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://nanuriweb.com">
+<link rel="alternate" hreflang="en" href="https://nanuriweb.com">
+<link rel="alternate" hreflang="ko" href="https://nanuriweb.com">
+<link rel="alternate" hreflang="es" href="https://nanuriweb.com">
+<link rel="alternate" hreflang="x-default" href="https://nanuriweb.com">
 <!-- JSON-LD 구조화 데이터 -->
 <script type="application/ld+json">
 {
@@ -101,7 +110,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .mob-overlay.open{display:block;}
 
 /* HERO */
-.hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 40px 80px;}
+.hero{min-height:100vh;background:#1a2e4a;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 40px 80px;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 60% at 50% -5%,rgba(201,168,76,.08),transparent 65%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(26,127,90,.06),transparent 55%);}
 .hero-content{position:relative;max-width:860px;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.10);border:1px solid rgba(201,168,76,.25);border-radius:24px;padding:7px 20px;font-size:11px;font-family:var(--font-n);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;}
@@ -583,6 +592,13 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 .indus-note-row a:hover{opacity:.7;}
 @media(max-width:900px){.indus-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.indus-grid{grid-template-columns:repeat(2,1fr);}}
+/* KAKAO FLOAT */
+.kakao-float{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;}
+.kakao-float-btn{width:52px;height:52px;background:#FEE500;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s;}
+.kakao-float-btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.22);}
+.kakao-float-btn svg{width:28px;height:28px;}
+.kakao-float-lbl{font-size:10px;font-family:var(--font-n);font-weight:700;color:#3C1E1E;background:#FEE500;border-radius:20px;padding:2px 8px;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+@media(max-width:600px){.kakao-float{bottom:18px;right:16px;}}
 </style>
 </head>
 <body>
@@ -2826,6 +2842,7 @@ const LANG = {
 let currentLang = 'en';
 function setLang(lang) {
   currentLang = lang;
+  try { localStorage.setItem('nw-lang', lang); } catch(e) {}
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.lang-btn').forEach(b => { if (b.textContent.toLowerCase() === lang || (lang === 'ko' && b.textContent === '한국어')) b.classList.add('active'); });
   const t = LANG[lang] || LANG['ko'];
@@ -2836,7 +2853,7 @@ function setLang(lang) {
   document.querySelectorAll('option[data-i18n]').forEach(el => { if (t[el.dataset.i18n]) el.textContent = t[el.dataset.i18n]; });
   document.documentElement.lang = lang;
 }
-setLang('en');
+setLang((function(){ try { return localStorage.getItem('nw-lang') || 'en'; } catch(e){ return 'en'; } })());
 
 /* ── Share Bar Functions ── */
 function shareVia(p) {
@@ -2891,7 +2908,7 @@ async function registerHome() {
     return;
   }
   try {
-    const res = await fetch('https://formsubmit.co/ajax/Hebronplatform@gmail.com', {
+    const res = await fetch('https://formsubmit.co/ajax/hello@nanuriweb.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
@@ -2926,5 +2943,15 @@ async function registerHome() {
 //   ...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 // fbq('init','YOUR_PIXEL_ID'); fbq('track','PageView');
 </script>
+<!-- KakaoTalk Float Button -->
+<a href="https://open.kakao.com/o/sNanuriWeb" target="_blank" rel="noopener" class="kakao-float" aria-label="카카오톡 문의">
+  <div class="kakao-float-btn">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 6C11.163 6 4 11.82 4 19c0 4.624 2.857 8.693 7.2 11.18L9.6 34l5.2-2.4C16.2 31.87 18.07 32 20 32c8.837 0 16-5.82 16-13S28.837 6 20 6z" fill="#3C1E1E"/>
+      <path d="M13 22l1.8-5.4 4 6 2.2-3.6 3.6 4.6L27 17" stroke="#FEE500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <span class="kakao-float-lbl">카카오톡</span>
+</a>
 </body>
 </html>
