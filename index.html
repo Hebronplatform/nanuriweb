@@ -101,7 +101,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .mob-overlay.open{display:block;}
 
 /* HERO */
-.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 24px 80px;}
+.hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 40px 80px;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 60% at 50% -5%,rgba(201,168,76,.08),transparent 65%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(26,127,90,.06),transparent 55%);}
 .hero-content{position:relative;max-width:860px;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.10);border:1px solid rgba(201,168,76,.25);border-radius:24px;padding:7px 20px;font-size:11px;font-family:var(--font-n);color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;}
@@ -109,6 +109,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .hero-title .gold{color:var(--gold);}
 .hero-desc{font-size:16px;color:rgba(255,255,255,.52);max-width:560px;margin:0 auto 48px;line-height:1.9;}
 .hero-desc strong{color:rgba(255,255,255,.85);}
+/* HERO SPLIT LAYOUT */
+.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1240px;width:100%;position:relative;}
+.hero-left{text-align:left;}
+.hero-left .hero-eyebrow{margin-bottom:24px;}
+.hero-left .hero-title{text-align:left;}
+.hero-left .hero-desc{text-align:left;margin:0 0 0;max-width:none;}
+.hero-left .hero-main-cta{text-align:left;margin-top:28px;margin-bottom:0;}
+.hero-left .hero-proof{justify-content:flex-start;padding-top:24px;margin-top:8px;}
+.hero-right{position:relative;}
+.hero-visual{border-radius:22px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1.5px rgba(201,168,76,.2);position:relative;}
+.hero-visual img{width:100%;height:auto;display:block;border-radius:22px;}
+.hero-visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,22,40,.8) 100%);border-radius:22px;pointer-events:none;}
+.hero-visual-badge{position:absolute;bottom:18px;left:18px;background:rgba(11,22,40,.92);backdrop-filter:blur(10px);border:1px solid rgba(201,168,76,.35);border-radius:10px;padding:10px 15px;z-index:2;}
+.vb-label{font-size:9px;font-family:var(--font-n);font-weight:700;color:rgba(255,255,255,.38);letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:3px;}
+.vb-value{font-size:13px;font-weight:700;color:var(--gold-light);display:block;}
+.hero-visual-stat{position:absolute;background:rgba(11,22,40,.88);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:9px 14px;text-align:center;z-index:2;}
+.vs-num{font-family:var(--font-d);font-size:20px;font-weight:700;color:white;display:block;line-height:1;}
+.vs-label{font-size:10px;font-family:var(--font-n);color:rgba(255,255,255,.45);letter-spacing:.4px;display:block;margin-top:3px;}
+.stat-cities{top:18px;right:18px;}
+.hero-lower{max-width:1240px;width:100%;margin:60px auto 0;position:relative;}
+@media(max-width:960px){.hero{padding:100px 24px 60px;}.hero-split{grid-template-columns:1fr;}.hero-left{text-align:center;}.hero-left .hero-title,.hero-left .hero-desc,.hero-left .hero-main-cta{text-align:center;}.hero-left .hero-proof{justify-content:center;}.hero-right{display:none;}}
 
 /* HERO WHY-HOOK */
 .hero-why{max-width:780px;margin:0 auto 40px;background:rgba(255,255,255,.045);border:1px solid rgba(201,168,76,.28);border-radius:20px;padding:26px 30px;text-align:left;}
@@ -700,19 +721,51 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
-  <div class="hero-content">
 
-    <div class="hero-eyebrow" data-i18n="hero.eyebrow">✦ 홈페이지 없어서 기회를 놓치고 있진 않으신가요?</div>
+  <!-- SPLIT: copy left / image right -->
+  <div class="hero-split">
 
-    <h1 class="hero-title">
-      <span data-i18n="hero.title1">사업체도, 교회도</span><br>
-      <span class="gold" data-i18n="hero.title2">온라인에서 첫날부터 발견됩니다</span>
-    </h1>
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-i18n="hero.eyebrow">✦ 홈페이지 없어서 기회를 놓치고 있진 않으신가요?</div>
+      <h1 class="hero-title">
+        <span data-i18n="hero.title1">사업체도, 교회도</span><br>
+        <span class="gold" data-i18n="hero.title2">온라인에서 첫날부터 발견됩니다</span>
+      </h1>
+      <p class="hero-desc" data-i18n-html="hero.desc">
+        제작 즉시 <strong>HebronGuide 72개 도시 자동 등재</strong> · <span style="color:rgba(255,255,255,.45);font-size:14px;">500개 도시 목표 확장 중</span><br>
+        한국어 · 영어 · 스페인어 직접 상담 · 일회 제작비 · 숨겨진 비용 없음 · <strong>$299~</strong>
+      </p>
+      <div class="hero-main-cta">
+        <a href="#contact" class="hero-cta-btn" data-i18n="hero.cta.btn">무료 기획서 — 지금 바로 신청하기 →</a>
+        <span class="hero-cta-note" data-i18n="hero.cta.note">기획서 확인 후 결정 · 비용 없음 · 48시간 이내 응답</span>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-chip"><span class="dot"></span><span data-i18n="hero.chip1">에덴교회 — edendallas.org 완성</span></div>
+        <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip2">한국 교회 2곳 — 기획서 진행 중</span></div>
+        <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip3">HebronGuide 72개 도시 연결 · 500개 목표</span></div>
+        <div class="proof-chip"><span class="dot" style="background:#60a5fa;"></span><span data-i18n="hero.chip4">3개 국어 직접 상담 · 숨겨진 비용 없음</span></div>
+      </div>
+    </div><!-- /hero-left -->
 
-    <p class="hero-desc" data-i18n-html="hero.desc">
-      제작 즉시 <strong>HebronGuide 72개 도시 자동 등재</strong> · <span style="color:rgba(255,255,255,.45);font-size:14px;">500개 도시 목표 확장 중</span><br>
-      한국어 · 영어 · 스페인어 직접 상담 · 일회 제작비 · 숨겨진 비용 없음 · <strong>$299~</strong>
-    </p>
+    <div class="hero-right">
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&h=700&q=85" alt="NanuriWeb — Professional Website Design" loading="eager">
+        <div class="hero-visual-overlay"></div>
+        <div class="hero-visual-badge">
+          <span class="vb-label">LATEST WORK</span>
+          <span class="vb-value">edendallas.org ✓ Live</span>
+        </div>
+        <div class="hero-visual-stat stat-cities">
+          <span class="vs-num">72+</span>
+          <span class="vs-label">Cities Listed</span>
+        </div>
+      </div>
+    </div><!-- /hero-right -->
+
+  </div><!-- /hero-split -->
+
+  <!-- LOWER: why-hook + fork buttons -->
+  <div class="hero-lower">
 
     <!-- HERO WHY-HOOK: 소비자 반박 선점 -->
     <div class="hero-why">
@@ -782,11 +835,6 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <span class="hw-answer-tag" data-i18n="hero.why.answer">✦ 그래서 NanuriWeb입니다 — 아래에서 요금을 확인하세요 ↓</span>
     </div>
 
-    <div class="hero-main-cta">
-      <a href="#contact" class="hero-cta-btn" data-i18n="hero.cta.btn">무료 기획서 — 지금 바로 신청하기 →</a>
-      <span class="hero-cta-note" data-i18n="hero.cta.note">기획서 확인 후 결정 · 비용 없음 · 48시간 이내 응답</span>
-    </div>
-
     <div class="hero-fork">
       <a href="#plans" class="fork-btn biz-fork" onclick="switchPlanTab('biz', document.querySelectorAll('.plan-tab')[0])">
         <div class="fork-row">
@@ -808,14 +856,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       </a>
     </div>
 
-    <div class="hero-proof">
-      <div class="proof-chip"><span class="dot"></span><span data-i18n="hero.chip1">에덴교회 — edendallas.org 완성</span></div>
-      <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip2">한국 교회 2곳 — 기획서 진행 중</span></div>
-      <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip3">HebronGuide 72개 도시 연결 · 500개 목표</span></div>
-      <div class="proof-chip"><span class="dot" style="background:#60a5fa;"></span><span data-i18n="hero.chip4">한국어 직접 상담 · 숨겨진 비용 없음</span></div>
-    </div>
-
-  </div>
+  </div><!-- /hero-lower -->
 </section>
 
 
@@ -2163,19 +2204,19 @@ const LANG = {
   en: {
     'nav.sub':'Korean · English · Spanish Web Design',
     'nav.plans':'Pricing','nav.about':'About','nav.cta':'Get Started',
-    'hero.eyebrow':'✦ Losing customers without a website?',
-    'hero.cta.btn':'Free Proposal — Apply Now →',
-    'hero.cta.note':'Decide after reviewing · No cost · Response within 48 hours',
-    'hero.title1':'Business or Church —','hero.title2':'Found online from Day One',
+    'hero.eyebrow':'✦ YOUR COMPETITORS ARE ONLINE — ARE YOU?',
+    'hero.cta.btn':'Get My Free Proposal →',
+    'hero.cta.note':'No commitment · Free planning doc · Reply within 48 hrs',
+    'hero.title1':'Get Found. Get Customers.','hero.title2':'Professional Websites From $299',
     'hero.desc':'Instantly listed on <strong>HebronGuide 72+ cities (growing to 500)</strong> worldwide.<br>Korean · English · Spanish support · One-time fee · No hidden costs · <strong>From $299</strong>',
     'fork.church.title':'Church Website','fork.church.desc':'Starter $499 · Growth $799 · Pro $1,299',
     'fork.church.tag':'Church Plant $299 · House Church Free Consult',
     'fork.biz.title':'Business · Org · Group','fork.biz.desc':'Solo $299 · Growth $999 · Pro $1,799',
     'fork.biz.tag':'Startups under 3 yrs: 50% off',
     'hero.chip1':'Eden Church Dallas — edendallas.org live',
-    'hero.chip2':'2 Churches in Korea — proposal in review',
+    'hero.chip2':'2 more projects in progress',
     'hero.chip3':'HebronGuide — 72+ cities connected (growing to 500)',
-    'hero.chip4':'Korean-friendly service · No hidden fees',
+    'hero.chip4':'Multilingual support · No hidden fees',
     'indus.eyebrow':'By Industry · 업종별 맞춤',
     'indus.title':'What\'s your industry?<br><span style="color:var(--gold);">Every niche needs a different approach</span>',
     'indus.desc':'Restaurant, salon, academy, organization — we design websites tailored to your industry from day one',
@@ -2185,7 +2226,7 @@ const LANG = {
     'indus.c5.type':'Association · Organization','indus.c5.hook':'A community website that<br>brings your members together',
     'indus.note':'Other industries welcome too','indus.cta':'Get a free proposal →',
     'hero.why.qlabel':'Frequently Asked',
-    'hero.why.qbubble':'"Local freelancers and web companies offer cheap sites — <em>why should I choose NanuriWeb?</em>"',
+    'hero.why.qbubble':'"Why not just use Squarespace, Wix, or hire a cheap local freelancer?"',
     'hero.why.item1.strong':'Immediate exposure in 72 cities upon launch',
     'hero.why.item1.vs':'Regular agencies require <s>separate promotion</s> after completion <em style="color:rgba(201,168,76,.5);font-style:normal;">(72 cities now → goal: 500)</em>',
     'hero.why.item2.strong':'A multilingual partner with you until the end',
@@ -2465,19 +2506,19 @@ const LANG = {
   es: {
     'nav.sub':'Diseño Web Multilingüe · Ko · En · Es',
     'nav.plans':'Precios','nav.about':'Nosotros','nav.cta':'Solicitar',
-    'hero.eyebrow':'✦ ¿Perdiendo clientes sin página web?',
-    'hero.cta.btn':'Propuesta Gratis — Aplicar Ahora →',
-    'hero.cta.note':'Decide después de revisar · Sin costo · Respuesta en 48 horas',
-    'hero.title1':'¿Necesitas un sitio web?','hero.title2':'Revisa los precios primero',
+    'hero.eyebrow':'✦ ¿TU NEGOCIO MERECE MÁS CLIENTES?',
+    'hero.cta.btn':'Quiero Mi Propuesta Gratis →',
+    'hero.cta.note':'Sin compromiso · Totalmente gratis · Respuesta en 48 horas',
+    'hero.title1':'Tu Negocio. Tu Iglesia.','hero.title2':'Presencia Digital desde el Primer Día',
     'hero.desc':'Iglesias y negocios. <strong>Desde $299, entrega rápida.</strong><br>Elige tu tipo abajo.',
     'fork.church.title':'Sitio de Iglesia','fork.church.desc':'Starter $499 · Growth $799 · Pro $1,299',
     'fork.church.tag':'Church Plant $299 · House Church Gratis',
     'fork.biz.title':'Negocio · Org · Grupo','fork.biz.desc':'Solo $299 · Growth $999 · Pro $1,799',
     'fork.biz.tag':'Startups menos de 3 años: 50% descuento',
     'hero.chip1':'Eden Church Dallas — edendallas.org activo',
-    'hero.chip2':'2 iglesias en Corea — propuesta en revisión',
+    'hero.chip2':'2 proyectos más en proceso',
     'hero.chip3':'HebronGuide — 72+ ciudades conectadas (en expansión)',
-    'hero.chip4':'Servicio en coreano · Sin costos ocultos',
+    'hero.chip4':'Atención en tu idioma · Sin sorpresas',
     'indus.eyebrow':'Por Industria · By Industry',
     'indus.title':'¿Cuál es tu industria?<br><span style="color:var(--gold);">Cada negocio necesita un enfoque diferente</span>',
     'indus.desc':'Restaurante, salón, academia, organización — diseñamos sitios web adaptados a tu industria desde el primer día',
@@ -2487,7 +2528,7 @@ const LANG = {
     'indus.c5.type':'Asociación · Organización','indus.c5.hook':'Un sitio que une<br>a toda tu comunidad',
     'indus.note':'Otras industrias también son bienvenidas','indus.cta':'Obtener propuesta gratis →',
     'hero.why.qlabel':'Pregunta Frecuente',
-    'hero.why.qbubble':'"Los freelancers locales y empresas web ofrecen sitios baratos — <em>¿por qué elegir NanuriWeb?</em>"',
+    'hero.why.qbubble':'"¿Por qué NanuriWeb y no Wix, Squarespace o un diseñador local más barato?"',
     'hero.why.item1.strong':'Exposición inmediata en 72 ciudades al lanzar',
     'hero.why.item1.vs':'Las agencias comunes requieren <s>promoción aparte</s> después de entregar <em style="color:rgba(201,168,76,.5);font-style:normal;">(72 ciudades ahora → meta: 500)</em>',
     'hero.why.item2.strong':'Un socio multilingüe contigo hasta el final',
