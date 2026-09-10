@@ -3,7 +3,7 @@
      이 파일은 build.py 가 자동 생성했습니다. 직접 편집하지 마세요.
      편집할 파일: index.src.html
      재생성 명령: python build.py
-     생성 시각: 2026-09-10 14:27
+     생성 시각: 2026-09-10 14:35
      HebronGuide 도시 수: 82 / 목표 500
      ============================================================ -->
 <html lang="ko">
@@ -605,9 +605,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 
 /* PROOF CHIPS */
 .hero-proof{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);padding-top:36px;}
-.proof-chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:9px 15px;font-size:12px;color:rgba(255,255,255,.9);}
-.proof-chip .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
-.proof-chip .dot.gold{background:var(--gold);}
+.proof-chip{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.34);border-radius:10px;padding:9px 15px;font-size:12px;font-weight:600;color:#fff;}
+.proof-chip .dot{width:9px;height:9px;border-radius:50%;background:#34d399;flex-shrink:0;box-shadow:0 0 9px 1px rgba(52,211,153,.9);}
+.proof-chip .dot.gold{background:var(--gold-light);box-shadow:0 0 9px 1px rgba(240,217,138,.9);}
+.proof-chip .dot.blue{background:#60c8ff;box-shadow:0 0 9px 1px rgba(96,200,255,.9);}
 
 /* BUTTONS */
 .btn-p{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:15px 32px;border-radius:var(--r);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;font-family:var(--font-b);}
@@ -661,7 +662,7 @@ hr.pdiv{border:none;border-top:1px solid rgba(255,255,255,.08);margin:16px 0;}
 
 /* BIZ BRIDGE */
 .biz-bridge{background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:40px 24px;text-align:center;margin-bottom:56px;}
-.biz-bridge p{font-family:var(--font-d);font-size:18px;color:rgba(255,255,255,.75);line-height:1.6;}
+.biz-bridge p{font-family:var(--font-d);font-size:18px;color:rgba(255,255,255,.92);line-height:1.6;}
 .biz-bridge p strong{color:rgba(255,255,255,.95);}
 
 /* CONTACT */
@@ -1167,7 +1168,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
         <div class="proof-chip"><span class="dot"></span><span data-i18n="hero.chip1">에덴교회 — edendallas.org 완성</span></div>
         <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip2">미주 한인회 — 기획 진행 중</span></div>
         <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip3">HebronGuide 82개 도시 연결 · 500개 목표</span></div>
-        <div class="proof-chip"><span class="dot" style="background:#93c5fd;"></span><span data-i18n="hero.chip4">한국어·영어 직접 상담 · 숨겨진 비용 없음</span></div>
+        <div class="proof-chip"><span class="dot blue"></span><span data-i18n="hero.chip4">한국어·영어 직접 상담 · 숨겨진 비용 없음</span></div>
       </div>
     </div><!-- /hero-left -->
 
