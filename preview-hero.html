@@ -3,7 +3,7 @@
      이 파일은 build.py 가 자동 생성했습니다. 직접 편집하지 마세요.
      편집할 파일: index.src.html
      재생성 명령: python build.py
-     생성 시각: 2026-09-10 13:24
+     생성 시각: 2026-09-10 13:29
      HebronGuide 도시 수: 82 / 목표 500
      ============================================================ -->
 <html lang="ko">
@@ -407,9 +407,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .lang-toggle:hover{border-color:rgba(201,168,76,.6);color:var(--gold-light);background:rgba(201,168,76,.08);}
 .lang-toggle .icon{width:14px;height:14px;opacity:.75;}
 @media(max-width:768px){
-  .lang-switcher{display:none;}
-  .nav-links a:not(.nav-cta){display:none;}
-  .nav-links .nav-cta{font-size:12px;padding:7px 14px;}
+  .lang-switcher{margin-left:0;}
+  .lang-toggle{font-size:11px;padding:5px 9px;gap:5px;}
+  .nav-links{display:none;}
 }
 
 /* MOBILE HAMBURGER BUTTON */
@@ -1049,14 +1049,14 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
       <a href="#plans" data-i18n="nav.plans">요금 보기</a>
       <a href="#contact" class="nav-cta" data-i18n="nav.cta">신청하기</a>
     </div>
+    <div class="lang-switcher">
+      <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language / 언어 전환">
+        <svg class="icon" aria-hidden="true"><use href="#ic-globe"/></svg>
+        <span id="langLabel">English</span>
+      </button>
+    </div>
     <button class="mob-ham" id="mob-ham" onclick="toggleMobMenu()" aria-label="메뉴 열기" aria-expanded="false">
       <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="lang-switcher">
-    <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language / 언어 전환">
-      <svg class="icon" aria-hidden="true"><use href="#ic-globe"/></svg>
-      <span id="langLabel">English</span>
     </button>
   </div>
 </nav>
