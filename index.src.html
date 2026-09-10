@@ -395,11 +395,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .nav-links a:hover{color:white;background:rgba(255,255,255,.07);}
 .nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;}
 .nav-cta:hover{background:#ddb94e!important;}
-.lang-switcher{display:flex;align-items:center;gap:3px;margin-left:10px;border-left:1px solid rgba(255,255,255,.1);padding-left:10px;}
-.lang-label{font-size:10px;font-family:var(--font-n);color:rgba(255,255,255,.38);letter-spacing:.4px;margin-right:4px;white-space:nowrap;}
-.lang-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);font-family:var(--font-n);font-size:12px;font-weight:700;padding:5px 11px;border-radius:6px;cursor:pointer;transition:all .18s;letter-spacing:.8px;text-transform:uppercase;}
-.lang-btn:hover{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.08);}
-.lang-btn.active{background:rgba(201,168,76,.2);border-color:var(--gold);color:var(--gold);}
+.lang-switcher{display:flex;align-items:center;margin-left:10px;}
+.lang-toggle{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.8);font-family:var(--font-n);font-size:12px;font-weight:600;padding:5px 10px;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.2px;white-space:nowrap;}
+.lang-toggle:hover{border-color:rgba(201,168,76,.6);color:var(--gold-light);background:rgba(201,168,76,.08);}
+.lang-toggle .icon{width:14px;height:14px;opacity:.75;}
 @media(max-width:768px){
   .lang-switcher{display:none;}
   .nav-links a:not(.nav-cta){display:none;}
@@ -1030,9 +1029,10 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </button>
   </div>
   <div class="lang-switcher">
-    <svg class="icon" aria-hidden="true" style="width:15px;height:15px;color:rgba(255,255,255,.5);margin-right:2px;"><use href="#ic-globe"/></svg>
-    <button class="lang-btn" data-lang="ko" onclick="setLang('ko')">한국어</button>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+    <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language / 언어 전환">
+      <svg class="icon" aria-hidden="true"><use href="#ic-globe"/></svg>
+      <span id="langLabel">English</span>
+    </button>
   </div>
 </nav>
 
@@ -3471,11 +3471,12 @@ function hgApplyToDOM() {
 // (구 hgSyncFromAPI fetch 블록 제거: /api/cities-count.json 미존재 + 중첩 /* */ 주석이 문법오류를 내
 //  인라인 스크립트 전체 실행을 막던 버그였음 — setLang·i18n·도시수 치환이 모두 죽어 있었음)
 
+function toggleLang() { setLang(currentLang === 'ko' ? 'en' : 'ko'); }
 function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('nw-lang', lang); } catch(e) {}
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.lang-btn').forEach(b => { if (b.dataset.lang === lang) b.classList.add('active'); });
+  var _ll = document.getElementById('langLabel');
+  if (_ll) _ll.textContent = (lang === 'ko' ? 'English' : '한국어');
   const t = LANG[lang] || LANG['ko'];
   document.querySelectorAll('[data-i18n]').forEach(el => { if (t[el.dataset.i18n]) el.textContent = hgReplace(t[el.dataset.i18n]); });
   document.querySelectorAll('[data-i18n-html]').forEach(el => { if (t[el.dataset.i18nHtml]) el.innerHTML = hgReplace(t[el.dataset.i18nHtml]); });
