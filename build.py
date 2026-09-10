@@ -25,8 +25,12 @@ index.src.html (토큰 원본) → index.html (배포본)
 """
 
 import argparse
+import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -64,6 +68,47 @@ def check_tokens(path):
         for tok, n in Counter(found).most_common():
             print(f"  ! {path.name}: {tok} {n}건 남음")
     return len(found)
+
+
+def validate_js(path):
+    """배포 전 안전장치: 인라인 <script>의 JS 문법을 node --check로 검사한다.
+    (2026-09 사고: LANG 문자열 안 작은따옴표가 스크립트를 깨뜨려 사이트가 사라짐)
+    JSON-LD(type=application/ld+json)와 외부 src 스크립트는 제외한다.
+    node 가 없으면 검사를 건너뛰되 경고한다. 문법 오류가 있으면 False.
+    """
+    html = path.read_text(encoding="utf-8")
+    node = shutil.which("node")
+    if not node:
+        print("  ! node 미설치 — JS 문법 검사 건너뜀 (설치 권장: nodejs.org)")
+        return True
+
+    ok = True
+    n_checked = 0
+    for m in re.finditer(r"<script\b([^>]*)>(.*?)</script>", html, re.DOTALL | re.IGNORECASE):
+        attrs, body = m.group(1), m.group(2)
+        if re.search(r"\bsrc\s*=", attrs, re.I):
+            continue  # 외부 스크립트
+        if re.search(r"type\s*=\s*[\"'][^\"']*json", attrs, re.I):
+            continue  # JSON-LD (JS 아님)
+        if not body.strip():
+            continue
+        n_checked += 1
+        tmp = None
+        try:
+            with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as f:
+                f.write(body)
+                tmp = f.name
+            r = subprocess.run([node, "--check", tmp], capture_output=True, text=True)
+            if r.returncode != 0:
+                ok = False
+                first = (r.stderr.strip().splitlines() or ["unknown error"])[0]
+                print(f"  ✗ 인라인 스크립트 #{n_checked} JS 문법 오류: {first}")
+        finally:
+            if tmp and os.path.exists(tmp):
+                os.remove(tmp)
+    if ok:
+        print(f"  인라인 스크립트 {n_checked}개 — 문법 통과")
+    return ok
 
 
 def build(cities, target):
@@ -145,19 +190,24 @@ def main():
     if args.cities:
         cities, source = args.cities, "수동 지정"
     else:
-        print(f"\n[1/3] 실시간 도시 수 확인 — {COUNT_URL}")
+        print(f"\n[1/4] 실시간 도시 수 확인 — {COUNT_URL}")
         cities, source = fetch_live_city_count()
     print(f"  도시 수: {cities} ({source}) · 목표: {args.target}")
 
-    print("\n[2/3] 토큰 치환")
+    print("\n[2/4] 토큰 치환")
     build(cities, args.target)
 
-    print("\n[3/3] 배포본 검증")
+    print("\n[3/4] 배포본 검증")
     left = check_tokens(OUT)
     if left == 0:
         print("  토큰 잔여 0건 — 통과")
     else:
         print(f"  실패: {left}건 남음")
+        sys.exit(1)
+
+    print("\n[4/4] JS 문법 검증 (배포 전 안전장치)")
+    if not validate_js(OUT):
+        print("\n  ✗ 실패: JS 문법 오류가 있어 배포를 중단합니다. 위 오류를 고치고 다시 빌드하세요.")
         sys.exit(1)
 
     print("\n완료. 이제 배포하세요:  vercel --prod")
