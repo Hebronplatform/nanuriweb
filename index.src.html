@@ -438,12 +438,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .hero-content{position:relative;max-width:860px;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(201,168,76,.16);border:1px solid rgba(201,168,76,.4);border-radius:24px;padding:10px 24px;font-size:15px;font-weight:600;font-family:var(--font-n);color:var(--gold-light);letter-spacing:.2px;margin-bottom:32px;line-height:1.35;}
 .hero-title{font-family:var(--font-d);font-size:clamp(28px,4.2vw,52px);font-weight:700;color:white;line-height:1.3;margin-bottom:18px;}
-.hero-title .gold{color:var(--gold);}
+.hero-title .gold{color:var(--gold-light);}
 .hero-rot-line{display:block;font-size:.9em;min-height:2.6em;}
 .hero-caret{display:inline-block;width:3px;height:.95em;background:var(--gold);margin-left:4px;vertical-align:text-bottom;animation:heroBlink 1s step-end infinite;}
 @keyframes heroBlink{0%,100%{opacity:1}50%{opacity:0}}
 @media (prefers-reduced-motion: reduce){.hero-caret{display:none;animation:none;}}
-.hero-desc{font-size:16px;color:rgba(255,255,255,.52);max-width:560px;margin:0 auto 48px;line-height:1.9;}
+.hero-desc{font-size:16px;color:rgba(255,255,255,.85);max-width:560px;margin:0 auto 48px;line-height:1.9;}
 .hero-desc strong{color:rgba(255,255,255,.85);}
 /* HERO SPLIT LAYOUT */
 .hero-split{display:grid;grid-template-columns:2fr 3fr;gap:48px;align-items:center;max-width:1240px;width:100%;position:relative;}
@@ -472,7 +472,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .hero-split{display:flex;flex-direction:column;align-items:stretch;grid-template-columns:none;max-width:none;width:100%;margin:0;gap:0;position:relative;}
 .hero-right{order:-1;display:block;width:100%;margin:0;position:relative;}
 .hero-visual{border-radius:0;box-shadow:none;aspect-ratio:auto;height:56vh;width:100%;}
-.hero-visual img{border-radius:0;object-position:center;}
+.hero-visual img{border-radius:0;object-position:center;filter:brightness(1.16) saturate(1.05) contrast(.98);}
 .hero-visual-overlay,.hero-visual-badge,.hero-visual-stat{display:none;}
 .hero-left{order:0;text-align:center;padding:36px 24px 52px;}
 .hero-left .hero-title,.hero-left .hero-desc,.hero-left .hero-main-cta{text-align:center;}
@@ -483,9 +483,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .hero-lower{margin:0 auto;padding:8px 24px 40px;}
 @media(min-width:961px){
   .hero-visual{height:90vh;}
-  .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,40,.5) 0%,rgba(11,22,40,.3) 42%,rgba(11,22,40,.85) 100%);z-index:1;pointer-events:none;}
+  .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,40,.34) 0%,rgba(11,22,40,.14) 42%,rgba(11,22,40,.64) 100%);z-index:1;pointer-events:none;}
   .hero-left{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 24px 40px;}
   .hero-left .hero-desc{max-width:640px;}
+  .hero-left .hero-title,.hero-left .hero-desc,.hero-left .hero-cta-note{text-shadow:0 2px 16px rgba(0,0,0,.6),0 1px 3px rgba(0,0,0,.5);}
+  .hero-left .proof-chip{background:rgba(11,22,40,.5);border-color:rgba(255,255,255,.28);backdrop-filter:blur(4px);}
   .hero-lower{max-width:1240px;}
 }
 
@@ -593,8 +595,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 
 /* PROOF CHIPS */
 .hero-proof{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.07);padding-top:36px;}
-.proof-chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:9px 15px;font-size:12px;color:rgba(255,255,255,.6);}
-.proof-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--emerald);flex-shrink:0;}
+.proof-chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:9px 15px;font-size:12px;color:rgba(255,255,255,.9);}
+.proof-chip .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
 .proof-chip .dot.gold{background:var(--gold);}
 
 /* BUTTONS */
@@ -954,7 +956,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 .hero-main-cta{text-align:center;margin-top:32px;}
 .hero-cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#fff;font-family:var(--font-n);font-weight:700;font-size:17px;padding:17px 38px;border-radius:50px;text-decoration:none;letter-spacing:.3px;transition:all .25s;box-shadow:0 6px 24px rgba(201,168,76,.45);}
 .hero-cta-btn:hover{background:#b8912f;transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,.55);}
-.hero-cta-note{display:block;margin-top:11px;font-size:12px;color:rgba(255,255,255,.38);letter-spacing:.5px;}
+.hero-cta-note{display:block;margin-top:11px;font-size:12px;color:rgba(255,255,255,.62);letter-spacing:.5px;}
 
 /* ── INDUSTRIES SECTION ── */
 .indus-section{padding:80px 24px;background:#fff;}
@@ -1155,7 +1157,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
         <div class="proof-chip"><span class="dot"></span><span data-i18n="hero.chip1">에덴교회 — edendallas.org 완성</span></div>
         <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip2">미주 한인회 — 기획 진행 중</span></div>
         <div class="proof-chip"><span class="dot gold"></span><span data-i18n="hero.chip3">HebronGuide {HG_CITIES}개 도시 연결 · {HG_TARGET}개 목표</span></div>
-        <div class="proof-chip"><span class="dot" style="background:#60a5fa;"></span><span data-i18n="hero.chip4">한국어·영어 직접 상담 · 숨겨진 비용 없음</span></div>
+        <div class="proof-chip"><span class="dot" style="background:#93c5fd;"></span><span data-i18n="hero.chip4">한국어·영어 직접 상담 · 숨겨진 비용 없음</span></div>
       </div>
     </div><!-- /hero-left -->
 
