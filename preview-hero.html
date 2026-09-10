@@ -968,18 +968,22 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 </style>
 
 <style id="hero70preview">
-@media(min-width:961px){
-  .hero-split{display:flex!important;flex-direction:column!important;align-items:center!important;gap:28px!important;max-width:1080px!important;}
-  .hero-right{width:100%!important;order:-1!important;display:block!important;}
-  .hero-visual{aspect-ratio:16/9!important;max-height:56vh!important;}
-  .hero-left{text-align:center!important;width:100%!important;max-width:840px!important;}
-  .hero-left .hero-title,.hero-left .hero-desc,.hero-left .hero-main-cta{text-align:center!important;}
-  .hero-left .hero-desc{margin-left:auto!important;margin-right:auto!important;}
-  .hero-left .hero-eyebrow{margin-left:auto!important;margin-right:auto!important;}
-  .hero-left .hero-proof{justify-content:center!important;}
-}
+/* ===== 미리보기: 상단 풀블리드 이미지 + 하단 텍스트 (모바일 포함) ===== */
+.hero{padding:0!important;min-height:auto!important;align-items:stretch!important;justify-content:flex-start!important;overflow:visible!important;}
+.hero-bg{display:none!important;}
+.hero-split{display:flex!important;flex-direction:column!important;align-items:stretch!important;max-width:none!important;width:100%!important;margin:0!important;gap:0!important;}
+.hero-right{order:-1!important;display:block!important;width:100%!important;margin:0!important;}
+.hero-visual{border-radius:0!important;box-shadow:none!important;aspect-ratio:auto!important;height:70vh!important;width:100%!important;max-height:none!important;}
+.hero-visual img{border-radius:0!important;}
+.hero-left{order:0!important;text-align:center!important;padding:40px 24px 56px!important;}
+.hero-left .hero-title,.hero-left .hero-desc,.hero-left .hero-main-cta{text-align:center!important;}
+.hero-left .hero-desc,.hero-left .hero-eyebrow{margin-left:auto!important;margin-right:auto!important;}
+.hero-left .hero-desc{max-width:640px!important;}
+.hero-left .hero-proof{justify-content:center!important;}
+.hero-lower{padding:0 24px 40px!important;}
+@media(max-width:960px){ .hero-right{display:block!important;} .hero-visual{height:54vh!important;} }
 </style>
-<div style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#C9A84C;color:#0B1628;text-align:center;font:600 13px/1.5 sans-serif;padding:8px;">미리보기 — 70% 상단 이미지 레이아웃 · 실제 홈페이지 아님</div>
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#C9A84C;color:#0B1628;text-align:center;font:600 13px/1.5 sans-serif;padding:8px;">미리보기 — 상단 풀블리드 이미지 · 실제 홈페이지 아님</div>
 </head>
 <body>
 <!-- SVG Icon Sprite -->
