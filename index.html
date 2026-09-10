@@ -3,7 +3,7 @@
      이 파일은 build.py 가 자동 생성했습니다. 직접 편집하지 마세요.
      편집할 파일: index.src.html
      재생성 명령: python build.py
-     생성 시각: 2026-09-10 13:34
+     생성 시각: 2026-09-10 14:10
      HebronGuide 도시 수: 82 / 목표 500
      ============================================================ -->
 <html lang="ko">
@@ -473,7 +473,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .vs-label{font-size:10px;font-family:var(--font-n);color:rgba(255,255,255,.45);letter-spacing:.4px;display:block;margin-top:3px;}
 .stat-cities{top:18px;right:18px;}
 .hero-lower{max-width:1240px;width:100%;margin:60px auto 0;position:relative;}
-@media(max-width:960px){.hero{padding:100px 24px 60px;}.hero-split{grid-template-columns:1fr;}.hero-left{text-align:center;}.hero-left .hero-title,.hero-left .hero-desc,.hero-left .hero-main-cta{text-align:center;}.hero-left .hero-proof{justify-content:center;}.hero-right{display:none;}}
+/* === 반응형 히어로: 데스크톱 글자 오버레이 / 모바일 상하분리(이미지 위) === */
+.hero{padding:0;min-height:auto;align-items:stretch;justify-content:flex-start;}
+.hero-bg{display:none;}
+.hero-split{display:flex;flex-direction:column;align-items:stretch;grid-template-columns:none;max-width:none;width:100%;margin:0;gap:0;position:relative;}
+.hero-right{order:-1;display:block;width:100%;margin:0;position:relative;}
+.hero-visual{border-radius:0;box-shadow:none;aspect-ratio:auto;height:56vh;width:100%;}
+.hero-visual img{border-radius:0;object-position:center;}
+.hero-visual-overlay,.hero-visual-badge,.hero-visual-stat{display:none;}
+.hero-left{order:0;text-align:center;padding:36px 24px 52px;}
+.hero-left .hero-title,.hero-left .hero-desc,.hero-left .hero-main-cta{text-align:center;}
+.hero-left .hero-eyebrow{margin:0 auto 20px;}
+.hero-left .hero-desc{margin:0 auto 26px;max-width:600px;}
+.hero-left .hero-main-cta{margin-top:24px;margin-bottom:0;}
+.hero-left .hero-proof{justify-content:center;padding-top:20px;margin-top:8px;}
+.hero-lower{margin:0 auto;padding:8px 24px 40px;}
+@media(min-width:961px){
+  .hero-visual{height:90vh;}
+  .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,40,.5) 0%,rgba(11,22,40,.3) 42%,rgba(11,22,40,.85) 100%);z-index:1;pointer-events:none;}
+  .hero-left{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 24px 40px;}
+  .hero-left .hero-desc{max-width:640px;}
+  .hero-lower{max-width:1240px;}
+}
 
 /* HERO WHY-HOOK */
 .hero-why{max-width:780px;margin:0 auto 40px;background:rgba(255,255,255,.045);border:1px solid rgba(201,168,76,.28);border-radius:20px;padding:26px 30px;text-align:left;}
@@ -1147,7 +1168,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
     <div class="hero-right">
       <div class="hero-visual">
-        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&h=700&q=85" alt="NanuriWeb — Professional Website Design" loading="eager">
+        <img src="https://images.unsplash.com/photo-1706689656095-168768dc20a5?auto=format&fit=crop&w=1600&h=1100&q=80" alt="NanuriWeb — 밝고 전문적인 맞춤 홈페이지 제작" loading="eager">
         <div class="hero-visual-overlay"></div>
         <div class="hero-visual-badge">
           <span class="vb-label">LATEST WORK</span>
