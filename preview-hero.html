@@ -3,7 +3,7 @@
      이 파일은 build.py 가 자동 생성했습니다. 직접 편집하지 마세요.
      편집할 파일: index.src.html
      재생성 명령: python build.py
-     생성 시각: 2026-09-10 12:45
+     생성 시각: 2026-09-10 13:24
      HebronGuide 도시 수: 82 / 목표 500
      ============================================================ -->
 <html lang="ko">
@@ -478,7 +478,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 /* HERO WHY-HOOK */
 .hero-why{max-width:780px;margin:0 auto 40px;background:rgba(255,255,255,.045);border:1px solid rgba(201,168,76,.28);border-radius:20px;padding:26px 30px;text-align:left;}
 .hw-q{font-size:13.5px;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.07);line-height:1.6;display:flex;align-items:flex-start;gap:8px;}
-.hw-q-bubble{flex-shrink:0;background:rgba(255,255,255,.07);border-radius:10px 10px 10px 3px;padding:6px 12px;font-size:13px;color:rgba(255,255,255,.55);font-style:italic;line-height:1.55;}
+.hw-q-bubble{flex-shrink:1;min-width:0;background:rgba(255,255,255,.07);border-radius:10px 10px 10px 3px;padding:6px 12px;font-size:13px;color:rgba(255,255,255,.55);font-style:italic;line-height:1.55;}
 .hw-q-label{font-size:10px;font-style:normal;font-family:var(--font-n);color:rgba(255,255,255,.22);letter-spacing:.5px;margin-bottom:6px;display:block;}
 .hw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 @media(max-width:620px){.hw-grid{grid-template-columns:1fr;gap:9px;}}
@@ -895,7 +895,8 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 /* 출시 알림 폼 */
 .eco-notify{margin-top:24px;background:rgba(255,255,255,.04);border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:18px 16px;}
 .eco-notify-label{font-size:12px;font-weight:700;color:#93c5fd;margin-bottom:10px;display:block;}
-.eco-notify-row{display:flex;gap:8px;}
+.eco-notify-row{display:flex;flex-direction:column;gap:8px;}
+.eco-notify-input{min-width:0;}
 .eco-notify-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:9px 13px;font-size:13px;color:white;font-family:var(--font-b);outline:none;}
 .eco-notify-input::placeholder{color:rgba(255,255,255,.25);}
 .eco-notify-input:focus{border-color:rgba(59,130,246,.5);}
@@ -1140,7 +1141,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <div class="hero-split">
 
     <div class="hero-left">
-      <div class="hero-eyebrow" data-i18n-html="hero.eyebrow">혹시 홈페이지가 없어서 더 많은 기회를 놓치고 있진 않으신가요?</div>
+      <div class="hero-eyebrow" data-i18n-html="hero.eyebrow">혹시 홈페이지가 없어 큰 기회를 놓치고 있진 않으신가요?</div>
       <h1 class="hero-title">
         <span data-i18n="hero.title1">사업체도, 교회도</span>
         <span class="hero-rot-line"><span class="gold" id="heroRot" data-i18n="hero.title2">온라인에서 첫날부터 발견됩니다</span><span class="hero-caret" id="heroCaret" aria-hidden="true"></span></span>
@@ -2263,7 +2264,6 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 
       <!-- NanuriHome 카드 (준비중) -->
       <div class="eco-card eh reveal">
-        <div class="eco-coming-badge">Coming Soon</div>
         <div class="eco-status soon"><span class="s-dot"></span><span data-i18n="eco.home.status">준비중 · 2026년 하반기</span></div>
         <div class="eco-logo"><span class="eh-accent">Nanuri</span>Home</div>
         <div class="eco-tagline" data-i18n-html="eco.home.tagline">부동산·집 관련 전문가 연결 정보 서비스<br>NanuriHome.com — 집을 찾고, 고치고, 꾸미는 모든 것</div>
@@ -2504,7 +2504,7 @@ const LANG = {
   ko: {
     'nav.sub':'한국어 · English','nav.lang.label':'언어 선택',
     'nav.plans':'요금 보기','nav.about':'회사 소개','nav.cta':'신청하기',
-    'hero.eyebrow':'혹시 홈페이지가 없어서 더 많은 기회를 놓치고 있진 않으신가요?',
+    'hero.eyebrow':'혹시 홈페이지가 없어 큰 기회를 놓치고 있진 않으신가요?',
     'hero.cta.btn':'무료 기획서 — 지금 바로 신청하기 →',
     'hero.cta.note':'기획서 확인 후 결정 · 비용 없음 · 48시간 이내 응답',
     'hero.title1':'사업체도, 교회도','hero.title2':'온라인에서 첫날부터 발견됩니다',
@@ -2800,7 +2800,7 @@ const LANG = {
   en: {
     'nav.sub':'Korean · English','nav.lang.label':'Language',
     'nav.plans':'Pricing','nav.about':'About','nav.cta':'Get Started',
-    'hero.eyebrow':'Could you be missing out on more opportunities without a website?',
+    'hero.eyebrow':'Could you be missing out on big opportunities without a website?',
     'hero.cta.btn':'Get My Free Proposal →',
     'hero.cta.note':'No commitment · Free planning doc · Reply within 48 hrs',
     'hero.title1':'Get Found. Get Customers.','hero.title2':'Professional Websites From $299',
@@ -3128,7 +3128,7 @@ const LANG = {
   es: {
     'nav.sub':'Coreano · Inglés','nav.lang.label':'Idioma',
     'nav.plans':'Precios','nav.about':'Nosotros','nav.cta':'Solicitar',
-    'hero.eyebrow':'¿Quizás estás perdiendo más oportunidades sin un sitio web?',
+    'hero.eyebrow':'¿Quizás estás perdiendo grandes oportunidades sin un sitio web?',
     'hero.cta.btn':'Quiero Mi Propuesta Gratis →',
     'hero.cta.note':'Sin compromiso · Totalmente gratis · Respuesta en 48 horas',
     'hero.title1':'Tu Negocio. Tu Iglesia.','hero.title2':'Presencia Digital desde el Primer Día',
