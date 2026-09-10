@@ -3,7 +3,7 @@
      이 파일은 build.py 가 자동 생성했습니다. 직접 편집하지 마세요.
      편집할 파일: index.src.html
      재생성 명령: python build.py
-     생성 시각: 2026-09-10 05:44
+     생성 시각: 2026-09-10 11:07
      HebronGuide 도시 수: 82 / 목표 500
      ============================================================ -->
 <html lang="ko">
@@ -462,7 +462,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,40,.97
 .hero-left .hero-proof{justify-content:flex-start;padding-top:24px;margin-top:8px;}
 .hero-right{position:relative;}
 .hero-visual{border-radius:22px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1.5px rgba(201,168,76,.2);position:relative;aspect-ratio:4/3;}
-.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block;border-radius:22px;}
+.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block;border-radius:22px;will-change:transform;}
 .hero-visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,22,40,.8) 100%);border-radius:22px;pointer-events:none;}
 .hero-visual-badge{position:absolute;bottom:18px;left:18px;background:rgba(11,22,40,.92);backdrop-filter:blur(10px);border:1px solid rgba(201,168,76,.35);border-radius:10px;padding:10px 15px;z-index:2;}
 .vb-label{font-size:9px;font-family:var(--font-n);font-weight:700;color:rgba(255,255,255,.38);letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:3px;}
@@ -1020,7 +1020,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </svg>
     <div>
       <div class="nav-wordmark"><span class="w-nanuri">Nanuri</span><span class="w-web">Web</span></div>
-      <span class="nav-sub" data-i18n="nav.sub">한국어 · EN · ES</span>
+      <span class="nav-sub" data-i18n="nav.sub">한국어 · English</span>
     </div>
   </a>
   <div style="display:flex;align-items:center;gap:4px;">
@@ -1035,10 +1035,9 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
     </button>
   </div>
   <div class="lang-switcher">
-    <span class="lang-label" data-i18n="nav.lang.label">언어 선택</span>
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('ko')">한국어</button>
-    <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <svg class="icon" aria-hidden="true" style="width:15px;height:15px;color:rgba(255,255,255,.5);margin-right:2px;"><use href="#ic-globe"/></svg>
+    <button class="lang-btn" data-lang="ko" onclick="setLang('ko')">한국어</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
   </div>
 </nav>
 
@@ -2484,7 +2483,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 /* MULTILINGUAL */
 const LANG = {
   ko: {
-    'nav.sub':'한국어 · EN · ES','nav.lang.label':'언어 선택',
+    'nav.sub':'한국어 · English','nav.lang.label':'언어 선택',
     'nav.plans':'요금 보기','nav.about':'회사 소개','nav.cta':'신청하기',
     'hero.eyebrow':'✦ 홈페이지 없어서 기회를 놓치고 있진 않으신가요?',
     'hero.cta.btn':'무료 기획서 — 지금 바로 신청하기 →',
@@ -2780,7 +2779,7 @@ const LANG = {
     'footer.home.badge':'준비중',
   },
   en: {
-    'nav.sub':'Korean · English · Español','nav.lang.label':'Language',
+    'nav.sub':'Korean · English','nav.lang.label':'Language',
     'nav.plans':'Pricing','nav.about':'About','nav.cta':'Get Started',
     'hero.eyebrow':'✦ YOUR COMPETITORS ARE ONLINE — ARE YOU?',
     'hero.cta.btn':'Get My Free Proposal →',
@@ -3108,7 +3107,7 @@ const LANG = {
     'bizplans.note':'※ All prices in USD · Startup: business within 3 years of founding',
   },
   es: {
-    'nav.sub':'Ko · En · Español','nav.lang.label':'Idioma',
+    'nav.sub':'Coreano · Inglés','nav.lang.label':'Idioma',
     'nav.plans':'Precios','nav.about':'Nosotros','nav.cta':'Solicitar',
     'hero.eyebrow':'✦ ¿TU NEGOCIO MERECE MÁS CLIENTES?',
     'hero.cta.btn':'Quiero Mi Propuesta Gratis →',
@@ -3481,7 +3480,7 @@ function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('nw-lang', lang); } catch(e) {}
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.lang-btn').forEach(b => { if (b.textContent.toLowerCase() === lang || (lang === 'ko' && b.textContent === '한국어')) b.classList.add('active'); });
+  document.querySelectorAll('.lang-btn').forEach(b => { if (b.dataset.lang === lang) b.classList.add('active'); });
   const t = LANG[lang] || LANG['ko'];
   document.querySelectorAll('[data-i18n]').forEach(el => { if (t[el.dataset.i18n]) el.textContent = hgReplace(t[el.dataset.i18n]); });
   document.querySelectorAll('[data-i18n-html]').forEach(el => { if (t[el.dataset.i18nHtml]) el.innerHTML = hgReplace(t[el.dataset.i18nHtml]); });
@@ -3497,7 +3496,6 @@ setLang((function(){
     if (saved) return saved;
     var bl = (navigator.language || 'en').substring(0, 2).toLowerCase();
     if (bl === 'ko') return 'ko';
-    if (bl === 'es') return 'es';
     return 'en';
   } catch(e) { return 'en'; }
 })());
@@ -3537,6 +3535,31 @@ setLang((function(){
 })();
 /* setLang 후 순환 재시작 (언어 전환 대응) */
 (function(){ var _s=window.setLang; if(typeof _s==='function'){ window.setLang=function(l){ _s(l); if(window.__heroRotRestart) window.__heroRotRestart(); }; } })();
+
+/* ── 히어로 이미지 패럴랙스 (사진은 프레임 안에서 고정된 듯 머무르고, 글씨는 스크롤) ── */
+(function(){
+  var frame = document.querySelector('.hero-visual');
+  var img = frame && frame.querySelector('img');
+  if(!img) return;
+  var reduce=false; try{ reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  if(reduce) return;
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var r = frame.getBoundingClientRect();
+    var vh = window.innerHeight || 1;
+    // 프레임 중심이 뷰포트 중심에서 떨어진 거리(px) → 연속적으로 부드럽게 이동
+    var delta = (r.top + r.height / 2) - vh / 2;
+    var shift = delta * -0.16;             // 패럴랙스 강도(스크롤과 반대로 이동해 제자리에 머무는 느낌)
+    var max = r.height * 0.09;             // scale(1.22) 여백 안으로 제한 → 빈 틈 방지
+    if (shift > max) shift = max; else if (shift < -max) shift = -max;
+    img.style.transform = 'scale(1.22) translateY(' + shift.toFixed(1) + 'px)';
+  }
+  function onScroll(){ if(!ticking){ ticking=true; window.requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  update();
+})();
 
 /* ── Share Bar Functions ── */
 function shareVia(p) {
