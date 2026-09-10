@@ -1689,6 +1689,83 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   </div>
 </section>
 
+<!-- LIVE DEMO — 가정교회 올인원 · 시애틀지구촌교회 라이브 데모 -->
+<style>
+.demo-section{background:linear-gradient(180deg,#0B1628 0%,#0d1a2f 100%);padding:88px 24px;}
+.demo-inner{max-width:1100px;margin:0 auto;}
+.demo-header{text-align:center;max-width:780px;margin:0 auto 46px;}
+.demo-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:24px;padding:7px 18px;margin-bottom:22px;}
+.demo-live-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:demoPulse 1.8s infinite;}
+@keyframes demoPulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.5)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.demo-h2{font-size:clamp(26px,4vw,40px);font-weight:800;color:#fff;line-height:1.25;margin:0 0 16px;}
+.demo-sub{font-size:15px;line-height:1.85;color:rgba(255,255,255,.6);margin:0 0 26px;}
+.demo-domain{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 16px;text-decoration:none;transition:.2s;}
+.demo-domain:hover{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.08);}
+.demo-domain .icon{width:18px;height:18px;color:var(--gold);}
+.demo-domain-url{font-weight:700;color:#fff;font-size:15px;letter-spacing:.3px;}
+.demo-domain-badge{font-size:10px;font-weight:700;letter-spacing:1px;color:#4ade80;background:rgba(74,222,128,.12);border-radius:20px;padding:3px 10px;text-transform:uppercase;}
+.demo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:42px;}
+.demo-card{display:flex;flex-direction:column;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 20px;text-decoration:none;transition:transform .2s,border-color .2s,background .2s;}
+.demo-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.45);background:rgba(201,168,76,.06);}
+.demo-card-icon{width:46px;height:46px;border-radius:12px;background:rgba(201,168,76,.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.demo-card-icon .icon{width:22px;height:22px;color:var(--gold-light);}
+.demo-card-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;}
+.demo-card-desc{font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.5);margin-bottom:16px;flex:1;}
+.demo-card-open{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.3px;}
+.demo-cta-row{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;text-align:center;}
+.demo-cta-text{font-size:16px;font-weight:600;color:#fff;}
+.demo-cta-btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none;transition:.2s;}
+.demo-cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);}
+@media(max-width:860px){.demo-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.demo-grid{grid-template-columns:1fr;}}
+</style>
+<section class="demo-section" id="livedemo">
+  <div class="demo-inner">
+    <div class="demo-header">
+      <span class="demo-kicker" data-i18n="demo.kicker"><span class="demo-live-dot"></span>Live Demo · 라이브 데모</span>
+      <h2 class="demo-h2" data-i18n-html="demo.h2">가정교회 올인원 — <span style="color:var(--gold);">직접 눌러 보세요</span></h2>
+      <p class="demo-sub" data-i18n="demo.sub">시애틀지구촌교회가 실제로 쓰는 사이트입니다. 홈 소개부터 가정교회(GMC), 삶공부, 교인 등록까지 — 아래 버튼을 누르면 진짜 사이트가 새 창에서 열립니다.</p>
+      <a class="demo-domain" href="https://www.ijiguchon.org/home/" target="_blank" rel="noopener">
+        <svg class="icon"><use href="#ic-globe"/></svg>
+        <span class="demo-domain-url">ijiguchon.org</span>
+        <span class="demo-domain-badge" data-i18n="demo.badge">운영 중 · LIVE</span>
+      </a>
+    </div>
+
+    <div class="demo-grid">
+      <a class="demo-card reveal" href="https://www.ijiguchon.org/home/" target="_blank" rel="noopener">
+        <div class="demo-card-icon"><svg class="icon"><use href="#ic-home"/></svg></div>
+        <div class="demo-card-title" data-i18n="demo.c1.title">홈 · 교회 소개</div>
+        <div class="demo-card-desc" data-i18n="demo.c1.desc">첫인상과 예배 안내를 한 화면에</div>
+        <span class="demo-card-open" data-i18n="demo.open">열어보기 →</span>
+      </a>
+      <a class="demo-card reveal" href="https://www.ijiguchon.org/gmc/" target="_blank" rel="noopener">
+        <div class="demo-card-icon"><svg class="icon"><use href="#ic-users"/></svg></div>
+        <div class="demo-card-title" data-i18n="demo.c2.title">GMC · 가정교회</div>
+        <div class="demo-card-desc" data-i18n="demo.c2.desc">목장·가정교회 목회 시스템</div>
+        <span class="demo-card-open" data-i18n="demo.open">열어보기 →</span>
+      </a>
+      <a class="demo-card reveal" href="https://www.ijiguchon.org/study/" target="_blank" rel="noopener">
+        <div class="demo-card-icon"><svg class="icon"><use href="#ic-edit"/></svg></div>
+        <div class="demo-card-title" data-i18n="demo.c3.title">삶공부 · 양육</div>
+        <div class="demo-card-desc" data-i18n="demo.c3.desc">온라인 성경공부와 제자훈련</div>
+        <span class="demo-card-open" data-i18n="demo.open">열어보기 →</span>
+      </a>
+      <a class="demo-card reveal" href="https://www.ijiguchon.org/register/" target="_blank" rel="noopener">
+        <div class="demo-card-icon"><svg class="icon"><use href="#ic-check-circle"/></svg></div>
+        <div class="demo-card-title" data-i18n="demo.c4.title">교인 등록 · 새가족</div>
+        <div class="demo-card-desc" data-i18n="demo.c4.desc">새가족이 온라인으로 바로 등록</div>
+        <span class="demo-card-open" data-i18n="demo.open">열어보기 →</span>
+      </a>
+    </div>
+
+    <div class="demo-cta-row">
+      <span class="demo-cta-text" data-i18n="demo.cta.text">우리 교회도 이렇게 만들 수 있습니다.</span>
+      <a href="#contact" class="demo-cta-btn" data-i18n="demo.cta.btn">무료 상담 신청 →</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ — 자주 묻는 질문 -->
 <section class="faq-section" id="faq">
   <div class="faq-inner">
@@ -2559,6 +2636,16 @@ const LANG = {
     'partners.cta.btn':'무료 상담 신청',
     'partners.cta.text2':'우리 교회도\n디지털 문을 열고 싶다면',
     'partners.cta.btn2':'지금 시작하기',
+    'demo.kicker':'Live Demo · 라이브 데모',
+    'demo.h2':'가정교회 올인원 — <span style="color:var(--gold);">직접 눌러 보세요</span>',
+    'demo.sub':'시애틀지구촌교회가 실제로 쓰는 사이트입니다. 홈 소개부터 가정교회(GMC), 삶공부, 교인 등록까지 — 아래 버튼을 누르면 진짜 사이트가 새 창에서 열립니다.',
+    'demo.badge':'운영 중 · LIVE',
+    'demo.c1.title':'홈 · 교회 소개','demo.c1.desc':'첫인상과 예배 안내를 한 화면에',
+    'demo.c2.title':'GMC · 가정교회','demo.c2.desc':'목장·가정교회 목회 시스템',
+    'demo.c3.title':'삶공부 · 양육','demo.c3.desc':'온라인 성경공부와 제자훈련',
+    'demo.c4.title':'교인 등록 · 새가족','demo.c4.desc':'새가족이 온라인으로 바로 등록',
+    'demo.open':'열어보기 →',
+    'demo.cta.text':'우리 교회도 이렇게 만들 수 있습니다.','demo.cta.btn':'무료 상담 신청 →',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 현재 {HG_CITIES}개 도시 · {HG_TARGET}개 목표<br>© 2026 Hebron Platform LLC. All rights reserved.',
     'mob.section':'페이지 바로가기',
     'mob.nav.home':'홈','mob.nav.home.desc':'처음으로 돌아가기',
@@ -2793,6 +2880,16 @@ const LANG = {
     'partners.cta.btn':'Free Consultation',
     'partners.cta.text2':'Ready to open\nyour church\'s digital door?',
     'partners.cta.btn2':'Get Started',
+    'demo.kicker':'Live Demo',
+    'demo.h2':'A house-church all-in-one — <span style="color:var(--gold);">try it yourself</span>',
+    'demo.sub':'A real, live site used by Seattle Global Village Church. From the home page to house church (GMC), life study, and member registration — tap a button and the actual site opens in a new tab.',
+    'demo.badge':'Running · LIVE',
+    'demo.c1.title':'Home · About','demo.c1.desc':'First impression and worship info in one place',
+    'demo.c2.title':'GMC · House Church','demo.c2.desc':'House-church / small-group ministry system',
+    'demo.c3.title':'Life Study · Discipleship','demo.c3.desc':'Online Bible study and discipleship',
+    'demo.c4.title':'Register · New Family','demo.c4.desc':'New members register online instantly',
+    'demo.open':'Open →',
+    'demo.cta.text':'Your church can have this too.','demo.cta.btn':'Get a free consultation →',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · {HG_CITIES} Cities &amp; Growing · Goal: {HG_TARGET}<br>© 2026 Hebron Platform LLC. All rights reserved.',
     'mob.section':'Quick Navigation',
     'mob.nav.home':'Home','mob.nav.home.desc':'Back to top',
@@ -3109,6 +3206,16 @@ const LANG = {
     'partners.cta.btn':'Consulta Gratuita',
     'partners.cta.text2':'¿Lista tu iglesia para\nabrir su puerta digital?',
     'partners.cta.btn2':'Comenzar Ahora',
+    'demo.kicker':'Demo en Vivo',
+    'demo.h2':'Iglesia en casa todo-en-uno — <span style="color:var(--gold);">pruébalo tú mismo</span>',
+    'demo.sub':'Un sitio real y activo que usa la Iglesia Global Village de Seattle. Desde la página de inicio hasta la iglesia en casa (GMC), estudio de vida y registro de miembros — toca un botón y el sitio real se abre en una pestaña nueva.',
+    'demo.badge':'Activo · LIVE',
+    'demo.c1.title':'Inicio · Nosotros','demo.c1.desc':'Primera impresión e info de servicios en un solo lugar',
+    'demo.c2.title':'GMC · Iglesia en Casa','demo.c2.desc':'Sistema de ministerio de grupos / células',
+    'demo.c3.title':'Estudio de Vida · Discipulado','demo.c3.desc':'Estudio bíblico y discipulado en línea',
+    'demo.c4.title':'Registro · Nueva Familia','demo.c4.desc':'Los nuevos miembros se registran en línea al instante',
+    'demo.open':'Abrir →',
+    'demo.cta.text':'Tu iglesia también puede tener esto.','demo.cta.btn':'Solicita una consulta gratis →',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Socio Oficial de <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · {HG_CITIES} Ciudades y Creciendo · Meta: {HG_TARGET}<br>© 2026 Hebron Platform LLC. All rights reserved.',
     'mob.section':'Navegación Rápida',
     'mob.nav.home':'Inicio','mob.nav.home.desc':'Volver al inicio',
