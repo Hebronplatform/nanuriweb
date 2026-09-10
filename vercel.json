@@ -3,12 +3,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.nanuriweb.com" }],
-      "destination": "https://nanuriweb.com/:path*",
-      "permanent": true
-    },
     { "source": "/pricing", "destination": "/#plans", "permanent": false },
     { "source": "/contact", "destination": "/#contact", "permanent": false },
     { "source": "/faq", "destination": "/#faq", "permanent": false },
