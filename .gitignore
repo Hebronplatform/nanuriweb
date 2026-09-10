@@ -1,2 +1,16 @@
 .vercel
 node_modules
+
+# 빌드 산출물 아님 — index.html은 커밋한다 (Vercel 정적 배포)
+# 편집 원본: index.src.html
+
+# ── 기밀·업무 자료 (원격/배포 공개 금지) ──
+ops/
+clients/
+Doc/
+agency/
+_claude/
+_vercel/
+01_Website & Marketing methods/
+타 웹사이트 광고/
+Vibe_Coding_Website_Guide.docx

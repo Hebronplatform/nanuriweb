@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# 내부 · 작업용 경로는 색인 제외
+Disallow: /clients/
+Disallow: /agency/
+Disallow: /ops/
+Disallow: /shared/
+Disallow: /99_Archive/
+Disallow: /*.src.html$
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+Sitemap: https://nanuriweb.com/sitemap.xml

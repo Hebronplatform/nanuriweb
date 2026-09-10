@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Navy background -->
+  <rect width="512" height="512" rx="96" fill="#0B1628"/>
+
+  <!-- Globe (centered, scaled up from nav logo) -->
+  <g transform="translate(256,230)">
+    <defs>
+      <clipPath id="gc"><circle cx="0" cy="0" r="120"/></clipPath>
+    </defs>
+    <g clip-path="url(#gc)" stroke="#C9A84C" stroke-width="2.5" fill="none" opacity="0.85">
+      <ellipse cx="0" cy="0" rx="120" ry="36"/>
+      <ellipse cx="0" cy="-36" rx="104" ry="30"/>
+      <ellipse cx="0" cy="36" rx="104" ry="30"/>
+      <line x1="0" y1="-120" x2="0" y2="120"/>
+      <path d="M0,-120 C-72,-60 -72,60 0,120"/>
+      <path d="M0,-120 C72,-60 72,60 0,120"/>
+    </g>
+    <circle cx="0" cy="0" r="120" stroke="#C9A84C" stroke-width="3" fill="none"/>
+    <!-- Nodes -->
+    <circle cx="0" cy="-120" r="7" fill="#C9A84C"/>
+    <circle cx="104" cy="-60" r="7" fill="#C9A84C"/>
+    <circle cx="104" cy="60" r="7" fill="#C9A84C"/>
+    <line x1="0" y1="-120" x2="104" y2="-60" stroke="#C9A84C" stroke-width="2" stroke-dasharray="6 5" opacity="0.6"/>
+    <line x1="104" y1="-60" x2="104" y2="60" stroke="#C9A84C" stroke-width="2" stroke-dasharray="6 5" opacity="0.6"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="256" y="406" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="800" fill="rgba(255,255,255,0.92)" text-anchor="middle" letter-spacing="-1">Nanuri</text>
+  <text x="256" y="468" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800" fill="#C9A84C" text-anchor="middle" letter-spacing="2">WEB</text>
+
+  <!-- Gold accent bar bottom -->
+  <rect x="80" y="492" width="352" height="6" rx="3" fill="#C9A84C" opacity="0.7"/>
+</svg>
