@@ -3,7 +3,7 @@
      이 파일은 build.py 가 자동 생성했습니다. 직접 편집하지 마세요.
      편집할 파일: index.src.html
      재생성 명령: python build.py
-     생성 시각: 2026-09-10 16:21
+     생성 시각: 2026-09-10 18:19
      HebronGuide 도시 수: 82 / 목표 500
      ============================================================ -->
 <html lang="ko">
@@ -751,20 +751,29 @@ hr.pdiv{border:none;border-top:1px solid rgba(255,255,255,.08);margin:16px 0;}
 .stmt-sub{font-size:14px;color:rgba(255,255,255,.42);line-height:1.9;max-width:560px;margin:0 auto 32px;position:relative;}
 .stmt-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:30px;padding:10px 22px;font-size:13px;font-weight:700;color:var(--gold);position:relative;}
 
-.portfolio-card{background:var(--navy);border-radius:var(--rl);padding:28px 32px;margin-bottom:16px;}
-.pc-live{font-size:10px;font-family:var(--font-n);font-weight:700;color:var(--emerald);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:20px;justify-items:center;}
+/* 제작 사례 = 셀폰 목업 (핵심만) */
+.portfolio-card{position:relative;width:100%;max-width:200px;min-height:330px;
+  background:linear-gradient(172deg,#1a3c6d,#0d2143);
+  border:1px solid rgba(255,255,255,.12);border-radius:32px;
+  padding:38px 18px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;
+  box-shadow:0 24px 50px rgba(0,0,0,.42), inset 0 0 0 5px rgba(255,255,255,.03);}
+.portfolio-card::before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);
+  width:50px;height:6px;border-radius:4px;background:rgba(255,255,255,.22);}
+.pc-live,.pc-partner,.pc-planning{font-size:10px;font-family:var(--font-n);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:6px;}
+.pc-live{color:var(--emerald);}
 .pc-live::before{content:'●';animation:pulse 1.6s ease-in-out infinite;}
-.pc-name{font-family:var(--font-d);font-size:20px;font-weight:700;color:white;margin-bottom:4px;}
-.pc-sub{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:14px;display:block;}
-.pc-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--gold);font-weight:700;text-decoration:none;}
-.pc-link:hover{color:var(--gold-light);}
+.pc-partner{color:#60a5fa;}
+.pc-planning{color:var(--gold);}
+.pc-name{font-family:var(--font-d);font-size:19px;font-weight:700;color:white;margin-bottom:6px;}
+.pc-sub{font-size:11.5px;color:rgba(255,255,255,.5);margin-bottom:10px;display:block;line-height:1.5;word-break:keep-all;}
+.pc-desc{font-size:11px;color:rgba(255,255,255,.64);line-height:1.6;margin:0 0 16px;word-break:keep-all;}
+.pc-link{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--gold);font-weight:700;text-decoration:none;border:1px solid rgba(201,168,76,.5);border-radius:22px;padding:9px 16px;}
+.pc-link:hover{color:var(--gold-light);background:rgba(201,168,76,.1);}
 .pc-progress{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:var(--rl);padding:20px 24px;}
 .pc-progress-label{font-size:10px;font-family:var(--font-n);font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
 .pc-progress-text{font-size:13px;color:var(--gray);line-height:1.7;}
-.portfolio-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;}
-.pc-planning{font-size:10px;font-family:var(--font-n);font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
-.pc-partner{font-size:10px;font-family:var(--font-n);font-weight:700;color:#60a5fa;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
-@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;}.portfolio-card{max-width:240px;}}
 
 /* STEPS */
 .steps-wrap{display:flex;flex-direction:column;gap:0;}
@@ -1397,7 +1406,7 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
           </svg>
         </div>
         <h3 class="why-card-title" data-i18n-html="why.c2.title">HebronGuide 현재 82개 도시<br>자동 등재 — 어디도 없는 혜택</h3>
-        <p class="why-card-body" data-i18n-html="why.c2.body">홈페이지 완성 즉시 <strong>현재 82개 도시</strong> 한인 네트워크에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.</p>
+        <p class="why-card-body" data-i18n-html="why.c2.body">홈페이지 완성 즉시 <strong>‘글로벌 환대 플랫폼’</strong>에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.</p>
         <div class="why-card-note" data-i18n="why.c2.note">→ HebronGuide.com — 한인 최대 글로벌 디렉터리</div>
       </div>
 
@@ -2147,19 +2156,22 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
           <div class="portfolio-card">
             <div class="pc-live">LIVE</div>
             <div class="pc-name">에덴교회</div>
-            <span class="pc-sub">Global Mission Church of Greater Seattle Dallas · Texas, USA · Growth Plan</span>
+            <span class="pc-sub">Eden Church · Dallas, TX</span>
+            <p class="pc-desc">달라스의 한인 교회. 예배·소그룹·공동체 소식을 한 홈페이지에 담았습니다.</p>
             <a href="https://edendallas.org" target="_blank" class="pc-link">edendallas.org →</a>
           </div>
           <div class="portfolio-card">
             <div class="pc-partner">PARTNER PLATFORM</div>
             <div class="pc-name">HebronGuide</div>
-            <span class="pc-sub">한인 커뮤니티 디렉토리 · 82개 도시 · 북미 전역</span>
+            <span class="pc-sub">글로벌 환대 플랫폼 · 82개 도시</span>
+            <p class="pc-desc">전 세계 한인을 잇는 환대 플랫폼. 낯선 도시에서도 한인 교회·사업체를 찾아줍니다.</p>
             <a href="https://hebronguide.com" target="_blank" class="pc-link">hebronguide.com →</a>
           </div>
           <div class="portfolio-card">
             <div class="pc-planning">기획 진행 중</div>
-            <div class="pc-name">미주 한인회</div>
-            <span class="pc-sub">Korean American Assoc. · USA</span>
+            <div class="pc-name">페더럴웨이 한인회</div>
+            <span class="pc-sub">Federal Way Korean Assoc. · WA</span>
+            <p class="pc-desc">페더럴웨이 지역 한인들을 잇는 한인회. 홈페이지를 함께 기획하고 있습니다.</p>
             <span class="pc-link" style="color:var(--gold);opacity:.6;cursor:default;">준비 중 ···</span>
           </div>
         </div>
@@ -2722,7 +2734,7 @@ const LANG = {
     'why.c1.note':'→ 당회·장로회 기획서도 함께 준비해 드립니다',
     'why.c2.tag':'독점 혜택 · Exclusive',
     'why.c2.title':'HebronGuide 현재 82개 도시<br>자동 등재 — 어디도 없는 혜택',
-    'why.c2.body':'홈페이지 완성 즉시 <strong>현재 82개 도시</strong> 한인 네트워크에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.',
+    'why.c2.body':'홈페이지 완성 즉시 <strong>‘글로벌 환대 플랫폼’</strong>에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.',
     'why.c2.note':'→ HebronGuide.com — 한인 최대 글로벌 디렉터리',
     'why.c3.tag':'Korean · English',
     'why.c3.title':'한국어·영어 직접 상담 · 48시간 응답<br>만족할 때까지 무제한 수정',
@@ -2822,7 +2834,7 @@ const LANG = {
     'fork.church.tag':'Church Plant $299 · House Church Free Consult',
     'fork.biz.title':'Business · Org · Group','fork.biz.desc':'Solo $299 · Growth $999 · Pro $1,799',
     'fork.biz.tag':'Startups under 3 yrs: 50% off',
-    'hero.chip1':'Global Mission Church of Greater Seattle Dallas — edendallas.org live',
+    'hero.chip1':'Eden Church — edendallas.org live',
     'hero.chip2':'Korean American Assoc. — in planning',
     'hero.chip3':'HebronGuide — 82+ cities connected (growing to 500)',
     'hero.chip4':'Multilingual support · No hidden fees',
@@ -2895,7 +2907,7 @@ const LANG = {
     'trust.nohidden':'No Hidden Fees','trust.revisions':'Revisions Until Satisfied',
     'trust.korean':'Korean-Friendly Service','trust.response':'48-hr Response Guaranteed',
     'testimonial.quote':'I didn\'t know where to start, but the team walked me through everything step by step. The result was beyond what I expected.',
-    'testimonial.name':'Lead Pastor, Global Mission Church of Greater Seattle Dallas',
+    'testimonial.name':'Lead Pastor, Eden Church (Dallas)',
     'about.eyebrow':'About · Company Info',
     'about.title':'What is<br><em>NanuriWeb?</em>',
     'about.desc':'<strong>Nanuri</strong> means "sharing together" in Korean — the belief that good things grow when we give them away. It\'s the same spirit of <strong>hospitality</strong> that drives HebronGuide.com: making every person feel at home, no matter where they are. We\'re not just a web agency. We start with you, grow with you, and <strong>stay with you every step of the way</strong>.',
@@ -2966,7 +2978,7 @@ const LANG = {
     'why.c1.note':'→ Deacon board / elder board proposal included',
     'why.c2.tag':'Exclusive Benefit · Exclusive',
     'why.c2.title':'HebronGuide — Now 82 Cities<br>Auto-Listed — A Benefit No One Else Offers',
-    'why.c2.body':'The moment your website is complete, you are automatically listed in <strong>82 cities</strong> of the Korean network. HebronGuide is still expanding toward its goal of 500 cities. This is an exclusive NanuriWeb benefit that Ministry Brands and Card&amp;Beyond cannot offer.',
+    'why.c2.body':'The moment your website is complete, you are automatically listed on the <strong>‘Global Hospitality Platform.’</strong> HebronGuide is still expanding toward its goal of 500 cities. This is an exclusive NanuriWeb benefit that Ministry Brands and Card&amp;Beyond cannot offer.',
     'why.c2.note':'→ HebronGuide.com — Largest global Korean directory',
     'why.c3.tag':'Korean · English',
     'why.c3.title':'Multilingual Support · 48hr Response<br>Unlimited Revisions Until You\'re Satisfied',
