@@ -3,7 +3,7 @@
      이 파일은 build.py 가 자동 생성했습니다. 직접 편집하지 마세요.
      편집할 파일: index.src.html
      재생성 명령: python build.py
-     생성 시각: 2026-09-15 02:25
+     생성 시각: 2026-09-16 00:00
      HebronGuide 도시 수: 82 / 목표 500
      ============================================================ -->
 <html lang="ko">
@@ -1004,6 +1004,13 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
 .kakao-float-btn svg{width:28px;height:28px;}
 .kakao-float-lbl{font-size:10px;font-family:var(--font-n);font-weight:700;color:#3C1E1E;background:#FEE500;border-radius:20px;padding:2px 8px;box-shadow:0 2px 8px rgba(0,0,0,.12);}
 @media(max-width:600px){.kakao-float{bottom:18px;right:16px;}}
+/* 떠 있는 이메일 상담 버튼 */
+.mail-float{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;}
+.mail-float-btn{width:52px;height:52px;background:var(--navy);border:1px solid rgba(201,168,76,.45);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:transform .2s,box-shadow .2s;}
+.mail-float:hover .mail-float-btn{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.28);}
+.mail-float-btn svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.mail-float-lbl{font-size:10px;font-family:var(--font-n);font-weight:700;color:#fff;background:var(--navy);border:1px solid rgba(201,168,76,.35);border-radius:20px;padding:2px 9px;box-shadow:0 2px 8px rgba(0,0,0,.16);white-space:nowrap;}
+@media(max-width:600px){.mail-float{bottom:18px;right:16px;}}
 </style>
 </head>
 <body>
@@ -1375,53 +1382,94 @@ footer{background:#060d18;padding:36px 24px;text-align:center;border-top:1px sol
   <div class="why-inner">
     <div class="why-header">
       <span class="why-kicker" data-i18n="why.kicker">왜 NanuriWeb인가 · Why NanuriWeb</span>
-      <h2 class="why-h2" data-i18n-html="why.h2">템플릿 서비스와는 다릅니다<br><span style="color:var(--gold);">한인 사업체 및 교회 전문 맞춤 제작</span></h2>
-      <p class="why-sub" data-i18n="why.sub">Ministry Brands·Wix·Squarespace는 모든 교회가 같아 보입니다. 우리는 처음부터 당신의 사업체 및 교회만을 위해 설계합니다.</p>
+      <h2 class="why-h2" data-i18n-html="why.h2">교회가 주인인 홈페이지<br><span style="color:var(--gold);">가정교회를 아는 제작</span></h2>
+      <p class="why-sub" data-i18n="why.sub">비슷한 템플릿이 아니라, 우리 교회의 사역 구조에 맞춰 만듭니다.</p>
     </div>
 
     <div class="why-grid">
 
-      <!-- 카드 1: 맞춤 제작 vs 템플릿 -->
+      <!-- 카드 1: 교회 소유 -->
       <div class="why-card reveal">
-        <div class="why-card-tag vs" data-i18n="why.c1.tag">vs 템플릿 서비스</div>
+        <div class="why-card-tag vs" data-i18n="why.c1.tag">소유권 · Ownership</div>
         <div class="why-card-icon" style="background:rgba(11,22,40,.07);">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="3"/>
-            <path d="M3 9h18M9 21V9"/>
+            <rect x="4" y="10.5" width="16" height="10.5" rx="2.5"/>
+            <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/>
           </svg>
         </div>
-        <h3 class="why-card-title" data-i18n="why.c1.title">100% 완전 맞춤 제작</h3>
-        <p class="why-card-body" data-i18n="why.c1.body">Ministry Brands·Wix는 수백 교회가 똑같은 템플릿을 씁니다. NanuriWeb은 처음부터 당신의 사업체 및 교회만을 위해 설계합니다. 비슷한 홈페이지? 없습니다.</p>
-        <div class="why-card-note" data-i18n="why.c1.note">→ 당회·장로회 기획서도 함께 준비해 드립니다</div>
+        <h3 class="why-card-title" data-i18n="why.c1.title">교회가 소유합니다</h3>
+        <p class="why-card-body" data-i18n="why.c1.body">도메인·교인 데이터·사이트 코드가 모두 교회 것입니다. 업체를 바꾸셔도 그대로 가져가실 수 있습니다.</p>
+        <div class="why-card-note" data-i18n="why.c1.note">→ 플랫폼에 갇히지 않습니다</div>
       </div>
 
-      <!-- 카드 2: HebronGuide 독점 혜택 (featured) -->
+      <!-- 카드 2: 가정교회 특화 (featured) -->
       <div class="why-card featured reveal">
-        <div class="why-card-tag excl" data-i18n="why.c2.tag">독점 혜택 · Exclusive</div>
+        <div class="why-card-tag excl" data-i18n="why.c2.tag">가정교회 · House Church</div>
         <div class="why-card-icon" style="background:rgba(201,168,76,.15);">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9.5"/>
-            <path d="M12 2.5C9.5 6 9.5 18 12 21.5M12 2.5C14.5 6 14.5 18 12 21.5"/>
-            <path d="M2.5 12Q7 10 12 12Q17 14 21.5 12"/>
+            <path d="M3.5 10.5 12 4l8.5 6.5V20a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/>
+            <path d="M9.5 21v-5.5h5V21"/>
           </svg>
         </div>
-        <h3 class="why-card-title" data-i18n-html="why.c2.title">HebronGuide 현재 82개 도시<br>자동 등재 — 어디도 없는 혜택</h3>
-        <p class="why-card-body" data-i18n-html="why.c2.body">홈페이지 완성 즉시 <strong>‘글로벌 환대 플랫폼’</strong>에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.</p>
-        <div class="why-card-note" data-i18n="why.c2.note">→ HebronGuide.com — 한인 최대 글로벌 디렉터리</div>
+        <h3 class="why-card-title" data-i18n="why.c2.title">가정교회를 압니다</h3>
+        <p class="why-card-body" data-i18n="why.c2.body">목장 소개, 삶공부 신청, 처음 오신 분(VIP) 환영 흐름이 처음부터 들어 있습니다.</p>
+        <div class="why-card-note" data-i18n="why.c2.note">→ 시애틀지구촌교회에서 실제로 쓰는 구조</div>
       </div>
 
-      <!-- 카드 3: 한국어 전담 파트너십 -->
+      <!-- 카드 3: 폰 앱 -->
       <div class="why-card reveal">
-        <div class="why-card-tag spec" data-i18n="why.c3.tag">Korean · English</div>
+        <div class="why-card-tag spec" data-i18n="why.c3.tag">폰 앱 · App</div>
         <div class="why-card-icon" style="background:rgba(26,127,90,.1);">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
-            <path d="M12 7V3M8 7V4M16 7V4"/>
+            <rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/>
+            <path d="M10.5 18.5h3"/>
           </svg>
         </div>
-        <h3 class="why-card-title" data-i18n-html="why.c3.title">한국어·영어 직접 상담 · 48시간 응답<br>만족할 때까지 무제한 수정</h3>
-        <p class="why-card-body" data-i18n="why.c3.body">한국어·영어로 직접 소통합니다. 언어 장벽 없이 오픈 후에도 관리비 내에서 끝까지 함께합니다. 숨겨진 비용, 없습니다.</p>
-        <div class="why-card-note" data-i18n="why.c3.note">→ 일회 제작비 · 관리비 투명 공개</div>
+        <h3 class="why-card-title" data-i18n="why.c3.title">폰 앱까지 함께</h3>
+        <p class="why-card-body" data-i18n="why.c3.body">교인들이 폰 홈 화면에 설치해 쓰는 교인 앱(PWA)을 함께 만듭니다. 앱스토어 등록비가 없습니다.</p>
+        <div class="why-card-note" data-i18n="why.c3.note">→ 설치는 링크 한 번이면 됩니다</div>
+      </div>
+
+      <!-- 카드 4: 한국어·영어 -->
+      <div class="why-card reveal">
+        <div class="why-card-tag spec" data-i18n="why.c4.tag">Korean · English</div>
+        <div class="why-card-icon" style="background:rgba(26,127,90,.1);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9.5"/>
+            <path d="M12 2.5C9.5 6 9.5 18 12 21.5M12 2.5C14.5 6 14.5 18 12 21.5M2.5 12h19"/>
+          </svg>
+        </div>
+        <h3 class="why-card-title" data-i18n="why.c4.title">한국어·영어 한 사이트</h3>
+        <p class="why-card-body" data-i18n="why.c4.body">부모 세대와 자녀 세대, 이웃이 같은 사이트를 각자의 언어로 봅니다.</p>
+        <div class="why-card-note" data-i18n="why.c4.note">→ 상담도 한국어·영어로</div>
+      </div>
+
+      <!-- 카드 5: 요금 -->
+      <div class="why-card reveal">
+        <div class="why-card-tag vs" data-i18n="why.c5.tag">요금 · Pricing</div>
+        <div class="why-card-icon" style="background:rgba(11,22,40,.07);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v18"/>
+            <path d="M16.5 7.5c0-1.7-2-2.8-4.5-2.8S7.5 5.8 7.5 7.5s2 2.6 4.5 3 4.5 1.3 4.5 3-2 2.8-4.5 2.8-4.5-1.1-4.5-2.8"/>
+          </svg>
+        </div>
+        <h3 class="why-card-title" data-i18n="why.c5.title">기능마다 월 요금이 붙지 않습니다</h3>
+        <p class="why-card-body" data-i18n="why.c5.body">플랜에 들어 있는 기능은 추가 월 요금 없이 쓰시고, 관리비는 정해진 금액만 받습니다.</p>
+        <div class="why-card-note" data-i18n="why.c5.note">→ 일회 제작비 · 관리비 투명 공개</div>
+      </div>
+
+      <!-- 카드 6: HebronGuide 자동 등재 -->
+      <div class="why-card reveal">
+        <div class="why-card-tag excl" data-i18n="why.c6.tag">포함 · Included</div>
+        <div class="why-card-icon" style="background:rgba(201,168,76,.15);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s7-5.2 7-10.5a7 7 0 1 0-14 0C5 15.8 12 21 12 21z"/>
+            <circle cx="12" cy="10.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="why-card-title" data-i18n="why.c6.title">HebronGuide 자동 등재</h3>
+        <p class="why-card-body" data-i18n-html="why.c6.body">완성과 동시에 <strong>글로벌 환대 플랫폼</strong>의 현재 82개 도시 네트워크에 등재됩니다(500개 도시를 향해 확장 중).</p>
+        <div class="why-card-note" data-i18n="why.c6.note">→ HebronGuide.com — 글로벌 환대 플랫폼</div>
       </div>
 
     </div>
@@ -2723,6 +2771,7 @@ const LANG = {
     'demo.c4.title':'교인 등록 · 새가족','demo.c4.desc':'새가족이 온라인으로 바로 등록',
     'demo.open':'열어보기 →',
     'demo.cta.text':'우리 교회도 이렇게 만들 수 있습니다.','demo.cta.btn':'무료 상담 신청 →',
+    'float.email':'이메일 상담',
     'portfolio.gmc.name':'시애틀지구촌교회','portfolio.gmc.sub':'GMC of Greater Seattle · WA',
     'portfolio.gmc.desc':'성경적 가정교회. 홈페이지와 폰에 설치하는 교인 앱을 한/영으로 운영합니다.',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 현재 82개 도시 · 500개 목표<br>© 2026 Hebron Platform LLC. All rights reserved.',
@@ -2755,20 +2804,32 @@ const LANG = {
     'phil.hwandae.item2':'<strong>모든 페이지, 모든 문장에 그 마음이 배어 있어야 합니다</strong> — 철학은 소개 페이지 한 곳에만 있지 않습니다',
     'phil.hwandae.item3':'<strong>HebronGuide 82개 도시에서 실천해온 정신</strong> — 500개 도시를 향해 지금도 확장 중이며, 그 환대를 웹사이트로 이어갑니다',
     'why.kicker':'왜 NanuriWeb인가 · Why NanuriWeb',
-    'why.h2':'템플릿 서비스와는 다릅니다<br><span style="color:var(--gold);">한인 사업체 및 교회 전문 맞춤 제작</span>',
-    'why.sub':'Ministry Brands·Wix·Squarespace는 모든 교회가 같아 보입니다. 우리는 처음부터 당신의 사업체 및 교회만을 위해 설계합니다.',
-    'why.c1.tag':'vs 템플릿 서비스',
-    'why.c1.title':'100% 완전 맞춤 제작',
-    'why.c1.body':'Ministry Brands·Wix는 수백 교회가 똑같은 템플릿을 씁니다. NanuriWeb은 처음부터 당신의 사업체 및 교회만을 위해 설계합니다. 비슷한 홈페이지? 없습니다.',
-    'why.c1.note':'→ 당회·장로회 기획서도 함께 준비해 드립니다',
-    'why.c2.tag':'독점 혜택 · Exclusive',
-    'why.c2.title':'HebronGuide 현재 82개 도시<br>자동 등재 — 어디도 없는 혜택',
-    'why.c2.body':'홈페이지 완성 즉시 <strong>‘글로벌 환대 플랫폼’</strong>에 자동 등재됩니다. HebronGuide는 500개 도시를 목표로 지금도 확장 중입니다. Ministry Brands도, Card&amp;Beyond도 줄 수 없는 NanuriWeb만의 독점 혜택입니다.',
-    'why.c2.note':'→ HebronGuide.com — 한인 최대 글로벌 디렉터리',
-    'why.c3.tag':'Korean · English',
-    'why.c3.title':'한국어·영어 직접 상담 · 48시간 응답<br>만족할 때까지 무제한 수정',
-    'why.c3.body':'한국어·영어로 직접 소통합니다. 언어 장벽 없이 오픈 후에도 관리비 내에서 끝까지 함께합니다. 숨겨진 비용, 없습니다.',
-    'why.c3.note':'→ 일회 제작비 · 관리비 투명 공개',
+    'why.h2':'교회가 주인인 홈페이지<br><span style="color:var(--gold);">가정교회를 아는 제작</span>',
+    'why.sub':'비슷한 템플릿이 아니라, 우리 교회의 사역 구조에 맞춰 만듭니다.',
+    'why.c1.tag':'소유권 · Ownership',
+    'why.c1.title':'교회가 소유합니다',
+    'why.c1.body':'도메인·교인 데이터·사이트 코드가 모두 교회 것입니다. 업체를 바꾸셔도 그대로 가져가실 수 있습니다.',
+    'why.c1.note':'→ 플랫폼에 갇히지 않습니다',
+    'why.c2.tag':'가정교회 · House Church',
+    'why.c2.title':'가정교회를 압니다',
+    'why.c2.body':'목장 소개, 삶공부 신청, 처음 오신 분(VIP) 환영 흐름이 처음부터 들어 있습니다.',
+    'why.c2.note':'→ 시애틀지구촌교회에서 실제로 쓰는 구조',
+    'why.c3.tag':'폰 앱 · App',
+    'why.c3.title':'폰 앱까지 함께',
+    'why.c3.body':'교인들이 폰 홈 화면에 설치해 쓰는 교인 앱(PWA)을 함께 만듭니다. 앱스토어 등록비가 없습니다.',
+    'why.c3.note':'→ 설치는 링크 한 번이면 됩니다',
+    'why.c4.tag':'Korean · English',
+    'why.c4.title':'한국어·영어 한 사이트',
+    'why.c4.body':'부모 세대와 자녀 세대, 이웃이 같은 사이트를 각자의 언어로 봅니다.',
+    'why.c4.note':'→ 상담도 한국어·영어로',
+    'why.c5.tag':'요금 · Pricing',
+    'why.c5.title':'기능마다 월 요금이 붙지 않습니다',
+    'why.c5.body':'플랜에 들어 있는 기능은 추가 월 요금 없이 쓰시고, 관리비는 정해진 금액만 받습니다.',
+    'why.c5.note':'→ 일회 제작비 · 관리비 투명 공개',
+    'why.c6.tag':'포함 · Included',
+    'why.c6.title':'HebronGuide 자동 등재',
+    'why.c6.body':'완성과 동시에 <strong>글로벌 환대 플랫폼</strong>의 현재 82개 도시 네트워크에 등재됩니다(500개 도시를 향해 확장 중).',
+    'why.c6.note':'→ HebronGuide.com — 글로벌 환대 플랫폼',
     'urgency.text':'동시에 진행하는 프로젝트는 <strong>3건까지만</strong> 받습니다 — 한 분씩 깊게 섬기기 위해서입니다',
     'urgency.cta':'무료 상담 신청 →',
     'share.eyebrow':'Share · 공유하기','share.heading':'NanuriWeb을 소개해 주세요',
@@ -2878,7 +2939,7 @@ const LANG = {
     'indus.c7.type':'Clinic · Dental · Oriental Med','indus.c7.hook':'A clinic website that<br>brings in new patients on autopilot',
     'indus.note':'Other industries welcome too','indus.cta':'Get a free proposal →',
     'hero.why.qlabel':'Frequently Asked',
-    'hero.why.qbubble':'"Why not just use Squarespace, Wix, or hire a cheap local freelancer?"',
+    'hero.why.qbubble':'"A local student or a website company could do it cheaper — why NanuriWeb?"',
     'hero.why.item1.strong':'Immediate exposure in 82 cities upon launch',
     'hero.why.item1.vs':'Regular agencies require <s>separate promotion</s> after completion <em style="color:rgba(201,168,76,.5);font-style:normal;">(82 cities now → goal: 500)</em>',
     'hero.why.item2.strong':'A multilingual partner with you until the end',
@@ -2969,6 +3030,7 @@ const LANG = {
     'demo.c4.title':'Register · New Family','demo.c4.desc':'New members register online instantly',
     'demo.open':'Open →',
     'demo.cta.text':'Your church can have this too.','demo.cta.btn':'Get a free consultation →',
+    'float.email':'Email us',
     'portfolio.gmc.name':'GMC of Greater Seattle','portfolio.gmc.sub':'Korean house church · Seattle, WA',
     'portfolio.gmc.desc':'A biblical house church. Website plus an installable member app, in Korean and English.',
     'footer.sub':'<a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a><br>Official Partner of <a href="https://hebronguide.com" target="_blank">HebronGuide.com</a> · 82 Cities &amp; Growing · Goal: 500<br>© 2026 Hebron Platform LLC. All rights reserved.',
@@ -3001,20 +3063,32 @@ const LANG = {
     'phil.hwandae.item2':'<strong>That heart must be woven into every page, every sentence</strong> — our philosophy does not live on just one About page',
     'phil.hwandae.item3':'<strong>The spirit we have practiced across HebronGuide\'s 82 cities</strong> — still expanding toward 500 cities, and carried forward through every website we build',
     'why.kicker':'Why NanuriWeb · Why NanuriWeb',
-    'why.h2':'Different from template services<br><span style="color:var(--gold);">Tailored for Korean churches &amp; businesses</span>',
-    'why.sub':'Ministry Brands · Wix · Squarespace make every church look the same. We design exclusively for your church or business from the very start.',
-    'why.c1.tag':'vs Template Services',
-    'why.c1.title':'100% Fully Custom',
-    'why.c1.body':'Ministry Brands and Wix have hundreds of churches using the exact same templates. NanuriWeb designs exclusively for your church or business from day one. Look-alike websites? Not here.',
-    'why.c1.note':'→ Deacon board / elder board proposal included',
-    'why.c2.tag':'Exclusive Benefit · Exclusive',
-    'why.c2.title':'HebronGuide — Now 82 Cities<br>Auto-Listed — A Benefit No One Else Offers',
-    'why.c2.body':'The moment your website is complete, you are automatically listed on the <strong>‘Global Hospitality Platform.’</strong> HebronGuide is still expanding toward its goal of 500 cities. This is an exclusive NanuriWeb benefit that Ministry Brands and Card&amp;Beyond cannot offer.',
-    'why.c2.note':'→ HebronGuide.com — Largest global Korean directory',
-    'why.c3.tag':'Korean · English',
-    'why.c3.title':'Multilingual Support · 48hr Response<br>Unlimited Revisions Until You\'re Satisfied',
-    'why.c3.body':'We communicate directly in Korean or English — whichever works for you. No language barriers. We stay with you after launch, within your maintenance plan. No hidden costs.',
-    'why.c3.note':'→ One-time build fee · Transparent maintenance cost',
+    'why.h2':'A website your church owns<br><span style="color:var(--gold);">built by people who know house church</span>',
+    'why.sub':'Not one more template — built around the way your church actually ministers.',
+    'why.c1.tag':'Ownership',
+    'why.c1.title':'Your church owns it',
+    'why.c1.body':'The domain, the member data and the site code all belong to the church. Change providers and everything goes with you.',
+    'why.c1.note':'→ No platform lock-in',
+    'why.c2.tag':'House Church',
+    'why.c2.title':'We know house church',
+    'why.c2.body':'House-church pages, life-study signup and a welcome flow for first-time guests are built in from the start.',
+    'why.c2.note':'→ The same structure GMC of Greater Seattle uses',
+    'why.c3.tag':'Phone App',
+    'why.c3.title':'A phone app as well',
+    'why.c3.body':'We build a member app (PWA) your people install on the phone home screen. No app store fees.',
+    'why.c3.note':'→ Installs from a single link',
+    'why.c4.tag':'Korean · English',
+    'why.c4.title':'One site, two languages',
+    'why.c4.body':'Parents, children and neighbors read the same site, each in their own language.',
+    'why.c4.note':'→ Consultation in Korean or English',
+    'why.c5.tag':'Pricing',
+    'why.c5.title':'No monthly fee per feature',
+    'why.c5.body':'Features included in your plan carry no extra monthly fee, and maintenance stays the amount we agreed on.',
+    'why.c5.note':'→ One build fee · maintenance published openly',
+    'why.c6.tag':'Included',
+    'why.c6.title':'Listed on HebronGuide',
+    'why.c6.body':'The moment your site launches it is listed across the <strong>global hospitality platform</strong> network of 82 cities (growing toward 500).',
+    'why.c6.note':'→ HebronGuide.com — global hospitality platform',
     'urgency.text':'We take on <strong>only 3 projects</strong> at a time — so we can serve each one deeply',
     'urgency.cta':'Free Consultation →',
     'share.eyebrow':'Share','share.heading':'Share NanuriWeb',
@@ -3383,6 +3457,16 @@ async function registerHome() {
     </svg>
   </div>
   <span class="kakao-float-lbl">카카오톡</span>
+</a>
+<!-- 이메일 상담 Float Button -->
+<a href="mailto:hello@nanuriweb.com?subject=NanuriWeb%20%EB%AC%B4%EB%A3%8C%20%EC%83%81%EB%8B%B4%20%EC%8B%A0%EC%B2%AD" class="mail-float" aria-label="이메일 상담 · Email consultation">
+  <div class="mail-float-btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="2.5" y="5" width="19" height="14" rx="2.5"/>
+      <path d="m3.5 6.5 8.5 6 8.5-6"/>
+    </svg>
+  </div>
+  <span class="mail-float-lbl" data-i18n="float.email">이메일 상담</span>
 </a>
 </body>
 </html>
