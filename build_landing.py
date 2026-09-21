@@ -546,7 +546,7 @@ section{{padding:74px 0;}}
     <a href="https://hebronguide.com" target="_blank" rel="noopener">HebronGuide</a>
   </div>
   <div style="margin-bottom:10px;">다른 업종 보기: {siblings}</div>
-  <div>Hebron Platform LLC · Seattle, WA · <a href="mailto:hello@nanuriweb.com">hello@nanuriweb.com</a></div>
+  <div>Hebron Platform LLC · Seattle, WA · <a href="mailto:hebronplatform@gmail.com">hebronplatform@gmail.com</a></div>
   <div style="margin-top:8px;">&copy; 2026 Hebron Platform LLC. All rights reserved.</div>
 </div></footer>
 
@@ -604,7 +604,7 @@ def build_page(ind, all_inds):
                 "name": "NanuriWeb",
                 "legalName": "Hebron Platform LLC",
                 "url": SITE + "/",
-                "email": "hello@nanuriweb.com",
+                "email": "hebronplatform@gmail.com",
             },
             "areaServed": {
                 "@type": "City", "name": "Seattle",
