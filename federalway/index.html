@@ -148,7 +148,8 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
 }
 .logo-mark {
   width: 44px; height: 44px;
-  background: var(--gold);
+  background: transparent;
+  object-fit: contain;
   color: var(--navy);
   border-radius: 50%;
   display: flex;
@@ -1650,6 +1651,8 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
    ═══════════════════════════════════════════════════════════ */
 .kakao-fab {
   position: fixed;
+  touch-action: none;           /* 끌 때 화면이 같이 안 움직이게 */
+  cursor: grab;
   bottom: 24px;
   right: 24px;
   z-index: 90;
@@ -1659,6 +1662,8 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
   padding: 12px 18px 12px 14px;
   background: #FEE500;
   color: #191919;
+  user-select: none;
+  -webkit-user-select: none;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
@@ -1792,7 +1797,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
 <header class="header">
   <div class="header-inner">
     <a href="#home" class="logo-area" aria-label="홈으로">
-      <div class="logo-mark">한</div>
+      <img class="logo-mark" src="/federalway/logo.png" alt="페더럴웨이 한인회 로고" width="44" height="44" loading="eager"/>
       <div class="logo-text">
         <div class="name" data-i18n="brand.name">페더럴웨이 한인회</div>
         <div class="name-en">Federal Way Korean American Association</div>
@@ -2561,7 +2566,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
   <div class="footer-inner">
     <div class="footer-col">
       <div class="footer-brand">
-        <div class="logo-mark">한</div>
+        <img class="logo-mark" src="/federalway/logo.png" alt="페더럴웨이 한인회 로고" width="44" height="44" loading="eager"/>
         <div>
           <div class="footer-brand-text" data-i18n="brand.name">페더럴웨이 한인회</div>
           <div class="footer-brand-en">Federal Way Korean American Association</div>
@@ -3102,5 +3107,74 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 </script>
 
+
+<script>
+/* 카카오 버튼 — 끌어서 옮기기 (2026-09-21)
+   떠 있는 버튼은 늘 뭔가를 가린다. 가리는 자리는 사람마다 다르므로
+   우리가 정하지 않고 옮기게 둔다. 옮긴 자리는 그 브라우저에 남는다. */
+(function(){
+  var fab = document.querySelector('.kakao-fab');
+  if(!fab) return;
+  var KEY = 'fwkaa_fab_pos';
+
+  function place(x, y){
+    var w = fab.offsetWidth, h = fab.offsetHeight;
+    // 화면 밖으로 나가지 않게 — 옮겼다가 못 찾으면 곤란하다
+    x = Math.max(8, Math.min(x, window.innerWidth  - w - 8));
+    y = Math.max(8, Math.min(y, window.innerHeight - h - 8));
+    fab.style.left = x + 'px';
+    fab.style.top  = y + 'px';
+    fab.style.right = 'auto';
+    fab.style.bottom = 'auto';
+  }
+  try{
+    var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if(saved && typeof saved.x === 'number') place(saved.x, saved.y);
+  }catch(e){}
+
+  var dragging = false, moved = false, sx = 0, sy = 0, ox = 0, oy = 0;
+
+  function down(e){
+    var p = e.touches ? e.touches[0] : e;
+    var r = fab.getBoundingClientRect();
+    dragging = true; moved = false;
+    sx = p.clientX; sy = p.clientY; ox = r.left; oy = r.top;
+    fab.style.cursor = 'grabbing';
+  }
+  function move(e){
+    if(!dragging) return;
+    var p = e.touches ? e.touches[0] : e;
+    var dx = p.clientX - sx, dy = p.clientY - sy;
+    // 6px 넘게 움직이면 '끌기', 아니면 '누르기'
+    if(!moved && Math.abs(dx) + Math.abs(dy) < 6) return;
+    moved = true;
+    if(e.cancelable) e.preventDefault();
+    place(ox + dx, oy + dy);
+  }
+  function up(){
+    if(!dragging) return;
+    dragging = false;
+    fab.style.cursor = 'grab';
+    if(moved){
+      var r = fab.getBoundingClientRect();
+      try{ localStorage.setItem(KEY, JSON.stringify({x:r.left, y:r.top})); }catch(e){}
+    }
+  }
+  // 끌고 난 뒤의 클릭은 링크를 열지 않는다
+  fab.addEventListener('click', function(e){ if(moved){ e.preventDefault(); } });
+
+  fab.addEventListener('mousedown', down);
+  window.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', up);
+  fab.addEventListener('touchstart', down, {passive:true});
+  window.addEventListener('touchmove', move, {passive:false});
+  window.addEventListener('touchend', up);
+
+  // 창 크기가 바뀌어도 화면 안에 남게
+  window.addEventListener('resize', function(){
+    if(fab.style.left){ var r = fab.getBoundingClientRect(); place(r.left, r.top); }
+  });
+})();
+</script>
 </body>
 </html>
