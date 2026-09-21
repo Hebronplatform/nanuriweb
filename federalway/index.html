@@ -145,7 +145,10 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
   display: flex;
   align-items: center;
   gap: 14px;
+  min-width: 0;          /* 좁을 때 글자 칸이 줄어들 수 있게 */
 }
+.logo-mark { flex: none; }
+.logo-text { min-width: 0; }
 .logo-mark {
   width: 44px; height: 44px;
   background: transparent;
@@ -162,6 +165,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
 .logo-text .name {
   color: var(--white);
   font-size: 18px;
+  white-space: nowrap;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -1780,11 +1784,20 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
   .programs-grid { grid-template-columns: 1fr; }
   .donation-banner { padding: 56px 0; }
   .donation-banner h2 { font-size: 26px; }
-  .logo-text .name { font-size: 15px; }
+  .logo-text .name { font-size: 15px; white-space: nowrap; }
   .logo-text .name-en { display: none; }
+  .header-inner { padding: 12px 16px; gap: 10px; }
+  .logo-area { gap: 9px; }
+  .logo-mark { width: 36px; height: 36px; }
+  .footer-brand .logo-mark { width: 36px; height: 36px; }
   .hg-link span { display: none; }
   .hg-link { padding: 6px 8px; }
   .login-link { display: none; }
+}
+@media (max-width: 400px) {
+  .logo-text .name { font-size: 13.5px; }
+  .logo-mark { width: 32px; height: 32px; }
+  .header-inner { padding: 10px 12px; gap: 8px; }
 }
 </style>
 </head>
@@ -2047,7 +2060,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
          data-i18n="leaders.ask">사진 한 장만 올려 주시면 이 자리가 채워집니다.</p>
       <p style="font-size:14px;line-height:1.8;color:#5b6b7c;margin:0 0 18px;"
          data-i18n="leaders.ask2">30초면 됩니다. 모아서 보내지 않으셔도 됩니다. 각자 올리시면 됩니다.</p>
-      <a href="mailto:hello@nanuriweb.com?subject=%ED%8E%98%EB%8D%94%EB%9F%B4%EC%9B%A8%EC%9D%B4%20%ED%95%9C%EC%9D%B8%ED%9A%8C%20%EC%9E%84%EC%9B%90%20%EC%82%AC%EC%A7%84&body=%EC%9D%B4%EB%A6%84%3A%0D%0A%EC%A7%81%ED%95%A8%3A%0D%0A%0D%0A%28%EC%82%AC%EC%A7%84%20%ED%95%9C%20%EC%9E%A5%EC%9D%84%20%EC%B2%A8%EB%B6%80%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%BC%EA%B5%B4%EC%9D%B4%20%EC%9E%98%20%EB%82%98%EC%98%A8%20%EA%B2%83%EC%9D%B4%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%29%0D%0A" target="_blank" rel="noopener"
+      <a href="mailto:hebronplatform@gmail.com?subject=%ED%8E%98%EB%8D%94%EB%9F%B4%EC%9B%A8%EC%9D%B4%20%ED%95%9C%EC%9D%B8%ED%9A%8C%20%EC%9E%84%EC%9B%90%20%EC%82%AC%EC%A7%84&body=%EC%9D%B4%EB%A6%84%3A%0D%0A%EC%A7%81%ED%95%A8%3A%0D%0A%0D%0A%28%EC%82%AC%EC%A7%84%20%ED%95%9C%20%EC%9E%A5%EC%9D%84%20%EC%B2%A8%EB%B6%80%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%BC%EA%B5%B4%EC%9D%B4%20%EC%9E%98%20%EB%82%98%EC%98%A8%20%EA%B2%83%EC%9D%B4%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%29%0D%0A" target="_blank" rel="noopener"
          style="display:inline-block;background:#1B4D7E;color:#fff;text-decoration:none;
                 border-radius:999px;padding:14px 30px;font-size:16px;font-weight:700;min-height:48px;"
          data-i18n="leaders.askbtn">사진 보내기</a>
