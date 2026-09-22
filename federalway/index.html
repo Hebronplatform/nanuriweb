@@ -376,7 +376,6 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
 }
 .hero-photo {
   aspect-ratio: 4 / 5;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Over_Dumas_Bay_%28Unsplash%29.jpg/1280px-Over_Dumas_Bay_%28Unsplash%29.jpg");
   background:
     linear-gradient(135deg, rgba(10,26,58,0.5), rgba(198,40,40,0.3)),
     repeating-linear-gradient(45deg, rgba(0,0,0,0.05) 0 12px, rgba(0,0,0,0.08) 12px 24px);
@@ -1805,6 +1804,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--navy); line-
    전부 실제 페더럴웨이 지역 · 라이선스 열린 사진.
    한인회 사진이 들어오면 이 줄만 바꾸면 된다. */
 .hero-photo, .program-photo { background-size: cover !important; background-position: center !important; }
+.hero-photo { background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Over_Dumas_Bay_%28Unsplash%29.jpg/1280px-Over_Dumas_Bay_%28Unsplash%29.jpg") !important; }
 .hero-photo::after, .program-photo::after{
   content:''; position:absolute; inset:0; pointer-events:none;
   background:linear-gradient(180deg, rgba(10,26,58,.10), rgba(10,26,58,.42));
