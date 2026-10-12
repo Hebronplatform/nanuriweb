@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NanuriWeb 템플릿 미리보기 · 교회 · 사업체 · 기관</title>
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/index.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   NanuriWeb · 교회 · 사업체 · 기관 템플릿 10종 미리보기 (1단계)
+   자료 한 벌 (church.js / business.js / organization.js) ×
+   디자인 10종 (구성 10 · 대표 톤 하나씩)
+   2단계 확장 계획: 각 구성의 다른 톤 추가로 20종 · 3단계 30종
+   원리는 GMC_POLISH_PRINCIPLES.md 기본값을 따른다.
+   서체: Pretendard 한 종 + 영문 Geist + 명조는 이름·구절만.
+   ============================================================ */
+
+/* --- 기본 토큰 (템플릿이 재정의) --- */
+:root{
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: "Geist", "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif KR", "Gowun Batang", serif;
+
+  --ink: #14213d;
+  --ink-2: #4a5568;
+  --bg: #ffffff;
+  --bg-2: #faf7f2;
+  --line: rgba(20,33,61,.10);
+  --accent: #B8924A;
+  --accent-soft: rgba(184,146,74,.10);
+
+  --wrap: 1200px;
+  --pad: 24px;
+  --r: 14px;
+  --shadow: 0 10px 30px rgba(20,33,61,.06);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing:-.01em;
+  line-height:1.65;
+}
+a{color:inherit; text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{max-width:100%;display:block}
+
+/* --- 상단 컨트롤 바 (미리보기 툴) --- */
+.chrome{
+  position: sticky; top:0; z-index:50;
+  background: #0f172a; color:#fff;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.chrome-inner{
+  max-width: 1400px; margin:0 auto;
+  padding: 10px 16px;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items:center;
+}
+.chrome-title{
+  display:flex; align-items:center; gap:10px;
+  font-weight: 700; letter-spacing:-.02em; font-size:15px;
+}
+.chrome-title small{
+  font-family: var(--font-mono);
+  font-size:10px; letter-spacing:.16em; text-transform: uppercase;
+  color: #cbd5e1; font-weight:500;
+}
+.chrome-tabs{ display:flex; gap:6px; flex-wrap:wrap }
+.chrome-tabs button{
+  padding: 8px 14px; border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.75);
+  font-size: 13px; font-weight:600;
+  border: 1px solid rgba(255,255,255,.08);
+  transition: background .15s;
+}
+.chrome-tabs button:hover{background: rgba(255,255,255,.12)}
+.chrome-tabs button[aria-pressed="true"]{
+  background: #fff; color:#0f172a; border-color: #fff;
+}
+.chrome-designs{
+  display:flex; gap:4px; flex-wrap:wrap;
+  padding: 6px; border-radius: 10px;
+  background: rgba(255,255,255,.05);
+  max-width: 100%;
+}
+.chrome-designs button{
+  min-width: 34px; height: 30px; padding: 0 8px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight:600;
+  color: rgba(255,255,255,.7);
+  transition: background .15s;
+}
+.chrome-designs button:hover{background: rgba(255,255,255,.08)}
+.chrome-designs button[aria-pressed="true"]{
+  background: #fff; color:#0f172a;
+}
+.chrome-meta{
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 8px 16px; font-size: 12px; color: #cbd5e1;
+  max-width: 1400px; margin: 0 auto;
+  display:flex; gap:16px; flex-wrap:wrap; align-items:center;
+}
+.chrome-meta strong{color:#fff; font-weight:600}
+.chrome-meta .chip{
+  display:inline-block; padding: 2px 8px; border-radius: 999px;
+  background: rgba(255,255,255,.08); color:#e2e8f0;
+  font-family: var(--font-mono); letter-spacing:.08em; font-size:10px; text-transform: uppercase;
+}
+@media (max-width: 900px){
+  .chrome-inner{ grid-template-columns: 1fr; }
+}
+
+/* --- 예시 데이터 뱃지 --- */
+.preview-bar{
+  background: #fef3c7; color: #78350f;
+  padding: 8px 16px; text-align: center;
+  font-size: 12.5px; letter-spacing:-.005em;
+}
+.preview-bar strong{font-weight:700}
+
+/* --- 사이트 미리보기 공통 뼈대 --- */
+.site{ background: var(--bg); color: var(--ink) }
+.wrap{ max-width: var(--wrap); margin: 0 auto; padding: 0 var(--pad) }
+
+/* 소제목 리듬: 영문 eyebrow → 한글 제목 → 짧은 설명 */
+.eyebrow{
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing:.16em; text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.h-section{
+  margin: .4em 0 .3em;
+  font-weight: 800; letter-spacing:-.028em; line-height:1.2;
+  font-size: clamp(24px, 3.2vw, 36px);
+}
+.section-desc{
+  color: var(--ink-2); max-width: 62ch;
+  word-break: keep-all;
+}
+.section-more{
+  margin-top: 20px; display:inline-flex; align-items:center; gap:8px;
+  font-weight: 600; color: var(--ink);
+  border-bottom: 1px solid transparent;
+}
+.section-more:hover{ border-color: var(--ink) }
+.section-more::after{ content:"→"; font-family: var(--font-mono) }
+
+/* 상단 사이트 네비 (템플릿 안) */
+.site-nav{
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: relative; z-index: 2;
+}
+.site-nav-inner{
+  max-width: var(--wrap); margin: 0 auto;
+  padding: 18px var(--pad);
+  display: grid; grid-template-columns: auto 1fr auto; align-items:center; gap: 24px;
+}
+.brand{ display:flex; align-items:center; gap:10px }
+.brand-mark{
+  width: 34px; height: 34px; border-radius: 8px;
+  background: var(--accent-soft); color: var(--accent);
+  display:grid; place-items:center;
+  font-family: var(--font-mono); font-weight:700; font-size: 14px;
+}
+.brand-name{
+  font-family: var(--font-serif);
+  font-weight: 800; letter-spacing:-.02em; font-size: 18px;
+}
+.brand-en{
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing:.14em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.site-menu{
+  display: flex; gap: 22px; justify-content:center;
+  font-size: 14px; font-weight: 600;
+}
+.site-menu a{ opacity:.8 }
+.site-cta{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 10px 16px; border-radius: 10px;
+  background: var(--ink); color: var(--bg);
+  font-size: 14px; font-weight: 700;
+}
+
+/* 히어로 */
+.hero{ padding: 72px 0 40px }
+.hero-inner{ display: grid; gap: 28px }
+.hero-eyebrow{ font-family: var(--font-mono); letter-spacing:.16em; font-size:11px; text-transform:uppercase; color: var(--accent); font-weight:600 }
+.hero-title{
+  font-weight: 800; letter-spacing:-.038em; line-height:1.1;
+  font-size: clamp(36px, 6vw, 68px);
+  margin: 8px 0 18px;
+}
+.hero-title .name-serif{ font-family: var(--font-serif); font-weight: 800 }
+.hero-lead{ font-size: 18px; color: var(--ink-2); max-width: 56ch; word-break: keep-all }
+.hero-verse{
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: 15px; line-height:1.7; color: var(--ink-2);
+  border-left: 2px solid var(--accent);
+  padding: 4px 0 4px 14px;
+  margin-top: 22px; max-width: 46ch;
+  word-break: keep-all;
+}
+.hero-verse .ref{
+  display:block; margin-top: 6px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing:.12em;
+  color: var(--ink-2); text-transform: uppercase; font-weight: 500;
+}
+.hero-actions{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 30px }
+.btn{
+  display:inline-flex; align-items:center; gap: 8px;
+  padding: 12px 20px; border-radius: 10px;
+  font-weight: 700; font-size: 14.5px;
+  transition: transform .1s;
+}
+.btn-primary{ background: var(--ink); color: var(--bg) }
+.btn-outline{ border: 1px solid var(--line); color: var(--ink) }
+.btn:hover{ transform: translateY(-1px) }
+.hero-media{
+  aspect-ratio: 5/4;
+  border-radius: var(--r);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  display:grid; place-items:center; color: var(--ink-2);
+  font-family: var(--font-mono); font-size: 12px; letter-spacing:.12em; text-transform: uppercase;
+  overflow:hidden;
+  position:relative;
+}
+.hero-media::before{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(135deg, var(--accent-soft), transparent 60%);
+}
+.hero-media span{ position:relative; z-index:1 }
+
+/* 정보 카드 4칸 */
+.info-cards{
+  padding: 12px 0 48px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+}
+.info-card{
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: var(--r);
+  padding: 22px 20px;
+  transition: box-shadow .15s, transform .15s;
+}
+.info-card:hover{ box-shadow: var(--shadow); transform: translateY(-2px) }
+.info-card .ic-eyebrow{
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing:.14em;
+  text-transform: uppercase; color: var(--accent); font-weight:600;
+}
+.info-card .ic-ko{
+  margin: 6px 0 10px;
+  font-size: 16px; font-weight: 700; letter-spacing:-.018em;
+}
+.info-card .ic-value{
+  font-size: 22px; font-weight: 800; letter-spacing:-.03em;
+  font-family: var(--font-mono);
+}
+@media (max-width: 900px){
+  .info-cards{ grid-template-columns: repeat(2, 1fr) }
+}
+@media (max-width: 520px){
+  .info-cards{ grid-template-columns: 1fr }
+}
+
+/* 소개 블록 */
+.about{ padding: 56px 0; background: var(--bg-2) }
+.about-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 48px }
+.about-block h3{
+  margin: 8px 0 14px;
+  font-weight: 800; letter-spacing:-.024em; line-height:1.25;
+  font-size: clamp(22px, 2.4vw, 30px);
+}
+.about-block p{ color: var(--ink-2); word-break: keep-all; max-width: 52ch }
+.about-block .sign{
+  display:inline-block; margin-top: 14px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing:.08em;
+  color: var(--ink); font-weight: 600;
+}
+@media (max-width: 780px){ .about-grid{ grid-template-columns: 1fr; gap: 32px } }
+
+/* 카테고리별 콘텐츠: 목장/삶공부/새세대(교회), 메뉴/영업시간/후기(사업체), 사업/공지/행사(기관) */
+.cat-section{ padding: 56px 0 }
+.cat-section + .cat-section{ padding-top: 12px }
+
+.list{ margin-top: 24px; display: grid; gap: 12px }
+.list li{
+  list-style: none;
+  padding: 16px 18px; border: 1px solid var(--line);
+  border-radius: 10px; background: var(--bg);
+  display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items:baseline;
+}
+.list li .meta{
+  font-family: var(--font-mono); font-size: 11px; letter-spacing:.12em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.list li .lead{ font-weight: 700 }
+.list li .sub{ color: var(--ink-2); font-size: 13.5px; margin-top: 2px; word-break: keep-all }
+
+.grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 18px }
+.grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px }
+.grid-4{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 18px }
+@media (max-width: 900px){
+  .grid-3, .grid-4{ grid-template-columns: 1fr 1fr }
+}
+@media (max-width: 620px){
+  .grid-2, .grid-3, .grid-4{ grid-template-columns: 1fr }
+}
+.item{
+  padding: 20px; border: 1px solid var(--line);
+  border-radius: var(--r); background: var(--bg);
+}
+.item .num{
+  font-family: var(--font-mono); font-size: 12px; letter-spacing:.14em;
+  color: var(--accent); font-weight: 700;
+}
+.item h4{
+  margin: 6px 0 8px; font-weight: 800; letter-spacing:-.02em;
+  font-size: 17px;
+}
+.item .sub{ font-size: 13px; color: var(--ink-2); word-break: keep-all }
+.item .en{
+  display:block; margin-top:4px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing:.12em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+
+.pull{
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px; margin: 24px 0;
+  background: var(--accent-soft);
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: 15.5px;
+  word-break: keep-all;
+}
+
+/* 후원/헌금/CTA */
+.give{ padding: 56px 0; background: var(--bg-2) }
+.give-inner{ display:grid; grid-template-columns: 1fr 1fr; gap: 40px }
+@media (max-width: 780px){ .give-inner{ grid-template-columns: 1fr } }
+.give-methods{ display:grid; gap: 12px; margin-top: 20px }
+.give-methods .m{
+  padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg);
+}
+.give-methods .m .t{ font-weight: 700 }
+.give-methods .m .n{ font-size: 13px; color: var(--ink-2); margin-top: 2px }
+.receipt-note{
+  margin-top: 20px; padding: 14px 16px;
+  border: 1px dashed var(--line); border-radius: 10px;
+  font-size: 13px; color: var(--ink-2); word-break: keep-all;
+}
+.receipt-note .lab{
+  display:inline-block; padding: 1px 8px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing:.12em; text-transform: uppercase;
+  font-weight: 700; margin-right: 6px;
+}
+
+/* 정책·안내 */
+.policy{ padding: 40px 0 }
+.policy-grid{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px }
+@media (max-width: 900px){ .policy-grid{ grid-template-columns: 1fr } }
+.policy .p-item{
+  padding: 20px; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg);
+}
+.policy .p-item h5{
+  margin: 0 0 6px; font-weight: 800; font-size: 15px; letter-spacing:-.018em;
+}
+.policy .p-item p{ color: var(--ink-2); font-size: 13.5px; word-break: keep-all; margin: 0 }
+.policy .draft{
+  display:inline-block; padding: 2px 8px; border-radius: 999px;
+  background: #fef3c7; color: #78350f;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing:.12em; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 10px;
+}
+
+/* 하단 CTA 밴드 */
+.cta-band{
+  padding: 40px 0; text-align: center;
+  border-top: 1px solid var(--line);
+}
+.cta-band .h{
+  font-weight: 800; letter-spacing:-.03em; font-size: clamp(24px, 3vw, 34px);
+  margin-bottom: 8px;
+}
+.cta-band .s{ color: var(--ink-2); margin-bottom: 22px; word-break: keep-all }
+
+/* 푸터 */
+.foot{
+  padding: 32px 0 48px; border-top: 1px solid var(--line);
+  background: var(--bg-2);
+  font-size: 13px; color: var(--ink-2);
+}
+.foot-inner{ display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px }
+@media (max-width: 780px){ .foot-inner{ grid-template-columns: 1fr; gap: 24px } }
+.foot h6{
+  font-size: 11px; font-family: var(--font-mono); letter-spacing:.16em; text-transform: uppercase;
+  color: var(--ink); font-weight: 700; margin: 0 0 10px;
+}
+.foot a{ display:block; padding: 3px 0; opacity:.85 }
+.foot a:hover{ opacity: 1 }
+
+/* ============================================================
+   디자인 10종 (1단계 · 구성 10 · 대표 톤 하나씩)
+   구성 축(10): 01 클래식 · 03 큰 사진 · 05 좌우 분할 · 07 여정 넘버 ·
+              09 커뮤니티 앞 · 11 소식 중심 · 13 환영 중심 ·
+              15 모던 그리드 · 17 이야기·나눔 · 19 한/영 병행
+   확장 계획: 각 구성의 다른 톤(짝수 번호) 추가 → 2단계 20종 · 3단계 30종
+   짝수 번호 CSS 정의는 확장 대비로 남겨둠 (지금은 미노출)
+   ============================================================ */
+
+/* 01 · 클래식 4카드 · 따뜻 (크림 남색 골드) */
+body[data-template="01"]{
+  --ink:#14213d; --ink-2:#4a5b7a;
+  --bg:#ffffff; --bg-2:#f5efe3;
+  --accent:#B8924A; --accent-soft:rgba(184,146,74,.10);
+  --line: rgba(20,33,61,.10);
+}
+
+/* 02 · 클래식 4카드 · 시원 (화이트 딥블루 세이지) */
+body[data-template="02"]{
+  --ink:#0a2540; --ink-2:#48607f;
+  --bg:#ffffff; --bg-2:#eef4f2;
+  --accent:#6f8f7f; --accent-soft:rgba(111,143,127,.14);
+  --line: rgba(10,37,64,.10);
+}
+
+/* 03 · 큰 사진 히어로 · 따뜻 */
+body[data-template="03"]{
+  --ink:#231512; --ink-2:#5a4a44;
+  --bg:#ffffff; --bg-2:#faf4ec;
+  --accent:#a15a3b; --accent-soft:rgba(161,90,59,.10);
+  --line: rgba(35,21,18,.10);
+}
+body[data-template="03"] .hero-media{ aspect-ratio: 16/10 }
+
+/* 04 · 큰 사진 히어로 · 시원 */
+body[data-template="04"]{
+  --ink:#0e1a2b; --ink-2:#4a5a72;
+  --bg:#ffffff; --bg-2:#eaeef4;
+  --accent:#2c6cbf; --accent-soft:rgba(44,108,191,.10);
+  --line: rgba(14,26,43,.10);
+}
+body[data-template="04"] .hero-media{ aspect-ratio: 16/10 }
+
+/* 05 · 좌우 분할 · 따뜻 */
+body[data-template="05"]{
+  --ink:#1a1a1a; --ink-2:#575757;
+  --bg:#fdfaf4; --bg-2:#f3ebd8;
+  --accent:#8b6b3a; --accent-soft:rgba(139,107,58,.12);
+  --line: rgba(26,26,26,.10);
+}
+body[data-template="05"] .hero-inner{ grid-template-columns: 1.1fr 1fr; align-items:center }
+@media (max-width: 780px){ body[data-template="05"] .hero-inner{ grid-template-columns: 1fr } }
+
+/* 06 · 좌우 분할 · 시원 */
+body[data-template="06"]{
+  --ink:#0c1826; --ink-2:#4a5b70;
+  --bg:#ffffff; --bg-2:#eef2f5;
+  --accent:#3a7f8f; --accent-soft:rgba(58,127,143,.10);
+  --line: rgba(12,24,38,.10);
+}
+body[data-template="06"] .hero-inner{ grid-template-columns: 1fr 1.05fr; align-items:center }
+@media (max-width: 780px){ body[data-template="06"] .hero-inner{ grid-template-columns: 1fr } }
+
+/* 07 · 여정 넘버 · 따뜻 */
+body[data-template="07"]{
+  --ink:#2b1e15; --ink-2:#5c4b3f;
+  --bg:#fffdf7; --bg-2:#f6ecd8;
+  --accent:#8f5a2a; --accent-soft:rgba(143,90,42,.12);
+  --line: rgba(43,30,21,.10);
+}
+body[data-template="07"] .item .num{ font-size: 22px; font-weight: 800; color: var(--accent) }
+
+/* 08 · 여정 넘버 · 시원 */
+body[data-template="08"]{
+  --ink:#0a1a2b; --ink-2:#48607b;
+  --bg:#ffffff; --bg-2:#eaf1f5;
+  --accent:#26608f; --accent-soft:rgba(38,96,143,.10);
+  --line: rgba(10,26,43,.10);
+}
+body[data-template="08"] .item .num{ font-size: 22px; font-weight: 800; color: var(--accent) }
+
+/* 09 · 커뮤니티 앞 · 따뜻 */
+body[data-template="09"]{
+  --ink:#1a1a1a; --ink-2:#565247;
+  --bg:#ffffff; --bg-2:#f2ecdb;
+  --accent:#a08453; --accent-soft:rgba(160,132,83,.12);
+  --line: rgba(26,26,26,.10);
+}
+
+/* 10 · 커뮤니티 앞 · 시원 */
+body[data-template="10"]{
+  --ink:#122032; --ink-2:#4e627a;
+  --bg:#ffffff; --bg-2:#eaf0f4;
+  --accent:#3b6da3; --accent-soft:rgba(59,109,163,.10);
+  --line: rgba(18,32,50,.10);
+}
+
+/* 11 · 소식 중심 · 따뜻 */
+body[data-template="11"]{
+  --ink:#221a12; --ink-2:#5a4d3f;
+  --bg:#ffffff; --bg-2:#f5ebd6;
+  --accent:#7a5528; --accent-soft:rgba(122,85,40,.12);
+  --line: rgba(34,26,18,.10);
+}
+body[data-template="11"] .hero{ padding: 48px 0 24px }
+
+/* 12 · 소식 중심 · 시원 */
+body[data-template="12"]{
+  --ink:#0f1e2e; --ink-2:#4c5f78;
+  --bg:#ffffff; --bg-2:#eef2f6;
+  --accent:#3c7994; --accent-soft:rgba(60,121,148,.10);
+  --line: rgba(15,30,46,.10);
+}
+body[data-template="12"] .hero{ padding: 48px 0 24px }
+
+/* 13 · 환영 중심 · 따뜻 */
+body[data-template="13"]{
+  --ink:#1c1409; --ink-2:#5b4a37;
+  --bg:#fffcf3; --bg-2:#f4e8ca;
+  --accent:#c48a3a; --accent-soft:rgba(196,138,58,.12);
+  --line: rgba(28,20,9,.10);
+}
+body[data-template="13"] .hero-title{ font-size: clamp(38px, 6.5vw, 76px); letter-spacing:-.04em }
+
+/* 14 · 환영 중심 · 시원 */
+body[data-template="14"]{
+  --ink:#0c1e2f; --ink-2:#4a5f79;
+  --bg:#f7fafb; --bg-2:#e6eef2;
+  --accent:#5a8fa5; --accent-soft:rgba(90,143,165,.14);
+  --line: rgba(12,30,47,.10);
+}
+body[data-template="14"] .hero-title{ font-size: clamp(38px, 6.5vw, 76px); letter-spacing:-.04em }
+
+/* 15 · 모던 그리드 · 따뜻 */
+body[data-template="15"]{
+  --ink:#1a1a1a; --ink-2:#585858;
+  --bg:#ffffff; --bg-2:#f4efe6;
+  --accent:#9a7a3a; --accent-soft:rgba(154,122,58,.12);
+  --line: rgba(26,26,26,.08);
+  --r: 6px;
+}
+body[data-template="15"] .info-cards{ grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
+body[data-template="15"] .info-card{ border: 0; border-right: 1px solid var(--line); border-radius: 0 }
+body[data-template="15"] .info-card:last-child{ border-right: 0 }
+
+/* 16 · 모던 그리드 · 시원 */
+body[data-template="16"]{
+  --ink:#0e1c2f; --ink-2:#4a5c76;
+  --bg:#ffffff; --bg-2:#eef2f6;
+  --accent:#276b9a; --accent-soft:rgba(39,107,154,.10);
+  --line: rgba(14,28,47,.08);
+  --r: 6px;
+}
+body[data-template="16"] .info-cards{ grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
+body[data-template="16"] .info-card{ border: 0; border-right: 1px solid var(--line); border-radius: 0 }
+body[data-template="16"] .info-card:last-child{ border-right: 0 }
+
+/* 17 · 이야기·나눔 · 따뜻 */
+body[data-template="17"]{
+  --ink:#231c14; --ink-2:#5b4a37;
+  --bg:#fffcf5; --bg-2:#f6ecd6;
+  --accent:#a06a2a; --accent-soft:rgba(160,106,42,.12);
+  --line: rgba(35,28,20,.10);
+}
+
+/* 18 · 이야기·나눔 · 시원 */
+body[data-template="18"]{
+  --ink:#0e1e30; --ink-2:#4a5e78;
+  --bg:#ffffff; --bg-2:#ecf1f5;
+  --accent:#3a7a9a; --accent-soft:rgba(58,122,154,.10);
+  --line: rgba(14,30,48,.10);
+}
+
+/* 19 · 한/영 병행 · 따뜻 */
+body[data-template="19"]{
+  --ink:#1a1408; --ink-2:#5c4a35;
+  --bg:#ffffff; --bg-2:#f5ecd8;
+  --accent:#a37a3a; --accent-soft:rgba(163,122,58,.12);
+  --line: rgba(26,20,8,.10);
+}
+body[data-template="19"] .bilingual-en{ display: block !important }
+
+/* 20 · 한/영 병행 · 시원 */
+body[data-template="20"]{
+  --ink:#0f1e2f; --ink-2:#4a5e78;
+  --bg:#ffffff; --bg-2:#eaf0f4;
+  --accent:#356f95; --accent-soft:rgba(53,111,149,.10);
+  --line: rgba(15,30,47,.10);
+}
+body[data-template="20"] .bilingual-en{ display: block !important }
+
+/* 기본은 영문 병행 텍스트 숨김 (19·20만 표시) */
+.bilingual-en{ display: none; font-family: var(--font-mono); font-size: 12px; letter-spacing:.06em; color: var(--ink-2); margin-top: 4px }
+
+</style>
+</head>
+
+<body data-template="01" data-category="church">
+
+<!-- 미리보기 안내 뱃지 -->
+<div class="preview-bar">
+  <strong>NanuriWeb 템플릿 미리보기</strong> ·
+  예시 데이터입니다 · 실존 조직 아님 ·
+  법률 문안은 변호사 검토 전 초안
+</div>
+
+<!-- 상단 컨트롤 바 -->
+<div class="chrome" role="toolbar" aria-label="템플릿 미리보기 도구">
+  <div class="chrome-inner">
+    <div class="chrome-title">
+      NanuriWeb <small>Template Preview</small>
+    </div>
+    <div class="chrome-tabs" role="group" aria-label="자료 종류">
+      <button data-cat="church"       aria-pressed="true">교회</button>
+      <button data-cat="business"     aria-pressed="false">사업체</button>
+      <button data-cat="organization" aria-pressed="false">기관 · 한인회</button>
+    </div>
+    <div class="chrome-designs" role="group" aria-label="디자인 번호">
+      <!-- 채워짐: 01~20 -->
+    </div>
+  </div>
+  <div class="chrome-meta">
+    <span class="chip" id="chipCat">교회</span>
+    <span class="chip" id="chipT">01</span>
+    <span><strong id="tName">클래식 4카드 · 따뜻</strong></span>
+    <span id="tFit">이런 곳에 잘 맞습니다: 처음 오신 분이 예배 시간과 오시는 길을 먼저 찾는 교회</span>
+  </div>
+</div>
+
+<!-- 사이트 미리보기 본문 -->
+<main class="site" id="site">
+
+  <!-- 사이트 상단 네비 -->
+  <nav class="site-nav" aria-label="사이트 상단">
+    <div class="site-nav-inner">
+      <div class="brand">
+        <span class="brand-mark" id="brandMark">S</span>
+        <div>
+          <div class="brand-name" id="brandName">이름</div>
+          <div class="brand-en" id="brandEn">EN</div>
+        </div>
+      </div>
+      <div class="site-menu" id="siteMenu">
+        <a href="#">환영</a>
+        <a href="#">소개</a>
+        <a href="#">주요</a>
+        <a href="#">소식</a>
+        <a href="#">문의</a>
+      </div>
+      <a class="site-cta" id="navCta" href="#">제작 문의하기</a>
+    </div>
+  </nav>
+
+  <!-- 히어로 -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner" id="heroInner">
+        <div class="hero-left">
+          <div class="hero-eyebrow" id="heroEyebrow">WELCOME</div>
+          <h1 class="hero-title">
+            <span class="name-serif" id="heroName">이름</span>
+          </h1>
+          <p class="hero-lead" id="heroLead">한 줄 소개</p>
+          <span class="bilingual-en" id="heroLeadEn"></span>
+
+          <blockquote class="hero-verse" id="heroVerse" hidden>
+            <span id="heroVerseText"></span>
+            <span class="ref" id="heroVerseRef"></span>
+          </blockquote>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="heroCta1" href="#">주요 안내</a>
+            <a class="btn btn-outline" id="heroCta2" href="#">이번 주 소식</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <span>사진 자리 · 실제 사이트에서는 교회·사업체 사진</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 정보 카드 4칸 -->
+  <section aria-label="빠른 정보">
+    <div class="wrap">
+      <div class="info-cards" id="infoCards"></div>
+    </div>
+  </section>
+
+  <!-- 소개 블록 -->
+  <section class="about">
+    <div class="wrap">
+      <div class="about-grid" id="aboutGrid"></div>
+    </div>
+  </section>
+
+  <!-- 카테고리별 콘텐츠 -->
+  <section class="cat-section">
+    <div class="wrap" id="catMain"></div>
+  </section>
+
+  <section class="cat-section">
+    <div class="wrap" id="catSecondary"></div>
+  </section>
+
+  <!-- 소식 · 공지 -->
+  <section class="cat-section">
+    <div class="wrap" id="newsSection"></div>
+  </section>
+
+  <!-- 후원 · 헌금 -->
+  <section class="give">
+    <div class="wrap">
+      <div class="give-inner" id="giveInner"></div>
+    </div>
+  </section>
+
+  <!-- 정책 -->
+  <section class="policy">
+    <div class="wrap" id="policySection"></div>
+  </section>
+
+  <!-- 하단 CTA -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="h" id="ctaHead">함께 이야기 나눕시다</div>
+      <div class="s" id="ctaSub">부담 없이 먼저 연락 주십시오. 답장은 곧 드립니다.</div>
+      <a class="btn btn-primary" id="ctaBtn" href="#">문의하기</a>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-inner">
+        <div>
+          <h6 id="footBrandLabel">이름 · 연락</h6>
+          <div id="footAddr"></div>
+          <div id="footPhone"></div>
+          <div id="footEmail"></div>
+        </div>
+        <div>
+          <h6>메뉴</h6>
+          <a href="#">환영합니다</a>
+          <a href="#">소개</a>
+          <a href="#">주요</a>
+          <a href="#">소식</a>
+          <a href="#">문의</a>
+        </div>
+        <div>
+          <h6>안내</h6>
+          <a href="#">개인정보 처리방침</a>
+          <a href="#">접근성 안내</a>
+          <a href="#">이용약관</a>
+          <div style="margin-top:14px; font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2)">
+            Powered by NanuriWeb · 예시 · 실존 조직 아님
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- 자료 세 벌 -->
+<script src="./data/church.js"></script>
+<script src="./data/business.js"></script>
+<script src="./data/organization.js"></script>
+
+<script>
+/* ============================================================
+   렌더러 · 같은 자료 구조를 세 카테고리 + 10종 디자인으로
+   ============================================================ */
+
+const TEMPLATES = [
+  { n:"01", name:"클래식 4카드", fit:"처음 오신 분이 예배 시간과 오시는 길을 먼저 찾는 교회 · 표준적인 안내가 필요한 사업체·기관" },
+  { n:"03", name:"큰 사진 히어로", fit:"실제 사진을 앞세우고 싶은 곳 · 카페·베이커리·문화 공간" },
+  { n:"05", name:"좌우 분할", fit:"인사말과 사진을 나란히 두어 인격적인 인상을 주고 싶은 교회·상담실" },
+  { n:"07", name:"여정 넘버", fit:"처음 오시나요 · 새 가족 여정을 강조하는 교회 · 정착 안내 기관" },
+  { n:"09", name:"커뮤니티 앞", fit:"목장·소그룹이 심장인 가정교회 · 회원 모임 중심의 한인회" },
+  { n:"11", name:"소식 중심", fit:"주간 소식·주보가 활발한 교회 · 이달의 공지가 많은 기관" },
+  { n:"13", name:"환영 중심", fit:"환대의 첫 인상을 최대치로 · 크게 이름을 보여주고 싶은 교회" },
+  { n:"15", name:"모던 그리드", fit:"카드형 정돈을 좋아하는 분 · 시각적 정돈이 필요한 사업체·기관" },
+  { n:"17", name:"이야기·나눔", fit:"간증·손님 이야기·후기가 자산인 곳 · 카페·상담·교회" },
+  { n:"19", name:"한/영 병행", fit:"2세·비한국어권 배우자·다국적 이웃을 함께 섬기는 한인교회·한인회" },
+];
+
+const CATEGORIES = {
+  church: window.CHURCH,
+  business: window.BUSINESS,
+  organization: window.ORG,
+};
+
+const CAT_LABEL = { church:"교회", business:"사업체", organization:"기관 · 한인회" };
+
+/* --- SVG 유틸 --- */
+const svgArrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+/* --- 헬퍼 --- */
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+function clear(node){ while(node.firstChild) node.removeChild(node.firstChild); }
+function escapeHtml(s){ return String(s ?? "").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+function firstLetter(s){ return (s || "?").trim().charAt(0); }
+
+/* --- 컨트롤 바 채우기 --- */
+(function initChrome(){
+  const box = document.querySelector('.chrome-designs');
+  TEMPLATES.forEach(t => {
+    const b = el('button', null, t.n);
+    b.dataset.t = t.n;
+    b.setAttribute('aria-pressed', t.n === "01" ? "true":"false");
+    b.title = t.name;
+    b.addEventListener('click', () => setTemplate(t.n));
+    box.appendChild(b);
+  });
+  document.querySelectorAll('.chrome-tabs button').forEach(b => {
+    b.addEventListener('click', () => setCategory(b.dataset.cat));
+  });
+})();
+
+/* --- 상태 변경 --- */
+function setCategory(cat){
+  document.body.dataset.category = cat;
+  document.querySelectorAll('.chrome-tabs button').forEach(b => {
+    b.setAttribute('aria-pressed', b.dataset.cat === cat ? "true":"false");
+  });
+  document.getElementById('chipCat').textContent = CAT_LABEL[cat];
+  render();
+}
+function setTemplate(n){
+  document.body.dataset.template = n;
+  document.querySelectorAll('.chrome-designs button').forEach(b => {
+    b.setAttribute('aria-pressed', b.dataset.t === n ? "true":"false");
+  });
+  const meta = TEMPLATES.find(t => t.n === n);
+  document.getElementById('chipT').textContent = n;
+  document.getElementById('tName').textContent = meta.name;
+  document.getElementById('tFit').textContent = "이런 곳에 잘 맞습니다: " + meta.fit;
+}
+
+/* --- 실제 페이지 렌더 --- */
+function render(){
+  const cat = document.body.dataset.category;
+  const D = CATEGORIES[cat];
+  if(!D){ return; }
+
+  // Brand · nav
+  document.getElementById('brandMark').textContent = firstLetter(D.identity.nameKo);
+  document.getElementById('brandName').textContent = D.identity.nameKo;
+  document.getElementById('brandEn').textContent = D.identity.nameEn || "";
+  document.getElementById('navCta').textContent = (D.cta && D.cta.primary && D.cta.primary.label) || "문의하기";
+
+  // Hero
+  document.getElementById('heroEyebrow').textContent = (cat === 'church') ? 'WELCOME · 환영합니다'
+                                                   : (cat === 'business') ? 'NEIGHBOR · 이웃 가게'
+                                                   : 'COMMUNITY · 커뮤니티';
+  document.getElementById('heroName').textContent = D.identity.nameKo;
+  document.getElementById('heroLead').textContent = D.identity.tagline || "";
+  const enEl = document.getElementById('heroLeadEn');
+  enEl.textContent = D.identity.nameEn ? (D.identity.nameEn + (D.identity.signature ? " · " + D.identity.signature.en : "")) : "";
+
+  // 성경 구절은 교회만
+  const verseBox = document.getElementById('heroVerse');
+  if(cat === 'church' && D.identity.verse){
+    document.getElementById('heroVerseText').textContent = D.identity.verse.ko;
+    document.getElementById('heroVerseRef').textContent = (D.identity.verse.ref || "") + (D.identity.verse.refEn ? " · " + D.identity.verse.refEn : "");
+    verseBox.hidden = false;
+  } else {
+    verseBox.hidden = true;
+  }
+  document.getElementById('heroCta1').textContent = D.cta.secondary ? D.cta.secondary.label : "안내";
+  document.getElementById('heroCta2').textContent = D.cta.visit ? D.cta.visit.label : "오시는 길";
+
+  // 정보 카드
+  const ic = document.getElementById('infoCards');
+  clear(ic);
+  (D.welcomeCards || []).forEach(c => {
+    const box = el('article', 'info-card');
+    box.innerHTML = `
+      <div class="ic-eyebrow">${escapeHtml(c.en)}</div>
+      <div class="ic-ko">${escapeHtml(c.ko)}</div>
+      <div class="ic-value">${escapeHtml(c.value)}</div>`;
+    ic.appendChild(box);
+  });
+
+  // 소개 블록 두 개
+  const ag = document.getElementById('aboutGrid');
+  clear(ag);
+  (D.aboutBlocks || []).slice(0,2).forEach(b => {
+    const box = el('div', 'about-block');
+    box.innerHTML = `
+      <div class="eyebrow">${escapeHtml(b.eyebrow)}</div>
+      <h3>${escapeHtml(b.title)}</h3>
+      <p>${escapeHtml(b.body)}</p>
+      ${b.signature ? `<span class="sign">${escapeHtml(b.signature)}</span>` : ''}`;
+    ag.appendChild(box);
+  });
+
+  // 카테고리별 콘텐츠
+  const main = document.getElementById('catMain');
+  const secondary = document.getElementById('catSecondary');
+  clear(main); clear(secondary);
+
+  if(cat === 'church'){
+    main.appendChild(sectionBlock(
+      D.homegroups.eyebrow,
+      D.homegroups.heading,
+      D.homegroups.intro,
+      makeList(D.homegroups.groups.map(g => ({
+        left: `<div class="lead">${escapeHtml(g.area)} 지역 목장</div>`,
+        right: `<span class="meta">${escapeHtml(g.meets)}</span>`
+      }))),
+      makePull(D.homegroups.principles[0])
+    ));
+    secondary.appendChild(sectionBlock(
+      D.discipleship.eyebrow,
+      D.discipleship.heading,
+      D.discipleship.intro,
+      makeGrid(D.discipleship.courses.map((c,i) => ({
+        num: String(i+1).padStart(2,'0'),
+        title: c.title,
+        en: c.duration,
+        sub: c.note
+      })), 'grid-4')
+    ));
+  } else if (cat === 'business'){
+    main.appendChild(sectionBlock(
+      D.services.eyebrow,
+      D.services.heading,
+      D.services.intro,
+      makeGrid(D.services.items.map((s,i) => ({
+        num: String(i+1).padStart(2,'0'),
+        title: s.title,
+        en: s.price,
+        sub: s.note
+      })), 'grid-2')
+    ));
+    secondary.appendChild(sectionBlock(
+      D.reviews.eyebrow,
+      D.reviews.heading,
+      "손님이 남겨 주신 짧은 말들. 원문 그대로 실었습니다.",
+      makeGrid(D.reviews.items.map(r => ({
+        num: '"',
+        title: r.body,
+        en: "— " + r.by,
+        sub: ""
+      })), 'grid-3')
+    ));
+  } else {
+    main.appendChild(sectionBlock(
+      D.programs.eyebrow,
+      D.programs.heading,
+      D.programs.intro,
+      makeGrid(D.programs.items.map((p,i) => ({
+        num: String(i+1).padStart(2,'0'),
+        title: p.title,
+        en: p.subtitle,
+        sub: p.body
+      })), 'grid-4')
+    ));
+    secondary.appendChild(sectionBlock(
+      D.events.eyebrow,
+      D.events.heading,
+      "다가오는 자리 · 미리 알려 주시면 자리를 준비해 드립니다.",
+      makeList((D.events.upcoming || []).map(ev => ({
+        left: `<div class="lead">${escapeHtml(ev.title)}</div><div class="sub">${escapeHtml(ev.place)} · ${escapeHtml(ev.note)}</div>`,
+        right: `<span class="meta">${escapeHtml(ev.date)}</span>`
+      })))
+    ));
+  }
+
+  // 소식
+  const newsBlock = document.getElementById('newsSection');
+  clear(newsBlock);
+  const newsSrc = (cat === 'organization') ? D.notices : D.news;
+  newsBlock.appendChild(sectionBlock(
+    newsSrc.eyebrow,
+    newsSrc.heading,
+    (cat === 'church') ? "매주 목요일 갱신됩니다." : (cat === 'business') ? "새 원두·시즌 메뉴·이벤트 소식." : "이번 달 주요 공지와 이야기.",
+    makeList((newsSrc.latest || []).map(n => ({
+      left: `<div class="lead">${escapeHtml(n.title)}</div>`,
+      right: `<span class="meta">${escapeHtml(n.date)}${n.tag ? " · " + escapeHtml(n.tag) : ""}</span>`
+    })))
+  ));
+
+  // 후원/헌금/예약
+  const giveInner = document.getElementById('giveInner');
+  clear(giveInner);
+  if(cat === 'church' || cat === 'organization'){
+    const G = D.giving || D.give;
+    giveInner.innerHTML = `
+      <div>
+        <div class="eyebrow">${escapeHtml(G.eyebrow)}</div>
+        <h2 class="h-section">${escapeHtml(G.heading)}</h2>
+        <p class="section-desc">${escapeHtml(G.intro)}</p>
+      </div>
+      <div>
+        <div class="give-methods">
+          ${(G.methods || []).map(m => `
+            <div class="m">
+              <div class="t">${escapeHtml(m.title)}</div>
+              <div class="n">${escapeHtml(m.note)}</div>
+            </div>`).join("")}
+        </div>
+        <div class="receipt-note">
+          <span class="lab">검토 전 초안</span>
+          ${escapeHtml(G.receiptNote)}
+        </div>
+      </div>`;
+  } else {
+    // 사업체는 예약 안내
+    const R = D.reserve;
+    giveInner.innerHTML = `
+      <div>
+        <div class="eyebrow">${escapeHtml(R.eyebrow)}</div>
+        <h2 class="h-section">${escapeHtml(R.heading)}</h2>
+        <p class="section-desc">${escapeHtml(R.intro)}</p>
+      </div>
+      <div>
+        <div style="padding:24px; border:1px solid var(--line); border-radius:var(--r); background:var(--bg);">
+          <div class="eyebrow">HOURS</div>
+          <h3 class="h-section" style="font-size:22px; margin-top:6px">영업 시간</h3>
+          ${(D.hours || []).map(h => `<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--line)"><span>${escapeHtml(h.day)}</span><span style="font-family:var(--font-mono);font-size:13px">${escapeHtml(h.time)}</span></div>`).join("")}
+          <a class="btn btn-primary" style="margin-top:18px" href="${escapeHtml(R.ctaLabel ? '#reserve' : '#')}">${escapeHtml(R.ctaLabel || "예약 문의")}</a>
+        </div>
+      </div>`;
+  }
+
+  // 정책
+  const P = D.policy;
+  const pol = document.getElementById('policySection');
+  pol.innerHTML = `
+    <div class="eyebrow">${escapeHtml(P.eyebrow)}</div>
+    <h2 class="h-section">${escapeHtml(P.heading)}</h2>
+    <div class="policy-grid" style="margin-top:20px">
+      ${(P.items || []).map(it => `
+        <div class="p-item">
+          <span class="draft">${escapeHtml(P.draftLabel || "검토 전 초안")}</span>
+          <h5>${escapeHtml(it.title)}</h5>
+          <p>${escapeHtml(it.body)}</p>
+        </div>`).join("")}
+    </div>`;
+
+  // 하단 CTA
+  document.getElementById('ctaHead').textContent =
+    (cat === 'church') ? "먼저 얼굴을 뵙고 싶습니다"
+    : (cat === 'business') ? "오늘, 한 잔 같이 드시겠어요"
+    : "함께 만들어 가는 자리";
+  document.getElementById('ctaSub').textContent =
+    (cat === 'church') ? "부담 없이 먼저 알려 주십시오. 자리를 준비해 두겠습니다."
+    : (cat === 'business') ? "메뉴·예약·촬영 문의 · 짧게 답장 드립니다."
+    : "회원·후원·자원봉사 · 편하실 때 연락 주십시오.";
+  const cbtn = document.getElementById('ctaBtn');
+  cbtn.textContent = D.cta.primary.label;
+  cbtn.href = D.cta.primary.href;
+
+  // 푸터
+  document.getElementById('footBrandLabel').textContent = D.identity.nameKo + " · 연락";
+  document.getElementById('footAddr').textContent = D.contact.address || D.contact.mailingAddress || "";
+  document.getElementById('footPhone').textContent = D.contact.phone || "";
+  document.getElementById('footEmail').textContent = D.contact.email || "";
+}
+
+/* --- 재사용 블록 --- */
+function sectionBlock(eyebrow, heading, desc, ...contents){
+  const w = el('div');
+  w.innerHTML = `
+    <div class="eyebrow">${escapeHtml(eyebrow)}</div>
+    <h2 class="h-section">${escapeHtml(heading)}</h2>
+    <p class="section-desc">${escapeHtml(desc || "")}</p>`;
+  contents.forEach(c => { if(c) w.appendChild(c); });
+  const more = el('a', 'section-more');
+  more.href = '#'; more.textContent = "전체 보기";
+  w.appendChild(more);
+  return w;
+}
+function makeList(rows){
+  const ul = el('ul', 'list');
+  rows.forEach(r => {
+    const li = document.createElement('li');
+    li.innerHTML = `<div>${r.left}</div><div>${r.right}</div>`;
+    ul.appendChild(li);
+  });
+  return ul;
+}
+function makeGrid(items, cls){
+  const g = el('div', cls || 'grid-3');
+  g.style.marginTop = '20px';
+  items.forEach(it => {
+    const box = el('div', 'item');
+    box.innerHTML = `
+      <div class="num">${escapeHtml(it.num || "")}</div>
+      <h4>${escapeHtml(it.title || "")}</h4>
+      ${it.en ? `<span class="en">${escapeHtml(it.en)}</span>` : ""}
+      <div class="sub">${escapeHtml(it.sub || "")}</div>`;
+    g.appendChild(box);
+  });
+  return g;
+}
+function makePull(text){
+  if(!text) return null;
+  const p = el('div', 'pull', escapeHtml(text));
+  return p;
+}
+
+/* --- 시작 --- */
+setTemplate("01");
+setCategory("church");
+</script>
+</body>
+</html>
